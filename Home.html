@@ -10,10 +10,23 @@
 </head>
 
 <body>
+
+    <!--Text mit Daten vom Server ersetzen-->
+    <h1 id="test"></h1>
+    <p>Please help me</p>
+    <script>
+        fetch(`https:\/\/it2wi1.if-lab.de/rest/beispiel/info`)
+            .then(response => response.json())
+            .then(data => document.querySelector("#test").innerHTML = data);
+    </script>
+
+    <!--Daten vom Server anfordern-->
+    <!--Brauchen wir das noch, wenn wir das 1. verwenden können?-->
     <script src="src/js/test.js"></script>
     <div id="test2">
         <h2>Request2</h2>
-        <button type="button" onclick="requestData(`https:\/\/it2wi1.if-lab.de/rest/beispiel/info`)">request2 here</button>
+        <button type="button" onclick="requestData(`https:\/\/it2wi1.if-lab.de/rest/beispiel/info`)">request2
+            here</button>
     </div>
 </body>
 
