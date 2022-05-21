@@ -1,1 +1,16 @@
 /* Style vorgaben einfuegen */
+.background {
+    background-color: #717e87;
+}
+
+.actionBar {
+    color: #314151;
+}
+
+.timer {
+    color: #217446;
+}
+
+.eskalation {
+    color: #d24525;
+}
