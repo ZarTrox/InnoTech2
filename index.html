@@ -15,9 +15,17 @@
     <h1 id="test"></h1>
     <p>Please help me</p>
     <script>
-        fetch(`https://it2wi1.if-lab.de/rest/ft_ablauf`)
-            .then(response => response.json())
-            .then(data => document.querySelector("#test").innerHTML = data);
+        //fetch(`https://it2wi1.if-lab.de/rest/ft_ablauf`)
+        //    .then(response => response.json())
+        //    .then(data => document.querySelector("#test").innerHTML = data);
+
+        //fetch(`https://it2wi1.if-lab.de/rest/ft_ablauf`)
+        //    .then(response => response.json())
+        //    .then(data => {
+        //        for(elment in data){
+        //            console.log(data)
+        //        }
+        //    });
     </script>
 
     <!--Daten vom Server anfordern-->
@@ -25,7 +33,7 @@
     <script src="src/js/test.js"></script>
     <div id="test2">
         <h2>Request2</h2>
-        <button type="button" onclick="requestData(`https://it2wi1.if-lab.de/rest/ft_ablauf`)">request2
+        <button type="button" onclick="requestData2(`https:\/\/it2wi1.if-lab.de\/rest\/ft_ablauf`)">request2
             here</button>
     </div>
 </body>
