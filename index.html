@@ -20,9 +20,21 @@
         //    .then(data => document.querySelector("#test").innerHTML = data);
 
         //TODO wie kann man das als einzige funktion die live geupdated wird verbauen?
-        //Alles in eine Funktion?
-        zeigeStapelMagazin();
-        function zeigeStapelMagazin() {
+        function getData() {
+            fetch(`https://it2wi1.if-lab.de/rest/ft_ablauf`)
+                .then(response => response.json())
+                .then(data => {
+                    zeigeStapelMagazin(data);
+                    zeigeHochregalLager(data);
+                    zeigeBrennOfen(data);
+
+
+                })
+
+        }
+
+
+        function zeigeStapelMagazin(data) {
             fetch(`https://it2wi1.if-lab.de/rest/ft_ablauf`)
                 .then(response => response.json())
                 .then(data => {
@@ -34,10 +46,10 @@
                                 //Wenn es nicht das erste Element ist, dann speicher die daten vom element davor zum Vergleichen in einer Variable ab
                                 var werteAlt = data[element - 1]["werte"];
                                 //if (werteNeu[StelleX] != werteAlt[StelleX]) {
-                                    //Wenn sich im Vergelich zur Sekunde zuvor etwas veraendert, dann...
-                                    /*Relevant für x sind hier:
-                                        e.g. H-Vertikal;
-                                    */
+                                //Wenn sich im Vergelich zur Sekunde zuvor etwas veraendert, dann...
+                                /*Relevant für x sind hier:
+                                    e.g. H-Vertikal;
+                                */
                                 //}
                             } else {
                                 //Wenn es das erste Element (Uhrzeit: 12:00:00) ist dann mach ...
@@ -52,8 +64,7 @@
         function displayInGraphic(graphicPath, Data, UpdatedPlace) {
 
         }
-        zeigeHochregalLager()
-        function zeigeHochregalLager() {
+        function zeigeHochregalLager(data) {
             fetch(`https://it2wi1.if-lab.de/rest/ft_ablauf`)
                 .then(response => response.json())
                 .then(data => {
@@ -84,10 +95,10 @@
                                         Motor vertikal runter: Q5 (M3)
                                         Motor vertikal hoch: Q6 (M3)
                                     */
-                                   var lichtschrankeInnen = data[element]["werte"]["Lichtschranke innen"];
-                                   var referenztasterVertikal = data[element]["werte"]["Referenztaster vertikal"];
-                                   var referenztasterAuslegerVorne = data[element]["werte"]["Referenztaster Ausleger vorne"];
-                                   //Was hat es mit H-Vertikal & H-Horizointal in der beschreibung auf sich?
+                                    var lichtschrankeInnen = data[element]["werte"]["Lichtschranke innen"];
+                                    var referenztasterVertikal = data[element]["werte"]["Referenztaster vertikal"];
+                                    var referenztasterAuslegerVorne = data[element]["werte"]["Referenztaster Ausleger vorne"];
+                                    //Was hat es mit H-Vertikal & H-Horizointal in der beschreibung auf sich?
                                 }
                             } else {
                                 //Wenn es das erste Element (Uhrzeit: 12:00:00) ist dann mach ...
@@ -98,7 +109,7 @@
                     }
                 });
         }
-        function zeigeBrennOfen(){
+        function zeigeBrennOfen(data) {
 
         }
     </script>
