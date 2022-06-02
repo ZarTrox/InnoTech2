@@ -20,7 +20,8 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
 
-
+    <script type = "text/javascript" src = "https://d3js.org/d3.v4.min.js"></script>
+    <script src="./js/main.js"></script>
 
 
     <!-- Loadings -->
@@ -111,7 +112,10 @@
 
     </div>
 
-
+    <div id = "svgcontainer"> </div>
+    <script>
+        getData();
+    </script>
 
     <!-- Footer -->
     <?php include('./incl/footer.php') ?>
