@@ -6,122 +6,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type = "text/javascript" src = "https://d3js.org/d3.v4.min.js"></script>
+    <script src="./js/main.js"></script>
     <title>InnoTech2</title>
 </head>
-
 <body>
-
-    <!--Text mit Daten vom Server ersetzen-->
-    <h1 id="test"></h1>
-    <p>Please help me</p>
-    <script>
-        //fetch(`https://it2wi1.if-lab.de/rest/ft_ablauf`)
-        //    .then(response => response.json())
-        //    .then(data => document.querySelector("#test").innerHTML = data);
-
-        //TODO wie kann man das als einzige funktion die live geupdated wird verbauen?
-        function getData() {
-            fetch(`https://it2wi1.if-lab.de/rest/ft_ablauf`)
-                .then(response => response.json())
-                .then(data => {
-                    zeigeStapelMagazin(data);
-                    zeigeHochregalLager(data);
-                    zeigeBrennOfen(data);
-
-
-                })
-
-        }
-
-
-        function zeigeStapelMagazin(data) {
-            fetch(`https://it2wi1.if-lab.de/rest/ft_ablauf`)
-                .then(response => response.json())
-                .then(data => {
-                    for (element in data) {
-                        if (data[element]) {
-                            var datumUndUhrzeit = data[element]["datum"];
-                            var werteNeu = data[element]["werte"];
-                            if (element != 0) {
-                                //Wenn es nicht das erste Element ist, dann speicher die daten vom element davor zum Vergleichen in einer Variable ab
-                                var werteAlt = data[element - 1]["werte"];
-                                //if (werteNeu[StelleX] != werteAlt[StelleX]) {
-                                //Wenn sich im Vergelich zur Sekunde zuvor etwas veraendert, dann...
-                                /*Relevant für x sind hier:
-                                    e.g. H-Vertikal;
-                                */
-                                //}
-                            } else {
-                                //Wenn es das erste Element (Uhrzeit: 12:00:00) ist dann mach ...
-                            }
-                        } else {
-                            console.log("Element is empty!")
-                        }
-                    }
-                });
-        }
-
-        function displayInGraphic(graphicPath, Data, UpdatedPlace) {
-
-        }
-        function zeigeHochregalLager(data) {
-            fetch(`https://it2wi1.if-lab.de/rest/ft_ablauf`)
-                .then(response => response.json())
-                .then(data => {
-                    for (element in data) {
-                        if (data[element]) {
-                            //var datumUndUhrzeit = data[element]["datum"];
-                            //var werteNeu = data[element]["werte"];
-                            if (element != 0) {
-                                //Wenn es nicht das erste Element ist, dann speicher die daten vom element davor zum Vergleichen in einer Variable ab
-                                //var werteAlt = data[element - 1]["werte"];
-                                //Oder: wertNeu[StelleX] != werteAlt[StelleX]
-                                if (data[element]["werte"] != data[element - 1]["werte"]) {
-                                    //Wenn sich im Vergelich zur Sekunde zuvor etwas veraendert, dann...
-                                    /*Relevant für HochregalLager sind hier:
-                                        LichtschrankeInnen: I2
-                                        Referenztaster vertikal : I4
-                                        Referenztaster Ausleger vorne : I5
-                                        Spursensor oben: A1 (Ausgegraut!)
-                                        Spursensor unten: A2 (Ausgegraut!)
-                                        Encoder horizontal Impuls 1: B1 (Ausgegraut!)
-                                        Encoder horizontal Impuls 2: B2 (Ausgegraut!)
-                                        Encoder vertikal Impuls 1: B3 (Ausgegraut!)
-                                        Encoder vertikal Impuls 2: B4 (Ausgegraut!)
-                                        Motor Förderband vorwärts: Q1 (M1)
-                                        Motor Förderband rückwarts: Q2 (M1)
-                                        Motor horizontal zum Regal: Q3 (M2)
-                                        Motor horizontal zum Förderband: Q4 (M2)
-                                        Motor vertikal runter: Q5 (M3)
-                                        Motor vertikal hoch: Q6 (M3)
-                                    */
-                                    var lichtschrankeInnen = data[element]["werte"]["Lichtschranke innen"];
-                                    var referenztasterVertikal = data[element]["werte"]["Referenztaster vertikal"];
-                                    var referenztasterAuslegerVorne = data[element]["werte"]["Referenztaster Ausleger vorne"];
-                                    //Was hat es mit H-Vertikal & H-Horizointal in der beschreibung auf sich?
-                                }
-                            } else {
-                                //Wenn es das erste Element (Uhrzeit: 12:00:00) ist dann mach ...
-                            }
-                        } else {
-                            console.log("Element is empty!")
-                        }
-                    }
-                });
-        }
-        function zeigeBrennOfen(data) {
-
-        }
-    </script>
-
-    <!--Daten vom Server anfordern-->
-    <!--Brauchen wir das noch, wenn wir das 1. verwenden können?-->
-    <script src="src/js/test.js"></script>
-    <div id="test2">
-        <h2>Request2</h2>
-        <button type="button" onclick="requestData2(`https:\/\/it2wi1.if-lab.de\/rest\/ft_ablauf`)">request2
-            here</button>
+    <div id = "svgcontainer">
     </div>
-</body>
-
+    <script>
+        createSvg();
+    </script>
+ </body>
 </html>
