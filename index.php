@@ -20,7 +20,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
 
-    <script type = "text/javascript" src = "https://d3js.org/d3.v4.min.js"></script>
+    <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
     <script src="./js/main.js"></script>
 
 
@@ -53,11 +53,23 @@
                             <th>Status</th>
                         </tr>
                         <tr>
-                            <td>Schwenkarm</td>
-                            <td>...</td>
+                            <td>Hochregallager</td>
+                            <td>O.k.</td>
                         </tr>
                         <tr>
+                            <td>Sauggreifer</td>
                             <td>Error</td>
+                        </tr>
+                        <tr>
+                            <td>Brennofen</td>
+                            <td>Error</td>
+                        </tr>
+                        <tr>
+                            <td>Sortierstrecke</td>
+                            <td>O.k.</td>
+                        </tr>
+                        <tr>
+                            <td>Wipp-Hebel</td>
                             <td>O.k.</td>
                         </tr>
                     </table>
@@ -77,15 +89,15 @@
         </h1>
 
         <!-- 1. -->
-        <div id="schwenkarm" class="container_single_part">
+        <div id="Hochregallager" class="container_single_part">
             <h2>
-                Schwenkarm
+                Hochregallager
             </h2>
 
             <div class="container pt-5 pb-5">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <img class="single_pic" src="./media/img/Schwenkarm.png" alt="Part Schwenkarm">
+                        <img class="single_pic" src="./media/img/Hochregallager.png" alt="Part Hochregallager">
                     </div>
                     <div class="col-12 col-lg-6">
                         <p>
@@ -96,6 +108,100 @@
                 </div>
             </div>
         </div>
+
+        <!-- End 1. -->
+
+        <!-- 2. -->
+        <div id="Sauggreifer" class="container_single_part">
+            <h2>
+                Sauggreifer
+            </h2>
+
+            <div class="container pt-5 pb-5">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <img class="single_pic" src="./media/img/Sauggreifer.png" alt="Part Sauggreifer">
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <p>
+                            Beschreibung:
+                        </p>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- End 2. -->
+
+        <!-- 3. -->
+        <div id="Brennofen" class="container_single_part">
+            <h2>
+            Brennofen
+            </h2>
+
+            <div class="container pt-5 pb-5">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <img class="single_pic" src="./media/img/Brennofen.png" alt="Part Brennofen">
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <p>
+                            Beschreibung:
+                        </p>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- End 3. -->
+
+        <!-- 4. -->
+        <div id="Sortierstrecke" class="container_single_part">
+            <h2>
+            Sortierstrecke
+            </h2>
+
+            <div class="container pt-5 pb-5">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <img class="single_pic" src="./media/img/Sortierstrecke.png" alt="Part Sortierstrecke">
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <p>
+                            Beschreibung:
+                        </p>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- End 4. -->
+
+        <!-- 5. -->
+        <div id="Wipp-Hebel" class="container_single_part">
+            <h2>
+            Wipp-Hebel
+            </h2>
+
+            <div class="container pt-5 pb-5">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <img class="single_pic" src="./media/img/Wipp-Hebel.png" alt="Part Wipp-Hebel">
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <p>
+                            Beschreibung:
+                        </p>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- End 5. -->
 
 
 
@@ -112,7 +218,7 @@
 
     </div>
 
-    <div id = "svgcontainer"> </div>
+    <div id="svgcontainer"> </div>
     <script>
         getData();
     </script>

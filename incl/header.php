@@ -1,4 +1,4 @@
-<div class="header">
+<nav class="header">
     <div class="header_brand">
         <a href="#overview">
             Awesome team!
@@ -12,9 +12,11 @@
         <div class="dropdown">
             <div class="dropbtn">Einzelübersicht</div>
             <div class="dropdown-content">
-                <a href="#schwenkarm">Schwenkarm</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+                <a href="#Hochregallager">Hochregallager</a>
+                <a href="#Sauggreifer">Sauggreifer</a>
+                <a href="#Brennofen">Brennofen</a>
+                <a href="#Sortierstrecke">Sortierstrecke</a>
+                <a href="#Wipp-Hebel">Wipp-Hebel</a>
             </div>
         </div>
         <div>
@@ -36,7 +38,7 @@
         <div class="iphone__screen">
             <a href="#" class="nav__trigger"><span class="nav__icon"></span></a>
             <nav class="nav">
-                <ul class="nav__list mr-auto ml-auto">
+                <ul class="nav__list mr-auto ml-auto mt-5">
                     <li class="nav__item"><a class="nav__link" href="#overview">Gesamtübersicht</a></li>
                     <li class="nav__item">
                         <div class="dropdown">
@@ -59,7 +61,7 @@
     </div>
 
 
-</div>
+</nav>
 
 
 
@@ -69,5 +71,18 @@
     });
     $('.nav__link').on('click', function(e) {
         $('.iphone__screen').toggleClass('nav--active');
+    });
+
+
+
+
+
+    window.addEventListener('scroll', (e) => {
+        const nav = document.querySelector('.header');
+        if (window.pageYOffset > 0) {
+            nav.classList.add("add-shadow");
+        } else {
+            nav.classList.remove("add-shadow");
+        }
     });
 </script>

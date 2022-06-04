@@ -43,4 +43,3 @@
 
 <!-- ###################### Style #################### -->
 <link href="./css/stylesheet.css" rel="stylesheet">
-<script href="./js/main.js"></script>
