@@ -1,3 +1,24 @@
+const ArrayWithVariablesForHochregalLager = [
+    "Lichtschranke Innen",
+    "Referenztaster vertikal",
+    "Referenztaster Ausleger vorne",
+    "B-Motor Foerderband vorwaerts", //Wo ist rückwerts?
+    "H-horizontal",
+    "H-vertikal"
+]
+
+const ArrayWithVariablesForBearbeitungsstationMitBrennofen = [
+
+]
+
+const ArrayWithVariablesForSortierstreckeMitFarberkennung = [
+
+]
+
+const ArrayWithVariablesForVakuumSauggreifer = [
+
+]
+
 function getData() {
     fetch(`https://it2wi1.if-lab.de/rest/ft_ablauf`)
         .then(response => response.json())
@@ -7,19 +28,16 @@ function getData() {
 
 }
 
-function updateSvgWithData(data) {
+async function updateSvgWithData(data) {
     for (element in data) {
+        //Check time here
+        await sleep(1000)
         if (data[element]) {
             if (element != 0) {
                 if (data[element]["werte"] != data[element - 1]["werte"]) {
                     var diffBetweenObjects = compareJSONObject(data[element]["werte"], data[element - 1]["werte"])
                     if (diffBetweenObjects.length != 0) {
-                        /* Idee:
-                            if(x. includes(y) || x.includes(z) || ...){
-                                updateHochregalLager();
-                            }
-
-                        */
+                        updateHochregalLager(diffBetweenObjects);
                     }
                 }
             } else {
@@ -31,14 +49,28 @@ function updateSvgWithData(data) {
     }
 }
 
+
+async function generateTable(dataArray) {
+    var tableBeginning = "<table>\n<tr>\n<th>Name</th>\n<th>Value</th>\n</tr>\n";
+    var tableContent = "";
+    var tableElementInHTML = document.getElementById("tableForHochregalLager")
+    for (element in dataArray){
+        var variableName = dataArray[element][0];
+        var variableValue = dataArray[element][1];
+        tableContent += "<tr>\n<td>" + variableName + "</td>\n<td>" + variableValue + "</td></tr>\n"
+    }
+    var tableString = tableBeginning + tableContent + "</table>";
+    tableElementInHTML.innerHTML = tableString;
+}
+
 function compareJSONObject(currentObject, previousObject) {
-    var arrayWithResults = [];
+    var arrayWithResults = new Array();
+    //Zeit oben hinzufügen?
     for (x in currentObject) {
         if (currentObject[x] != previousObject[x]) {
-            arrayWithResults.push(x + "; " + currentObject[x])
+            arrayWithResults.push([x, currentObject[x]])
         }
     }
-    console.log(arrayWithResults)
     return arrayWithResults;
 }
 
@@ -68,7 +100,25 @@ function createSvg() {
         .style("stroke-width", 2);
 }
 
-function updateHochregalLager(arrayWithChangedElements) {
-    //TODO
-   createSvg();//Was soll dann passieren
+function updateHochregalLager(diffBetweenObjects) {
+    var variablesThatAreChanged = getVariablesThatAreUsedForThisStep(diffBetweenObjects, ArrayWithVariablesForHochregalLager);
+    if (variablesThatAreChanged.length != 0) {
+        generateTable(variablesThatAreChanged);
+    }
+}
+
+function getVariablesThatAreUsedForThisStep(diffBetweenObjects, variableArray) {
+    var variablesThatAreUsed = [];
+    for (entry in diffBetweenObjects) {
+        for (variable in variableArray) {
+            if (diffBetweenObjects[entry].includes(variableArray[variable])) {
+                variablesThatAreUsed.push(diffBetweenObjects[entry]);
+            }
+        }
+    }
+    return variablesThatAreUsed;
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
