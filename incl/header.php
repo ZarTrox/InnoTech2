@@ -44,15 +44,15 @@
                         <div class="dropdown">
                             <div class="dropbtn">Einzelübersicht</div>
                             <div class="dropdown-content">
-                                <a class="nav__link" href="#schwenkarm">Schwenkarm</a>
-                                <a class="nav__link" href="#">Link 2</a>
-                                <a class="nav__link" href="#">Link 3</a>
+                                <a class="nav__link" href="#Hochregallager">Hochregallager</a>
+                                <a class="nav__link" href="#Sauggreifer">Sauggreifer</a>
+                                <a class="nav__link" href="#Brennofen">Brennofen</a>
+                                <a class="nav__link" href="#Sortierstrecke">Sortierstrecke</a>
+                                <a class="nav__link" href="#Wipp-Hebel">Wipp-Hebel</a>
                             </div>
                         </div>
                     </li>
-                    <li class="nav__item"><a class="nav__link" href="#">Portfolio</a></li>
-                    <li class="nav__item"><a class="nav__link" href="#">Blog</a></li>
-                    <li class="nav__item"><a class="nav__link" href="#">Contact Us</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#">Live Status</a></li>
                 </ul>
             </nav>
             <div class="iphone__content"></div>
