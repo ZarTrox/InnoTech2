@@ -32,11 +32,10 @@
 <body>
     <!-- NOTE Header -->
     <?php include('./incl/header.php') ?>
-    <div style="padding-top: 70px;"></div>
 
 
     <!-- NOTE overview -->
-    <div id="overview" class="container_overview">
+    <div id="overview" class="container_overview header_placeholder">
         <h1>
             Gesamtübersicht
         </h1>
@@ -83,13 +82,13 @@
 
 
     <!-- NOTE single_view -->
-    <div id="single_view" class="container_single_view">
-        <h1>
+    <div id="single_view" class="container_single_view ">
+        <h1 style="margin-bottom: -70px;">
             Einzelübersicht
         </h1>
 
         <!-- 1. -->
-        <div id="Hochregallager" class="container_single_part">
+        <div id="Hochregallager" class="container_single_part header_placeholder">
             <h2>
                 Hochregallager
             </h2>
@@ -112,7 +111,7 @@
         <!-- End 1. -->
 
         <!-- 2. -->
-        <div id="Sauggreifer" class="container_single_part">
+        <div id="Sauggreifer" class="container_single_part header_placeholder">
             <h2>
                 Sauggreifer
             </h2>
@@ -135,9 +134,9 @@
         <!-- End 2. -->
 
         <!-- 3. -->
-        <div id="Brennofen" class="container_single_part">
+        <div id="Brennofen" class="container_single_part header_placeholder">
             <h2>
-            Brennofen
+                Brennofen
             </h2>
 
             <div class="container pt-5 pb-5">
@@ -158,9 +157,9 @@
         <!-- End 3. -->
 
         <!-- 4. -->
-        <div id="Sortierstrecke" class="container_single_part">
+        <div id="Sortierstrecke" class="container_single_part header_placeholder">
             <h2>
-            Sortierstrecke
+                Sortierstrecke
             </h2>
 
             <div class="container pt-5 pb-5">
@@ -181,9 +180,9 @@
         <!-- End 4. -->
 
         <!-- 5. -->
-        <div id="Wipp-Hebel" class="container_single_part">
+        <div id="Wipp-Hebel" class="container_single_part header_placeholder">
             <h2>
-            Wipp-Hebel
+                Wipp-Hebel
             </h2>
 
             <div class="container pt-5 pb-5">
