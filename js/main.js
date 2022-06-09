@@ -8,7 +8,24 @@ const ArrayWithVariablesForHochregalLager = [
 ]
 
 const ArrayWithVariablesForBearbeitungsstationMitBrennofen = [
-
+    "B-Referenzschalter Drehkranz (Pos. Sauger)",
+    "B-Referenzschalter Drehkranz (Pos. Foerderband)",
+    "B-Referenzschalter Drehkranz (Pos. Saege)",
+    "B-Referenzschalter Sauger (Pos. Drehkranz)",
+    "B-Lichtschranke Ende Foerderband",
+    "B-Referenzschalter Ofenschieber Innen",
+    "B-Referenzschalter Ofenschieber Aussen",
+    "B-Referenzschalter Sauger (Pos. Brennofen)",
+    "B-Lichtschranke Brennofen",
+    "B-Motor Drehkranz im Uhrzeigersinn",
+    "B-Motor Drehkranz gegen Uhrzeigersinn",
+    "B-Motor Foerderband vorwaerts",
+    "B-Motor Saege",
+    "B-Motor Ofenschieber Einfahren",
+    "B-Motor Ofenschieber Ausfahren",
+    "B-Motor Sauger zum Ofen",
+    "B-Motor Sauger zum Drehkranz",
+    "B-Leuchte Ofen"
 ]
 
 const ArrayWithVariablesForSortierstreckeMitFarberkennung = [
@@ -37,7 +54,8 @@ async function updateSvgWithData(data) {
                 if (data[element]["werte"] != data[element - 1]["werte"]) {
                     var diffBetweenObjects = compareJSONObject(data[element]["werte"], data[element - 1]["werte"])
                     if (diffBetweenObjects.length != 0) {
-                        updateHochregalLager(diffBetweenObjects);
+                        updateStationen(diffBetweenObjects);
+                        //updateHochregalLager(diffBetweenObjects);
                     }
                 }
             } else {
@@ -48,12 +66,15 @@ async function updateSvgWithData(data) {
         }
     }
 }
+function updateStationen(diffBetweenObjects){
+    updateHochregalLager(diffBetweenObjects);
+    updateBearbeitungsstationMitBrennofen(diffBetweenObjects);
+}
 
-
-async function generateTable(dataArray) {
+async function generateTable(dataArray, elementID) {
     var tableBeginning = "<table>\n<tr>\n<th>Name</th>\n<th>Value</th>\n</tr>\n";
     var tableContent = "";
-    var tableElementInHTML = document.getElementById("tableForHochregalLager")
+    var tableElementInHTML = document.getElementById(elementID)
     for (element in dataArray){
         var variableName = dataArray[element][0];
         var variableValue = dataArray[element][1];
@@ -74,6 +95,35 @@ function compareJSONObject(currentObject, previousObject) {
     return arrayWithResults;
 }
 
+function updateHochregalLager(diffBetweenObjects) {
+    var variablesThatAreChanged = getVariablesThatAreUsedForThisStep(diffBetweenObjects, ArrayWithVariablesForHochregalLager);
+    if (variablesThatAreChanged.length != 0) {
+        generateTable(variablesThatAreChanged, "tableForHochregalLager");
+    }
+}
+
+function updateBearbeitungsstationMitBrennofen(diffBetweenObjects){
+    var variablesThatAreChanged = getVariablesThatAreUsedForThisStep(diffBetweenObjects, ArrayWithVariablesForBearbeitungsstationMitBrennofen);
+    if (variablesThatAreChanged.length != 0) {
+        generateTable(variablesThatAreChanged, "tableForBearbeitungstation");
+    }
+}
+
+function getVariablesThatAreUsedForThisStep(diffBetweenObjects, variableArray) {
+    var variablesThatAreUsed = [];
+    for (entry in diffBetweenObjects) {
+        for (variable in variableArray) {
+            if (diffBetweenObjects[entry].includes(variableArray[variable])) {
+                variablesThatAreUsed.push(diffBetweenObjects[entry]);
+            }
+        }
+    }
+    return variablesThatAreUsed;
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 //Übergebe ein Array. Je mehr daten desto mehr striche. Das Grundgerüst sollte immer gleich bleiben
 function createSvg() {
@@ -98,27 +148,4 @@ function createSvg() {
         .attr("y2", 200)
         .style("stroke", "rgb(0,0,0)")
         .style("stroke-width", 2);
-}
-
-function updateHochregalLager(diffBetweenObjects) {
-    var variablesThatAreChanged = getVariablesThatAreUsedForThisStep(diffBetweenObjects, ArrayWithVariablesForHochregalLager);
-    if (variablesThatAreChanged.length != 0) {
-        generateTable(variablesThatAreChanged);
-    }
-}
-
-function getVariablesThatAreUsedForThisStep(diffBetweenObjects, variableArray) {
-    var variablesThatAreUsed = [];
-    for (entry in diffBetweenObjects) {
-        for (variable in variableArray) {
-            if (diffBetweenObjects[entry].includes(variableArray[variable])) {
-                variablesThatAreUsed.push(diffBetweenObjects[entry]);
-            }
-        }
-    }
-    return variablesThatAreUsed;
-}
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
 }
