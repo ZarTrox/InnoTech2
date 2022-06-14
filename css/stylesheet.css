@@ -290,6 +290,18 @@ body {
 
 
 /* NOTE overview */
+.overview_light_container {
+    padding-top: 73px;
+    height: 15vh;
+    width: 100%;
+    text-align: center;
+}
+
+.overview_light {
+    height: 15vh;
+
+}
+
 .container_overview {
     min-height: 100vh;
 }

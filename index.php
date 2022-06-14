@@ -34,18 +34,25 @@
     <?php include('./incl/header.php') ?>
 
 
+    <div class="overview_light_container" style=";">
+        <img class="overview_light" src="./media/img/ampel/Ampelfarbeaus.svg" alt="Ampel">
+    </div>
+
+
     <!-- NOTE overview -->
     <div id="overview" class="container_overview header_placeholder">
+
+
         <h1>
             Gesamtübersicht
         </h1>
 
         <div class="container pt-5 pb-5">
             <div class="row">
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-xl-6">
                     <img class="overview_pic" src="./media/img/Gesamtübersicht.png" alt="Gesamtübersicht der Anlage">
                 </div>
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-xl-6">
                     <table class="overview_table">
                         <tr>
                             <th>Beschreibung</th>
