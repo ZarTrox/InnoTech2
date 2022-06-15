@@ -350,6 +350,6 @@ body {
 
 /* NOTE Footer */
 .footer_container {
-    height: 10vh;
+    min-height: 15vh;
     background-color: var(--action-bar);
 }
