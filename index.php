@@ -44,36 +44,8 @@
 
         <div class="container pt-5 pb-5">
             <div class="row">
-                <div class="col-12 col-xl-6">
+                <div class="col-12">
                     <img class="overview_pic" src="./media/img/Gesamtübersicht.png" alt="Gesamtübersicht der Anlage">
-                </div>
-                <div class="col-12 col-xl-6">
-                    <table class="overview_table">
-                        <tr>
-                            <th>Beschreibung</th>
-                            <th>Status</th>
-                        </tr>
-                        <tr>
-                            <td>Hochregallager</td>
-                            <td>O.k.</td>
-                        </tr>
-                        <tr>
-                            <td>Sauggreifer</td>
-                            <td>Error</td>
-                        </tr>
-                        <tr>
-                            <td>Brennofen</td>
-                            <td>Error</td>
-                        </tr>
-                        <tr>
-                            <td>Sortierstrecke</td>
-                            <td>O.k.</td>
-                        </tr>
-                        <tr>
-                            <td>Wipp-Hebel</td>
-                            <td>O.k.</td>
-                        </tr>
-                    </table>
                 </div>
             </div>
         </div>
