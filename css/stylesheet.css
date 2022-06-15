@@ -59,6 +59,16 @@ a:hover {
     text-decoration: none !important;
 }
 
+table td, th {
+    border: 1px solid black;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
 .header_placeholder {
     padding-top: 70px;
 }
@@ -102,6 +112,10 @@ body {
     font-size: x-large;
     margin-top: auto !important;
     margin-bottom: auto !important;
+}
+
+.header_logo {
+    max-height: 50px;
 }
 
 .header_links {
@@ -291,15 +305,13 @@ body {
 
 /* NOTE overview */
 .overview_light_container {
-    padding-top: 73px;
-    height: 15vh;
-    width: 100%;
-    text-align: center;
+    display: contents;
 }
 
 .overview_light {
-    height: 15vh;
-
+    max-height: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .container_overview {
@@ -309,16 +321,6 @@ body {
 .overview_pic {
     width: 100%;
     height: auto;
-}
-
-.overview_table, td, th {
-    border: 1px solid black;
-}
-
-
-.overview_table {
-    width: 100%;
-    border-collapse: collapse;
 }
 
 @media (max-width: 991px) {

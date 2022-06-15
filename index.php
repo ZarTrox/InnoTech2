@@ -34,11 +34,6 @@
     <?php include('./incl/header.php') ?>
 
 
-    <div class="overview_light_container" style=";">
-        <img class="overview_light" src="./media/img/ampel/Ampelfarbeaus.svg" alt="Ampel">
-    </div>
-
-
     <!-- NOTE overview -->
     <div id="overview" class="container_overview header_placeholder">
 
@@ -103,13 +98,43 @@
             <div class="container pt-5 pb-5">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <img class="single_pic" src="./media/img/Hochregallager.png" alt="Part Hochregallager">
+                        <img class="single_pic" src="./media/img/Hochregallager.svg" alt="Part Hochregallager">
                     </div>
                     <div class="col-12 col-lg-6">
                         <p>
                             Beschreibung:
                         </p>
-                        </table>
+                        <div class="mt-5">
+                            <p>
+                                Status der Sensoren & Aktoren:
+                            </p>
+                            <table class="">
+                                <tr>
+                                    <th>Beschreibung</th>
+                                    <th>Status</th>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 1</td>
+                                    <td>O.k.</td>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 2</td>
+                                    <td>Error</td>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 3</td>
+                                    <td>Error</td>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 4</td>
+                                    <td>O.k.</td>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 5</td>
+                                    <td>O.k.</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -132,7 +157,37 @@
                         <p>
                             Beschreibung:
                         </p>
-                        </table>
+                        <div class="mt-5">
+                            <p>
+                                Status der Sensoren & Aktoren:
+                            </p>
+                            <table class="">
+                                <tr>
+                                    <th>Beschreibung</th>
+                                    <th>Status</th>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 1</td>
+                                    <td>O.k.</td>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 2</td>
+                                    <td>Error</td>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 3</td>
+                                    <td>Error</td>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 4</td>
+                                    <td>O.k.</td>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 5</td>
+                                    <td>O.k.</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -155,7 +210,37 @@
                         <p>
                             Beschreibung:
                         </p>
-                        </table>
+                        <div class="mt-5">
+                            <p>
+                                Status der Sensoren & Aktoren:
+                            </p>
+                            <table class="">
+                                <tr>
+                                    <th>Beschreibung</th>
+                                    <th>Status</th>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 1</td>
+                                    <td>O.k.</td>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 2</td>
+                                    <td>Error</td>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 3</td>
+                                    <td>Error</td>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 4</td>
+                                    <td>O.k.</td>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 5</td>
+                                    <td>O.k.</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -178,7 +263,37 @@
                         <p>
                             Beschreibung:
                         </p>
-                        </table>
+                        <div class="mt-5">
+                            <p>
+                                Status der Sensoren & Aktoren:
+                            </p>
+                            <table class="">
+                                <tr>
+                                    <th>Beschreibung</th>
+                                    <th>Status</th>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 1</td>
+                                    <td>O.k.</td>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 2</td>
+                                    <td>Error</td>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 3</td>
+                                    <td>Error</td>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 4</td>
+                                    <td>O.k.</td>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 5</td>
+                                    <td>O.k.</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -201,7 +316,37 @@
                         <p>
                             Beschreibung:
                         </p>
-                        </table>
+                        <div class="mt-5">
+                            <p>
+                                Status der Sensoren & Aktoren:
+                            </p>
+                            <table class="">
+                                <tr>
+                                    <th>Beschreibung</th>
+                                    <th>Status</th>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 1</td>
+                                    <td>O.k.</td>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 2</td>
+                                    <td>Error</td>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 3</td>
+                                    <td>Error</td>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 4</td>
+                                    <td>O.k.</td>
+                                </tr>
+                                <tr>
+                                    <td>Sensor 5</td>
+                                    <td>O.k.</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

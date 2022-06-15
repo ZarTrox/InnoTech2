@@ -1,8 +1,12 @@
 <div class="header">
     <div class="header_brand">
         <a href="#overview">
-            Awesome team!
+            <img class="header_logo" src="./media/img/logo/Logo weiß.svg" alt="Logo">
         </a>
+    </div>
+
+    <div class="overview_light_container">
+        <img class="overview_light" src="./media/img/ampel/Ampelfarbeaus.svg" alt="Ampel">
     </div>
 
     <div class="header_links header_large">
@@ -35,7 +39,9 @@
         <a class="nav__trigger pointer"><span class="nav__icon pointer"></span></a>
         <nav class="nav">
             <ul class="nav__list mr-auto ml-auto mt-5">
-                <li class="nav__item"><a class="nav__link" href="#overview">Gesamtübersicht</a></li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#overview">Gesamtübersicht</a>
+                </li>
                 <li class="nav__item">
                     <div class="dropdown">
                         <div class="dropbtn">Einzelübersicht</div>
