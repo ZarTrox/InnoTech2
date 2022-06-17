@@ -274,15 +274,15 @@
         <!-- End 4. -->
 
         <!-- 5. -->
-        <div id="Wipp-Hebel" class="container_single_part header_placeholder">
+        <div id="Wipphebel" class="container_single_part header_placeholder">
             <h2>
-                Wipp-Hebel
+                Wipphebel
             </h2>
 
             <div class="container pt-5 pb-5">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <img class="single_pic" src="./media/img/Wipp-Hebel.png" alt="Part Wipp-Hebel">
+                        <img class="single_pic" src="./media/img/WWipphebel.svg" alt="Part Wipphebel">
                     </div>
                     <div class="col-12 col-lg-6">
                         <p>

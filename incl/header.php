@@ -20,7 +20,7 @@
                 <a href="#Sauggreifer">Sauggreifer</a>
                 <a href="#Brennofen">Brennofen</a>
                 <a href="#Sortierstrecke">Sortierstrecke</a>
-                <a href="#Wipp-Hebel">Wipp-Hebel</a>
+                <a href="#Wipphebel">Wipphebel</a>
             </div>
         </div>
         <div>
@@ -50,7 +50,7 @@
                             <a class="nav__link" href="#Sauggreifer">Sauggreifer</a>
                             <a class="nav__link" href="#Brennofen">Brennofen</a>
                             <a class="nav__link" href="#Sortierstrecke">Sortierstrecke</a>
-                            <a class="nav__link" href="#Wipp-Hebel">Wipp-Hebel</a>
+                            <a class="nav__link" href="#Wipphebel">Wipphebel</a>
                         </div>
                     </div>
                 </li>
