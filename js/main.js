@@ -58,30 +58,15 @@ async function updateSvgWithData(data) {
         //Check time here
         await sleep(1000)
         if (data[element]) {
-            if (element != 0) {
-                if (data[element]["werte"] != data[element - 1]["werte"]) {
-                    var diffBetweenObjects = compareJSONObject(data[element]["werte"], data[element - 1]["werte"])
-                    if (diffBetweenObjects.length != 0) {
-                        updateStationen(diffBetweenObjects);
-                        //updateHochregalLager(diffBetweenObjects);
-                    }
-                }
-            } else {
-                createSvgOrig(data[element]["werte"]);
-            }
+            createSvgOrig(data[element]["werte"], data[element]["datum"]);
         } else {
             console.log("Element is empty!")
         }
     }
 }
 
-function updateStationen(diffBetweenObjects) {
-    updateHochregalLager(diffBetweenObjects);
-    updateBearbeitungsstationMitBrennofen(diffBetweenObjects);
-}
-
-function createSvgOrig(dataArray, elementID) {
-    d3.xml("./media/img/vakuum_skaliert.svg",
+function createSvgOrig(dataArray, Zeit) {
+    d3.xml("./media/img/Hochregallager.svg",
         function (error, documentFragment) {
             if (error) { console.log(error); return; }
 
@@ -93,159 +78,77 @@ function createSvgOrig(dataArray, elementID) {
                 main_chart_svg.node().appendChild(svgNode);
             }
             svg = main_chart_svg.select("svg")
-            
-            if (elementID === "tableForHochregalLager") {
-                for (element in dataArray) {
-                    for (variable in ArrayWithVariablesForHochregalLager)
-                    if(dataArray[element][0] == "H-vertikel"){
-                        svg.selectAll("rect#hverti").remove();
-                        svg.append("rect")
-                        .attr("id", "hverti")
-                        .attr("x", 50)
-                        .attr("y", 50)
-                        .attr("width",100)
-                        .attr("height", 100)
-                        .attr('stroke', 'red')
-                        .attr("fill", "#ddd")
-                    } else if (dataArray[element][0] == "H-horizontal") {
-                        svg.selectAll("rect#hhori").remove();
-                        svg.append("rect")
-                        .attr("id", "hhori")
-                        .attr("x", 100)
-                        .attr("y", 100)
-                        .attr("width",100)
-                        .attr("height", 100)
-                        .attr('stroke', 'black')
-                        .attr("fill", "#ddd")
-                    }
-                    //Usw. vlt eine eigene funktion hierfür
-                }
-
-                svg.transition().duration(1000).delay(1000)
-                    .selectAll(".pimmelfurz")
-                    .attr("height", 100);
+            if (dataArray != "") {
+                updateStationen(svg, dataArray);
             }
-
 
         });
 }
 
-async function generateTable(dataArray, elementID) {
-    var tableBeginning = "<table>\n<tr>\n<th>Name</th>\n<th>Value</th>\n</tr>\n";
-    var tableContent = "";
-    var tableElementInHTML = document.getElementById(elementID)
-    for (element in dataArray) {
-        var variableName = dataArray[element][0];
-        var variableValue = dataArray[element][1];
-        tableContent += "<tr>\n<td>" + variableName + "</td>\n<td>" + variableValue + "</td></tr>\n"
-    }
-    var tableString = tableBeginning + tableContent + "</table>";
-    tableElementInHTML.innerHTML = tableString;
+function updateHochregallager(svg, dataArray) {
+    svg.selectAll("rect.Hochregallager").remove();
+    //Objekten wie dem turm oder dem motor eine id zuweise und diese dann bewegen
+    //hannah im Meeting zum motorhäuschen fragen
+    svg.append("rect")//H-vert&hori
+        .attr("class", "Hochregallager")
+        .attr("x", dataArray[ArrayWithVariablesForHochregalLager[5]])
+        .attr("y", dataArray[ArrayWithVariablesForHochregalLager[4]])
+        .attr("width", 100)
+        .attr("height", 100)
+        .attr('stroke', 'red')
+        .attr("fill", "#ddd")
+    svg.append("circle")//Lichtschranke Innen
+        .attr("class", "Hochregallager")
+        .attr("cx", 290)
+        .attr("cy", 420)
+        .attr("r", 15)
+        .attr('stroke', 'black')
+        .attr("fill", "#000")
+    svg.append("circle")//Referenztaster vertikal
+        .attr("class", "Hochregallager")
+        .attr("cx", 240)
+        .attr("cy", 130)
+        .attr("r", 15)
+        .attr('stroke', 'black')
+        .attr("fill", "#000")
+    svg.append("circle") //Referenztaster Ausleger vorne
+        .attr("class", "Hochregallager")
+        .attr("cx", 200)
+        .attr("cy", 420)
+        .attr("r", 15)
+        .attr('stroke', 'black')
+        .attr("fill", "#000")
+    svg.append("rect") //Motorförderband
+        .attr("class", "Hochregallager")
+        .attr("x", 240)
+        .attr("y", 500)
+        .attr("width", 50)
+        .attr("height", 50)
+        .attr('stroke', 'red')
+        .attr("fill", "#ddd")
 }
 
-function compareJSONObject(currentObject, previousObject) {
-    var arrayWithResults = new Array();
-    //Zeit oben hinzufügen?
-    for (x in currentObject) {
-        if (currentObject[x] != previousObject[x]) {
-            arrayWithResults.push([x, currentObject[x]])
-        }
+function updateBearbeitungsstationMitBrennofen(svg, dataArray) {
+    svg.selectAll("rect.Brennofen").remove();
+    var colorForLichtschalterA = "back";
+    if (!dataArray[ArrayWithVariablesForBearbeitungsstationMitBrennofen[4]]) {
+        colorForLichtschalterA = "green";
+        console.log("FARBE HAT SICH GEÄNDET DAS IST GUT")
     }
-    return arrayWithResults;
+    svg.append("rect")
+        .attr("class", "Hochregallager")
+        .attr("x", 500)
+        .attr("y", 500)
+        .attr("width", 100)
+        .attr("height", 100)
+        .attr('stroke', colorForLichtschalterA)
+        .attr("fill", colorForLichtschalterA)
 }
 
-function updateHochregalLager(diffBetweenObjects) {
-    //Alle daten übergeben und nur die neuen highlighten?
-    var variablesThatAreChanged = getVariablesThatAreUsedForThisStep(diffBetweenObjects, ArrayWithVariablesForHochregalLager);
-    if (variablesThatAreChanged.length != 0) {
-        generateTable(variablesThatAreChanged, "tableForHochregalLager");
-        createSvgOrig(variablesThatAreChanged, "tableForHochregalLager")
-    }
+function updateStationen(svg, dataArray) {
+    updateHochregallager(svg, dataArray);
+    updateBearbeitungsstationMitBrennofen(svg, dataArray);
 }
-
-function updateBearbeitungsstationMitBrennofen(diffBetweenObjects) {
-    var variablesThatAreChanged = getVariablesThatAreUsedForThisStep(diffBetweenObjects, ArrayWithVariablesForBearbeitungsstationMitBrennofen);
-    if (variablesThatAreChanged.length != 0) {
-        generateTable(variablesThatAreChanged, "tableForBearbeitungstation");
-        //update(variablesThatAreChanged);
-    }
-}
-
-//
-function getVariablesThatAreUsedForThisStep(diffBetweenObjects, variableArray) {
-    var variablesThatAreUsed = [];
-    for (entry in diffBetweenObjects) {
-        for (variable in variableArray) {
-            if (diffBetweenObjects[entry].includes(variableArray[variable])) {
-                variablesThatAreUsed.push(diffBetweenObjects[entry]);
-            }
-        }
-    }
-    return variablesThatAreUsed;
-}
-
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-
-/*
-function createSvgOrig2() {
-    //Var for svg graphic
-    console.log("!!!");
-    var width = 600;
-    var height = 500;
-    const svg = d3.select("#svgcontainer")
-        .append("svg")
-        .attr("width", width)
-        .attr("height", height);
-    //Create and append rectangle element
-    svg.append("rect")
-        .attr("x", 0)
-        .attr("y", 0)
-        .attr("width", width)
-        .attr("height", height)
-        .attr('stroke', 'black')
-        .attr("fill", "#ddd")
-    svg.append("text")
-        .attr('x', 5)
-        .attr('y', 5)
-        .attr('stroke', 'green')
-        .style("font-size", 20)
-        .text("Allgemeines Feld")
-    svg.append("rect")
-        .attr("x", 395)
-        .attr("y", 5)
-        .attr("width", 200)
-        .attr("height", 490)
-        .attr("fill", "#efefef")
-    svg.append("text")
-        .attr('x', 400)
-        .attr('y', 10)
-        .attr('stroke', 'green')
-        .style("font-size", 10)
-        .text("Bereich für Regal und Lager")
-    svg.append("rect")
-        .attr("x", 405)
-        .attr("y", 100)
-        .attr("width", 80)
-        .attr("height", 290)
-        .attr("fill", "#aaa")
-    svg.append("text")
-        .attr('x', 410)
-        .attr('y', 105)
-        .attr('stroke', 'green')
-        .style("font-size", 20)
-        .text("Hochregallager")
-    svg.append("circle")
-        .attr('cx', 550)
-        .attr('cy', 250)
-        .attr('r', 25)
-        .attr('stroke', 'black')
-        .attr('fill', 'blue')
-    svg.append("text")
-        .attr('x', 555)
-        .attr('y', 35)
-        .attr('stroke', 'green')
-        .style("font-size", 8)
-        .text("Der greifer halt")
-}*/
