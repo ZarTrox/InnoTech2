@@ -23,11 +23,6 @@
                 <a href="#Wipphebel">Wipphebel</a>
             </div>
         </div>
-        <div>
-            <a href="#">
-                Live Status
-            </a>
-        </div>
 
 
     </div>
@@ -54,7 +49,6 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav__item"><a class="nav__link" href="#">Live Status</a></li>
             </ul>
         </nav>
     </div>
