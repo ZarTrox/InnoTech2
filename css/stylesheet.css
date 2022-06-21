@@ -60,7 +60,7 @@ a:hover {
 }
 
 .link-special:hover {
-text-decoration: underline !important;
+    text-decoration: underline !important;
 }
 
 table td, th {
@@ -230,8 +230,8 @@ body {
     position: absolute;
     width: 30px;
     height: 25px;
-    right: 10px;
-    top: 10px;
+    right: 18px;
+    top: 18px;
     z-index: 200;
 }
 
