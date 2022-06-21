@@ -1,7 +1,7 @@
 <div class="header">
     <div class="header_brand">
         <a href="#overview">
-            <img class="header_logo" src="./media/img/logo/Logo weiß.svg" alt="Logo">
+            <img class="header_logo" src="./media/img/logo/Logo.svg" alt="Logo">
         </a>
     </div>
 
