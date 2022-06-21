@@ -55,8 +55,12 @@ a {
 }
 
 a:hover {
-    color: white !important;
-    text-decoration: none !important;
+    color: white;
+    text-decoration: none;
+}
+
+.link-special:hover {
+text-decoration: underline !important;
 }
 
 table td, th {
