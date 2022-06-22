@@ -268,15 +268,15 @@ body {
 
 .header_small .nav {
     /* transform: rotateZ(-90deg); */
+}
+
+.nav--active .nav {
+    transform: rotateZ(0);
     width: 100vw;
     height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
-}
-
-.nav--active .nav {
-    transform: rotateZ(0);
 }
 
 .nav__link {
