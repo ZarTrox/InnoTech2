@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        Aufgabe 1 - Innovation Technology II
+        Team 1 - Aufgabe 1 - Innovation Technology II
     </title>
 
     <meta name="robots" content="noindex, nofollow, nosnippet">
@@ -26,6 +26,8 @@
 
     <!-- Loadings -->
     <?php include('./incl/loadfiles.php') ?>
+    <?php include('./incl/cards.php'); ?>
+
 
 </head>
 
@@ -76,6 +78,7 @@
                         <p>
                             Beschreibung:
                         </p>
+
                         <div class="mt-5">
                             <p>
                                 Status der Sensoren & Aktoren:
@@ -106,6 +109,22 @@
                                     <td>Nein</td>
                                 </tr>
                             </table>
+
+<!--
+                            <a href="#legende" data-toggle="modal" class="animated-button">
+                                <div class="mt-3 mb-3">
+                                    <button class="learn-more">
+                                        <span class="circle" aria-hidden="true">
+                                            <span class="icon arrow"></span>
+                                        </span>
+                                        <span class="button-text">
+                                            Legende Einzelansicht
+                                        </span>
+                                    </button>
+                                </div>
+                            </a>
+-->
+
                         </div>
                     </div>
                 </div>
@@ -159,6 +178,22 @@
                                     <td>Nein</td>
                                 </tr>
                             </table>
+
+                            <!-- 
+                            <a href="#legende" data-toggle="modal" class="animated-button">
+                                <div class="mt-3 mb-3">
+                                    <button class="learn-more">
+                                        <span class="circle" aria-hidden="true">
+                                            <span class="icon arrow"></span>
+                                        </span>
+                                        <span class="button-text">
+                                            Legende Einzelansicht
+                                        </span>
+                                    </button>
+                                </div>
+                            </a>
+                            -->
+
                         </div>
                     </div>
                 </div>
@@ -212,6 +247,22 @@
                                     <td>Nein</td>
                                 </tr>
                             </table>
+
+                            <!-- 
+                            <a href="#legende" data-toggle="modal" class="animated-button">
+                                <div class="mt-3 mb-3">
+                                    <button class="learn-more">
+                                        <span class="circle" aria-hidden="true">
+                                            <span class="icon arrow"></span>
+                                        </span>
+                                        <span class="button-text">
+                                            Legende Einzelansicht
+                                        </span>
+                                    </button>
+                                </div>
+                            </a>
+                            -->
+
                         </div>
                     </div>
                 </div>
@@ -265,6 +316,22 @@
                                     <td>Nein</td>
                                 </tr>
                             </table>
+
+                            <!-- 
+                            <a href="#legende" data-toggle="modal" class="animated-button">
+                                <div class="mt-3 mb-3">
+                                    <button class="learn-more">
+                                        <span class="circle" aria-hidden="true">
+                                            <span class="icon arrow"></span>
+                                        </span>
+                                        <span class="button-text">
+                                            Legende Einzelansicht
+                                        </span>
+                                    </button>
+                                </div>
+                            </a>
+                            -->
+
                         </div>
                     </div>
                 </div>
@@ -318,6 +385,22 @@
                                     <td>Nein</td>
                                 </tr>
                             </table>
+
+                            <!-- 
+                            <a href="#legende" data-toggle="modal" class="animated-button">
+                                <div class="mt-3 mb-3">
+                                    <button class="learn-more">
+                                        <span class="circle" aria-hidden="true">
+                                            <span class="icon arrow"></span>
+                                        </span>
+                                        <span class="button-text">
+                                            Legende Einzelansicht
+                                        </span>
+                                    </button>
+                                </div>
+                            </a>
+                            -->
+
                         </div>
                     </div>
                 </div>

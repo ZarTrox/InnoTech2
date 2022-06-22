@@ -23,6 +23,13 @@
                 <a href="#Wipphebel">Wipphebel</a>
             </div>
         </div>
+        <!--
+        <div>
+            <a href="#legende" data-toggle="modal" class="animated-button">
+                Legende Einzelansicht
+            </a>
+        </div>
+        <-->
 
 
     </div>
@@ -35,11 +42,15 @@
         <nav class="nav">
             <ul class="nav__list mr-auto ml-auto mt-5">
                 <li class="nav__item">
-                    <a class="nav__link" href="#overview">Gesamtübersicht</a>
+                    <a class="nav__link" href="#overview">
+                        Gesamtübersicht
+                    </a>
                 </li>
                 <li class="nav__item">
                     <div class="dropdown">
-                        <div class="dropbtn">Einzelübersicht</div>
+                        <div class="dropbtn">
+                            Einzelübersicht
+                        </div>
                         <div class="dropdown-content">
                             <a class="nav__link" href="#Hochregallager">Hochregallager</a>
                             <a class="nav__link" href="#Sauggreifer">Sauggreifer</a>
@@ -49,6 +60,14 @@
                         </div>
                     </div>
                 </li>
+                <!--
+                <li class="nav__item">
+                    <a class="nav__link" href="#legende" data-toggle="modal" class="animated-button">
+                        Legende Einzelansicht
+                    </a>
+                </li>
+                -->
+
             </ul>
         </nav>
     </div>
