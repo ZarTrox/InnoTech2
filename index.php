@@ -83,27 +83,27 @@
                             <table class="">
                                 <tr>
                                     <th>Beschreibung</th>
-                                    <th>Status</th>
+                                    <th>Aktiv</th>
                                 </tr>
                                 <tr>
                                     <td>Sensor 1</td>
-                                    <td>O.k.</td>
+                                    <td>Nein</td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 2</td>
-                                    <td>Error</td>
+                                    <td>Ja</td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 3</td>
-                                    <td>Error</td>
+                                    <td>Nein</td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 4</td>
-                                    <td>O.k.</td>
+                                    <td>Nein</td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 5</td>
-                                    <td>O.k.</td>
+                                    <td>Nein</td>
                                 </tr>
                             </table>
                         </div>
@@ -136,27 +136,27 @@
                             <table class="">
                                 <tr>
                                     <th>Beschreibung</th>
-                                    <th>Status</th>
+                                    <th>Aktiv</th>
                                 </tr>
                                 <tr>
                                     <td>Sensor 1</td>
-                                    <td>O.k.</td>
+                                    <td>Nein</td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 2</td>
-                                    <td>Error</td>
+                                    <td>Ja</td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 3</td>
-                                    <td>Error</td>
+                                    <td>Nein</td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 4</td>
-                                    <td>O.k.</td>
+                                    <td>Nein</td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 5</td>
-                                    <td>O.k.</td>
+                                    <td>Nein</td>
                                 </tr>
                             </table>
                         </div>
@@ -189,27 +189,27 @@
                             <table class="">
                                 <tr>
                                     <th>Beschreibung</th>
-                                    <th>Status</th>
+                                    <th>Aktiv</th>
                                 </tr>
                                 <tr>
                                     <td>Sensor 1</td>
-                                    <td>O.k.</td>
+                                    <td>Nein</td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 2</td>
-                                    <td>Error</td>
+                                    <td>Ja</td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 3</td>
-                                    <td>Error</td>
+                                    <td>Nein</td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 4</td>
-                                    <td>O.k.</td>
+                                    <td>Nein</td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 5</td>
-                                    <td>O.k.</td>
+                                    <td>Nein</td>
                                 </tr>
                             </table>
                         </div>
@@ -242,27 +242,27 @@
                             <table class="">
                                 <tr>
                                     <th>Beschreibung</th>
-                                    <th>Status</th>
+                                    <th>Aktiv</th>
                                 </tr>
                                 <tr>
                                     <td>Sensor 1</td>
-                                    <td>O.k.</td>
+                                    <td>Nein</td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 2</td>
-                                    <td>Error</td>
+                                    <td>Ja</td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 3</td>
-                                    <td>Error</td>
+                                    <td>Nein</td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 4</td>
-                                    <td>O.k.</td>
+                                    <td>Nein</td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 5</td>
-                                    <td>O.k.</td>
+                                    <td>Nein</td>
                                 </tr>
                             </table>
                         </div>
@@ -295,27 +295,27 @@
                             <table class="">
                                 <tr>
                                     <th>Beschreibung</th>
-                                    <th>Status</th>
+                                    <th>Aktiv</th>
                                 </tr>
                                 <tr>
                                     <td>Sensor 1</td>
-                                    <td>O.k.</td>
+                                    <td>Nein</td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 2</td>
-                                    <td>Error</td>
+                                    <td>Ja</td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 3</td>
-                                    <td>Error</td>
+                                    <td>Nein</td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 4</td>
-                                    <td>O.k.</td>
+                                    <td>Nein</td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 5</td>
-                                    <td>O.k.</td>
+                                    <td>Nein</td>
                                 </tr>
                             </table>
                         </div>
