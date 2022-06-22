@@ -1,18 +1,12 @@
-<!-- ################# Tab ################# -->
-<link rel="icon" type="png" href="">
-
 <!-- ################# Apple icon website add to homescreen ################# -->
-<link rel="apple-touch-icon" type="png" href="">
 
-<link rel="apple-touch-icon-precomposed" href="">
+<link rel="apple-touch-icon" type="png" href="./media/img/logo/Logo64x64.png">
 
-<link rel="shortcut icon" href="">
+<link rel="apple-touch-icon-precomposed" href="./media/img/logo/Logo64x64.png">
 
-<link rel="icon" href="">
+<link rel="shortcut icon" href="./media/img/logo/Logo.svg">
 
-<link rel="apple-touch-icon" href="">
-
-<link rel="apple-touch-icon-precomposed" href="">
+<link rel="icon" type="image/png" href="./media/img/logo/Logo64x64.ico">
 
 
 
