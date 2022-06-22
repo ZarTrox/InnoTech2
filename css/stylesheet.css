@@ -116,6 +116,7 @@ body {
     font-size: x-large;
     margin-top: auto !important;
     margin-bottom: auto !important;
+    z-index: 999;
 }
 
 .header_logo {
@@ -329,6 +330,7 @@ body {
     max-height: 100%;
     margin-top: 5px;
     margin-bottom: 5px;
+    z-index: 999;
 }
 
 .container_overview {
