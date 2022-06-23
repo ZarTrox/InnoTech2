@@ -87,7 +87,7 @@ function createSvgUebersicht(dataArray, Zeit, dataArrayVorher) {
 }
 
 function createSvgHochregallager(dataArray, Zeit, dataArrayVorher) {
-    d3.xml("./media/img/HochregallagerNew5.svg",
+    d3.xml("./media/img/HochregallagerNew8.svg",
         function (error, documentFragment) {
             if (error) { console.log(error); return; }
 
@@ -102,12 +102,11 @@ function createSvgHochregallager(dataArray, Zeit, dataArrayVorher) {
                 //Direkt am anfang mappen und den maximalen wert anchfragen
                 var x = d3.scaleLinear()
                     .domain([0, 2370])
-                    .range([0, 600])
+                    .range([0, document.getElementById('Hochregallager').offsetWidth - 150])
                 var y = d3.scaleLinear()
                     .domain([0, 1108])
-                    .range([100, 768])
-                hochregallager_Horizontal_Vertikal(dataArray, Zeit, dataArrayVorher, x, y);
-                hochregallager_Referenztaster_Vertikal(dataArray, Zeit);
+                    .range([100, document.getElementById('Hochregallager').offsetHeight])
+                hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y);
 
                 //Und evtl mit lichtschranke aussen verbinden?
                 //Blinkt sehr selten? Gehört das so?
@@ -163,7 +162,8 @@ function createSvgHochregallager(dataArray, Zeit, dataArrayVorher) {
         });
 }
 
-function hochregallager_Horizontal_Vertikal(dataArray, Zeit, dataArrayVorher, x, y) {
+function hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y) {
+    //Hhori & HVerti
     var scaledHHorizontal = x(dataArray[ArrayWithVariablesForHochregalLager[7]]);
     var scaledHHorizontalVorher = x(dataArrayVorher[ArrayWithVariablesForHochregalLager[7]]);
     var scaledHvert = y(dataArray[ArrayWithVariablesForHochregalLager[8]]);
@@ -190,27 +190,30 @@ function hochregallager_Horizontal_Vertikal(dataArray, Zeit, dataArrayVorher, x,
             .attr("y", newvalueY)
             .attr("x", newvalueX)
     })
+    //Referenztastervertikal
+    if (dataArray[ArrayWithVariablesForHochregalLager[2]] == " false") {
+        /* Split and join        */
+        // var oldClasses = d3.select("#Referenztastervertikal").attr("class");
+        // console.log(oldClasses);
+        // var newClasses = "";
+        // if (!oldClasses.includes("Transform")) {
+        //     newClasses = oldClasses.replace("taster", "tasterTransform")
+        // } else if (oldClasses.includes("Transform")) {
+
+        // }
+        // svg.select("#Referenztastervertikal")
+        //     .transition()
+        //     .duration(1000)
+        //     .attr("class", "tasterTransform turmBewegen")
+        //     .transition()
+        //     .attr("class", "taster turmBewegen")
+    }
 }
 
 function hochregallager_Referenztaster_Vertikal(dataArray, Zeit) {
     //"Referenztaster vertikal"
     //Wert aus array verwenden und leerzeichen entfernen
-    if (dataArray[ArrayWithVariablesForHochregalLager[2]] == " false") {
-        /* Split and join        */
-        // var oldClasses = d3.select(this).attr("class");
-        // var newClasses = "";
-        // if (!oldClasses.includes("Transform")){
-        //     newClasses = oldClasses.replace("taster", "tasterTransform")
-        // } else if (oldClasses.includes("Transform")){
 
-        // }
-        svg.select("#Referenztastervertikal")
-            .transition()
-            .attr("class", "taster turm")
-            .transition()
-            .duration(1000)
-            .attr("class", "tasterTransform turm")
-    }
 }
 
 //Fehler: wenn wipphebel dann gleiche farbklassen verwendet und somit hochregallager andere farbe. aber egal da wir andere seiten verwenden fpr einzelansichten
