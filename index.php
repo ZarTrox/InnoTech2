@@ -68,12 +68,11 @@
             <h2>
                 Hochregallager
             </h2>
-
             <div class="container pt-5 pb-5">
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <!--<img class="single_pic" src="./media/img/Hochregallager.svg" alt="Part Hochregallager">-->
-                        <div id = "Hochregallager" alt="Part Hochregallager"></div>
+                        <div id = "HochregallagerSvg" alt="Part Hochregallager" style="width: 550px"></div>
                     </div>
                     <div class="col-12 col-lg-6">
                         <p>

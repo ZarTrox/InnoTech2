@@ -93,8 +93,8 @@ function createSvgHochregallager(dataArray, Zeit, dataArrayVorher) {
 
             var svgNode = documentFragment
                 .getElementsByTagName("svg")[0];
-            var main_chart_svg = d3.select("#Hochregallager")
-            if (document.getElementById('Hochregallager').getElementsByTagName('svg').length == 0) {
+            var main_chart_svg = d3.select("#HochregallagerSvg")
+            if (document.getElementById('HochregallagerSvg').getElementsByTagName('svg').length == 0) {
                 main_chart_svg.node().appendChild(svgNode);
             }
             svg = main_chart_svg.select("svg")
@@ -102,10 +102,10 @@ function createSvgHochregallager(dataArray, Zeit, dataArrayVorher) {
                 //Direkt am anfang mappen und den maximalen wert anchfragen
                 var x = d3.scaleLinear()
                     .domain([0, 2370])
-                    .range([0, document.getElementById('Hochregallager').offsetWidth - 150])
+                    .range([0, document.getElementById('HochregallagerSvg').offsetWidth - 75])
                 var y = d3.scaleLinear()
                     .domain([0, 1108])
-                    .range([100, document.getElementById('Hochregallager').offsetHeight])
+                    .range([50, document.getElementById('HochregallagerSvg').offsetHeight])
                 hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y);
 
                 //Und evtl mit lichtschranke aussen verbinden?
