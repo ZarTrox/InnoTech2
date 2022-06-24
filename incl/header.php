@@ -11,25 +11,38 @@
 
     <div class="header_links header_large">
         <div>
-            <a href="#overview">Gesamtübersicht</a>
+            <a href="#overview"><?php echo $lang['header1'] ?></a>
         </div>
         <div class="dropdown">
-            <div class="dropbtn">Einzelübersicht</div>
+            <div class="dropbtn"><?php echo $lang['header2'] ?></div>
             <div class="dropdown-content">
-                <a href="#Hochregallager">Hochregallager</a>
-                <a href="#Sauggreifer">Sauggreifer</a>
-                <a href="#Brennofen">Brennofen</a>
-                <a href="#Sortierstrecke">Sortierstrecke</a>
-                <a href="#Wipphebel">Wipphebel</a>
+                <a href="#Hochregallager"><?php echo $lang['header2.1'] ?></a>
+                <a href="#Sauggreifer"><?php echo $lang['header2.2'] ?></a>
+                <a href="#Brennofen"><?php echo $lang['header2.3'] ?></a>
+                <a href="#Sortierstrecke"><?php echo $lang['header2.4'] ?></a>
+                <a href="#Wipphebel"><?php echo $lang['header2.5'] ?></a>
             </div>
         </div>
-        <!--
         <div>
             <a href="#legende" data-toggle="modal" class="animated-button">
-                Legende Einzelansicht
+                <?php echo $lang['header3'] ?>
             </a>
         </div>
-        <-->
+
+        <div class="flag_large_screen">
+            <a href="?lang=de">
+                <div class="mr-3" id="germany">
+
+                </div>
+            </a>
+
+            <a href="?lang=en">
+                <div id="usa">
+
+                </div>
+            </a>
+        </div>
+
 
 
     </div>
@@ -43,30 +56,29 @@
             <ul class="nav__list mr-auto ml-auto mt-5">
                 <li class="nav__item">
                     <a class="nav__link" href="#overview">
-                        Gesamtübersicht
+                        <?php echo $lang['header1'] ?>
                     </a>
                 </li>
                 <li class="nav__item">
                     <div class="dropdown">
                         <div class="dropbtn">
-                            Einzelübersicht
+                            <?php echo $lang['header2'] ?>
                         </div>
                         <div class="dropdown-content">
-                            <a class="nav__link" href="#Hochregallager">Hochregallager</a>
-                            <a class="nav__link" href="#Sauggreifer">Sauggreifer</a>
-                            <a class="nav__link" href="#Brennofen">Brennofen</a>
-                            <a class="nav__link" href="#Sortierstrecke">Sortierstrecke</a>
-                            <a class="nav__link" href="#Wipphebel">Wipphebel</a>
+                            <a class="nav__link" href="#Hochregallager"><?php echo $lang['header2.1'] ?></a>
+                            <a class="nav__link" href="#Sauggreifer"><?php echo $lang['header2.2'] ?></a>
+                            <a class="nav__link" href="#Brennofen"><?php echo $lang['header2.3'] ?></a>
+                            <a class="nav__link" href="#Sortierstrecke"><?php echo $lang['header2.4'] ?></a>
+                            <a class="nav__link" href="#Wipphebel"><?php echo $lang['header2.5'] ?></a>
                         </div>
                     </div>
                 </li>
-                <!--
                 <li class="nav__item">
                     <a class="nav__link" href="#legende" data-toggle="modal" class="animated-button">
-                        Legende Einzelansicht
+                        <?php echo $lang['header2.3'] ?>
                     </a>
                 </li>
-                -->
+
 
             </ul>
         </nav>

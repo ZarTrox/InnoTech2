@@ -1,3 +1,9 @@
+<?php session_start(); ?>
+
+<!-- ** Languages ** -->
+<?php include('configlanguages.php'); ?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -36,7 +42,7 @@
     <?php include('./incl/header.php') ?>
 
 
-    <!-- NOTE overview -->
+    <!-- NOTE Gesamtübersicht -->
     <div id="overview" class="container_overview header_placeholder">
 
 
@@ -57,7 +63,7 @@
     </div>
 
 
-    <!-- NOTE single_view -->
+    <!-- NOTE Einzelübersicht -->
     <div id="single_view" class="container_single_view ">
         <h1 style="margin-bottom: -70px;">
             Einzelübersicht
@@ -72,7 +78,7 @@
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <!--<img class="single_pic" src="./media/img/Hochregallager.svg" alt="Part Hochregallager">-->
-                        <div id = "HochregallagerSvg" alt="Part Hochregallager" style="width: 550px"></div>
+                        <div id="HochregallagerSvg" alt="Part Hochregallager" style="width: 550px"></div>
                     </div>
                     <div class="col-12 col-lg-6">
                         <p>
@@ -110,7 +116,6 @@
                                 </tr>
                             </table>
 
-<!--
                             <a href="#legende" data-toggle="modal" class="animated-button">
                                 <div class="mt-3 mb-3">
                                     <button class="learn-more">
@@ -123,7 +128,6 @@
                                     </button>
                                 </div>
                             </a>
--->
 
                         </div>
                     </div>
@@ -179,7 +183,6 @@
                                 </tr>
                             </table>
 
-                            <!-- 
                             <a href="#legende" data-toggle="modal" class="animated-button">
                                 <div class="mt-3 mb-3">
                                     <button class="learn-more">
@@ -192,7 +195,6 @@
                                     </button>
                                 </div>
                             </a>
-                            -->
 
                         </div>
                     </div>
@@ -248,7 +250,6 @@
                                 </tr>
                             </table>
 
-                            <!-- 
                             <a href="#legende" data-toggle="modal" class="animated-button">
                                 <div class="mt-3 mb-3">
                                     <button class="learn-more">
@@ -261,7 +262,6 @@
                                     </button>
                                 </div>
                             </a>
-                            -->
 
                         </div>
                     </div>
@@ -317,7 +317,6 @@
                                 </tr>
                             </table>
 
-                            <!-- 
                             <a href="#legende" data-toggle="modal" class="animated-button">
                                 <div class="mt-3 mb-3">
                                     <button class="learn-more">
@@ -330,7 +329,6 @@
                                     </button>
                                 </div>
                             </a>
-                            -->
 
                         </div>
                     </div>
@@ -386,7 +384,6 @@
                                 </tr>
                             </table>
 
-                            <!-- 
                             <a href="#legende" data-toggle="modal" class="animated-button">
                                 <div class="mt-3 mb-3">
                                     <button class="learn-more">
@@ -399,7 +396,6 @@
                                     </button>
                                 </div>
                             </a>
-                            -->
 
                         </div>
                     </div>
@@ -414,10 +410,6 @@
 
     </div>
 
-
-
-    <!-- NOTE live_status -->
-    <div id="live_status" class="container_live_status">
 
 
 
