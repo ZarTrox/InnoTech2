@@ -47,14 +47,279 @@
 
 
         <h1>
-            Gesamtübersicht
+            <?php echo $lang['header1'] ?>
         </h1>
 
-        <div class="container pt-5 pb-5">
-            <div class="row">
-                <div class="col-12">
-                    <img class="overview_pic" src="./media/img/Gesamtübersicht.png" alt="Gesamtübersicht der Anlage">
+        <div class="row m-0 p-0">
+            <div class="container pt-3 pb-3 col-12 col-lg-6">
+                <div class="row">
+                    <div class="col-12">
+                        <img class="overview_pic" src="./media/img/Gesamtübersicht.png" alt="Gesamtübersicht der Anlage">
+                    </div>
                 </div>
+            </div>
+            <div class="pt-3 pb-3 pr-0 pl-0 mr-0 ml-0 col-12 col-lg-6">
+                <table class="">
+                    <tr>
+                        <th>
+                            <?php echo $lang['header2.1'] ?>
+                        </th>
+                        <th>Aktiv</th>
+                    </tr>
+                    <tr>
+                        <td>Sensor 1</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sensor 2</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" checked disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sensor 3</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sensor 4</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sensor 5</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            <?php echo $lang['header2.2'] ?>
+                        </th>
+                        <th>Aktiv</th>
+                    </tr>
+                    <tr>
+                        <td>Sensor 1</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sensor 2</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" checked disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sensor 3</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sensor 4</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sensor 5</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            <?php echo $lang['header2.3'] ?>
+                        </th>
+                        <th>Aktiv</th>
+                    </tr>
+                    <tr>
+                        <td>Sensor 1</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sensor 2</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" checked disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sensor 3</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sensor 4</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sensor 5</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            <?php echo $lang['header2.4'] ?>
+                        </th>
+                        <th>Aktiv</th>
+                    </tr>
+                    <tr>
+                        <td>Sensor 1</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sensor 2</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" checked disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sensor 3</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sensor 4</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sensor 5</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            <?php echo $lang['header2.5'] ?>
+                        </th>
+                        <th>Aktiv</th>
+                    </tr>
+                    <tr>
+                        <td>Sensor 1</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sensor 2</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" checked disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sensor 3</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sensor 4</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sensor 5</td>
+                        <td>
+                            <label class="switch">
+                                <input type="checkbox" disabled>
+                                <span class="slider round no-pointer"></span>
+                            </label>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
 
@@ -66,19 +331,19 @@
     <!-- NOTE Einzelübersicht -->
     <div id="single_view" class="container_single_view ">
         <h1 style="margin-bottom: -70px;">
-            Einzelübersicht
+            <?php echo $lang['header2'] ?>
         </h1>
 
         <!-- 1. -->
         <div id="Hochregallager" class="container_single_part header_placeholder">
             <h2>
-                Hochregallager
+                <?php echo $lang['header2.1'] ?>
             </h2>
             <div class="container pt-5 pb-5">
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <!--<img class="single_pic" src="./media/img/Hochregallager.svg" alt="Part Hochregallager">-->
-                        <div id="HochregallagerSvg" alt="Part Hochregallager" style="width: 550px"></div>
+                        <div id="HochregallagerSvg" class="single_pic" alt="Part Hochregallager"></div>
                     </div>
                     <div class="col-12 col-lg-6">
                         <p>
@@ -96,23 +361,48 @@
                                 </tr>
                                 <tr>
                                     <td>Sensor 1</td>
-                                    <td>Nein</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 2</td>
-                                    <td>Ja</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" checked disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 3</td>
-                                    <td>Nein</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 4</td>
-                                    <td>Nein</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 5</td>
-                                    <td>Nein</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                             </table>
 
@@ -140,7 +430,7 @@
         <!-- 2. -->
         <div id="Sauggreifer" class="container_single_part header_placeholder">
             <h2>
-                Sauggreifer
+                <?php echo $lang['header2.2'] ?>
             </h2>
 
             <div class="container pt-5 pb-5">
@@ -163,23 +453,48 @@
                                 </tr>
                                 <tr>
                                     <td>Sensor 1</td>
-                                    <td>Nein</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 2</td>
-                                    <td>Ja</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" checked disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 3</td>
-                                    <td>Nein</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 4</td>
-                                    <td>Nein</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 5</td>
-                                    <td>Nein</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                             </table>
 
@@ -207,7 +522,7 @@
         <!-- 3. -->
         <div id="Brennofen" class="container_single_part header_placeholder">
             <h2>
-                Brennofen
+                <?php echo $lang['header2.3'] ?>
             </h2>
 
             <div class="container pt-5 pb-5">
@@ -230,23 +545,48 @@
                                 </tr>
                                 <tr>
                                     <td>Sensor 1</td>
-                                    <td>Nein</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 2</td>
-                                    <td>Ja</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" checked disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 3</td>
-                                    <td>Nein</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 4</td>
-                                    <td>Nein</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 5</td>
-                                    <td>Nein</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                             </table>
 
@@ -274,7 +614,7 @@
         <!-- 4. -->
         <div id="Sortierstrecke" class="container_single_part header_placeholder">
             <h2>
-                Sortierstrecke
+                <?php echo $lang['header2.4'] ?>
             </h2>
 
             <div class="container pt-5 pb-5">
@@ -297,23 +637,48 @@
                                 </tr>
                                 <tr>
                                     <td>Sensor 1</td>
-                                    <td>Nein</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 2</td>
-                                    <td>Ja</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" checked disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 3</td>
-                                    <td>Nein</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 4</td>
-                                    <td>Nein</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 5</td>
-                                    <td>Nein</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                             </table>
 
@@ -341,7 +706,7 @@
         <!-- 5. -->
         <div id="Wipphebel" class="container_single_part header_placeholder">
             <h2>
-                Wipphebel
+                <?php echo $lang['header2.5'] ?>
             </h2>
 
             <div class="container pt-5 pb-5">
@@ -364,23 +729,48 @@
                                 </tr>
                                 <tr>
                                     <td>Sensor 1</td>
-                                    <td>Nein</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 2</td>
-                                    <td>Ja</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" checked disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 3</td>
-                                    <td>Nein</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 4</td>
-                                    <td>Nein</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Sensor 5</td>
-                                    <td>Nein</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="slider round no-pointer"></span>
+                                        </label>
+                                    </td>
                                 </tr>
                             </table>
 

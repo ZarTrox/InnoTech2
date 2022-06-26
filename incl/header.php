@@ -31,15 +31,11 @@
 
         <div class="flag_large_screen">
             <a href="?lang=de">
-                <div class="mr-3" id="germany">
-
-                </div>
+                <img src="./media/img/flag/de.svg" class="flag">
             </a>
 
             <a href="?lang=en">
-                <div id="usa">
-
-                </div>
+                <img src="./media/img/flag/us.svg" class="flag">
             </a>
         </div>
 
@@ -77,6 +73,18 @@
                     <a class="nav__link" href="#legende" data-toggle="modal" class="animated-button">
                         <?php echo $lang['header2.3'] ?>
                     </a>
+                </li>
+
+                <li class="nav__item">
+                    <div class="nav__link">
+                        <a href="?lang=de">
+                            <img src="./media/img/flag/de.svg" class="flag">
+                        </a>
+
+                        <a href="?lang=en">
+                            <img src="./media/img/flag/us.svg" class="flag">
+                        </a>
+                    </div>
                 </li>
 
 
