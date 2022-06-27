@@ -51,12 +51,24 @@
         </h1>
 
         <div class="row m-0 p-0">
-            <div class="container pt-3 pb-3 col-12 col-lg-6">
-                <div class="row">
-                    <div class="col-12">
-                        <img class="overview_pic" src="./media/img/Gesamtübersicht.png" alt="Gesamtübersicht der Anlage">
-                    </div>
-                </div>
+
+
+            <div class="col-12 col-lg-4 pt-3 pb-3 ">
+
+                <img class="overview_pic" id="overview_one" src="./media/img/ampel/Ampelfarbe_aus.svg" alt="Ampel">
+
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 pt-3 pb-3">
+
+                <img class="overview_pic" id="overview_two" src="./media/img/Gesamtübersicht_FischerTechnik.png" alt="Gesamtübersicht Fischer Technik">
+
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 pt-3 pb-3">
+
+                <img class="overview_pic" id="overview_three" src="./media/img/Gesamtübersicht_Umsetzer.png" alt="Gesamtübersicht Umsetzer">
+
             </div>
 
 
@@ -69,6 +81,26 @@
     </div>
 
 
+    <script>
+        $(document).ready(function() {
+
+            const mq = window.matchMedia("(min-width: 992px)");
+
+            if (mq.matches) {
+                var height = Math.min($("#overview_one").height(), $("#overview_two").height(), $("#overview_three").height());
+                $("#overview_one").height(height);
+                $("#overview_two").height(height);
+                $("#overview_three").height(height);
+            } else {
+                // window width is less than 960px
+            }
+
+        });
+    </script>
+
+
+
+
     <!-- NOTE Live Status -->
 
     <div id="live_status" class="header_placeholder">
@@ -76,7 +108,7 @@
             <?php echo $lang['header4'] ?>
         </h1>
 
-        <div class="row m-auto justify-content-center header_placeholder">
+        <div class="row m-auto pr-3 pl-3 justify-content-center header_placeholder">
 
             <div class="col-12 col-md-5 col-lg-3 m-2 p-0 card">
                 <div class="m-3">

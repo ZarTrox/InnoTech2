@@ -342,9 +342,7 @@ body {
     z-index: 999;
 }
 
-.container_overview {
-    min-height: 100vh;
-}
+.container_overview {}
 
 .overview_pic {
     max-width: 100%;
