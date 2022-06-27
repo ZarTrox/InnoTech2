@@ -3,12 +3,15 @@ $lang = array(
 
    /* <?php echo $lang['...'] ?> */
 
+   /* NOTE Title */
+   "title" => "Team 1 - Case 1 - Innovation Technology II",
+
 
    /* NOTE Header */
    "header1" => "Overview",
-   "header2" => "Single view",
-   "header3" => "Legend single view",
-   "header4" => "Live status",
+   "header2" => "Live status",
+   "header3" => "Single view",
+   "header4" => "Legend single view",
 
 
    /* NOTE Modules */
@@ -22,7 +25,16 @@ $lang = array(
    /* NOTE Gesamtübersicht */
 
 
+
+   /* NOTE Live Status */
+   "table_h1" => "Sensor / Actuator:",
+   "table_h2" => "Active / Inactive",
+
+
+
    /* NOTE Einzelübersicht */
+   "single_view_h1" => "Description:",
+   "single_view_h2" => "Status of Sensors & Actuators:",
 
 
    /* NOTE Footer */

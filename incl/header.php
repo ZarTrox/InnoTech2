@@ -15,8 +15,13 @@
                 <?php echo $lang['header1'] ?>
             </a>
         </div>
+        <div>
+            <a href="#live_status">
+                <?php echo $lang['header2'] ?>
+            </a>
+        </div>
         <div class="dropdown">
-            <div class="dropbtn"><?php echo $lang['header2'] ?></div>
+            <div class="dropbtn"><?php echo $lang['header3'] ?></div>
             <div class="dropdown-content">
                 <a href="#Hochregallager"><?php echo $lang['module1'] ?></a>
                 <a href="#Sauggreifer"><?php echo $lang['module2'] ?></a>
@@ -27,14 +32,10 @@
         </div>
         <div>
             <a href="#legende" data-toggle="modal" class="animated-button">
-                <?php echo $lang['header3'] ?>
-            </a>
-        </div>
-        <div>
-            <a href="#live_status">
                 <?php echo $lang['header4'] ?>
             </a>
         </div>
+
 
         <div class="flag_large_screen">
             <a href="?lang=de">
@@ -63,9 +64,14 @@
                     </a>
                 </li>
                 <li class="nav__item">
+                    <a class="nav__link" href="#live_status" data-toggle="modal" class="animated-button">
+                        <?php echo $lang['header2'] ?>
+                    </a>
+                </li>
+                <li class="nav__item">
                     <div class="dropdown">
                         <div class="dropbtn">
-                            <?php echo $lang['header2'] ?>
+                            <?php echo $lang['header3'] ?>
                         </div>
                         <div class="dropdown-content">
                             <a class="nav__link" href="#Hochregallager"><?php echo $lang['module1'] ?></a>
@@ -78,16 +84,9 @@
                 </li>
                 <li class="nav__item">
                     <a class="nav__link" href="#legende" data-toggle="modal" class="animated-button">
-                        <?php echo $lang['header3'] ?>
-                    </a>
-                </li>
-                <li class="nav__item">
-                    <a class="nav__link" href="#live_status" data-toggle="modal" class="animated-button">
                         <?php echo $lang['header4'] ?>
                     </a>
                 </li>
-
-
                 <li class="nav__item">
                     <div class="nav__link">
                         <a href="?lang=de">

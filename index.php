@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        Team 1 - Aufgabe 1 - Innovation Technology II
+        <?php echo $lang['title'] ?>
     </title>
 
     <meta name="robots" content="noindex, nofollow, nosnippet">
@@ -105,7 +105,7 @@
 
     <div id="live_status" class="header_placeholder">
         <h1 style="margin-bottom: -70px;">
-            <?php echo $lang['header4'] ?>
+            <?php echo $lang['header2'] ?>
         </h1>
 
         <div class="row m-auto pr-3 pl-3 justify-content-center header_placeholder">
@@ -118,9 +118,11 @@
                     <table>
                         <tr>
                             <th>
-                                Name
+                                <?php echo $lang['table_h1'] ?>
                             </th>
-                            <th>Aktiv</th>
+                            <th>
+                                <?php echo $lang['table_h2'] ?>
+                            </th>
                         </tr>
                         <tr>
                             <td>Sensor 1</td>
@@ -179,9 +181,11 @@
                     <table>
                         <tr>
                             <th>
-                                Name
+                                <?php echo $lang['table_h1'] ?>
                             </th>
-                            <th>Aktiv</th>
+                            <th>
+                                <?php echo $lang['table_h2'] ?>
+                            </th>
                         </tr>
                         <tr>
                             <td>Sensor 1</td>
@@ -240,9 +244,11 @@
                     <table>
                         <tr>
                             <th>
-                                Name
+                                <?php echo $lang['table_h1'] ?>
                             </th>
-                            <th>Aktiv</th>
+                            <th>
+                                <?php echo $lang['table_h2'] ?>
+                            </th>
                         </tr>
                         <tr>
                             <td>Sensor 1</td>
@@ -301,9 +307,11 @@
                     <table>
                         <tr>
                             <th>
-                                Name
+                                <?php echo $lang['table_h1'] ?>
                             </th>
-                            <th>Aktiv</th>
+                            <th>
+                                <?php echo $lang['table_h2'] ?>
+                            </th>
                         </tr>
                         <tr>
                             <td>Sensor 1</td>
@@ -362,9 +370,11 @@
                     <table>
                         <tr>
                             <th>
-                                Name
+                                <?php echo $lang['table_h1'] ?>
                             </th>
-                            <th>Aktiv</th>
+                            <th>
+                                <?php echo $lang['table_h2'] ?>
+                            </th>
                         </tr>
                         <tr>
                             <td>Sensor 1</td>
@@ -424,7 +434,7 @@
     <!-- NOTE Einzelübersicht -->
     <div id="single_view" class="container_single_view header_placeholder">
         <h1 style="margin-bottom: -70px;">
-            <?php echo $lang['header2'] ?>
+            <?php echo $lang['header3'] ?>
         </h1>
 
         <!-- 1. -->
@@ -440,17 +450,21 @@
                     </div>
                     <div class="col-12 col-lg-6">
                         <p>
-                            Beschreibung:
+                            <?php echo $lang['single_view_h1'] ?>
                         </p>
 
                         <div class="mt-5">
                             <p>
-                                Status der Sensoren & Aktoren:
+                                <?php echo $lang['single_view_h2'] ?>
                             </p>
                             <table class="">
                                 <tr>
-                                    <th>Beschreibung</th>
-                                    <th>Aktiv</th>
+                                    <th>
+                                        <?php echo $lang['table_h1'] ?>
+                                    </th>
+                                    <th>
+                                        <?php echo $lang['table_h2'] ?>
+                                    </th>
                                 </tr>
                                 <tr>
                                     <td>Sensor 1</td>
@@ -506,7 +520,7 @@
                                             <span class="icon arrow"></span>
                                         </span>
                                         <span class="button-text">
-                                            Legende Einzelansicht
+                                            <?php echo $lang['header4'] ?>
                                         </span>
                                     </button>
                                 </div>
@@ -533,16 +547,20 @@
                     </div>
                     <div class="col-12 col-lg-6">
                         <p>
-                            Beschreibung:
+                            <?php echo $lang['single_view_h1'] ?>
                         </p>
                         <div class="mt-5">
                             <p>
-                                Status der Sensoren & Aktoren:
+                                <?php echo $lang['single_view_h2'] ?>
                             </p>
                             <table class="">
                                 <tr>
-                                    <th>Beschreibung</th>
-                                    <th>Aktiv</th>
+                                    <th>
+                                        <?php echo $lang['table_h1'] ?>
+                                    </th>
+                                    <th>
+                                        <?php echo $lang['table_h2'] ?>
+                                    </th>
                                 </tr>
                                 <tr>
                                     <td>Sensor 1</td>
@@ -598,7 +616,7 @@
                                             <span class="icon arrow"></span>
                                         </span>
                                         <span class="button-text">
-                                            Legende Einzelansicht
+                                            <?php echo $lang['header4'] ?>
                                         </span>
                                     </button>
                                 </div>
@@ -625,16 +643,20 @@
                     </div>
                     <div class="col-12 col-lg-6">
                         <p>
-                            Beschreibung:
+                            <?php echo $lang['single_view_h1'] ?>
                         </p>
                         <div class="mt-5">
                             <p>
-                                Status der Sensoren & Aktoren:
+                                <?php echo $lang['single_view_h2'] ?>
                             </p>
                             <table class="">
                                 <tr>
-                                    <th>Beschreibung</th>
-                                    <th>Aktiv</th>
+                                    <th>
+                                        <?php echo $lang['table_h1'] ?>
+                                    </th>
+                                    <th>
+                                        <?php echo $lang['table_h2'] ?>
+                                    </th>
                                 </tr>
                                 <tr>
                                     <td>Sensor 1</td>
@@ -690,7 +712,7 @@
                                             <span class="icon arrow"></span>
                                         </span>
                                         <span class="button-text">
-                                            Legende Einzelansicht
+                                            <?php echo $lang['header4'] ?>
                                         </span>
                                     </button>
                                 </div>
@@ -717,16 +739,20 @@
                     </div>
                     <div class="col-12 col-lg-6">
                         <p>
-                            Beschreibung:
+                            <?php echo $lang['single_view_h1'] ?>
                         </p>
                         <div class="mt-5">
                             <p>
-                                Status der Sensoren & Aktoren:
+                                <?php echo $lang['single_view_h2'] ?>
                             </p>
                             <table class="">
                                 <tr>
-                                    <th>Beschreibung</th>
-                                    <th>Aktiv</th>
+                                    <th>
+                                        <?php echo $lang['table_h1'] ?>
+                                    </th>
+                                    <th>
+                                        <?php echo $lang['table_h2'] ?>
+                                    </th>
                                 </tr>
                                 <tr>
                                     <td>Sensor 1</td>
@@ -782,7 +808,7 @@
                                             <span class="icon arrow"></span>
                                         </span>
                                         <span class="button-text">
-                                            Legende Einzelansicht
+                                            <?php echo $lang['header4'] ?>
                                         </span>
                                     </button>
                                 </div>
@@ -809,16 +835,20 @@
                     </div>
                     <div class="col-12 col-lg-6">
                         <p>
-                            Beschreibung:
+                            <?php echo $lang['single_view_h1'] ?>
                         </p>
                         <div class="mt-5">
                             <p>
-                                Status der Sensoren & Aktoren:
+                                <?php echo $lang['single_view_h2'] ?>
                             </p>
                             <table class="">
                                 <tr>
-                                    <th>Beschreibung</th>
-                                    <th>Aktiv</th>
+                                    <th>
+                                        <?php echo $lang['table_h1'] ?>
+                                    </th>
+                                    <th>
+                                        <?php echo $lang['table_h2'] ?>
+                                    </th>
                                 </tr>
                                 <tr>
                                     <td>Sensor 1</td>
@@ -874,7 +904,7 @@
                                             <span class="icon arrow"></span>
                                         </span>
                                         <span class="button-text">
-                                            Legende Einzelansicht
+                                            <?php echo $lang['header4'] ?>
                                         </span>
                                     </button>
                                 </div>
