@@ -11,25 +11,42 @@
 
     <div class="header_links header_large">
         <div>
-            <a href="#overview">Gesamtübersicht</a>
-        </div>
-        <div class="dropdown">
-            <div class="dropbtn">Einzelübersicht</div>
-            <div class="dropdown-content">
-                <a href="#Hochregallager">Hochregallager</a>
-                <a href="#Sauggreifer">Sauggreifer</a>
-                <a href="#Brennofen">Brennofen</a>
-                <a href="#Sortierstrecke">Sortierstrecke</a>
-                <a href="#Wipphebel">Wipphebel</a>
-            </div>
-        </div>
-        <!--
-        <div>
-            <a href="#legende" data-toggle="modal" class="animated-button">
-                Legende Einzelansicht
+            <a href="#overview">
+                <?php echo $lang['header1'] ?>
             </a>
         </div>
-        <-->
+        <div>
+            <a href="#live_status">
+                <?php echo $lang['header2'] ?>
+            </a>
+        </div>
+        <div class="dropdown">
+            <div class="dropbtn"><?php echo $lang['header3'] ?></div>
+            <div class="dropdown-content">
+                <a href="#Hochregallager"><?php echo $lang['module1'] ?></a>
+                <a href="#Sauggreifer"><?php echo $lang['module2'] ?></a>
+                <a href="#Brennofen"><?php echo $lang['module3'] ?></a>
+                <a href="#Sortierstrecke"><?php echo $lang['module4'] ?></a>
+                <a href="#Wipphebel"><?php echo $lang['module5'] ?></a>
+            </div>
+        </div>
+        <div>
+            <a href="#legende" data-toggle="modal" class="animated-button">
+                <?php echo $lang['header4'] ?>
+            </a>
+        </div>
+
+
+        <div class="flag_large_screen">
+            <a href="?lang=de">
+                <img src="./media/img/flag/de.svg" class="flag">
+            </a>
+
+            <a href="?lang=en">
+                <img src="./media/img/flag/us.svg" class="flag">
+            </a>
+        </div>
+
 
 
     </div>
@@ -43,30 +60,45 @@
             <ul class="nav__list mr-auto ml-auto mt-5">
                 <li class="nav__item">
                     <a class="nav__link" href="#overview">
-                        Gesamtübersicht
+                        <?php echo $lang['header1'] ?>
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#live_status" data-toggle="modal" class="animated-button">
+                        <?php echo $lang['header2'] ?>
                     </a>
                 </li>
                 <li class="nav__item">
                     <div class="dropdown">
                         <div class="dropbtn">
-                            Einzelübersicht
+                            <?php echo $lang['header3'] ?>
                         </div>
                         <div class="dropdown-content">
-                            <a class="nav__link" href="#Hochregallager">Hochregallager</a>
-                            <a class="nav__link" href="#Sauggreifer">Sauggreifer</a>
-                            <a class="nav__link" href="#Brennofen">Brennofen</a>
-                            <a class="nav__link" href="#Sortierstrecke">Sortierstrecke</a>
-                            <a class="nav__link" href="#Wipphebel">Wipphebel</a>
+                            <a class="nav__link" href="#Hochregallager"><?php echo $lang['module1'] ?></a>
+                            <a class="nav__link" href="#Sauggreifer"><?php echo $lang['module2'] ?></a>
+                            <a class="nav__link" href="#Brennofen"><?php echo $lang['module3'] ?></a>
+                            <a class="nav__link" href="#Sortierstrecke"><?php echo $lang['module4'] ?></a>
+                            <a class="nav__link" href="#Wipphebel"><?php echo $lang['module5'] ?></a>
                         </div>
                     </div>
                 </li>
-                <!--
                 <li class="nav__item">
                     <a class="nav__link" href="#legende" data-toggle="modal" class="animated-button">
-                        Legende Einzelansicht
+                        <?php echo $lang['header4'] ?>
                     </a>
                 </li>
-                -->
+                <li class="nav__item">
+                    <div class="nav__link">
+                        <a href="?lang=de">
+                            <img src="./media/img/flag/de.svg" class="flag">
+                        </a>
+
+                        <a href="?lang=en">
+                            <img src="./media/img/flag/us.svg" class="flag">
+                        </a>
+                    </div>
+                </li>
+
 
             </ul>
         </nav>
