@@ -7,7 +7,7 @@ const ArrayWithVariablesForHochregalLager = [
     "Referenztaster horizontal",
     "Referenztaster Ausleger vorne",
     "Referenztaster Ausleger hinten",
-    "B-Motor Foerderband vorwaerts", //Wo ist rückwerts?
+    "B-Motor Foerderband vorwaerts", //Wo ist rückwerts? Ist das hier anwendbar?
     "H-horizontal",
     "H-vertikal"
 ]
@@ -44,6 +44,11 @@ const ArrayWithVariablesForVakuumSauggreifer = [
     "V-vertikal",
     "V-drehen",
     "V-horizontal"
+]
+
+const ArrayWithVariablesForWippHebel = [
+    "Umsetzer Endanschlag 1 (3B1)",
+    "Umsetzer Endanschlag 2 (3B2)"
 ]
 
 /*
@@ -87,7 +92,7 @@ function createSvgUebersicht(dataArray, Zeit, dataArrayVorher) {
 }
 
 function createSvgHochregallager(dataArray, Zeit, dataArrayVorher) {
-    d3.xml("./media/img/HochregallagerNew8.svg",
+    d3.xml("./media/img/HochregallagerNew11.svg",
         function (error, documentFragment) {
             if (error) { console.log(error); return; }
 
@@ -100,67 +105,26 @@ function createSvgHochregallager(dataArray, Zeit, dataArrayVorher) {
             svg = main_chart_svg.select("svg")
             if (dataArray != "") {
                 //Direkt am anfang mappen und den maximalen wert anchfragen
+                var widthDiv = document.getElementById('HochregallagerSvg').offsetWidth;
+                var heightDiv = document.getElementById('HochregallagerSvg').offsetHeight;
+                var widthLastColumn = d3.select("#letzteStrebe").attr("x");
                 var x = d3.scaleLinear()
                     .domain([0, 2370])
-                    .range([0, document.getElementById('HochregallagerSvg').offsetWidth - 75])
+                    .range([0, widthLastColumn])
                 var y = d3.scaleLinear()
                     .domain([0, 1108])
                     .range([50, document.getElementById('HochregallagerSvg').offsetHeight])
                 hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y);
-
-                //Und evtl mit lichtschranke aussen verbinden?
-                //Blinkt sehr selten? Gehört das so?
-                // if (dataArray[ArrayWithVariablesForHochregalLager[0]] == " false") {
-                // svg.select("#LichtschrankeInnen")
-                //     .transition()
-                //     .attr("class", "lichtschranke")
-
-                //     .transition()
-                //     .duration(1000)
-                //     .attr("class", "lichtschrankeTransform")
-                // // }
-
-                // // if (dataArray[ArrayWithVariablesForHochregalLager[0]] == " true") {
-                // svg.select("#B-MotorFoerderbandvorwaerts")
-                //     .transition()
-                //     .attr("class", "motor")
-
-                //     .transition()
-                //     .duration(1000)
-                //     .attr("class", "motorTransform")
-                // // }
-                // if ((dataArray[ArrayWithVariablesForHochregalLager[5]] != 1) || (dataArray[ArrayWithVariablesForHochregalLager[4]] != 2)) {
-                //     svg.selectAll(".turm")
-                //         .transition()
-                //         .duration(1000)
-                //         .attr("x", dataArray[ArrayWithVariablesForHochregalLager[7]] / 2)
-                //         .attr("y", dataArray[ArrayWithVariablesForHochregalLager[8]] / 2)
-                // }
-                /*svg.selectAll("rect.Hochregallager").remove();
-                svg.selectAll("circle.Hochregallager").remove();
-                //Objekten wie dem turm oder dem motor eine id zuweise und diese dann bewegen
-                //hannah im Meeting zum motorhäuschen fragen
-                svg.append("rect")//H-vert&hori
-                    .attr("class", "Hochregallager")
-                    .attr("id", "ausrichtung")
-                    .attr("x", dataArray[ArrayWithVariablesForHochregalLager[5]])
-                    .attr("y", dataArray[ArrayWithVariablesForHochregalLager[4]])
-                    .attr("width", 100)
-                    .attr("height", 100)
-                    .attr('stroke', 'red')
-                    .attr("fill", "#ddd")
-                //Vergleiche ob sich etwas zum vorherigen verändert hat (Fkt aus alter Datei nehmen)
-                //Bzw den vergleich nicht hier sondern in einer funktion und nunr wahr oder falsch uebermitteln
-                if ((dataArray[ArrayWithVariablesForHochregalLager[5]] != 1) || (dataArray[ArrayWithVariablesForHochregalLager[4]] != 2)){
-                    svg.select("#ausrichtung")
-                    .transition()
-                    .duration(500)
-                    .attr("fill", "red")
-                }*/
             }
 
         });
 }
+
+// function removeClassNames(element, regex){
+//     document.getElementById("MyElement").className =
+//    document.getElementById("MyElement").className.replace
+//       ( /(?:^|\s)(?!\S)/g , '' )
+// }
 
 function hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y) {
     //Hhori & HVerti
@@ -174,45 +138,84 @@ function hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y) {
     svg.selectAll(".turmBewegen").each(function (d, i) {
         var oldvalueX = d3.select(this).attr("x");
         var newvalueX = parseFloat(oldvalueX) + diffHHorizontal;
+        if (newvalueX < 0) {
+            console.log("X alt: " + oldvalueX);
+            console.log("X neu: " + newvalueX);
+        }
         d3.select(this)
             .transition()
             .duration(1000)
             .attr("x", newvalueX)
     })
+
     svg.selectAll(".greiferBewegen").each(function (d, i) {
         var oldvalueY = d3.select(this).attr("y");
         var newvalueY = parseFloat(oldvalueY) + diffHvert;
         var oldvalueX = d3.select(this).attr("x");
         var newvalueX = parseFloat(oldvalueX) + diffHHorizontal;
+        if (newvalueX < 0) {
+            console.log("X alt Greifer: " + oldvalueX);
+            console.log("X neu Greifer: " + newvalueX);
+        }
+        if (newvalueY < 0) {
+            console.log("Y alt Greifer: " + oldvalueY);
+            console.log("Y neu Greifer: " + newvalueY);
+        }
         d3.select(this)
             .transition()
             .duration(1000)
             .attr("y", newvalueY)
             .attr("x", newvalueX)
+        //Motor blinken lassen?
     })
-    //Referenztastervertikal
-    if (dataArray[ArrayWithVariablesForHochregalLager[2]] == " false") {
-        /* Split and join        */
-        // var oldClasses = d3.select("#Referenztastervertikal").attr("class");
-        // console.log(oldClasses);
-        // var newClasses = "";
-        // if (!oldClasses.includes("Transform")) {
-        //     newClasses = oldClasses.replace("taster", "tasterTransform")
-        // } else if (oldClasses.includes("Transform")) {
 
-        // }
-        // svg.select("#Referenztastervertikal")
-        //     .transition()
-        //     .duration(1000)
-        //     .attr("class", "tasterTransform turmBewegen")
-        //     .transition()
-        //     .attr("class", "taster turmBewegen")
+    //Und evtl mit lichtschranke aussen verbinden?
+    //Blinkt sehr selten? Gehört das so?
+    if (dataArray[ArrayWithVariablesForHochregalLager[0]] == " false") {
+        svg.select("#LichtschrankeInnen")
+            .transition()
+            .attr("class", "lichtschranke")
+            .transition()
+            .duration(1000)
+            .attr("class", "lichtschrankeTransform")
     }
-}
+    if (dataArray[ArrayWithVariablesForHochregalLager[1]] == " false") {
+        svg.select("#LichtschrankeAussen")
+            .transition()
+            .attr("class", "lichtschranke")
+            .transition()
+            .duration(1000)
+            .attr("class", "lichtschrankeTransform")
+    }
 
-function hochregallager_Referenztaster_Vertikal(dataArray, Zeit) {
-    //"Referenztaster vertikal"
-    //Wert aus array verwenden und leerzeichen entfernen
+    /*
+        "Referenztaster Ausleger vorne" ist immer gegenteil von "Referenztaster Ausleger hinten"
+        Also wenn true dann false und umgekehrt -> muss noch validiert werden
+    */
+    svg.selectAll(".taster").each(function (d, i) {
+        var currentId = d3.select(this).attr("id");
+        var currentRgbColor = d3.select(this).style('fill');
+        if (currentId === "Referenztastervertikal") {
+            if (dataArray[ArrayWithVariablesForHochregalLager[2]] == " false") {
+                document.getElementById("Referenztastervertikal").style.fill = "blue"
+                //Fuer Celina: TODO create blinking effect in svg file
+                //Farbe zu Farbe in svg aendern
+            } else {
+                document.getElementById("Referenztastervertikal").style.fill = currentRgbColor;
+            }
+            //Validieren ob die IDs richtig zugeordnet sind
+        } else if (currentId === "ReferenztasterAuslegerVorne") {
+            if (dataArray[ArrayWithVariablesForHochregalLager[4]] == " false") {
+                document.getElementById("ReferenztasterAuslegerVorne").style.fill = "blue"
+                document.getElementById("ReferenztasterAuslegerHinten").style.fill = "#FD76FF"
+                //Fuer Celina: TODO create blinking effect in svg file
+                //Farbe zu Farbe in svg aendern
+            } else {
+                document.getElementById("ReferenztasterAuslegerVorne").style.fill = "#FD76FF"
+                document.getElementById("ReferenztasterAuslegerHinten").style.fill = "blue";
+            }
+        }
+    })
 
 }
 
@@ -229,35 +232,82 @@ function createSvgWipphebel(dataArray, Zeit) {
             }
             svg = main_chart_svg.select("svg")
             if (dataArray != "") {
-                svg.selectAll("rect.Wipphebel").remove();
+                //Evtl muss man den Inhalt hier tauschen falls schalter 1 links und niucht rechts ist
+                /*
+                    Es gibt nur false false???
+                    Warum?
+                */
+                /*
+                Um zu testen ob das flippen funktioniert
+                var madde = Math.floor(Math.random() * (Math.ceil(6) - Math.floor(0)))
+                 if(madde > 3){
+                     dataArray[ArrayWithVariablesForWippHebel[0]] = " true"
+                 } else if (madde <= 3){
+                     dataArray[ArrayWithVariablesForWippHebel[1]] = " true"
+                 }*/
+                //Das als transition umwandeln? Wie würde das funktiuonieren?
+                if (dataArray[ArrayWithVariablesForWippHebel[0]] == " true") {
+                    console.log("True 1");
+                    document.getElementById("Wipphebel").style.transform = "scale(1, 1)";
+                } else if (dataArray[ArrayWithVariablesForWippHebel[1]] == " true") {
+                    console.log("True2");
+                    document.getElementById("Wipphebel").style.transform = "scale(-1, 1)";
+                } else {
+                    //Wipper in der Luft?
+                }
             }
         });
 }
 
-// function createSvgVakuumSauggreif(dataArray, Zeit) {
-//     d3.xml("./media/img/vakuum_skaliert.svg",
-//         function (error, documentFragment) {
-//             if (error) { console.log(error); return; }
-//             var svgNode = documentFragment
-//                 .getElementsByTagName("svg")[0];
-//             var main_chart_svg = d3.select("#Vakuum")
-//             if (document.getElementById('Vakuum').getElementsByTagName('svg').length == 0) {
-//                 main_chart_svg.node().appendChild(svgNode);
-//             }
-//             svg = main_chart_svg.select("svg")
-//             if (dataArray != "") {
-//                 svg.selectAll("rect.Vakuum").remove();
-//                 svg.append("rect") //"V-Referenzschalter horizontal"
-//                     .attr("class", "Hochregallager")
-//                     .attr("x", 350)
-//                     .attr("y", 500)
-//                     .attr("width", 50)
-//                     .attr("height", 50)
-//                     .attr('stroke', 'red')
-//                     .attr("fill", "#ddd")
-//             }
-//         });
-// }
+function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher) {
+    //TODO: Elemente in svg grupieren
+    d3.xml("./media/img/Vakuum-SauggreiferNew1.svg",
+        function (error, documentFragment) {
+            if (error) { console.log(error); return; }
+            var svgNode = documentFragment
+                .getElementsByTagName("svg")[0];
+            var main_chart_svg = d3.select("#Vakuum")
+            if (document.getElementById('Vakuum').getElementsByTagName('svg').length == 0) {
+                main_chart_svg.node().appendChild(svgNode);
+            }
+            svg = main_chart_svg.select("svg")
+            if (dataArray != "") {
+                //TOdo: Skalieren der Grafik
+                // var x = d3.scaleLinear()
+                //     .domain([0, 2370])
+                //     .range([0, widthLastColumn])
+                console.log(document.getElementById('HochregallagerSvg').offsetHeight);
+                var y = d3.scaleLinear()
+                    .domain([0, 977])
+                    .range([50, document.getElementById('HochregallagerSvg').offsetHeight])
+
+                //Flippen wenn der Kran auf der rechten seite ist
+                //Hoch und runter fahren
+                // if (rechts) {
+                //     document.getElementById("Vakuum").style.transform = "scale(-1, 1)";
+                // } else {
+                //     document.getElementById("Vakuum").style.transform = "scale(1, 1)";
+                // }
+                var scaledHvert = y(dataArray[ArrayWithVariablesForHochregalLager[8]]);
+                var scaledHvertVorher = y(dataArrayVorher[ArrayWithVariablesForHochregalLager[8]]);
+                var diffHvert = scaledHvertVorher - scaledHvert;
+                console.log("scaledHvert" + scaledHvert);
+                console.log("scaledHvertVorher" + scaledHvertVorher);
+                console.log("DiffHvert" + diffHvert);
+                console.log("------------------------------------");
+                svg.selectAll(".beweglicherArm").each(function (d, i) {
+                    var oldvalueY = d3.select(this).attr("y");
+                    var newvalueY = parseFloat(oldvalueY) + diffHvert;
+                    //console.log("NewY" + newvalueY);
+                    d3.select(this)
+                        .transition()
+                        .duration(1000)
+                        .attr("y", newvalueY)
+                    //TOdo: Bug fix
+                })
+            }
+        });
+}
 // function createSvgBrennofen(dataArray, Zeit) {
 //     d3.xml("./media/img/Wipphebel.svg",
 //         function (error, documentFragment) {
@@ -280,10 +330,14 @@ function createSvgWipphebel(dataArray, Zeit) {
 function updateStationen(dataArray, Zeit, dataArrayVorher) {
     createSvgUebersicht(dataArray, Zeit, dataArrayVorher);
     createSvgHochregallager(dataArray, Zeit, dataArrayVorher);
-    //createSvgVakuumSauggreif(dataArray, Zeit);
-    //createSvgWipphebel(dataArray, Zeit)
+    createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher);
+    createSvgWipphebel(dataArray, Zeit)
     //createSvgBrennofen(dataArray, Zeit);
 }
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function rgbToHex(r, g, b) {
+    return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
 }
