@@ -390,36 +390,42 @@ body {
 
 .legende .modal-content {
     padding: 100px 0;
-    text-align: center;
 }
 
 .legende .modal-content h2 {
     font-size: 3em;
     margin-bottom: 15px;
     color: black;
-}
-
-.legende .modal-content p {
-    margin-bottom: 30px;
+    text-align: center;
 }
 
 .legende .modal-content p.item-intro {
     font-size: 16px;
     font-style: italic;
     margin: 20px 0 30px;
+    text-align: center;
 }
 
-.legende .modal-content ul.list-inline {
-    margin-top: 0;
+.legende .modal-content p {
+    margin-top: 15px;
     margin-bottom: 30px;
+    color: black;
 }
 
 .legende .modal-content img {
-    margin-bottom: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .legende .modal-content button {
     cursor: pointer;
+    color: var(--action-bar);
+    border-color: var(--action-bar);
+}
+
+.legende .modal-content button:hover {
+    background-color: var(--action-bar);
+    color: white;
 }
 
 .legende .close-modal {
@@ -445,7 +451,7 @@ body {
     /* IE 9 */
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
-    background-color: black;
+    background-color: var(--action-bar);
 }
 
 .legende .close-modal .lr .rl {
@@ -456,7 +462,7 @@ body {
     /* IE 9 */
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
-    background-color: black;
+    background-color: var(--action-bar);
 }
 
 

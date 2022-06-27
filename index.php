@@ -32,7 +32,7 @@
 
     <!-- Loadings -->
     <?php include('./incl/loadfiles.php') ?>
-    <?php include('./incl/cards.php'); ?>
+    <?php include('./incl/popup.php'); ?>
 
 
 </head>
