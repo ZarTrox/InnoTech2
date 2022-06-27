@@ -7,12 +7,15 @@ $lang = array(
    /* NOTE Header */
    "header1" => "Gesamtübersicht",
    "header2" => "Einzelübersicht",
-   "header2.1" => "Hochregallager",
-   "header2.2" => "Sauggreifer",
-   "header2.3" => "Brennofen",
-   "header2.4" => "Sortierstrecke",
-   "header2.5" => "Wipphebel",
    "header3" => "Legende Einzelansicht",
+   "header4" => "Live Status",
+
+   /* NOTE Modules */
+   "module1" => "Hochregallager",
+   "module2" => "Sauggreifer",
+   "module3" => "Brennofen",
+   "module4" => "Sortierstrecke",
+   "module5" => "Wipphebel",
 
    /* NOTE Gesamtübersicht */
 

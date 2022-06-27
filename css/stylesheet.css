@@ -611,3 +611,12 @@ input:checked+.slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+
+/* NOTE Cards */
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 40%;
+    color: black;
+}
