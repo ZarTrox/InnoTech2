@@ -92,7 +92,7 @@ function createSvgUebersicht(dataArray, Zeit, dataArrayVorher) {
 }
 
 function createSvgHochregallager(dataArray, Zeit, dataArrayVorher) {
-    d3.xml("./media/img/HochregallagerNew11.svg",
+    d3.xml("./media/img/HochregallagerNew12.svg",
         function (error, documentFragment) {
             if (error) { console.log(error); return; }
 
@@ -138,10 +138,10 @@ function hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y) {
     svg.selectAll(".turmBewegen").each(function (d, i) {
         var oldvalueX = d3.select(this).attr("x");
         var newvalueX = parseFloat(oldvalueX) + diffHHorizontal;
-        if (newvalueX < 0) {
-            console.log("X alt: " + oldvalueX);
-            console.log("X neu: " + newvalueX);
-        }
+        // if (newvalueX < 0) {
+        //     console.log("X alt: " + oldvalueX);
+        //     console.log("X neu: " + newvalueX);
+        // }
         d3.select(this)
             .transition()
             .duration(1000)
@@ -153,14 +153,14 @@ function hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y) {
         var newvalueY = parseFloat(oldvalueY) + diffHvert;
         var oldvalueX = d3.select(this).attr("x");
         var newvalueX = parseFloat(oldvalueX) + diffHHorizontal;
-        if (newvalueX < 0) {
-            console.log("X alt Greifer: " + oldvalueX);
-            console.log("X neu Greifer: " + newvalueX);
-        }
-        if (newvalueY < 0) {
-            console.log("Y alt Greifer: " + oldvalueY);
-            console.log("Y neu Greifer: " + newvalueY);
-        }
+        // if (newvalueX < 0) {
+        //     console.log("X alt Greifer: " + oldvalueX);
+        //     console.log("X neu Greifer: " + newvalueX);
+        // }
+        // if (newvalueY < 0) {
+        //     console.log("Y alt Greifer: " + oldvalueY);
+        //     console.log("Y neu Greifer: " + newvalueY);
+        // }
         d3.select(this)
             .transition()
             .duration(1000)
@@ -221,7 +221,7 @@ function hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y) {
 
 //Fehler: wenn wipphebel dann gleiche farbklassen verwendet und somit hochregallager andere farbe. aber egal da wir andere seiten verwenden fpr einzelansichten
 function createSvgWipphebel(dataArray, Zeit) {
-    d3.xml("./media/img/Wipphebel.svg",
+    d3.xml("./media/img/Wipphebel2.svg",
         function (error, documentFragment) {
             if (error) { console.log(error); return; }
             var svgNode = documentFragment
@@ -276,10 +276,9 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher) {
                 // var x = d3.scaleLinear()
                 //     .domain([0, 2370])
                 //     .range([0, widthLastColumn])
-                console.log(document.getElementById('HochregallagerSvg').offsetHeight);
-                var y = d3.scaleLinear()
-                    .domain([0, 977])
-                    .range([50, document.getElementById('HochregallagerSvg').offsetHeight])
+                // var y = d3.scaleLinear()
+                //     .domain([0, 977])
+                //     .range([0, 768])
 
                 //Flippen wenn der Kran auf der rechten seite ist
                 //Hoch und runter fahren
@@ -288,22 +287,25 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher) {
                 // } else {
                 //     document.getElementById("Vakuum").style.transform = "scale(1, 1)";
                 // }
-                var scaledHvert = y(dataArray[ArrayWithVariablesForHochregalLager[8]]);
-                var scaledHvertVorher = y(dataArrayVorher[ArrayWithVariablesForHochregalLager[8]]);
-                var diffHvert = scaledHvertVorher - scaledHvert;
-                console.log("scaledHvert" + scaledHvert);
-                console.log("scaledHvertVorher" + scaledHvertVorher);
-                console.log("DiffHvert" + diffHvert);
-                console.log("------------------------------------");
+                // var scaledHvert = y(dataArray[ArrayWithVariablesForVakuumSauggreifer[3]]);
+                // var scaledHvertVorher = y(dataArrayVorher[ArrayWithVariablesForVakuumSauggreifer[3]]);
+                // var diffHvert = scaledHvert - scaledHvertVorher;
+                // console.log("scaledHvert" + scaledHvert);
+                // console.log("scaledHvertVorher" + scaledHvertVorher);
+                // console.log("DiffHvert" + diffHvert);
+                // console.log("------------------------------------");
                 svg.selectAll(".beweglicherArm").each(function (d, i) {
-                    var oldvalueY = d3.select(this).attr("y");
-                    var newvalueY = parseFloat(oldvalueY) + diffHvert;
-                    //console.log("NewY" + newvalueY);
+                    // var oldvalueY = d3.select(this).attr("y");
+                    // var newvalueY = parseFloat(oldvalueY) + diffHvert;
+                    // if (diffHvert != 0){
+                    //     console.log(d3.select(this));
+                    //     console.log("OldY: "+oldvalueY);
+                    //     console.log("NewY: " + newvalueY);
+                    // }
                     d3.select(this)
                         .transition()
                         .duration(1000)
-                        .attr("y", newvalueY)
-                    //TOdo: Bug fix
+                        .attr("y", dataArray[ArrayWithVariablesForVakuumSauggreifer[3]])
                 })
             }
         });
