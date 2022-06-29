@@ -543,7 +543,7 @@
             <div class="container ">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <img class="single_pic" src="./media/img/Sauggreifer.png" alt="Part Sauggreifer">
+                        <div class="single_pic" id="Vakuum" alt="Part Sauggreifer"></div>
                     </div>
                     <div class="col-12 col-lg-6">
                         <p>
@@ -831,7 +831,7 @@
             <div class="container ">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <img class="single_pic" src="./media/img/WWipphebel.svg" alt="Part Wipphebel">
+                        <div class="single_pic" id="WipphebelSvg" alt="Part Wipphebel"></div>
                     </div>
                     <div class="col-12 col-lg-6">
                         <p>

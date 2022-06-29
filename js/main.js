@@ -226,8 +226,8 @@ function createSvgWipphebel(dataArray, Zeit) {
             if (error) { console.log(error); return; }
             var svgNode = documentFragment
                 .getElementsByTagName("svg")[0];
-            var main_chart_svg = d3.select("#Wipphebel")
-            if (document.getElementById('Wipphebel').getElementsByTagName('svg').length == 0) {
+            var main_chart_svg = d3.select("#WipphebelSvg")
+            if (document.getElementById('WipphebelSvg').getElementsByTagName('svg').length == 0) {
                 main_chart_svg.node().appendChild(svgNode);
             }
             svg = main_chart_svg.select("svg")
@@ -237,21 +237,21 @@ function createSvgWipphebel(dataArray, Zeit) {
                     Es gibt nur false false???
                     Warum?
                 */
-                /*
-                Um zu testen ob das flippen funktioniert
+                
+                //Um zu testen ob das flippen funktioniert
                 var madde = Math.floor(Math.random() * (Math.ceil(6) - Math.floor(0)))
                  if(madde > 3){
                      dataArray[ArrayWithVariablesForWippHebel[0]] = " true"
                  } else if (madde <= 3){
                      dataArray[ArrayWithVariablesForWippHebel[1]] = " true"
-                 }*/
+                 }
                 //Das als transition umwandeln? Wie würde das funktiuonieren?
                 if (dataArray[ArrayWithVariablesForWippHebel[0]] == " true") {
                     console.log("True 1");
-                    document.getElementById("Wipphebel").style.transform = "scale(1, 1)";
+                    document.getElementById("WipphebelSvg").style.transform = "scale(1, 1)";
                 } else if (dataArray[ArrayWithVariablesForWippHebel[1]] == " true") {
                     console.log("True2");
-                    document.getElementById("Wipphebel").style.transform = "scale(-1, 1)";
+                    document.getElementById("WipphebelSvg").style.transform = "scale(-1, 1)";
                 } else {
                     //Wipper in der Luft?
                 }
