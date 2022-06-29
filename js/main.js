@@ -51,10 +51,13 @@ const ArrayWithVariablesForWippHebel = [
     "Umsetzer Endanschlag 2 (3B2)"
 ]
 
-/*
-Farben
-*/
-const farbeSchalterTransformation = "#fec3ff";
+const ArrayWithVariablesForAmpel = [
+    "Ampel rot",
+    "Ampel orange",
+    "Ampel gruen",
+    "Ampel weiss"
+]
+
 
 function getData() {
     fetch(`https://it2wi1.if-lab.de/rest/ft_ablauf`)
@@ -116,15 +119,18 @@ function createSvgHochregallager(dataArray, Zeit, dataArrayVorher) {
                     .range([50, document.getElementById('HochregallagerSvg').offsetHeight])
                 hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y);
             }
-
+            //Update input checkboxes
+            // var test = document.getElementsByClassName("test");
+            // for( var i = 0; i < test.length; i++){
+            //     if (!test[i].hasAttribute('checked')){
+            //         //console.log(test[i]);
+            //         test[i].setAttribute("checked", "")
+            //     } else if (test[i].hasAttribute('checked')){
+            //         test[i].removeAttribute('checked')
+            //     }
+            // }
         });
 }
-
-// function removeClassNames(element, regex){
-//     document.getElementById("MyElement").className =
-//    document.getElementById("MyElement").className.replace
-//       ( /(?:^|\s)(?!\S)/g , '' )
-// }
 
 function hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y) {
     //Hhori & HVerti
@@ -237,20 +243,18 @@ function createSvgWipphebel(dataArray, Zeit) {
                     Es gibt nur false false???
                     Warum?
                 */
-                
+
                 //Um zu testen ob das flippen funktioniert
                 var madde = Math.floor(Math.random() * (Math.ceil(6) - Math.floor(0)))
-                 if(madde > 3){
-                     dataArray[ArrayWithVariablesForWippHebel[0]] = " true"
-                 } else if (madde <= 3){
-                     dataArray[ArrayWithVariablesForWippHebel[1]] = " true"
-                 }
+                if (madde > 3) {
+                    dataArray[ArrayWithVariablesForWippHebel[0]] = " true"
+                } else if (madde <= 3) {
+                    dataArray[ArrayWithVariablesForWippHebel[1]] = " true"
+                }
                 //Das als transition umwandeln? Wie würde das funktiuonieren?
                 if (dataArray[ArrayWithVariablesForWippHebel[0]] == " true") {
-                    console.log("True 1");
                     document.getElementById("WipphebelSvg").style.transform = "scale(1, 1)";
                 } else if (dataArray[ArrayWithVariablesForWippHebel[1]] == " true") {
-                    console.log("True2");
                     document.getElementById("WipphebelSvg").style.transform = "scale(-1, 1)";
                 } else {
                     //Wipper in der Luft?
@@ -261,7 +265,7 @@ function createSvgWipphebel(dataArray, Zeit) {
 
 function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher) {
     //TODO: Elemente in svg grupieren
-    d3.xml("./media/img/Vakuum-SauggreiferNew1.svg",
+    d3.xml("./media/img/Vakuum-SauggreiferNew3.svg",
         function (error, documentFragment) {
             if (error) { console.log(error); return; }
             var svgNode = documentFragment
@@ -276,9 +280,9 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher) {
                 // var x = d3.scaleLinear()
                 //     .domain([0, 2370])
                 //     .range([0, widthLastColumn])
-                // var y = d3.scaleLinear()
-                //     .domain([0, 977])
-                //     .range([0, 768])
+                var y = d3.scaleLinear()
+                    .domain([0, 977])
+                    .range([768, 0])
 
                 //Flippen wenn der Kran auf der rechten seite ist
                 //Hoch und runter fahren
@@ -287,16 +291,26 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher) {
                 // } else {
                 //     document.getElementById("Vakuum").style.transform = "scale(1, 1)";
                 // }
-                // var scaledHvert = y(dataArray[ArrayWithVariablesForVakuumSauggreifer[3]]);
-                // var scaledHvertVorher = y(dataArrayVorher[ArrayWithVariablesForVakuumSauggreifer[3]]);
-                // var diffHvert = scaledHvert - scaledHvertVorher;
+                var madde = Math.floor(Math.random() * (Math.ceil(6) - Math.floor(0)))
+                // if (madde <= 2) {
+                //     dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 0
+                // } else 
+                if (madde > 2 && madde <= 4) {
+                    dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 50
+                } else if (madde > 4) {
+                    dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 200
+                }
+                var scaledHvert = y(dataArray[ArrayWithVariablesForVakuumSauggreifer[3]]);
+                var scaledHvertVorher = y(dataArrayVorher[ArrayWithVariablesForVakuumSauggreifer[3]]);
+                var diffHvert = scaledHvert - scaledHvertVorher;
                 // console.log("scaledHvert" + scaledHvert);
                 // console.log("scaledHvertVorher" + scaledHvertVorher);
                 // console.log("DiffHvert" + diffHvert);
                 // console.log("------------------------------------");
                 svg.selectAll(".beweglicherArm").each(function (d, i) {
-                    // var oldvalueY = d3.select(this).attr("y");
-                    // var newvalueY = parseFloat(oldvalueY) + diffHvert;
+
+                    var oldvalueY = y(d3.select(this).attr("y"));
+                    var newvalueY = parseFloat(oldvalueY) + diffHvert;
                     // if (diffHvert != 0){
                     //     console.log(d3.select(this));
                     //     console.log("OldY: "+oldvalueY);
@@ -305,7 +319,8 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher) {
                     d3.select(this)
                         .transition()
                         .duration(1000)
-                        .attr("y", dataArray[ArrayWithVariablesForVakuumSauggreifer[3]])
+                        .attr("y", newvalueY)
+
                 })
             }
         });
@@ -329,11 +344,24 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher) {
 //         });
 // }
 
+function createSvgAmpel(dataArray) {
+    if (dataArray[ArrayWithVariablesForAmpel[0]].includes(" true")) {
+        document.getElementById("Ampel").src = "./media/img/ampel/Ampelfarbe_rot.svg";
+    } else if (dataArray[ArrayWithVariablesForAmpel[1]].includes(" true")) {
+        document.getElementById("Ampel").src = "./media/img/ampel/Ampelfarbe_gelb.svg";
+    } else if (dataArray[ArrayWithVariablesForAmpel[2]].includes(" true")) {
+        document.getElementById("Ampel").src = "./media/img/ampel/Ampelfarbe_grün.svg";
+    } else if (dataArray[ArrayWithVariablesForAmpel[3]].includes(" true")) {
+        document.getElementById("Ampel").src = "./media/img/ampel/Ampelfarbe_aus.svg";
+    }
+}
+
 function updateStationen(dataArray, Zeit, dataArrayVorher) {
     createSvgUebersicht(dataArray, Zeit, dataArrayVorher);
     createSvgHochregallager(dataArray, Zeit, dataArrayVorher);
     createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher);
-    createSvgWipphebel(dataArray, Zeit)
+    createSvgWipphebel(dataArray, Zeit);
+    createSvgAmpel(dataArray);
     //createSvgBrennofen(dataArray, Zeit);
 }
 function sleep(ms) {
