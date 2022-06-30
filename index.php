@@ -225,6 +225,9 @@
                         <p class="mt-3">
                             <?php echo $lang['single_view_h1'] ?>
                         </p>
+                        <p>
+                            Ein Hochregallager ist ein Grundfläche sparendes Lager, das computergestützt die Ein- und Auslagerung von Waren ermöglicht. In den meisten Fällen sind Hochregallager als Palettenregallager ausgeführt. Diese Standardisierung ermöglicht einen hohen Automatisierungsgrad und die Anbindung an ein ERP-System (Enterprise-Resource-Planning). Hochregallager zeichnen sich dabei durch eine hohe Raumnutzung und einen hohen Investitionsbedarf aus.
+                        </p>
 
 
                     </div>
@@ -284,6 +287,9 @@
                         <p class="mt-3">
                             <?php echo $lang['single_view_h1'] ?>
                         </p>
+                        <p>
+                            Industrieroboter sind universell einsetzbare Bewegungsautomaten mit mehreren Achsen, deren Bewegungen hinsichtlich Bewegungsfolge und Wegen bzw. Winkeln frei (d. h. ohne mechanischen bzw. menschlichen Eingriff) programmierbar und gegebenenfalls sensorgeführt sind. Sie sind mit Greifern, Werkzeugen oder anderen Fertigungsmitteln ausrüstbar und können Handhabungs- und/oder Fertigungsaufgaben ausführen.
+                        </p>
 
                     </div>
                     <div class="col-12 col-lg-6">
@@ -337,6 +343,10 @@
 
                         <p class="mt-3">
                             <?php echo $lang['single_view_h1'] ?>
+                        </p>
+
+                        <p>
+                            Bei der Multi-Bearbeitungsstation mit Brennofen durchläuft das Werkstück automatisiert mehrere Stationen, die verschiedene Prozesse simulieren. Dabei kommen verschiedene Fördertechniken, wie zum Beispiel ein Förderband, ein Drehtisch und ein Vakuumsauggreifer, zum Einsatz. Der Bearbeitungsprozess beginnt mit dem Brennofen. Die Bearbeitung soll eingeleitet werden, sobald man ein Werkstück auf den Ofenschieber legt. Dabei wird die Lichtschranke unterbrochen, was dazu führen soll, dass das Tor des Ofens geöffnet und der Ofenschieber eingezogen wird.
                         </p>
 
 
@@ -394,6 +404,9 @@
                             <?php echo $lang['single_view_h1'] ?>
                         </p>
 
+                        <p>
+                            Die Sortierstrecke mit Farberkennung dient der automatisierten Trennung verschiedenfarbiger Bausteine. Dabei werden geometrisch gleiche, jedoch verschiedenfarbige Bauteile einem Farbsensor, mit Hilfe eines Förderbands zugeführt und dann, entsprechend ihrer Farbe, getrennt. Das Förderband wird von einem S-Motor angetrieben und der Förderweg wird mit Hilfe eines Impulstasters gemessen. Der Auswurf der Werkstücke erfolgt mit Pneumatikzylindern, die den entsprechenden Lagerstellen zugeordnet sind und von Magnetventilen betätigt werden. Mehrere Lichtschranken kontrollieren den Fluss der Werkstücke und ob sich Werkstücke in den Lagerstellen befinden.
+                        </p>
 
                     </div>
                     <div class="col-12 col-lg-6">
