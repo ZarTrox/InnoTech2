@@ -53,19 +53,13 @@
         <div class="row m-0 p-0">
 
 
-            <div class="col-12 col-lg-4 pt-3 pb-3 ">
-
-                <img class="overview_pic" id="overview_one" src="./media/img/ampel/Ampelfarbe_aus.svg" alt="Ampel">
-
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4 pt-3 pb-3">
+            <div class="col-12 col-md-6 pt-3 pb-3">
 
                 <img class="overview_pic" id="overview_two" src="./media/img/Gesamtübersicht_FischerTechnik.png" alt="Gesamtübersicht Fischer Technik">
 
             </div>
 
-            <div class="col-12 col-md-6 col-lg-4 pt-3 pb-3">
+            <div class="col-12 col-md-6 pt-3 pb-3">
 
                 <img class="overview_pic" id="overview_three" src="./media/img/Gesamtübersicht_Umsetzer.png" alt="Gesamtübersicht Umsetzer">
 
@@ -227,13 +221,19 @@
                     <div class="col-12 col-lg-6">
                         <!--<img class="single_pic" src="./media/img/Hochregallager.svg" alt="Part Hochregallager">-->
                         <div id="HochregallagerSvg" class="single_pic" alt="Part Hochregallager"></div>
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <p>
+
+                        <p class="mt-3">
                             <?php echo $lang['single_view_h1'] ?>
                         </p>
 
-                        <div class="mt-5">
+
+                    </div>
+
+
+                    <div class="col-12 col-lg-6">
+
+
+                        <div class="">
                             <p>
                                 <?php echo $lang['single_view_h2'] ?>
                             </p>
@@ -280,12 +280,14 @@
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <div class="single_pic" id="Vakuum" alt="Part Sauggreifer"></div>
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <p>
+
+                        <p class="mt-3">
                             <?php echo $lang['single_view_h1'] ?>
                         </p>
-                        <div class="mt-5">
+
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="">
                             <p>
                                 <?php echo $lang['single_view_h2'] ?>
                             </p>
@@ -332,12 +334,15 @@
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <img class="single_pic" src="./media/img/Brennofen.png" alt="Part Brennofen">
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <p>
+
+                        <p class="mt-3">
                             <?php echo $lang['single_view_h1'] ?>
                         </p>
-                        <div class="mt-5">
+
+
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="">
                             <p>
                                 <?php echo $lang['single_view_h2'] ?>
                             </p>
@@ -384,12 +389,15 @@
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <img class="single_pic" src="./media/img/Sortierstrecke.png" alt="Part Sortierstrecke">
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <p>
+
+                        <p class="mt-3">
                             <?php echo $lang['single_view_h1'] ?>
                         </p>
-                        <div class="mt-5">
+
+
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="">
                             <p>
                                 <?php echo $lang['single_view_h2'] ?>
                             </p>
@@ -436,15 +444,19 @@
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <div class="single_pic" id="WipphebelSvg" alt="Part Wipphebel"></div>
+
+                        <p class="mt-3">
+                            <?php echo $lang['single_view_h1'] ?>
+                        </p>
+
+
                     </div>
                     <div class="col-12 col-lg-6">
                         <p>
                             <?php echo $lang['single_view_h1'] ?>
                         </p>
-                        <div class="mt-5">
-                            <p>
-                                <?php echo $lang['single_view_h2'] ?>
-                            </p>
+                        <div class=5">
+
                             <table class="">
                                 <tr>
                                     <th>

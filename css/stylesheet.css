@@ -138,6 +138,47 @@ body {
     margin-left: 10px;
 }
 
+.header_light_container {
+    display: contents;
+    display: flex;
+    padding-top: 10px;
+}
+
+.header_light_basis {
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.header_light0 {
+    width: 40px;
+    height: 40px;
+    background: var(--timer);
+}
+
+.header_light1 {
+    width: 40px;
+    height: 40px;
+    background: red;
+}
+
+.header_light2 {
+    width: 40px;
+    height: 40px;
+    background: orange;
+}
+
+.header_light3 {
+    width: 40px;
+    height: 40px;
+    background: green;
+}
+
+.header_light4 {
+    width: 40px;
+    height: 40px;
+    background: white;
+}
+
 .add-shadow {
     box-shadow: 0px 4px 4px var(--timer);
     transition: 0.5s ease;
@@ -328,10 +369,6 @@ body {
 
 
 /* NOTE overview */
-.overview_light_container {
-    display: contents;
-}
-
 .overview_light {
     max-height: 100%;
     margin-top: 5px;
@@ -339,7 +376,9 @@ body {
     z-index: 999;
 }
 
-.container_overview {}
+.container_overview {
+    min-height: 100%;
+}
 
 .overview_pic {
     max-width: 100%;
