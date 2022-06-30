@@ -309,18 +309,27 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher) {
                 // console.log("------------------------------------");
                 svg.selectAll(".beweglicherArm").each(function (d, i) {
 
-                    var oldvalueY = y(d3.select(this).attr("y"));
-                    var newvalueY = parseFloat(oldvalueY) + diffHvert;
-                    // if (diffHvert != 0){
-                    //     console.log(d3.select(this));
-                    //     console.log("OldY: "+oldvalueY);
-                    //     console.log("NewY: " + newvalueY);
-                    // }
-                    d3.select(this)
-                        .transition()
-                        .duration(1000)
-                        .attr("y", newvalueY)
+                    if (d3.select(this).attr('id') === "testThisIssue") {
+                        var oldvalueY = y(d3.select(this).attr("y"));
+                        var newvalueY = parseFloat(oldvalueY) + diffHvert;
+                        d3.select(this)
+                            .transition()
+                            .duration(1000)
+                            .attr("y", newvalueY)
+                    } else {
 
+                        var oldvalueY = y(d3.select(this).attr("y"));
+                        var newvalueY = parseFloat(oldvalueY) + diffHvert;
+                        // if (diffHvert != 0){
+                        //     console.log(d3.select(this));
+                        //     console.log("OldY: "+oldvalueY);
+                        //     console.log("NewY: " + newvalueY);
+                        // }
+                        d3.select(this)
+                            .transition()
+                            .duration(1000)
+                            .attr("y", newvalueY)
+                    }
                 })
             }
         });

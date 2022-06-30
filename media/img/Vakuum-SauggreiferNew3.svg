@@ -30,7 +30,7 @@
 <rect x="247.8" y="301.7" transform="matrix(-1 -5.360657e-11 5.360657e-11 -1 535.3456 613.953)" class="sauggreifer_st1 beweglicherArm" width="39.7" height="10.5"/>
 <rect x="238.9" y="188.5" transform="matrix(-1 -5.365720e-11 5.365720e-11 -1 486.7121 412.4897)" class="sauggreifer_st1 beweglicherArm" width="8.9" height="35.5"/>
 <rect x="239.2" y="265.2" transform="matrix(-1 -5.388147e-11 5.388147e-11 -1 486.7121 565.9899)" class="sauggreifer_st1 beweglicherArm" width="8.3" height="35.5"/>
-<rect x="608.7" y="188.6" transform="matrix(-1 -5.370960e-11 5.370960e-11 -1 1376.1213 492.7803)" class="sauggreifer_st1 beweglicherArm" width="158.8" height="115.6"/>
+<rect x="608.7" y="188.6" transform="matrix(-1 -5.370960e-11 5.370960e-11 -1 1376.1213 492.7803)" class="sauggreifer_st1 beweglicherArm" id="testThisIssue" width="158.8" height="115.6"/>
 <rect x="146.5" y="189.4" transform="matrix(-1 -5.539670e-11 5.539670e-11 -1 328.1333 413.6134)" class="sauggreifer_st2 beweglicherArm" width="35.2" height="34.7"/>
 <rect x="109.1" y="189.7" transform="matrix(-1 -5.459423e-11 5.459423e-11 -1 255.6 454.5334)" class="sauggreifer_st2 beweglicherArm" width="37.3" height="75.2"/>
 <rect x="77.1" y="189.4" transform="matrix(-1 -5.878599e-11 5.878599e-11 -1 223.5754 413.7333)" class="sauggreifer_st1 beweglicherArm" width="69.4" height="34.9"/>
