@@ -124,51 +124,7 @@
                                 <?php echo $lang['table_h2'] ?>
                             </th>
                         </tr>
-                        <tr>
-                            <td>Sensor 1</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sensor 2</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" checked disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sensor 3</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sensor 4</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sensor 5</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
+                        <?php include('./incl/module1.php'); ?>
                     </table>
                 </div>
             </div>
@@ -187,51 +143,7 @@
                                 <?php echo $lang['table_h2'] ?>
                             </th>
                         </tr>
-                        <tr>
-                            <td>Sensor 1</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sensor 2</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" checked disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sensor 3</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sensor 4</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sensor 5</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
+                        <?php include('./incl/module2.php'); ?>
                     </table>
                 </div>
             </div>
@@ -250,51 +162,7 @@
                                 <?php echo $lang['table_h2'] ?>
                             </th>
                         </tr>
-                        <tr>
-                            <td>Sensor 1</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sensor 2</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" checked disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sensor 3</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sensor 4</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sensor 5</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
+                        <?php include('./incl/module3.php'); ?>
                     </table>
                 </div>
             </div>
@@ -313,51 +181,7 @@
                                 <?php echo $lang['table_h2'] ?>
                             </th>
                         </tr>
-                        <tr>
-                            <td>Sensor 1</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sensor 2</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" checked disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sensor 3</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sensor 4</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sensor 5</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
+                        <?php include('./incl/module4.php'); ?>
                     </table>
                 </div>
             </div>
@@ -376,51 +200,7 @@
                                 <?php echo $lang['table_h2'] ?>
                             </th>
                         </tr>
-                        <tr>
-                            <td>Sensor 1</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sensor 2</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" checked disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sensor 3</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sensor 4</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sensor 5</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox" disabled>
-                                    <span class="slider round no-pointer"></span>
-                                </label>
-                            </td>
-                        </tr>
+                        <?php include('./incl/module5.php'); ?>
                     </table>
                 </div>
             </div>
@@ -466,51 +246,7 @@
                                         <?php echo $lang['table_h2'] ?>
                                     </th>
                                 </tr>
-                                <tr>
-                                    <td>Sensor 1</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sensor 2</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" checked disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sensor 3</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sensor 4</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sensor 5</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
+                                <?php include('./incl/module1.php'); ?>
                             </table>
 
                             <a href="#legende" data-toggle="modal" class="animated-button">
@@ -562,51 +298,7 @@
                                         <?php echo $lang['table_h2'] ?>
                                     </th>
                                 </tr>
-                                <tr>
-                                    <td>Sensor 1</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sensor 2</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" checked disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sensor 3</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sensor 4</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sensor 5</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
+                                <?php include('./incl/module2.php'); ?>
                             </table>
 
                             <a href="#legende" data-toggle="modal" class="animated-button">
@@ -658,51 +350,7 @@
                                         <?php echo $lang['table_h2'] ?>
                                     </th>
                                 </tr>
-                                <tr>
-                                    <td>Sensor 1</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sensor 2</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" checked disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sensor 3</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sensor 4</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sensor 5</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
+                                <?php include('./incl/module3.php'); ?>
                             </table>
 
                             <a href="#legende" data-toggle="modal" class="animated-button">
@@ -754,51 +402,7 @@
                                         <?php echo $lang['table_h2'] ?>
                                     </th>
                                 </tr>
-                                <tr>
-                                    <td>Sensor 1</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sensor 2</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" checked disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sensor 3</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sensor 4</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sensor 5</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
+                                <?php include('./incl/module4.php'); ?>
                             </table>
 
                             <a href="#legende" data-toggle="modal" class="animated-button">
@@ -850,51 +454,7 @@
                                         <?php echo $lang['table_h2'] ?>
                                     </th>
                                 </tr>
-                                <tr>
-                                    <td>Sensor 1</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sensor 2</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" checked disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sensor 3</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sensor 4</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Sensor 5</td>
-                                    <td>
-                                        <label class="switch">
-                                            <input type="checkbox" disabled>
-                                            <span class="slider round no-pointer"></span>
-                                        </label>
-                                    </td>
-                                </tr>
+                                <?php include('./incl/module5.php'); ?>
                             </table>
 
                             <a href="#legende" data-toggle="modal" class="animated-button">
