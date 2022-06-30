@@ -58,10 +58,13 @@ a {
     text-decoration: none !important;
 }
 
-.col-lg-2 {
-    max-width: 18.5% !important;
-    flex: 0 0 18.5%;
+@media (min-width: 1240px) {
+    .large-grid {
+        max-width: 18.5%;
+        flex: 0 0 18.5%;
+    }
 }
+
 
 a:hover {
     color: white;
