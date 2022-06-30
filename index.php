@@ -104,7 +104,7 @@
 
         <div class="row m-auto pr-3 pl-3 justify-content-center header_placeholder">
 
-            <div class="col-12 col-md-5 col-lg-3 m-2 p-0 card">
+            <div class="col-12 col-md-6 col-lg-2 m-2 p-0 card">
                 <div class="m-3">
                     <h4>
                         <?php echo $lang['module1'] ?>
@@ -123,7 +123,7 @@
                 </div>
             </div>
 
-            <div class="col-12 col-md-5 col-lg-3 m-2 p-0 card">
+            <div class="col-12 col-md-6 col-lg-2 m-2 p-0 card">
                 <div class="m-3">
                     <h4>
                         <?php echo $lang['module2'] ?>
@@ -142,7 +142,7 @@
                 </div>
             </div>
 
-            <div class="col-12 col-md-5 col-lg-3 m-2 p-0 card">
+            <div class="col-12 col-md-6 col-lg-2 m-2 p-0 card">
                 <div class="m-3">
                     <h4>
                         <?php echo $lang['module3'] ?>
@@ -161,7 +161,7 @@
                 </div>
             </div>
 
-            <div class="col-12 col-md-5 col-lg-3 m-2 p-0 card">
+            <div class="col-12 col-md-6 col-lg-2 m-2 p-0 card">
                 <div class="m-3">
                     <h4>
                         <?php echo $lang['module4'] ?>
@@ -180,7 +180,7 @@
                 </div>
             </div>
 
-            <div class="col-12 col-md-5 col-lg-3 m-2 p-0 card">
+            <div class="col-12 col-md-6 col-lg-2 m-2 p-0 card">
                 <div class="m-3">
                     <h4>
                         <?php echo $lang['module5'] ?>
