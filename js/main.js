@@ -76,7 +76,7 @@ async function updateSvgWithData(data) {
     var getDomainMaxRangeHHorizontalXScale = getMaxValue(data, "H-horizontal")
     var getDomainMaxRangeHVertikalYScale = getMaxValue(data, "H-vertikal")
     var getDomainMaxRangeVVertikalYScale = getMaxValue(data, "V-vertikal")
-    var getDomainMaxRangeVHorizontalXScale= getMaxValue(data, "V-horizontal")
+    var getDomainMaxRangeVHorizontalXScale = getMaxValue(data, "V-horizontal")
 
     for (element in data) {
         //Check time here
@@ -92,6 +92,7 @@ async function updateSvgWithData(data) {
                 createSvgHochregallager(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeHHorizontalXScale, getDomainMaxRangeHVertikalYScale);
                 createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeVHorizontalXScale, getDomainMaxRangeVVertikalYScale);
                 createSvgWipphebel(dataArray, Zeit);
+                createSvgSortierstrecke(dataArray, Zeit);
                 createSvgAmpel(dataArray);
                 //createSvgBrennofen(dataArray, Zeit);
             }
@@ -102,27 +103,19 @@ async function updateSvgWithData(data) {
     }
 }
 
-function getMaxValue(dataArray, key) {
-    var max;
 
-    for (var i = 0; i < dataArray.length; i++) {
-        if (max == null || parseInt(dataArray[i]["werte"][key]) > parseInt(max))
-            max = dataArray[i]["werte"][key];
-    }
-    return max;
-}
 function createSvgUebersicht(dataArray, Zeit, dataArrayVorher) {
     d3.xml("./media/img/sehr_grobe_Gesamtansicht.svg",
-    function (error, documentFragment) {
-        if (error) { console.log(error); return; }
+        function (error, documentFragment) {
+            if (error) { console.log(error); return; }
 
-        var svgNode = documentFragment
-            .getElementsByTagName("svg")[0];
-        var main_chart_svg = d3.select("#Gesamtuebersicht")
-        if (document.getElementById('Gesamtuebersicht').getElementsByTagName('svg').length == 0) {
-            main_chart_svg.node().appendChild(svgNode);
-        }
-    });
+            var svgNode = documentFragment
+                .getElementsByTagName("svg")[0];
+            var main_chart_svg = d3.select("#Gesamtuebersicht")
+            if (document.getElementById('Gesamtuebersicht').getElementsByTagName('svg').length == 0) {
+                main_chart_svg.node().appendChild(svgNode);
+            }
+        });
 }
 
 function createSvgHochregallager(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeHHorizontalXScale, getDomainMaxRangeHVertikalYScale) {
@@ -255,7 +248,41 @@ function hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y) {
     })
 
 }
+function createSvgSortierstrecke(dataArray, Zeit) {
+    d3.xml("./media/img/Sortierstrecke3.svg",
+        function (error, documentFragment) {
+            if (error) { console.log(error); return; }
+            var svgNode = documentFragment
+                .getElementsByTagName("svg")[0];
+            var main_chart_svg = d3.select("#Sortierstrecke")
+            if (document.getElementById('Sortierstrecke').getElementsByTagName('svg').length == 0) {
+                main_chart_svg.node().appendChild(svgNode);
+            }
+            svg = main_chart_svg.select("svg")
+            if (dataArray != "") {
+                var getNumbersRegex = new RegExp(".*?\d+")
+                svg.selectAll(".foerderband").each(function (d, i) {
+                    if (true) {
+                        var classWithNumber = d3.select(this).attr('class').split(' ');
+                        var regexResult = classWithNumber[0].match(/\d+/g);
+                        if (regexResult.includes("16")) {
+                            d3.select(this)
+                                .attr("class", "st17 foerderband")
+                        } else if (regexResult.includes("17")){
+                            d3.select(this)
+                                .attr("class", "black18 foerderband")
+                        } else if (regexResult.includes("18")){
+                            d3.select(this)
+                                .attr("class", "st16 foerderband")
+                        }
+                    }
+                })
+            }
 
+        });
+
+
+}
 //Fehler: wenn wipphebel dann gleiche farbklassen verwendet und somit hochregallager andere farbe. aber egal da wir andere seiten verwenden fpr einzelansichten
 function createSvgWipphebel(dataArray, Zeit) {
     d3.xml("./media/img/Wipphebel2.svg",
@@ -335,16 +362,17 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMax
                 var scaledHvertVorher = y(dataArrayVorher[ArrayWithVariablesForVakuumSauggreifer[3]]);
                 var diffHvert = scaledHvert - scaledHvertVorher;
 
-                 console.log("scaledHvert" + scaledHvert);
-                 console.log("scaledHvertVorher" + scaledHvertVorher);
-                 console.log("DiffHvert" + diffHvert);
+                //  console.log("scaledHvert" + scaledHvert);
+                //  console.log("scaledHvertVorher" + scaledHvertVorher);
+                //  console.log("DiffHvert" + diffHvert);
                 // console.log("------------------------------------");
                 svg.selectAll(".beweglicherArm").each(function (d, i) {
 
                     if (d3.select(this).attr('id') === "testThisIssue") {
                         var oldvalueY = d3.select(this).attr("y");
-                        console.log("Old: " + oldvalueY);
-                        console.log("Diff: " + diffHvert);
+                        // console.log("Old: " + oldvalueY);
+                        // console.log("Diff: " + diffHvert);
+                        // console.log("------------------------------------")
                         var newvalueY = parseFloat(oldvalueY) + diffHvert;
                         d3.select(this)
                             .transition()
@@ -408,4 +436,14 @@ function sleep(ms) {
 
 function rgbToHex(r, g, b) {
     return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
+function getMaxValue(dataArray, key) {
+    var max;
+
+    for (var i = 0; i < dataArray.length; i++) {
+        if (max == null || parseInt(dataArray[i]["werte"][key]) > parseInt(max))
+            max = dataArray[i]["werte"][key];
+    }
+    return max;
 }
