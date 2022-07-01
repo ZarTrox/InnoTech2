@@ -82,8 +82,13 @@ $lang = array(
 
 
    /* NOTE Einzelübersicht */
-   "single_view_h1" => "Description:",
-   "single_view_h2" => "Status of Sensors & Actuators:",
+   "single_view_h1" => "View:",
+   "single_view_h1.1" => "Top view",
+   "single_view_h1.2" => "Side view",
+   "single_view_h1.3" => "Top and side view",
+
+   "single_view_h2" => "Description:",
+   "single_view_h3" => "Status of Sensors & Actuators:",
 
 
    /* NOTE Footer */

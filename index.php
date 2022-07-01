@@ -18,13 +18,13 @@
     <meta name="robots" content="noindex, nofollow, nosnippet">
 
     <!--
-   <meta name="robots" content="index, follow">
-   <meta name="robots" content="all">
-   <meta name="revisit-after" content="7 days">
-    -->
-
+    <meta name="robots" content="index, follow">
+    <meta name="robots" content="all">
+    <meta name="revisit-after" content="7 days">
     <meta name="keywords" content="">
     <meta name="description" content="">
+    -->
+
 
     <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
     <script src="./js/main.js"></script>
@@ -53,13 +53,13 @@
         <div class="row m-0 p-0">
 
 
-            <div class="col-12 col-md-6 pt-3 pb-3">
+            <div class="col-12 col-xl-6 pt-3 pb-3">
 
-                <img class="overview_pic" id="overview_two" src="./media/img/Gesamtübersicht_FischerTechnik.png" alt="Gesamtübersicht Fischer Technik">
+                <img class="overview_pic" id="overview_two" src="./media/img/sehr_grobe_Gesamtansicht.svg" alt="Gesamtübersicht Fischer Technik">
 
             </div>
 
-            <div class="col-12 col-md-6 pt-3 pb-3">
+            <div class="col-12 col-xl-6 pt-3 pb-3">
 
                 <img class="overview_pic" id="overview_three" src="./media/img/Gesamtübersicht_Umsetzer.png" alt="Gesamtübersicht Umsetzer">
 
@@ -102,10 +102,10 @@
             <?php echo $lang['header2'] ?>
         </h1>
 
-        <div class="row m-auto pr-3 pl-3 justify-content-center header_placeholder">
+        <div class="row m-0 justify-content-center header_placeholder">
 
-            <div class="col-12 col-md-6 col-lg-3 large-grid m-2 p-0 card">
-                <div class="m-3">
+            <div class="col-12 col-md-6 col-lg-3 large-grid oder-1 order-xl-2 p-0 card_live_status">
+                <div class="m-1">
                     <h4>
                         <?php echo $lang['module1'] ?>
                     </h4>
@@ -123,8 +123,8 @@
                 </div>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-3 large-grid m-2 p-0 card">
-                <div class="m-3">
+            <div class="col-12 col-md-6 col-lg-3 large-grid oder-1 order-xl-2 p-0 card_live_status">
+                <div class="m-1">
                     <h4>
                         <?php echo $lang['module2'] ?>
                     </h4>
@@ -142,27 +142,10 @@
                 </div>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-3 large-grid m-2 p-0 card">
-                <div class="m-3">
-                    <h4>
-                        <?php echo $lang['module3'] ?>
-                    </h4>
-                    <table>
-                        <tr>
-                            <th>
-                                <?php echo $lang['table_h1'] ?>
-                            </th>
-                            <th>
-                                <?php echo $lang['table_h2'] ?>
-                            </th>
-                        </tr>
-                        <?php include('./incl/module3.php'); ?>
-                    </table>
-                </div>
-            </div>
 
-            <div class="col-12 col-md-6 col-lg-3 large-grid m-2 p-0 card">
-                <div class="m-3">
+
+            <div class="col-12 col-md-6 col-lg-3 large-grid oder-1 order-xl-2 p-0 card_live_status">
+                <div class="m-1">
                     <h4>
                         <?php echo $lang['module4'] ?>
                     </h4>
@@ -180,8 +163,8 @@
                 </div>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-3 large-grid m-2 p-0 card">
-                <div class="m-3">
+            <div class="col-12 col-md-6 col-lg-3 large-grid oder-1 order-xl-2 p-0 card_live_status">
+                <div class="m-1">
                     <h4>
                         <?php echo $lang['module5'] ?>
                     </h4>
@@ -195,6 +178,26 @@
                             </th>
                         </tr>
                         <?php include('./incl/module5.php'); ?>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="col-12 oder-2 order-xl-1 large-grid p-0 card_live_status">
+                <div class="m-1">
+                    <h4>
+                        <?php echo $lang['module3'] ?>
+                    </h4>
+                    <table>
+                        <tr>
+                            <th>
+                                <?php echo $lang['table_h1'] ?>
+                            </th>
+                            <th>
+                                <?php echo $lang['table_h2'] ?>
+                            </th>
+                        </tr>
+                        <?php include('./incl/module3.php'); ?>
                     </table>
                 </div>
             </div>
@@ -222,9 +225,16 @@
                         <!--<img class="single_pic" src="./media/img/Hochregallager.svg" alt="Part Hochregallager">-->
                         <div id="HochregallagerSvg" class="single_pic" alt="Part Hochregallager"></div>
 
-                        <p class="mt-3">
+                        <h4 class="mt-3">
                             <?php echo $lang['single_view_h1'] ?>
+                        </h4>
+                        <p>
+                            <?php echo $lang['single_view_h1.2'] ?>
                         </p>
+
+                        <h4 class="mt-3">
+                            <?php echo $lang['single_view_h2'] ?>
+                        </h4>
                         <p>
                             Ein Hochregallager ist ein Grundfläche sparendes Lager, das computergestützt die Ein- und Auslagerung von Waren ermöglicht. In den meisten Fällen sind Hochregallager als Palettenregallager ausgeführt. Diese Standardisierung ermöglicht einen hohen Automatisierungsgrad und die Anbindung an ein ERP-System (Enterprise-Resource-Planning). Hochregallager zeichnen sich dabei durch eine hohe Raumnutzung und einen hohen Investitionsbedarf aus.
                         </p>
@@ -237,9 +247,9 @@
 
 
                         <div class="">
-                            <p>
-                                <?php echo $lang['single_view_h2'] ?>
-                            </p>
+                            <h4>
+                                <?php echo $lang['single_view_h3'] ?>
+                            </h4>
                             <table class="">
                                 <tr>
                                     <th>
@@ -284,9 +294,16 @@
                     <div class="col-12 col-lg-6">
                         <div class="single_pic" id="Vakuum" alt="Part Sauggreifer"></div>
 
-                        <p class="mt-3">
+                        <h4 class="mt-3">
                             <?php echo $lang['single_view_h1'] ?>
+                        </h4>
+                        <p>
+                            <?php echo $lang['single_view_h1.2'] ?>
                         </p>
+
+                        <h4 class="mt-3">
+                            <?php echo $lang['single_view_h2'] ?>
+                        </h4>
                         <p>
                             Industrieroboter sind universell einsetzbare Bewegungsautomaten mit mehreren Achsen, deren Bewegungen hinsichtlich Bewegungsfolge und Wegen bzw. Winkeln frei (d. h. ohne mechanischen bzw. menschlichen Eingriff) programmierbar und gegebenenfalls sensorgeführt sind. Sie sind mit Greifern, Werkzeugen oder anderen Fertigungsmitteln ausrüstbar und können Handhabungs- und/oder Fertigungsaufgaben ausführen.
                         </p>
@@ -294,9 +311,9 @@
                     </div>
                     <div class="col-12 col-lg-6">
                         <div class="">
-                            <p>
-                                <?php echo $lang['single_view_h2'] ?>
-                            </p>
+                            <h4>
+                                <?php echo $lang['single_view_h3'] ?>
+                            </h4>
                             <table class="">
                                 <tr>
                                     <th>
@@ -341,9 +358,16 @@
                     <div class="col-12 col-lg-6">
                         <img class="single_pic" src="./media/img/Brennofen.png" alt="Part Brennofen">
 
-                        <p class="mt-3">
+                        <h4 class="mt-3">
                             <?php echo $lang['single_view_h1'] ?>
+                        </h4>
+                        <p>
+                            <?php echo $lang['single_view_h1.2'] ?>
                         </p>
+
+                        <h4 class="mt-3">
+                            <?php echo $lang['single_view_h2'] ?>
+                        </h4>
 
                         <p>
                             Bei der Multi-Bearbeitungsstation mit Brennofen durchläuft das Werkstück automatisiert mehrere Stationen, die verschiedene Prozesse simulieren. Dabei kommen verschiedene Fördertechniken, wie zum Beispiel ein Förderband, ein Drehtisch und ein Vakuumsauggreifer, zum Einsatz. Der Bearbeitungsprozess beginnt mit dem Brennofen. Die Bearbeitung soll eingeleitet werden, sobald man ein Werkstück auf den Ofenschieber legt. Dabei wird die Lichtschranke unterbrochen, was dazu führen soll, dass das Tor des Ofens geöffnet und der Ofenschieber eingezogen wird.
@@ -353,9 +377,9 @@
                     </div>
                     <div class="col-12 col-lg-6">
                         <div class="">
-                            <p>
-                                <?php echo $lang['single_view_h2'] ?>
-                            </p>
+                            <h4>
+                                <?php echo $lang['single_view_h3'] ?>
+                            </h4>
                             <table class="">
                                 <tr>
                                     <th>
@@ -398,12 +422,18 @@
             <div class="container ">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <img class="single_pic" src="./media/img/Sortierstrecke.png" alt="Part Sortierstrecke">
+                        <img class="single_pic" src="./media/img/Sortierstrecke Oben und seitenansicht.svg" alt="Part Sortierstrecke">
 
-                        <p class="mt-3">
+                        <h4 class="mt-3">
                             <?php echo $lang['single_view_h1'] ?>
+                        </h4>
+                        <p>
+                            <?php echo $lang['single_view_h1.3'] ?>
                         </p>
 
+                        <h4 class="mt-3">
+                            <?php echo $lang['single_view_h2'] ?>
+                        </h4>
                         <p>
                             Die Sortierstrecke mit Farberkennung dient der automatisierten Trennung verschiedenfarbiger Bausteine. Dabei werden geometrisch gleiche, jedoch verschiedenfarbige Bauteile einem Farbsensor, mit Hilfe eines Förderbands zugeführt und dann, entsprechend ihrer Farbe, getrennt. Das Förderband wird von einem S-Motor angetrieben und der Förderweg wird mit Hilfe eines Impulstasters gemessen. Der Auswurf der Werkstücke erfolgt mit Pneumatikzylindern, die den entsprechenden Lagerstellen zugeordnet sind und von Magnetventilen betätigt werden. Mehrere Lichtschranken kontrollieren den Fluss der Werkstücke und ob sich Werkstücke in den Lagerstellen befinden.
                         </p>
@@ -411,9 +441,9 @@
                     </div>
                     <div class="col-12 col-lg-6">
                         <div class="">
-                            <p>
-                                <?php echo $lang['single_view_h2'] ?>
-                            </p>
+                            <h4>
+                                <?php echo $lang['single_view_h3'] ?>
+                            </h4>
                             <table class="">
                                 <tr>
                                     <th>
@@ -458,17 +488,27 @@
                     <div class="col-12 col-lg-6">
                         <div class="single_pic" id="WipphebelSvg" alt="Part Wipphebel"></div>
 
-                        <p class="mt-3">
+                        <h4 class="mt-3">
                             <?php echo $lang['single_view_h1'] ?>
+                        </h4>
+                        <p>
+                            <?php echo $lang['single_view_h1.2'] ?>
+                        </p>
+
+                        <h4 class="mt-3">
+                            <?php echo $lang['single_view_h2'] ?>
+                        </h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         </p>
 
 
                     </div>
                     <div class="col-12 col-lg-6">
-                        <p>
-                            <?php echo $lang['single_view_h1'] ?>
-                        </p>
-                        <div class=5">
+                        <div class="">
+                            <h4>
+                                <?php echo $lang['single_view_h3'] ?>
+                            </h4>
 
                             <table class="">
                                 <tr>

@@ -58,11 +58,8 @@ a {
     text-decoration: none !important;
 }
 
-@media (min-width: 1240px) {
-    .large-grid {
-        max-width: 18.5%;
-        flex: 0 0 18.5%;
-    }
+label {
+    margin: 0;
 }
 
 
@@ -405,11 +402,20 @@ body {
 
 
 /* NOTE Live Status */
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    width: 40%;
-    color: black;
+.card_live_status {
     font-size: smaller;
+    line-height: normal;
+}
+
+.card_live_status h4 {
+    text-align: center;
+}
+
+@media (min-width: 1200px) {
+    .large-grid {
+        max-width: 19.5%;
+        flex: 0 0 19.5%;
+    }
 }
 
 
