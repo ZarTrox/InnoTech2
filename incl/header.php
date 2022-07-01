@@ -5,8 +5,11 @@
         </a>
     </div>
 
-    <div class="overview_light_container">
-        <img class="overview_light" src="./media/img/ampel/Ampelfarbeaus.svg" alt="Ampel">
+    <div class="header_light_container">
+        <div class="header_light_basis header_light0"></div>
+        <div class="header_light_basis header_light0"></div>
+        <div class="header_light_basis header_light3"></div>
+        <div class="header_light_basis header_light0"></div>
     </div>
 
     <div class="header_links header_large">

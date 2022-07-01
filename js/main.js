@@ -73,13 +73,27 @@ function getData() {
 in updatesvgwithdata direkt alle infos mitgeben und die grafik immer neu gerneriern
 */
 async function updateSvgWithData(data) {
+    var getDomainMaxRangeHHorizontalXScale = getMaxValue(data, "H-horizontal")
+    var getDomainMaxRangeHVertikalYScale = getMaxValue(data, "H-vertikal")
+    var getDomainMaxRangeVVertikalYScale = getMaxValue(data, "V-vertikal")
+    var getDomainMaxRangeVHorizontalXScale= getMaxValue(data, "V-horizontal")
+
     for (element in data) {
         //Check time here
         await sleep(1000)
         if (data[element]) {
             //Todo fall für 0 einfuegen
             if (element != 0) {
-                updateStationen(data[element]["werte"], data[element]["datum"], data[element - 1]["werte"]);
+                var dataArray = data[element]["werte"];
+                var Zeit = data[element]["datum"];
+                var dataArrayVorher = data[element - 1]["werte"];
+                //updateStationen(data[element]["werte"], data[element]["datum"], data[element - 1]["werte"], getDomainMaxRangeHHorizontalXScale);
+                createSvgUebersicht(dataArray, Zeit, dataArrayVorher);
+                createSvgHochregallager(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeHHorizontalXScale, getDomainMaxRangeHVertikalYScale);
+                createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeVHorizontalXScale, getDomainMaxRangeVVertikalYScale);
+                createSvgWipphebel(dataArray, Zeit);
+                createSvgAmpel(dataArray);
+                //createSvgBrennofen(dataArray, Zeit);
             }
 
         } else {
@@ -88,6 +102,15 @@ async function updateSvgWithData(data) {
     }
 }
 
+function getMaxValue(dataArray, key) {
+    var max;
+
+    for (var i = 0; i < dataArray.length; i++) {
+        if (max == null || parseInt(dataArray[i]["werte"][key]) > parseInt(max))
+            max = dataArray[i]["werte"][key];
+    }
+    return max;
+}
 function createSvgUebersicht(dataArray, Zeit, dataArrayVorher) {
     d3.xml("./media/img/sehr_grobe_Gesamtansicht.svg",
     function (error, documentFragment) {
@@ -102,7 +125,7 @@ function createSvgUebersicht(dataArray, Zeit, dataArrayVorher) {
     });
 }
 
-function createSvgHochregallager(dataArray, Zeit, dataArrayVorher) {
+function createSvgHochregallager(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeHHorizontalXScale, getDomainMaxRangeHVertikalYScale) {
     d3.xml("./media/img/HochregallagerNew12.svg",
         function (error, documentFragment) {
             if (error) { console.log(error); return; }
@@ -120,10 +143,10 @@ function createSvgHochregallager(dataArray, Zeit, dataArrayVorher) {
                 var heightDiv = document.getElementById('HochregallagerSvg').offsetHeight;
                 var widthLastColumn = d3.select("#letzteStrebe").attr("x");
                 var x = d3.scaleLinear()
-                    .domain([0, 2370])
-                    .range([0, widthLastColumn])
+                    .domain([0, getDomainMaxRangeHHorizontalXScale])
+                    .range([0, widthLastColumn]) //vlt - 1/10. der länge abziehen wegen rahmen elemente?
                 var y = d3.scaleLinear()
-                    .domain([0, 1108])
+                    .domain([0, getDomainMaxRangeHVertikalYScale])
                     .range([50, document.getElementById('HochregallagerSvg').offsetHeight])
                 hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y);
             }
@@ -271,7 +294,7 @@ function createSvgWipphebel(dataArray, Zeit) {
         });
 }
 
-function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher) {
+function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeVHorizontalXScale, getDomainMaxRangeVVertikalYScale) {
     //TODO: Elemente in svg grupieren
     d3.xml("./media/img/Vakuum-SauggreiferNew3.svg",
         function (error, documentFragment) {
@@ -285,11 +308,11 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher) {
             svg = main_chart_svg.select("svg")
             if (dataArray != "") {
                 //TOdo: Skalieren der Grafik
-                // var x = d3.scaleLinear()
-                //     .domain([0, 2370])
-                //     .range([0, widthLastColumn])
+                var x = d3.scaleLinear()
+                    .domain([0, getDomainMaxRangeVHorizontalXScale])
+                    .range([0, 0])
                 var y = d3.scaleLinear()
-                    .domain([0, 977])
+                    .domain([0, getDomainMaxRangeVVertikalYScale])
                     .range([768, 0])
 
                 //Flippen wenn der Kran auf der rechten seite ist
@@ -303,22 +326,25 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher) {
                 // if (madde <= 2) {
                 //     dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 0
                 // } else 
-                if (madde > 2 && madde <= 4) {
-                    dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 50
-                } else if (madde > 4) {
-                    dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 200
-                }
+                // if (madde > 2 && madde <= 4) {
+                //     dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 50
+                // } else if (madde > 4) {
+                //     dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 200
+                // }
                 var scaledHvert = y(dataArray[ArrayWithVariablesForVakuumSauggreifer[3]]);
                 var scaledHvertVorher = y(dataArrayVorher[ArrayWithVariablesForVakuumSauggreifer[3]]);
                 var diffHvert = scaledHvert - scaledHvertVorher;
-                // console.log("scaledHvert" + scaledHvert);
-                // console.log("scaledHvertVorher" + scaledHvertVorher);
-                // console.log("DiffHvert" + diffHvert);
+
+                 console.log("scaledHvert" + scaledHvert);
+                 console.log("scaledHvertVorher" + scaledHvertVorher);
+                 console.log("DiffHvert" + diffHvert);
                 // console.log("------------------------------------");
                 svg.selectAll(".beweglicherArm").each(function (d, i) {
 
                     if (d3.select(this).attr('id') === "testThisIssue") {
-                        var oldvalueY = y(d3.select(this).attr("y"));
+                        var oldvalueY = d3.select(this).attr("y");
+                        console.log("Old: " + oldvalueY);
+                        console.log("Diff: " + diffHvert);
                         var newvalueY = parseFloat(oldvalueY) + diffHvert;
                         d3.select(this)
                             .transition()
@@ -326,13 +352,8 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher) {
                             .attr("y", newvalueY)
                     } else {
 
-                        var oldvalueY = y(d3.select(this).attr("y"));
+                        var oldvalueY = d3.select(this).attr("y");
                         var newvalueY = parseFloat(oldvalueY) + diffHvert;
-                        // if (diffHvert != 0){
-                        //     console.log(d3.select(this));
-                        //     console.log("OldY: "+oldvalueY);
-                        //     console.log("NewY: " + newvalueY);
-                        // }
                         d3.select(this)
                             .transition()
                             .duration(1000)
@@ -373,14 +394,14 @@ function createSvgAmpel(dataArray) {
     }
 }
 
-function updateStationen(dataArray, Zeit, dataArrayVorher) {
-    createSvgUebersicht(dataArray, Zeit, dataArrayVorher);
-    createSvgHochregallager(dataArray, Zeit, dataArrayVorher);
-    createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher);
-    createSvgWipphebel(dataArray, Zeit);
-    createSvgAmpel(dataArray);
-    //createSvgBrennofen(dataArray, Zeit);
-}
+// function updateStationen(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeHHorizontalXScale) {
+//     createSvgUebersicht(dataArray, Zeit, dataArrayVorher);
+//     createSvgHochregallager(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeHHorizontalXScale);
+//     createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher);
+//     createSvgWipphebel(dataArray, Zeit);
+//     createSvgAmpel(dataArray);
+//     //createSvgBrennofen(dataArray, Zeit);
+// }
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
