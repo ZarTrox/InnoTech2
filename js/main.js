@@ -89,9 +89,17 @@ async function updateSvgWithData(data) {
 }
 
 function createSvgUebersicht(dataArray, Zeit, dataArrayVorher) {
-    /*
-        Selber erstellen oder bild hernehmen?
-    */
+    d3.xml("./media/img/sehr_grobe_Gesamtansicht.svg",
+    function (error, documentFragment) {
+        if (error) { console.log(error); return; }
+
+        var svgNode = documentFragment
+            .getElementsByTagName("svg")[0];
+        var main_chart_svg = d3.select("#Gesamtuebersicht")
+        if (document.getElementById('Gesamtuebersicht').getElementsByTagName('svg').length == 0) {
+            main_chart_svg.node().appendChild(svgNode);
+        }
+    });
 }
 
 function createSvgHochregallager(dataArray, Zeit, dataArrayVorher) {
