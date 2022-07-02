@@ -1,3 +1,11 @@
+/*  Aufgaben Celina:
+- Richtige Skalieren umsetzen
+- Über neue Idee die Zeit zutracken denken (Mit der Uhrzeit die mitgeliefert wird arbeiten?)
+
+
+
+*/
+
 //Arrays with all variables in them
 
 const ArrayWithVariablesForHochregalLager = [
@@ -7,7 +15,6 @@ const ArrayWithVariablesForHochregalLager = [
     "Referenztaster horizontal",
     "Referenztaster Ausleger vorne",
     "Referenztaster Ausleger hinten",
-    "B-Motor Foerderband vorwaerts", //Wo ist rückwerts? Ist das hier anwendbar?
     "H-horizontal",
     "H-vertikal"
 ]
@@ -34,7 +41,12 @@ const ArrayWithVariablesForBearbeitungsstationMitBrennofen = [
 ]
 
 const ArrayWithVariablesForSortierstreckeMitFarberkennung = [
-
+    "S-Lichtschranke Eingang",
+    "S-Lichtschranke nach Farbsensor",
+    "S-Lichtschranke weiss",
+    "S-Lichtschranke rot",
+    "S-Lichtschranke blau",
+    "S-Motor Foerderband"
 ]
 
 const ArrayWithVariablesForVakuumSauggreifer = [
@@ -64,14 +76,10 @@ function getData() {
         .then(response => response.json())
         .then(data => {
             updateSvgWithData(data);
-            //testSvg(data);
         })
 
 }
-/*Idee:
 
-in updatesvgwithdata direkt alle infos mitgeben und die grafik immer neu gerneriern
-*/
 async function updateSvgWithData(data) {
     var getDomainMaxRangeHHorizontalXScale = getMaxValue(data, "H-horizontal")
     var getDomainMaxRangeHVertikalYScale = getMaxValue(data, "H-vertikal")
@@ -95,6 +103,9 @@ async function updateSvgWithData(data) {
                 createSvgSortierstrecke(dataArray, Zeit);
                 createSvgAmpel(dataArray);
                 //createSvgBrennofen(dataArray, Zeit);
+            } else {
+                //createAllSVGs();
+                //Oder in den FUnktionen pruefen ob dataArrayVorher = null
             }
 
         } else {
@@ -103,9 +114,8 @@ async function updateSvgWithData(data) {
     }
 }
 
-
 function createSvgUebersicht(dataArray, Zeit, dataArrayVorher) {
-    d3.xml("./media/img/sehr_grobe_Gesamtansicht.svg",
+    d3.xml("./media/img/grobe_Gesamtansicht5.svg",
         function (error, documentFragment) {
             if (error) { console.log(error); return; }
 
@@ -115,6 +125,9 @@ function createSvgUebersicht(dataArray, Zeit, dataArrayVorher) {
             if (document.getElementById('Gesamtuebersicht').getElementsByTagName('svg').length == 0) {
                 main_chart_svg.node().appendChild(svgNode);
             }
+
+
+            //svg.select("#HochregallagerLink").appendChild("<a href='www.w3schools.com/html/html_links.asp'></a>")
         });
 }
 
@@ -130,17 +143,19 @@ function createSvgHochregallager(dataArray, Zeit, dataArrayVorher, getDomainMaxR
                 main_chart_svg.node().appendChild(svgNode);
             }
             svg = main_chart_svg.select("svg")
+
             if (dataArray != "") {
                 //Direkt am anfang mappen und den maximalen wert anchfragen
                 var widthDiv = document.getElementById('HochregallagerSvg').offsetWidth;
                 var heightDiv = document.getElementById('HochregallagerSvg').offsetHeight;
                 var widthLastColumn = d3.select("#letzteStrebe").attr("x");
+                console.log(parseInt(getDomainMaxRangeHHorizontalXScale) / 10);
                 var x = d3.scaleLinear()
                     .domain([0, getDomainMaxRangeHHorizontalXScale])
-                    .range([0, widthLastColumn]) //vlt - 1/10. der länge abziehen wegen rahmen elemente?
+                    .range([parseInt(getDomainMaxRangeHHorizontalXScale) / 10, widthLastColumn]) //vlt - 1/10. der länge abziehen wegen rahmen elemente?
                 var y = d3.scaleLinear()
                     .domain([0, getDomainMaxRangeHVertikalYScale])
-                    .range([50, document.getElementById('HochregallagerSvg').offsetHeight])
+                    .range([parseInt(heightDiv) / 10, heightDiv])
                 hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y);
             }
             //Update input checkboxes
@@ -158,47 +173,64 @@ function createSvgHochregallager(dataArray, Zeit, dataArrayVorher, getDomainMaxR
 
 function hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y) {
     //Hhori & HVerti
-    var scaledHHorizontal = x(dataArray[ArrayWithVariablesForHochregalLager[7]]);
-    var scaledHHorizontalVorher = x(dataArrayVorher[ArrayWithVariablesForHochregalLager[7]]);
-    var scaledHvert = y(dataArray[ArrayWithVariablesForHochregalLager[8]]);
-    var scaledHvertVorher = y(dataArrayVorher[ArrayWithVariablesForHochregalLager[8]]);
 
-    var diffHHorizontal = scaledHHorizontal - scaledHHorizontalVorher;
-    var diffHvert = scaledHvertVorher - scaledHvert;
-    svg.selectAll(".turmBewegen").each(function (d, i) {
-        var oldvalueX = d3.select(this).attr("x");
-        var newvalueX = parseFloat(oldvalueX) + diffHHorizontal;
-        // if (newvalueX < 0) {
-        //     console.log("X alt: " + oldvalueX);
-        //     console.log("X neu: " + newvalueX);
-        // }
-        d3.select(this)
-            .transition()
-            .duration(1000)
-            .attr("x", newvalueX)
-    })
+    if (dataArrayVorher) {
+        var scaledHHorizontal = x(dataArray[ArrayWithVariablesForHochregalLager[6]]);
+        var scaledHHorizontalVorher = x(dataArrayVorher[ArrayWithVariablesForHochregalLager[6]]);
+        var scaledHvert = y(dataArray[ArrayWithVariablesForHochregalLager[7]]);
+        var scaledHvertVorher = y(dataArrayVorher[ArrayWithVariablesForHochregalLager[7]]);
 
-    svg.selectAll(".greiferBewegen").each(function (d, i) {
-        var oldvalueY = d3.select(this).attr("y");
-        var newvalueY = parseFloat(oldvalueY) + diffHvert;
-        var oldvalueX = d3.select(this).attr("x");
-        var newvalueX = parseFloat(oldvalueX) + diffHHorizontal;
-        // if (newvalueX < 0) {
-        //     console.log("X alt Greifer: " + oldvalueX);
-        //     console.log("X neu Greifer: " + newvalueX);
-        // }
-        // if (newvalueY < 0) {
-        //     console.log("Y alt Greifer: " + oldvalueY);
-        //     console.log("Y neu Greifer: " + newvalueY);
-        // }
-        d3.select(this)
-            .transition()
-            .duration(1000)
-            .attr("y", newvalueY)
-            .attr("x", newvalueX)
-        //Motor blinken lassen?
-    })
+        var diffHHorizontal = scaledHHorizontal - scaledHHorizontalVorher;
+        var diffHvert = scaledHvertVorher - scaledHvert;
+        svg.selectAll(".turmBewegen").each(function (d, i) {
+            var oldvalueX = d3.select(this).attr("x");
+            var newvalueX = parseFloat(oldvalueX) + diffHHorizontal;
+            // if (newvalueX < 0) {
+            //     console.log("X alt: " + oldvalueX);
+            //     console.log("X neu: " + newvalueX);
+            // }
+            d3.select(this)
+                .transition()
+                .duration(1000)
+                .attr("x", newvalueX)
+        })
 
+        svg.selectAll(".greiferBewegen").each(function (d, i) {
+            var oldvalueY = d3.select(this).attr("y");
+            var newvalueY = parseFloat(oldvalueY) + diffHvert;
+            var oldvalueX = d3.select(this).attr("x");
+            var newvalueX = parseFloat(oldvalueX) + diffHHorizontal;
+            // if (newvalueX < 0) {
+            //     console.log("X alt Greifer: " + oldvalueX);
+            //     console.log("X neu Greifer: " + newvalueX);
+            // }
+            // if (newvalueY < 0) {
+            //     console.log("Y alt Greifer: " + oldvalueY);
+            //     console.log("Y neu Greifer: " + newvalueY);
+            // }
+            d3.select(this)
+                .transition()
+                .duration(1000)
+                .attr("y", newvalueY)
+                .attr("x", newvalueX)
+            //Motor blinken lassen?
+        })
+    } else {
+        svg.selectAll(".turmBewegen").each(function (d, i) {
+            d3.select(this)
+                .transition()
+                .duration(1000)
+                .attr("x", x(dataArray[ArrayWithVariablesForHochregalLager[6]]))
+        })
+
+        svg.selectAll(".greiferBewegen").each(function (d, i) {
+            d3.select(this)
+                .transition()
+                .duration(1000)
+                .attr("y", y(dataArray[ArrayWithVariablesForHochregalLager[7]]))
+                .attr("x", x(dataArray[ArrayWithVariablesForHochregalLager[6]]))
+        })
+    }
     //Und evtl mit lichtschranke aussen verbinden?
     //Blinkt sehr selten? Gehört das so?
     if (dataArray[ArrayWithVariablesForHochregalLager[0]] == " false") {
@@ -249,7 +281,7 @@ function hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y) {
 
 }
 function createSvgSortierstrecke(dataArray, Zeit) {
-    d3.xml("./media/img/Sortierstrecke3.svg",
+    d3.xml("./media/img/Sortierstrecke7.svg",
         function (error, documentFragment) {
             if (error) { console.log(error); return; }
             var svgNode = documentFragment
@@ -259,24 +291,102 @@ function createSvgSortierstrecke(dataArray, Zeit) {
                 main_chart_svg.node().appendChild(svgNode);
             }
             svg = main_chart_svg.select("svg")
+
             if (dataArray != "") {
-                var getNumbersRegex = new RegExp(".*?\d+")
-                svg.selectAll(".foerderband").each(function (d, i) {
-                    if (true) {
+                if (dataArray[ArrayWithVariablesForSortierstreckeMitFarberkennung[5]] === " true") { //Wenn variable x fuer motor is true dann....
+                    svg.selectAll(".foerderband").each(function (d, i) {
+
                         var classWithNumber = d3.select(this).attr('class').split(' ');
                         var regexResult = classWithNumber[0].match(/\d+/g);
                         if (regexResult.includes("16")) {
                             d3.select(this)
-                                .attr("class", "st17 foerderband")
-                        } else if (regexResult.includes("17")){
+                                .attr("class", "sortierstrecke_st17 foerderband")
+                        } else if (regexResult.includes("17")) {
                             d3.select(this)
-                                .attr("class", "black18 foerderband")
-                        } else if (regexResult.includes("18")){
+                                .attr("class", "sortierstrecke_black18 foerderband")
+                        } else if (regexResult.includes("18")) {
                             d3.select(this)
-                                .attr("class", "st16 foerderband")
+                                .attr("class", "sortierstrecke_st16 foerderband")
                         }
-                    }
-                })
+
+                    })
+                }
+                if (dataArray[ArrayWithVariablesForSortierstreckeMitFarberkennung[0]] === " false") {
+                    svg.select("#LichtschrankeEingangSeite")
+                        .transition()
+                        .attr("class", "sortierstrecke_Lichtschranke")
+                        .transition()
+                        .duration(1000)
+                        .attr("class", "sortierstrecke_Lichtschranke_transform")
+
+                    svg.select("#LichtschrankeEingangOben")
+                        .transition()
+                        .attr("class", "sortierstrecke_Lichtschranke")
+                        .transition()
+                        .duration(1000)
+                        .attr("class", "sortierstrecke_Lichtschranke_transform")
+                }
+                if (dataArray[ArrayWithVariablesForSortierstreckeMitFarberkennung[1]] === " false") {
+                    svg.select("#LichtschrankeNachFarbsensorSeite")
+                        .transition()
+                        .attr("class", "sortierstrecke_Lichtschranke")
+                        .transition()
+                        .duration(1000)
+                        .attr("class", "sortierstrecke_Lichtschranke_transform")
+                    svg.select("#LichtschrankeNachFarbsensorOben")
+                        .transition()
+                        .attr("class", "sortierstrecke_Lichtschranke")
+                        .transition()
+                        .duration(1000)
+                        .attr("class", "sortierstrecke_Lichtschranke_transform")
+
+                }
+                if (dataArray[ArrayWithVariablesForSortierstreckeMitFarberkennung[2]] === " false") {
+                    svg.select("#LichtschrankeWeissSeite")
+                        .transition()
+                        .attr("class", "sortierstrecke_Lichtschranke")
+                        .transition()
+                        .duration(1000)
+                        .attr("class", "sortierstrecke_Lichtschranke_transform")
+
+                    svg.select("#LichtschrankeWeissOben")
+                        .transition()
+                        .attr("class", "sortierstrecke_Lichtschranke")
+                        .transition()
+                        .duration(1000)
+                        .attr("class", "sortierstrecke_Lichtschranke_transform")
+                }
+                if (dataArray[ArrayWithVariablesForSortierstreckeMitFarberkennung[3]] === " false") {
+                    svg.select("#LichtschrankeRotSeite")
+                        .transition()
+                        .attr("class", "sortierstrecke_Lichtschranke")
+                        .transition()
+                        .duration(1000)
+                        .attr("class", "sortierstrecke_Lichtschranke_transform")
+
+                    svg.select("#LichtschrankeRotOben")
+                        .transition()
+                        .attr("class", "sortierstrecke_Lichtschranke")
+                        .transition()
+                        .duration(1000)
+                        .attr("class", "sortierstrecke_Lichtschranke_transform")
+                }
+                if (dataArray[ArrayWithVariablesForSortierstreckeMitFarberkennung[4]] === " false") {
+                    svg.select("#LichtschrankeBlauSeite")
+                        .transition()
+                        .attr("class", "sortierstrecke_Lichtschranke")
+                        .transition()
+                        .duration(1000)
+                        .attr("class", "sortierstrecke_Lichtschranke_transform")
+
+                    svg.select("#LichtschrankeBlauOben")
+                        .transition()
+                        .attr("class", "sortierstrecke_Lichtschranke")
+                        .transition()
+                        .duration(1000)
+                        .attr("class", "sortierstrecke_Lichtschranke_transform")
+                }
+
             }
 
         });
@@ -358,36 +468,45 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMax
                 // } else if (madde > 4) {
                 //     dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 200
                 // }
-                var scaledHvert = y(dataArray[ArrayWithVariablesForVakuumSauggreifer[3]]);
-                var scaledHvertVorher = y(dataArrayVorher[ArrayWithVariablesForVakuumSauggreifer[3]]);
-                var diffHvert = scaledHvert - scaledHvertVorher;
+                if (dataArrayVorher) {
+                    var scaledHvert = y(dataArray[ArrayWithVariablesForVakuumSauggreifer[3]]);
+                    var scaledHvertVorher = y(dataArrayVorher[ArrayWithVariablesForVakuumSauggreifer[3]]);
+                    var diffHvert = scaledHvert - scaledHvertVorher;
 
-                //  console.log("scaledHvert" + scaledHvert);
-                //  console.log("scaledHvertVorher" + scaledHvertVorher);
-                //  console.log("DiffHvert" + diffHvert);
-                // console.log("------------------------------------");
-                svg.selectAll(".beweglicherArm").each(function (d, i) {
+                    //  console.log("scaledHvert" + scaledHvert);
+                    //  console.log("scaledHvertVorher" + scaledHvertVorher);
+                    //  console.log("DiffHvert" + diffHvert);
+                    // console.log("------------------------------------");
+                    svg.selectAll(".beweglicherArm").each(function (d, i) {
+                        if (d3.select(this).attr('id') === "testThisIssue") {
+                            var oldvalueY = d3.select(this).attr("y");
+                            // console.log("Old: " + oldvalueY);
+                            // console.log("Diff: " + diffHvert);
+                            // console.log("------------------------------------")
+                            var newvalueY = parseFloat(oldvalueY) + diffHvert;
+                            d3.select(this)
+                                .transition()
+                                .duration(1000)
+                                .attr("y", newvalueY)
+                        } else {
 
-                    if (d3.select(this).attr('id') === "testThisIssue") {
-                        var oldvalueY = d3.select(this).attr("y");
-                        // console.log("Old: " + oldvalueY);
-                        // console.log("Diff: " + diffHvert);
-                        // console.log("------------------------------------")
-                        var newvalueY = parseFloat(oldvalueY) + diffHvert;
+                            var oldvalueY = d3.select(this).attr("y");
+                            var newvalueY = parseFloat(oldvalueY) + diffHvert;
+                            d3.select(this)
+                                .transition()
+                                .duration(1000)
+                                .attr("y", newvalueY)
+                        }
+                    })
+                } else {
+                    svg.selectAll(".beweglicherArm").each(function (d, i) {
                         d3.select(this)
                             .transition()
                             .duration(1000)
-                            .attr("y", newvalueY)
-                    } else {
+                            .attr("y", y(dataArray[ArrayWithVariablesForVakuumSauggreifer[3]]));
 
-                        var oldvalueY = d3.select(this).attr("y");
-                        var newvalueY = parseFloat(oldvalueY) + diffHvert;
-                        d3.select(this)
-                            .transition()
-                            .duration(1000)
-                            .attr("y", newvalueY)
-                    }
-                })
+                    })
+                }
             }
         });
 }
@@ -411,6 +530,7 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMax
 // }
 
 function createSvgAmpel(dataArray) {
+
     if (dataArray[ArrayWithVariablesForAmpel[0]].includes(" true")) {
         document.getElementById("Ampel").src = "./media/img/ampel/Ampelfarbe_rot.svg";
     } else if (dataArray[ArrayWithVariablesForAmpel[1]].includes(" true")) {
@@ -422,14 +542,6 @@ function createSvgAmpel(dataArray) {
     }
 }
 
-// function updateStationen(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeHHorizontalXScale) {
-//     createSvgUebersicht(dataArray, Zeit, dataArrayVorher);
-//     createSvgHochregallager(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeHHorizontalXScale);
-//     createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher);
-//     createSvgWipphebel(dataArray, Zeit);
-//     createSvgAmpel(dataArray);
-//     //createSvgBrennofen(dataArray, Zeit);
-// }
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -440,7 +552,6 @@ function rgbToHex(r, g, b) {
 
 function getMaxValue(dataArray, key) {
     var max;
-
     for (var i = 0; i < dataArray.length; i++) {
         if (max == null || parseInt(dataArray[i]["werte"][key]) > parseInt(max))
             max = dataArray[i]["werte"][key];
