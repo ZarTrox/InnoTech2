@@ -1,3 +1,4 @@
+<!-- Hochregallager -->
 <tr>
     <td>
         <?php echo $lang['module1.1'] ?>

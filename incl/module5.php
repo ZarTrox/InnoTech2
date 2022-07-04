@@ -1,3 +1,5 @@
+<!-- Wipphebel -->
+
 <tr>
     <td>
         <?php echo $lang['module5.1'] ?>

@@ -1,3 +1,5 @@
+<!-- Brennofen -->
+
 <tr>
     <td>
         <?php echo $lang['module3.1'] ?>

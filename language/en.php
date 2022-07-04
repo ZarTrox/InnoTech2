@@ -77,7 +77,7 @@ $lang = array(
 
    /* NOTE Live Status */
    "table_h1" => "Sensor / Actuator:",
-   "table_h2" => "Active / Inactive",
+   "table_h2" => "Inactive / Active",
 
 
 

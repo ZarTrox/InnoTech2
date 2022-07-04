@@ -1,3 +1,5 @@
+<!-- Sauggreifer -->
+
 <tr>
     <td>
         <?php echo $lang['module2.1'] ?>

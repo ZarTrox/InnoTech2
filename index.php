@@ -104,6 +104,7 @@
 
         <div class="row m-0 justify-content-center header_placeholder">
 
+            <!-- 1. Hochregallager -->
             <div class="col-12 col-md-6 col-lg-3 large-grid oder-1 order-xl-2 p-0 card_live_status">
                 <div class="m-1">
                     <h4>
@@ -123,6 +124,7 @@
                 </div>
             </div>
 
+            <!-- 2. Sauggreifer -->
             <div class="col-12 col-md-6 col-lg-3 large-grid oder-1 order-xl-2 p-0 card_live_status">
                 <div class="m-1">
                     <h4>
@@ -143,7 +145,7 @@
             </div>
 
 
-
+            <!-- 4. Sortierstrecke -->
             <div class="col-12 col-md-6 col-lg-3 large-grid oder-1 order-xl-2 p-0 card_live_status">
                 <div class="m-1">
                     <h4>
@@ -163,6 +165,8 @@
                 </div>
             </div>
 
+
+            <!-- 5. Wipphebel -->
             <div class="col-12 col-md-6 col-lg-3 large-grid oder-1 order-xl-2 p-0 card_live_status">
                 <div class="m-1">
                     <h4>
@@ -182,7 +186,7 @@
                 </div>
             </div>
 
-
+            <!-- 3. Brennofen -->
             <div class="col-12 oder-2 order-xl-1 large-grid p-0 card_live_status">
                 <div class="m-1">
                     <h4>
@@ -214,37 +218,22 @@
             <?php echo $lang['header3'] ?>
         </h1>
 
-        <!-- 1. -->
+        <!-- 1. Hochregallager -->
         <div id="Hochregallager" class="container_single_part header_placeholder">
             <h2>
                 <?php echo $lang['module1'] ?>
             </h2>
-            <div class="container ">
+            <div class="container">
                 <div class="row">
+
+                    <!-- Bild -->
                     <div class="col-12 col-lg-6">
                         <!--<img class="single_pic" src="./media/img/Hochregallager.svg" alt="Part Hochregallager">-->
                         <div id="HochregallagerSvg" class="single_pic" alt="Part Hochregallager"></div>
-
-                        <h4 class="mt-3">
-                            <?php echo $lang['single_view_h1'] ?>
-                        </h4>
-                        <p>
-                            <?php echo $lang['single_view_h1.2'] ?>
-                        </p>
-
-                        <h4 class="mt-3">
-                            <?php echo $lang['single_view_h2'] ?>
-                        </h4>
-                        <p>
-                            Ein Hochregallager ist ein Grundfläche sparendes Lager, das computergestützt die Ein- und Auslagerung von Waren ermöglicht. In den meisten Fällen sind Hochregallager als Palettenregallager ausgeführt. Diese Standardisierung ermöglicht einen hohen Automatisierungsgrad und die Anbindung an ein ERP-System (Enterprise-Resource-Planning). Hochregallager zeichnen sich dabei durch eine hohe Raumnutzung und einen hohen Investitionsbedarf aus.
-                        </p>
-
-
                     </div>
 
-
+                    <!-- Status Sensoren & Aktoren -->
                     <div class="col-12 col-lg-6">
-
 
                         <div class="">
                             <h4>
@@ -277,23 +266,9 @@
 
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- End 1. -->
-
-        <!-- 2. -->
-        <div id="Sauggreifer" class="container_single_part header_placeholder">
-            <h2>
-                <?php echo $lang['module2'] ?>
-            </h2>
-
-            <div class="container ">
-                <div class="row">
-                    <div class="col-12 col-lg-6">
-                        <div class="single_pic" id="Vakuum" alt="Part Sauggreifer"></div>
-
+                    <!-- Beschreibung -->
+                    <div class="col-12">
                         <h4 class="mt-3">
                             <?php echo $lang['single_view_h1'] ?>
                         </h4>
@@ -305,10 +280,32 @@
                             <?php echo $lang['single_view_h2'] ?>
                         </h4>
                         <p>
-                            Industrieroboter sind universell einsetzbare Bewegungsautomaten mit mehreren Achsen, deren Bewegungen hinsichtlich Bewegungsfolge und Wegen bzw. Winkeln frei (d. h. ohne mechanischen bzw. menschlichen Eingriff) programmierbar und gegebenenfalls sensorgeführt sind. Sie sind mit Greifern, Werkzeugen oder anderen Fertigungsmitteln ausrüstbar und können Handhabungs- und/oder Fertigungsaufgaben ausführen.
+                            Ein Hochregallager ist ein Grundfläche sparendes Lager, das computergestützt die Ein- und Auslagerung von Waren ermöglicht. In den meisten Fällen sind Hochregallager als Palettenregallager ausgeführt. Diese Standardisierung ermöglicht einen hohen Automatisierungsgrad und die Anbindung an ein ERP-System (Enterprise-Resource-Planning). Hochregallager zeichnen sich dabei durch eine hohe Raumnutzung und einen hohen Investitionsbedarf aus.
                         </p>
-
                     </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- End 1. -->
+
+        <!-- 2. Sauggreifer -->
+        <div id="Sauggreifer" class="container_single_part header_placeholder">
+            <h2>
+                <?php echo $lang['module2'] ?>
+            </h2>
+
+            <div class="container ">
+                <div class="row">
+
+                    <!-- Bild -->
+                    <div class="col-12 col-lg-6">
+                        <div class="single_pic" id="Vakuum" alt="Part Sauggreifer"></div>
+                    </div>
+
+                    <!-- Status Sensoren & Aktoren -->
                     <div class="col-12 col-lg-6">
                         <div class="">
                             <h4>
@@ -341,13 +338,32 @@
 
                         </div>
                     </div>
+
+                    <!-- Beschreibung -->
+                    <div>
+                        <h4 class="mt-3">
+                            <?php echo $lang['single_view_h1'] ?>
+                        </h4>
+                        <p>
+                            <?php echo $lang['single_view_h1.2'] ?>
+                        </p>
+
+                        <h4 class="mt-3">
+                            <?php echo $lang['single_view_h2'] ?>
+                        </h4>
+                        <p>
+                            Industrieroboter sind universell einsetzbare Bewegungsautomaten mit mehreren Achsen, deren Bewegungen hinsichtlich Bewegungsfolge und Wegen bzw. Winkeln frei (d. h. ohne mechanischen bzw. menschlichen Eingriff) programmierbar und gegebenenfalls sensorgeführt sind. Sie sind mit Greifern, Werkzeugen oder anderen Fertigungsmitteln ausrüstbar und können Handhabungs- und/oder Fertigungsaufgaben ausführen.
+                        </p>
+                    </div>
+
+
                 </div>
             </div>
         </div>
 
         <!-- End 2. -->
 
-        <!-- 3. -->
+        <!-- 3. Brennofen -->
         <div id="Brennofen" class="container_single_part header_placeholder">
             <h2>
                 <?php echo $lang['module3'] ?>
@@ -356,8 +372,10 @@
             <div class="container ">
                 <div class="row">
                     <div class="col-12 col-lg-6">
+                        <!-- Bild -->
                         <img class="single_pic" src="./media/img/Brennofen.png" alt="Part Brennofen">
 
+                        <!-- Beschreibung -->
                         <h4 class="mt-3">
                             <?php echo $lang['single_view_h1'] ?>
                         </h4>
@@ -375,6 +393,8 @@
 
 
                     </div>
+
+                    <!-- Status Sensoren & Aktoren -->
                     <div class="col-12 col-lg-6">
                         <div class="">
                             <h4>
@@ -404,16 +424,17 @@
                                     </button>
                                 </div>
                             </a>
-
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </div>
 
         <!-- End 3. -->
 
-        <!-- 4. -->
+        <!-- 4. Sortierstrecke -->
         <div id="Sortierstrecke" class="container_single_part header_placeholder">
             <h2>
                 <?php echo $lang['module4'] ?>
@@ -421,24 +442,13 @@
 
             <div class="container ">
                 <div class="row">
+
+                    <!-- Bild -->
                     <div class="col-12 col-lg-6">
                         <img class="single_pic" src="./media/img/Sortierstrecke Oben und seitenansicht.svg" alt="Part Sortierstrecke">
-
-                        <h4 class="mt-3">
-                            <?php echo $lang['single_view_h1'] ?>
-                        </h4>
-                        <p>
-                            <?php echo $lang['single_view_h1.3'] ?>
-                        </p>
-
-                        <h4 class="mt-3">
-                            <?php echo $lang['single_view_h2'] ?>
-                        </h4>
-                        <p>
-                            Die Sortierstrecke mit Farberkennung dient der automatisierten Trennung verschiedenfarbiger Bausteine. Dabei werden geometrisch gleiche, jedoch verschiedenfarbige Bauteile einem Farbsensor, mit Hilfe eines Förderbands zugeführt und dann, entsprechend ihrer Farbe, getrennt. Das Förderband wird von einem S-Motor angetrieben und der Förderweg wird mit Hilfe eines Impulstasters gemessen. Der Auswurf der Werkstücke erfolgt mit Pneumatikzylindern, die den entsprechenden Lagerstellen zugeordnet sind und von Magnetventilen betätigt werden. Mehrere Lichtschranken kontrollieren den Fluss der Werkstücke und ob sich Werkstücke in den Lagerstellen befinden.
-                        </p>
-
                     </div>
+
+                    <!-- Status Sensoren & Aktoren -->
                     <div class="col-12 col-lg-6">
                         <div class="">
                             <h4>
@@ -471,13 +481,32 @@
 
                         </div>
                     </div>
+
+                    <!-- Beschreibung -->
+                    <div>
+                        <h4 class="mt-3">
+                            <?php echo $lang['single_view_h1'] ?>
+                        </h4>
+                        <p>
+                            <?php echo $lang['single_view_h1.3'] ?>
+                        </p>
+
+                        <h4 class="mt-3">
+                            <?php echo $lang['single_view_h2'] ?>
+                        </h4>
+                        <p>
+                            Die Sortierstrecke mit Farberkennung dient der automatisierten Trennung verschiedenfarbiger Bausteine. Dabei werden geometrisch gleiche, jedoch verschiedenfarbige Bauteile einem Farbsensor, mit Hilfe eines Förderbands zugeführt und dann, entsprechend ihrer Farbe, getrennt. Das Förderband wird von einem S-Motor angetrieben und der Förderweg wird mit Hilfe eines Impulstasters gemessen. Der Auswurf der Werkstücke erfolgt mit Pneumatikzylindern, die den entsprechenden Lagerstellen zugeordnet sind und von Magnetventilen betätigt werden. Mehrere Lichtschranken kontrollieren den Fluss der Werkstücke und ob sich Werkstücke in den Lagerstellen befinden.
+                        </p>
+                    </div>
+
+
                 </div>
             </div>
         </div>
 
         <!-- End 4. -->
 
-        <!-- 5. -->
+        <!-- 5. Wipphebel -->
         <div id="Wipphebel" class="container_single_part header_placeholder">
             <h2>
                 <?php echo $lang['module5'] ?>
@@ -485,25 +514,13 @@
 
             <div class="container ">
                 <div class="row">
+
+                    <!-- Bild -->
                     <div class="col-12 col-lg-6">
                         <div class="single_pic" id="WipphebelSvg" alt="Part Wipphebel"></div>
-
-                        <h4 class="mt-3">
-                            <?php echo $lang['single_view_h1'] ?>
-                        </h4>
-                        <p>
-                            <?php echo $lang['single_view_h1.2'] ?>
-                        </p>
-
-                        <h4 class="mt-3">
-                            <?php echo $lang['single_view_h2'] ?>
-                        </h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>
-
-
                     </div>
+
+                    <!-- Status Sensoren & Aktoren -->
                     <div class="col-12 col-lg-6">
                         <div class="">
                             <h4>
@@ -537,6 +554,25 @@
 
                         </div>
                     </div>
+
+                    <!-- Beschreibung -->
+                    <div>
+                        <h4 class="mt-3">
+                            <?php echo $lang['single_view_h1'] ?>
+                        </h4>
+                        <p>
+                            <?php echo $lang['single_view_h1.2'] ?>
+                        </p>
+
+                        <h4 class="mt-3">
+                            <?php echo $lang['single_view_h2'] ?>
+                        </h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+
+
                 </div>
             </div>
         </div>
