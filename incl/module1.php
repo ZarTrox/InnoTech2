@@ -1,4 +1,6 @@
-<!-- Hochregallager -->
+<!-- 1. Hochregallager -->
+
+<!-- Referenztaster horizontal -->
 <tr>
     <td>
         <?php echo $lang['module1.1'] ?>
@@ -10,6 +12,8 @@
         </label>
     </td>
 </tr>
+
+<!-- Lichtschranke innen -->
 <tr>
     <td>
         <?php echo $lang['module1.2'] ?>
@@ -21,6 +25,8 @@
         </label>
     </td>
 </tr>
+
+<!-- Lichtschranke aussen -->
 <tr>
     <td>
         <?php echo $lang['module1.3'] ?>
@@ -32,6 +38,8 @@
         </label>
     </td>
 </tr>
+
+<!-- Referenztaster vertikal -->
 <tr>
     <td>
         <?php echo $lang['module1.4'] ?>
@@ -43,6 +51,8 @@
         </label>
     </td>
 </tr>
+
+<!-- Referenztaster Ausleger vorne -->
 <tr>
     <td>
         <?php echo $lang['module1.5'] ?>
@@ -54,6 +64,8 @@
         </label>
     </td>
 </tr>
+
+<!-- Referenztaster Ausleger hinten -->
 <tr>
     <td>
         <?php echo $lang['module1.6'] ?>
@@ -65,6 +77,8 @@
         </label>
     </td>
 </tr>
+
+<!-- H-vertikal -->
 <tr>
     <td>
         <?php echo $lang['module1.7'] ?>
@@ -76,6 +90,8 @@
         </label>
     </td>
 </tr>
+
+<!-- H-horizontal -->
 <tr>
     <td>
         <?php echo $lang['module1.8'] ?>

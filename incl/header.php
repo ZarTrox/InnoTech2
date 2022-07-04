@@ -48,6 +48,10 @@
             <a href="?lang=en">
                 <img src="./media/img/flag/us.svg" class="flag">
             </a>
+
+            <a href="?lang=cn">
+                <img src="./media/img/flag/cn.svg" class="flag">
+            </a>
         </div>
 
 
@@ -98,6 +102,10 @@
 
                         <a href="?lang=en">
                             <img src="./media/img/flag/us.svg" class="flag">
+                        </a>
+
+                        <a href="?lang=cn">
+                            <img src="./media/img/flag/cn.svg" class="flag">
                         </a>
                     </div>
                 </li>

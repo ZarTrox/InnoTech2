@@ -1,5 +1,6 @@
-<!-- Sortierstrecke -->
+<!-- 4. Sortierstrecke -->
 
+<!-- S-Lichtschranke Eingang -->
 <tr>
     <td>
         <?php echo $lang['module4.1'] ?>
@@ -11,6 +12,8 @@
         </label>
     </td>
 </tr>
+
+<!-- S-Lichtschranke nach Farbsensor -->
 <tr>
     <td>
         <?php echo $lang['module4.2'] ?>
@@ -22,6 +25,8 @@
         </label>
     </td>
 </tr>
+
+<!-- S-Lichtschranke weiss -->
 <tr>
     <td>
         <?php echo $lang['module4.3'] ?>
@@ -33,6 +38,8 @@
         </label>
     </td>
 </tr>
+
+<!-- S-Lichtschranke rot -->
 <tr>
     <td>
         <?php echo $lang['module4.4'] ?>
@@ -44,6 +51,8 @@
         </label>
     </td>
 </tr>
+
+<!-- S-Lichtschranke blau -->
 <tr>
     <td>
         <?php echo $lang['module4.5'] ?>
@@ -55,6 +64,8 @@
         </label>
     </td>
 </tr>
+
+<!-- S-Motor Foerderband -->
 <tr>
     <td>
         <?php echo $lang['module4.6'] ?>

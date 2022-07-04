@@ -55,7 +55,7 @@
 
             <div class="col-12 col-xl-6 pt-3 pb-3">
 
-                <img class="overview_pic" id="overview_two" src="./media/img/sehr_grobe_Gesamtansicht.svg" alt="Gesamtübersicht Fischer Technik">
+                <img class="overview_pic" id="overview_two" src="./media/img/Gesamtansicht.svg" alt="Gesamtübersicht Fischer Technik">
 
             </div>
 
