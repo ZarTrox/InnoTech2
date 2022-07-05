@@ -1,7 +1,7 @@
 /*  Aufgaben Celina:
 - Richtige Skalieren umsetzen
 - Über neue Idee die Zeit zutracken denken (Mit der Uhrzeit die mitgeliefert wird arbeiten?)
-
+- d3.ease verwenden?
 
 
 */
@@ -101,6 +101,7 @@ async function updateSvgWithData(data) {
                 createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeVHorizontalXScale, getDomainMaxRangeVVertikalYScale);
                 createSvgWipphebel(dataArray, Zeit);
                 createSvgSortierstrecke(dataArray, Zeit);
+                createSvgStapelmagazin()
                 createSvgAmpel(dataArray);
                 //createSvgBrennofen(dataArray, Zeit);
             } else {
@@ -152,10 +153,11 @@ function createSvgHochregallager(dataArray, Zeit, dataArrayVorher, getDomainMaxR
                 console.log(parseInt(getDomainMaxRangeHHorizontalXScale) / 10);
                 var x = d3.scaleLinear()
                     .domain([0, getDomainMaxRangeHHorizontalXScale])
-                    .range([parseInt(getDomainMaxRangeHHorizontalXScale) / 10, widthLastColumn]) //vlt - 1/10. der länge abziehen wegen rahmen elemente?
+                    .range([parseInt(getDomainMaxRangeHHorizontalXScale) / 10, widthLastColumn]).clamp(true) //vlt - 1/10. der länge abziehen wegen rahmen elemente?
                 var y = d3.scaleLinear()
                     .domain([0, getDomainMaxRangeHVertikalYScale])
-                    .range([parseInt(heightDiv) / 10, heightDiv])
+                    .range([parseInt(heightDiv) / 10, heightDiv]).clamp(true)
+
                 hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y);
             }
             //Update input checkboxes
@@ -192,7 +194,7 @@ function hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y) {
             d3.select(this)
                 .transition()
                 .duration(1000)
-                .attr("x", newvalueX)
+                .attr("x", newvalueX + "px")
         })
 
         svg.selectAll(".greiferBewegen").each(function (d, i) {
@@ -211,8 +213,8 @@ function hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y) {
             d3.select(this)
                 .transition()
                 .duration(1000)
-                .attr("y", newvalueY)
-                .attr("x", newvalueX)
+                .attr("y", newvalueY + "px")
+                .attr("x", newvalueX + "px")
             //Motor blinken lassen?
         })
     } else {
@@ -220,15 +222,15 @@ function hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y) {
             d3.select(this)
                 .transition()
                 .duration(1000)
-                .attr("x", x(dataArray[ArrayWithVariablesForHochregalLager[6]]))
+                .attr("x", x(dataArray[ArrayWithVariablesForHochregalLager[6]]) + "px")
         })
 
         svg.selectAll(".greiferBewegen").each(function (d, i) {
             d3.select(this)
                 .transition()
                 .duration(1000)
-                .attr("y", y(dataArray[ArrayWithVariablesForHochregalLager[7]]))
-                .attr("x", x(dataArray[ArrayWithVariablesForHochregalLager[6]]))
+                .attr("y", y(dataArray[ArrayWithVariablesForHochregalLager[7]]) + "px")
+                .attr("x", x(dataArray[ArrayWithVariablesForHochregalLager[6]]) + "px")
         })
     }
     //Und evtl mit lichtschranke aussen verbinden?
@@ -447,11 +449,10 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMax
                 //TOdo: Skalieren der Grafik
                 var x = d3.scaleLinear()
                     .domain([0, getDomainMaxRangeVHorizontalXScale])
-                    .range([0, 0])
+                    .range([0, 0]).clamp(true)
                 var y = d3.scaleLinear()
                     .domain([0, getDomainMaxRangeVVertikalYScale])
-                    .range([768, 0])
-
+                    .range([768, 0]).clamp(true)
                 //Flippen wenn der Kran auf der rechten seite ist
                 //Hoch und runter fahren
                 // if (rechts) {
@@ -487,7 +488,7 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMax
                             d3.select(this)
                                 .transition()
                                 .duration(1000)
-                                .attr("y", newvalueY)
+                                .attr("y", newvalueY + "px")
                         } else {
 
                             var oldvalueY = d3.select(this).attr("y");
@@ -495,7 +496,7 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMax
                             d3.select(this)
                                 .transition()
                                 .duration(1000)
-                                .attr("y", newvalueY)
+                                .attr("y", newvalueY + "px")
                         }
                     })
                 } else {
@@ -503,11 +504,26 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMax
                         d3.select(this)
                             .transition()
                             .duration(1000)
-                            .attr("y", y(dataArray[ArrayWithVariablesForVakuumSauggreifer[3]]));
+                            .attr("y", y(dataArray[ArrayWithVariablesForVakuumSauggreifer[3]]) + "px");
 
                     })
                 }
             }
+        });
+}
+
+function createSvgStapelmagazin() {
+    d3.xml("./media/img/Stapelmagazin.svg",
+        function (error, documentFragment) {
+            if (error) { console.log(error); return; }
+            var svgNode = documentFragment
+                .getElementsByTagName("svg")[0];
+            var main_chart_svg = d3.select("#StapelmagazinSvg")
+            if (document.getElementById('StapelmagazinSvg').getElementsByTagName('svg').length == 0) {
+                main_chart_svg.node().appendChild(svgNode);
+            }
+            svg = main_chart_svg.select("svg")
+            svg = main_chart_svg.select("svg")
         });
 }
 // function createSvgBrennofen(dataArray, Zeit) {
