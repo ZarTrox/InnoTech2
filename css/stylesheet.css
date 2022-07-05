@@ -429,6 +429,10 @@ body {
     height: auto;
 }
 
+.single_pic svg {
+    width: 100%;
+    height: auto;
+}
 
 
 /* NOTE live_status */

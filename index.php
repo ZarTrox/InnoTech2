@@ -223,7 +223,7 @@
             <h2>
                 <?php echo $lang['module1'] ?>
             </h2>
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
 
                     <!-- Bild -->
