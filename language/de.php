@@ -74,7 +74,7 @@ $lang = array(
 
    /* NOTE Live Status */
    "table_h1" => "Sensor / Aktor:",
-   "table_h2" => "Aktiv / Inaktiv",
+   "table_h2" => "Inaktiv / Aktiv",
 
 
    /* NOTE Einzelübersicht */

@@ -1,4 +1,4 @@
-<div class="footer_container">
+<div class="footer_container mt-5">
     <div>
         <p class="text-center pt-3 pb-3 m-0">
             Copyright &copy; <?php echo date("Y"); ?><br>

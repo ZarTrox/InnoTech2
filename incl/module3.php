@@ -1,3 +1,6 @@
+<!-- 3. Brennofen -->
+
+<!-- B-Referenzschalter Drehkranz (Pos. Sauger) -->
 <tr>
     <td>
         <?php echo $lang['module3.1'] ?>
@@ -9,6 +12,8 @@
         </label>
     </td>
 </tr>
+
+<!-- B-Referenzschalter Drehkranz (Pos. Foerderband) -->
 <tr>
     <td>
         <?php echo $lang['module3.2'] ?>
@@ -20,6 +25,8 @@
         </label>
     </td>
 </tr>
+
+<!-- B-Lichtschranke Ende Foerderband -->
 <tr>
     <td>
         <?php echo $lang['module3.3'] ?>
@@ -31,6 +38,8 @@
         </label>
     </td>
 </tr>
+
+<!-- B-Referenzschalter Drehkranz (Pos. Saege) -->
 <tr>
     <td>
         <?php echo $lang['module3.4'] ?>
@@ -42,6 +51,8 @@
         </label>
     </td>
 </tr>
+
+<!-- B-Referenzschalter Sauger (Pos. Drehkranz) -->
 <tr>
     <td>
         <?php echo $lang['module3.5'] ?>
@@ -53,6 +64,8 @@
         </label>
     </td>
 </tr>
+
+<!-- B-Referenzschalter Ofenschieber Innen -->
 <tr>
     <td>
         <?php echo $lang['module3.6'] ?>
@@ -64,6 +77,8 @@
         </label>
     </td>
 </tr>
+
+<!-- B-Referenzschalter Ofenschieber Aussen -->
 <tr>
     <td>
         <?php echo $lang['module3.7'] ?>
@@ -75,6 +90,8 @@
         </label>
     </td>
 </tr>
+
+<!-- B-Referenzschalter Sauger (Pos. Brennofen) -->
 <tr>
     <td>
         <?php echo $lang['module3.8'] ?>
@@ -86,6 +103,8 @@
         </label>
     </td>
 </tr>
+
+<!-- B-Lichtschranke Brennofen -->
 <tr>
     <td>
         <?php echo $lang['module3.9'] ?>
@@ -97,6 +116,8 @@
         </label>
     </td>
 </tr>
+
+<!-- B-Motor Drehkranz im Uhrzeigersinn -->
 <tr>
     <td>
         <?php echo $lang['module3.10'] ?>
@@ -108,6 +129,8 @@
         </label>
     </td>
 </tr>
+
+<!-- B-Motor Drehkranz gegen Uhrzeigersinn -->
 <tr>
     <td>
         <?php echo $lang['module3.11'] ?>
@@ -119,6 +142,8 @@
         </label>
     </td>
 </tr>
+
+<!-- B-Motor Foerderband vorwaerts -->
 <tr>
     <td>
         <?php echo $lang['module3.12'] ?>
@@ -130,6 +155,8 @@
         </label>
     </td>
 </tr>
+
+<!-- B-Motor Saege -->
 <tr>
     <td>
         <?php echo $lang['module3.13'] ?>
@@ -141,6 +168,8 @@
         </label>
     </td>
 </tr>
+
+<!-- B-Motor Ofenschieber Einfahren -->
 <tr>
     <td>
         <?php echo $lang['module3.14'] ?>
@@ -152,6 +181,8 @@
         </label>
     </td>
 </tr>
+
+<!-- B-Motor Ofenschieber Ausfahren -->
 <tr>
     <td>
         <?php echo $lang['module3.15'] ?>
@@ -163,6 +194,8 @@
         </label>
     </td>
 </tr>
+
+<!-- B-Motor Sauger zum Ofen -->
 <tr>
     <td>
         <?php echo $lang['module3.16'] ?>
@@ -174,6 +207,8 @@
         </label>
     </td>
 </tr>
+
+<!-- B-Motor Sauger zum Drehkranz -->
 <tr>
     <td>
         <?php echo $lang['module3.17'] ?>
@@ -185,6 +220,8 @@
         </label>
     </td>
 </tr>
+
+<!-- B-Leuchte Ofen -->
 <tr>
     <td>
         <?php echo $lang['module3.18'] ?>

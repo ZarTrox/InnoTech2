@@ -6,6 +6,8 @@ if (!isset($_SESSION['lang'])) {
         $_SESSION['lang'] = "de";
     } elseif ($_GET['lang'] == "en") {
         $_SESSION['lang'] = "en";
+    } elseif ($_GET['lang'] == "cn") {
+        $_SESSION['lang'] = "cn";
     } else {
         $_SESSION['lang'] = "en";
     }
@@ -14,6 +16,8 @@ if (!isset($_SESSION['lang'])) {
         $_SESSION['lang'] = "de";
     else if ($_GET['lang'] == "en")
         $_SESSION['lang'] = "en";
+    else if ($_GET['lang'] == "cn")
+        $_SESSION['lang'] = "cn";
     else {
         $_SESSION['lang'] = "en";
     }
