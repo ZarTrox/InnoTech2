@@ -288,8 +288,8 @@ function createSvgSortierstrecke(dataArray, Zeit) {
             if (error) { console.log(error); return; }
             var svgNode = documentFragment
                 .getElementsByTagName("svg")[0];
-            var main_chart_svg = d3.select("#Sortierstrecke")
-            if (document.getElementById('Sortierstrecke').getElementsByTagName('svg').length == 0) {
+            var main_chart_svg = d3.select("#SortierstreckeSvg")
+            if (document.getElementById('SortierstreckeSvg').getElementsByTagName('svg').length == 0) {
                 main_chart_svg.node().appendChild(svgNode);
             }
             svg = main_chart_svg.select("svg")
