@@ -7,7 +7,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxHochregallagerReferenztasterhorizontal" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -20,7 +20,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" checked disabled>
+            <input id="checkboxHochregallagerLichtschrankeinnen" type="checkbox" checked disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -33,7 +33,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxHochregallagerLichtschrankeaussen" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -46,7 +46,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxHochregallagerReferenztastervertikal" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -59,7 +59,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxHochregallagerReferenztasterauslegervorne" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -72,34 +72,34 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxHochregallagerReferenztasterauslegerhinten" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
 </tr>
 
-<!-- H-vertikal -->
+<!-- H-vertikal 
 <tr>
     <td>
         <?php echo $lang['module1.7'] ?>
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxHochregallagerVertikal" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
-</tr>
+</tr> -->
 
-<!-- H-horizontal -->
+<!-- H-horizontal 
 <tr>
     <td>
         <?php echo $lang['module1.8'] ?>
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxHochregallagerHorizontal" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
-</tr>
+</tr>-->

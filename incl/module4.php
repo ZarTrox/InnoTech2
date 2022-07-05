@@ -7,7 +7,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxSortierstreckeLichtschrankeeingang" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -20,7 +20,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" checked disabled>
+            <input id="checkboxSortierstreckeLichtschrankenachfarbsensor" type="checkbox" checked disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -33,7 +33,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxSortierstreckeLichtschrankeweiss" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -46,7 +46,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxSortierstreckeLichtschrankerot" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -59,7 +59,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxSortierstreckeLichtschrankeblau" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -72,7 +72,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxSortierstreckeMotorfoerderband" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>

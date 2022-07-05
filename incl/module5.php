@@ -7,7 +7,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxWipphebelUmsetzerendanschlag1" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -20,7 +20,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" checked disabled>
+            <input id="checkboxWipphebelUmsetzerendanschlag2" type="checkbox" checked disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>

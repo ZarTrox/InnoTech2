@@ -7,7 +7,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxBrennofenReferenzschalterdrehkreuzsauger" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -20,7 +20,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" checked disabled>
+            <input id="checkboxBrennofenReferenzschalterdrehkreuzfoerderband" type="checkbox" checked disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -33,7 +33,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxBrennofenLichtschrankeendefoerderband" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -46,7 +46,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxBrennofenReferenzschalterdrehkreuzsaege" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -59,7 +59,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxBrennofenReferenzschaltersaugerdrehkreuz" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -72,7 +72,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxBrennofenReferenzschalterOfenschieberinnen" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -85,7 +85,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxBrennofenReferenzschalterofenschieberaussen" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -98,7 +98,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxBrennofenReferenzschaltersaugerbrennofen" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -111,7 +111,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxBrennofenLichtschrankebrennofen" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -124,7 +124,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxBrennofenMotordrehkreuzimuhrzeigersinn" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -137,7 +137,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxBrennofenMotordrehkreuzgegenuhrzeigersinn" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -150,7 +150,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxBrennofenMotorfoerderbandvorwaerts" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -163,7 +163,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxBrennofenMotorsaege" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -176,7 +176,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxBrennofenMotorofenschiebereinfahrt" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -189,7 +189,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxBrennofenMotorofenschieberausfahrt" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -202,7 +202,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxBrennofenMotorsaugerzumofen" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -215,7 +215,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxBrennofenMotorsaugerzumdrehkreuz" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -228,7 +228,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxBrennofenLeutchteofen" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>

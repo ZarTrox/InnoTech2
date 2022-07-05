@@ -7,7 +7,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxSauggreiferReferenzschaltervertikal" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -20,7 +20,7 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" checked disabled>
+            <input id="checkboxSauggreiferReferenzschalterhorizontal" type="checkbox" checked disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -33,47 +33,47 @@
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxSauggreiferReferenzschalterdrehen" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
 </tr>
 
-<!-- V-vertikal -->
+<!-- V-vertikal 
 <tr>
     <td>
         <?php echo $lang['module2.4'] ?>
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxSauggreiferVertikal" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
-</tr>
+</tr>-->
 
-<!-- V-horizontal -->
+<!-- V-horizontal 
 <tr>
     <td>
         <?php echo $lang['module2.5'] ?>
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxSauggreiferHorizontal" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
-</tr>
+</tr>-->
 
-<!-- V-drehen -->
+<!-- V-drehen 
 <tr>
     <td>
         <?php echo $lang['module2.6'] ?>
     </td>
     <td>
         <label class="switch">
-            <input type="checkbox" disabled>
+            <input id="checkboxSauggreiferDrehen" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
-</tr>
+</tr>-->
