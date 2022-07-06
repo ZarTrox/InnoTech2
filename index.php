@@ -61,7 +61,7 @@
 
             <div class="col-12 col-xl-6 pt-3 pb-3">
 
-                <img class="overview_pic" id="overview_three" src="./media/img/Gesamtübersicht_Umsetzer.png" alt="Gesamtübersicht Umsetzer">
+                <img class="overview_pic" id="overview_three" src="./media/img/Gesamtübersicht_Festo.svg" alt="Gesamtübersicht Festo">
 
             </div>
 
@@ -373,14 +373,14 @@
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <!-- Bild -->
-                        <img class="single_pic" src="./media/img/Brennofen.png" alt="Part Brennofen">
+                        <img class="single_pic" src="./media/img/Brennofen.svg" alt="Part Brennofen">
 
                         <!-- Beschreibung -->
                         <h4 class="mt-3">
                             <?php echo $lang['single_view_h1'] ?>
                         </h4>
                         <p>
-                            <?php echo $lang['single_view_h1.2'] ?>
+                            <?php echo $lang['single_view_h1.1'] ?>
                         </p>
 
                         <h4 class="mt-3">
