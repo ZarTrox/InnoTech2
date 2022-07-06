@@ -20,7 +20,7 @@
     </td>
     <td>
         <label class="switch">
-            <input id="checkboxSortierstreckeLichtschrankenachfarbsensor" type="checkbox" checked disabled>
+            <input id="checkboxSortierstreckeLichtschrankenachfarbsensor" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>

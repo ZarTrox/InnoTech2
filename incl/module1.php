@@ -20,7 +20,7 @@
     </td>
     <td>
         <label class="switch">
-            <input id="checkboxHochregallagerLichtschrankeinnen" type="checkbox" checked disabled>
+            <input id="checkboxHochregallagerLichtschrankeinnen" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>

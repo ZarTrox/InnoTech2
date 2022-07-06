@@ -20,7 +20,7 @@
     </td>
     <td>
         <label class="switch">
-            <input id="checkboxWipphebelUmsetzerendanschlag2" type="checkbox" checked disabled>
+            <input id="checkboxWipphebelUmsetzerendanschlag2" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>

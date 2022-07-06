@@ -55,7 +55,7 @@
 
             <div class="col-12 col-xl-6 pt-3 pb-3">
 
-                <img class="overview_pic" id="overview_two" src="./media/img/Gesamtansicht.svg" alt="Gesamtübersicht Fischer Technik">
+                <div class="overview_pic" id="GesamtueberblickSvg" alt="Gesamtübersicht Fischer Technik"></div>
 
             </div>
 
@@ -516,7 +516,8 @@
                 <div class="row">
 
                     <!-- Bild -->
-                    <div class="col-12 col-lg-6">
+                    <div class="col-12 col-lg-6" style="display: flex !important;">
+                        <img src="./media/img/Stapelmagazin.svg" class="single_pic" alt="Stapelmagazin">
                         <div class="single_pic" id="WipphebelSvg" alt="Part Wipphebel"></div>
                     </div>
 
