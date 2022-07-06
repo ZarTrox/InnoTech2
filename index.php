@@ -516,7 +516,8 @@
                 <div class="row">
 
                     <!-- Bild -->
-                    <div class="col-12 col-lg-6">
+                    <div class="col-12 col-lg-6" style="display: flex !important;">
+                        <img src="./media/img/Stapelmagazin.svg" class="single_pic" alt="Stapelmagazin">
                         <div class="single_pic" id="WipphebelSvg" alt="Part Wipphebel"></div>
                     </div>
 
