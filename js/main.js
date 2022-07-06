@@ -79,6 +79,51 @@ const arrayHochregallagerCheckboxIds = [
     "checkboxHochregallagerReferenztasterauslegerhinten"
 ]
 
+const arraySauggreiferCheckboxIds = [
+    "checkboxSauggreiferReferenzschaltervertikal",
+    "checkboxSauggreiferReferenzschalterhorizontal",
+    "checkboxSauggreiferReferenzschalterdrehen",
+]
+
+const arrayWipphebelCheckboxIds = [
+    "checkboxWipphebelUmsetzerendanschlag1",
+    "checkboxWipphebelUmsetzerendanschlag2"
+]
+
+const arrayBearbeitungsstationMitBrennofenCheckboxIds = [
+    "checkboxBrennofenReferenzschalterdrehkreuzsauger",
+    "checkboxBrennofenReferenzschalterdrehkreuzfoerderband",
+    "checkboxBrennofenLichtschrankeendefoerderband",
+    "checkboxBrennofenReferenzschalterdrehkreuzsaege",
+    "checkboxBrennofenReferenzschaltersaugerdrehkreuz",
+    "checkboxBrennofenReferenzschalterOfenschieberinnen",
+    "checkboxBrennofenReferenzschalterofenschieberaussen",
+    "checkboxBrennofenReferenzschaltersaugerbrennofen",
+    "checkboxBrennofenLichtschrankebrennofen",
+    "checkboxBrennofenMotordrehkreuzimuhrzeigersinn",
+    "checkboxBrennofenMotordrehkreuzgegenuhrzeigersinn",
+    "checkboxBrennofenMotorfoerderbandvorwaerts",
+    "checkboxBrennofenMotorsaege",
+    "checkboxBrennofenMotorofenschiebereinfahrt",
+    "checkboxBrennofenMotorofenschieberausfahrt",
+    "checkboxBrennofenMotorsaugerzumofen",
+    "checkboxBrennofenMotorsaugerzumdrehkreuz",
+    "checkboxBrennofenLeutchteofen"
+]
+
+const arraySortierstreckeMitFarberkennungCheckboxIds = [
+    "checkboxSortierstreckeLichtschrankeeingang",
+    "checkboxSortierstreckeLichtschrankenachfarbsensor",
+    "checkboxSortierstreckeLichtschrankeweiss",
+    "checkboxSortierstreckeLichtschrankerot",
+    "checkboxSortierstreckeLichtschrankeblau",
+    "checkboxSortierstreckeMotorfoerderband"
+]
+
+const arrayVakuumSauggreiferCheckboxIds = [
+
+]
+
 
 function getData() {
     fetch(`https://it2wi1.if-lab.de/rest/ft_ablauf`)
@@ -98,28 +143,23 @@ async function updateSvgWithData(data) {
     for (element in data) {
         //Check time here
         await sleep(1000)
-        if (data[element]) {
-            //Todo fall für 0 einfuegen
-            if (element != 0) {
-                var dataArray = data[element]["werte"];
-                var Zeit = data[element]["datum"];
-                var dataArrayVorher = data[element - 1]["werte"];
-                //updateStationen(data[element]["werte"], data[element]["datum"], data[element - 1]["werte"], getDomainMaxRangeHHorizontalXScale);
-                createSvgUebersicht(dataArray, Zeit, dataArrayVorher);
-                createSvgHochregallager(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeHHorizontalXScale, getDomainMaxRangeHVertikalYScale);
-                createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeVHorizontalXScale, getDomainMaxRangeVVertikalYScale);
-                createSvgWipphebel(dataArray, Zeit);
-                createSvgSortierstrecke(dataArray, Zeit);
-                createSvgStapelmagazin()
-                //createSvgAmpel(dataArray);
-                //createSvgBrennofen(dataArray, Zeit);
-            } else {
-                //createAllSVGs();
-                //Oder in den FUnktionen pruefen ob dataArrayVorher = null
-            }
-
+        //Todo fall für 0 einfuegen
+        if (element != 0) {
+            var dataArray = data[element]["werte"];
+            var Zeit = data[element]["datum"];
+            var dataArrayVorher = data[element - 1]["werte"];
+            //updateStationen(data[element]["werte"], data[element]["datum"], data[element - 1]["werte"], getDomainMaxRangeHHorizontalXScale);
+            createSvgUebersicht(dataArray, Zeit, dataArrayVorher);
+            createSvgHochregallager(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeHHorizontalXScale, getDomainMaxRangeHVertikalYScale);
+            createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeVHorizontalXScale, getDomainMaxRangeVVertikalYScale);
+            createSvgWipphebel(dataArray, Zeit);
+            createSvgSortierstrecke(dataArray, Zeit);
+            //createSvgStapelmagazin()
+            //createSvgAmpel(dataArray);
+            //createSvgBrennofen(dataArray, Zeit);
         } else {
-            console.log("Element is empty!")
+            //createAllSVGs();
+            //Oder in den FUnktionen pruefen ob dataArrayVorher = null
         }
     }
 }
@@ -131,8 +171,8 @@ function createSvgUebersicht(dataArray, Zeit, dataArrayVorher) {
 
             var svgNode = documentFragment
                 .getElementsByTagName("svg")[0];
-            var main_chart_svg = d3.select("#Gesamtuebersicht")
-            if (document.getElementById('Gesamtuebersicht').getElementsByTagName('svg').length == 0) {
+            var main_chart_svg = d3.select("#GesamtueberblickSvg")
+            if (document.getElementById('GesamtueberblickSvg').getElementsByTagName('svg').length == 0) {
                 main_chart_svg.node().appendChild(svgNode);
             }
 
@@ -192,23 +232,26 @@ function createSvgHochregallager(dataArray, Zeit, dataArrayVorher, getDomainMaxR
                         default:
                             status = "";
                     }
-                    console.log(status);
                     updateInputCheckboxes(arrayHochregallagerCheckboxIds[id], status)
                 }
             }
-
         });
 }
 
 function updateInputCheckboxes(checkBoxID, status) {
-    if(!status){
+    if (!status) {
         console.warn("status for checkbox is empty!")
     }
-    var inputElement = document.getElementById(checkBoxID);
-    if (status === " true") {
-        inputElement.setAttribute("checked", "")
-    } else if (status === " false") {
-        inputElement.removeAttribute('checked')
+    var inputElements = document.getElementsByClassName(checkBoxID);
+    for (checkbox in inputElements) {
+        if (typeof inputElements[checkbox] === "object") {
+            console.log("Hi");
+            if (status === " true") {
+                inputElements[checkbox].setAttribute("checked", "")
+            } else if (status === " false") {
+                inputElements[checkbox].removeAttribute('checked')
+            }
+        }
     }
 }
 
@@ -427,7 +470,32 @@ function createSvgSortierstrecke(dataArray, Zeit) {
                         .duration(1000)
                         .attr("class", "sortierstrecke_Lichtschranke_transform")
                 }
-
+                var status = "";
+                for (id in arraySortierstreckeMitFarberkennungCheckboxIds) {
+                    switch (parseInt(id)) {
+                        case 0:
+                            status = dataArray["Referenztaster horizontal"];
+                            break;
+                        case 1:
+                            status = dataArray["Lichtschranke innen"];
+                            break;
+                        case 2:
+                            status = dataArray["Lichtschranke aussen"];
+                            break;
+                        case 3:
+                            status = dataArray["Referenztaster vertikal"];
+                            break;
+                        case 4:
+                            status = dataArray["Referenztaster Ausleger vorne"];
+                            break;
+                        case 5:
+                            status = dataArray["Referenztaster Ausleger hinten"];
+                            break;
+                        default:
+                            status = "";
+                    }
+                    updateInputCheckboxes(arraySortierstreckeMitFarberkennungCheckboxIds[id], status)
+                }
             }
 
         });
@@ -467,6 +535,32 @@ function createSvgWipphebel(dataArray, Zeit) {
                     document.getElementById("WipphebelSvg").style.transform = "scale(-1, 1)";
                 } else {
                     //Wipper in der Luft?
+                }
+                var status = "";
+                for (id in arrayWipphebelCheckboxIds) {
+                    switch (parseInt(id)) {
+                        case 0:
+                            status = dataArray["Referenztaster horizontal"];
+                            break;
+                        case 1:
+                            status = dataArray["Lichtschranke innen"];
+                            break;
+                        case 2:
+                            status = dataArray["Lichtschranke aussen"];
+                            break;
+                        case 3:
+                            status = dataArray["Referenztaster vertikal"];
+                            break;
+                        case 4:
+                            status = dataArray["Referenztaster Ausleger vorne"];
+                            break;
+                        case 5:
+                            status = dataArray["Referenztaster Ausleger hinten"];
+                            break;
+                        default:
+                            status = "";
+                    }
+                    updateInputCheckboxes(arrayWipphebelCheckboxIds[id], status)
                 }
             }
         });
@@ -546,6 +640,32 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMax
                             .attr("y", y(dataArray[ArrayWithVariablesForVakuumSauggreifer[3]]) + "px");
 
                     })
+                }
+                var status = "";
+                for (id in arraySauggreiferCheckboxIds) {
+                    switch (parseInt(id)) {
+                        case 0:
+                            status = dataArray["Referenztaster horizontal"];
+                            break;
+                        case 1:
+                            status = dataArray["Lichtschranke innen"];
+                            break;
+                        case 2:
+                            status = dataArray["Lichtschranke aussen"];
+                            break;
+                        case 3:
+                            status = dataArray["Referenztaster vertikal"];
+                            break;
+                        case 4:
+                            status = dataArray["Referenztaster Ausleger vorne"];
+                            break;
+                        case 5:
+                            status = dataArray["Referenztaster Ausleger hinten"];
+                            break;
+                        default:
+                            status = "";
+                    }
+                    updateInputCheckboxes(arraySauggreiferCheckboxIds[id], status)
                 }
             }
         });

@@ -7,7 +7,7 @@
     </td>
     <td>
         <label class="switch">
-            <input id="checkboxHochregallagerReferenztasterhorizontal" type="checkbox" disabled>
+            <input class="checkboxHochregallagerReferenztasterhorizontal" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -20,7 +20,7 @@
     </td>
     <td>
         <label class="switch">
-            <input id="checkboxHochregallagerLichtschrankeinnen" type="checkbox" checked disabled>
+            <input class="checkboxHochregallagerLichtschrankeinnen" type="checkbox" checked disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -33,7 +33,7 @@
     </td>
     <td>
         <label class="switch">
-            <input id="checkboxHochregallagerLichtschrankeaussen" type="checkbox" disabled>
+            <input class="checkboxHochregallagerLichtschrankeaussen" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -46,7 +46,7 @@
     </td>
     <td>
         <label class="switch">
-            <input id="checkboxHochregallagerReferenztastervertikal" type="checkbox" disabled>
+            <input class="checkboxHochregallagerReferenztastervertikal" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -59,12 +59,11 @@
     </td>
     <td>
         <label class="switch">
-            <input id="checkboxHochregallagerReferenztasterauslegervorne" type="checkbox" disabled>
+            <input class="checkboxHochregallagerReferenztasterauslegervorne" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
 </tr>
-
 <!-- Referenztaster Ausleger hinten -->
 <tr>
     <td>
@@ -72,7 +71,7 @@
     </td>
     <td>
         <label class="switch">
-            <input id="checkboxHochregallagerReferenztasterauslegerhinten" type="checkbox" disabled>
+            <input class="checkboxHochregallagerReferenztasterauslegerhinten" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -85,7 +84,7 @@
     </td>
     <td>
         <label class="switch">
-            <input id="checkboxHochregallagerVertikal" type="checkbox" disabled>
+            <input class="checkboxHochregallagerVertikal" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -98,7 +97,7 @@
     </td>
     <td>
         <label class="switch">
-            <input id="checkboxHochregallagerHorizontal" type="checkbox" disabled>
+            <input class="checkboxHochregallagerHorizontal" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>

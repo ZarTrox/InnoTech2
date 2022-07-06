@@ -7,7 +7,7 @@
     </td>
     <td>
         <label class="switch">
-            <input id="checkboxSortierstreckeLichtschrankeeingang" type="checkbox" disabled>
+            <input class="checkboxSortierstreckeLichtschrankeeingang" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -20,7 +20,7 @@
     </td>
     <td>
         <label class="switch">
-            <input id="checkboxSortierstreckeLichtschrankenachfarbsensor" type="checkbox" checked disabled>
+            <input class="checkboxSortierstreckeLichtschrankenachfarbsensor" type="checkbox" checked disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -33,7 +33,7 @@
     </td>
     <td>
         <label class="switch">
-            <input id="checkboxSortierstreckeLichtschrankeweiss" type="checkbox" disabled>
+            <input class="checkboxSortierstreckeLichtschrankeweiss" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -46,7 +46,7 @@
     </td>
     <td>
         <label class="switch">
-            <input id="checkboxSortierstreckeLichtschrankerot" type="checkbox" disabled>
+            <input class="checkboxSortierstreckeLichtschrankerot" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -59,7 +59,7 @@
     </td>
     <td>
         <label class="switch">
-            <input id="checkboxSortierstreckeLichtschrankeblau" type="checkbox" disabled>
+            <input class="checkboxSortierstreckeLichtschrankeblau" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -72,7 +72,7 @@
     </td>
     <td>
         <label class="switch">
-            <input id="checkboxSortierstreckeMotorfoerderband" type="checkbox" disabled>
+            <input class="checkboxSortierstreckeMotorfoerderband" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>

@@ -7,7 +7,7 @@
     </td>
     <td>
         <label class="switch">
-            <input id="checkboxSauggreiferReferenzschaltervertikal" type="checkbox" disabled>
+            <input class="checkboxSauggreiferReferenzschaltervertikal" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -20,7 +20,7 @@
     </td>
     <td>
         <label class="switch">
-            <input id="checkboxSauggreiferReferenzschalterhorizontal" type="checkbox" checked disabled>
+            <input class="checkboxSauggreiferReferenzschalterhorizontal" type="checkbox" checked disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -33,7 +33,7 @@
     </td>
     <td>
         <label class="switch">
-            <input id="checkboxSauggreiferReferenzschalterdrehen" type="checkbox" disabled>
+            <input class="checkboxSauggreiferReferenzschalterdrehen" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -46,7 +46,7 @@
     </td>
     <td>
         <label class="switch">
-            <input id="checkboxSauggreiferVertikal" type="checkbox" disabled>
+            <input class="checkboxSauggreiferVertikal" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -59,7 +59,7 @@
     </td>
     <td>
         <label class="switch">
-            <input id="checkboxSauggreiferHorizontal" type="checkbox" disabled>
+            <input class="checkboxSauggreiferHorizontal" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -72,7 +72,7 @@
     </td>
     <td>
         <label class="switch">
-            <input id="checkboxSauggreiferDrehen" type="checkbox" disabled>
+            <input class="checkboxSauggreiferDrehen" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
