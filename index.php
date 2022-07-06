@@ -445,7 +445,7 @@
 
                     <!-- Bild -->
                     <div class="col-12 col-lg-6">
-                        <img class="single_pic" src="./media/img/Sortierstrecke7.svg" alt="Part Sortierstrecke">
+                        <div class="single_pic" id="SortierstreckeSvg" alt="Part Sortierstrecke"></div>
                     </div>
 
                     <!-- Status Sensoren & Aktoren -->

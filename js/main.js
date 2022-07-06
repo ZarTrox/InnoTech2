@@ -70,6 +70,15 @@ const ArrayWithVariablesForAmpel = [
     "Ampel weiss"
 ]
 
+const arrayHochregallagerCheckboxIds = [
+    "checkboxHochregallagerReferenztasterhorizontal",
+    "checkboxHochregallagerLichtschrankeinnen",
+    "checkboxHochregallagerLichtschrankeaussen",
+    "checkboxHochregallagerReferenztastervertikal",
+    "checkboxHochregallagerReferenztasterauslegervorne",
+    "checkboxHochregallagerReferenztasterauslegerhinten"
+]
+
 
 function getData() {
     fetch(`https://it2wi1.if-lab.de/rest/ft_ablauf`)
@@ -102,7 +111,7 @@ async function updateSvgWithData(data) {
                 createSvgWipphebel(dataArray, Zeit);
                 createSvgSortierstrecke(dataArray, Zeit);
                 createSvgStapelmagazin()
-                createSvgAmpel(dataArray);
+                //createSvgAmpel(dataArray);
                 //createSvgBrennofen(dataArray, Zeit);
             } else {
                 //createAllSVGs();
@@ -116,7 +125,7 @@ async function updateSvgWithData(data) {
 }
 
 function createSvgUebersicht(dataArray, Zeit, dataArrayVorher) {
-    d3.xml("./media/img/grobe_Gesamtansicht5.svg",
+    d3.xml("./media/img/Gesamtansicht.svg",
         function (error, documentFragment) {
             if (error) { console.log(error); return; }
 
@@ -150,7 +159,7 @@ function createSvgHochregallager(dataArray, Zeit, dataArrayVorher, getDomainMaxR
                 var widthDiv = document.getElementById('HochregallagerSvg').offsetWidth;
                 var heightDiv = document.getElementById('HochregallagerSvg').offsetHeight;
                 var widthLastColumn = d3.select("#letzteStrebe").attr("x");
-                console.log(parseInt(getDomainMaxRangeHHorizontalXScale) / 10);
+                //console.log(parseInt(getDomainMaxRangeHHorizontalXScale) / 10);
                 var x = d3.scaleLinear()
                     .domain([0, getDomainMaxRangeHHorizontalXScale])
                     .range([parseInt(getDomainMaxRangeHHorizontalXScale) / 10, widthLastColumn]).clamp(true) //vlt - 1/10. der länge abziehen wegen rahmen elemente?
@@ -159,18 +168,48 @@ function createSvgHochregallager(dataArray, Zeit, dataArrayVorher, getDomainMaxR
                     .range([parseInt(heightDiv) / 10, heightDiv]).clamp(true)
 
                 hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y);
+                var status = "";
+                for (id in arrayHochregallagerCheckboxIds) {
+                    switch (parseInt(id)) {
+                        case 0:
+                            status = dataArray["Referenztaster horizontal"];
+                            break;
+                        case 1:
+                            status = dataArray["Lichtschranke innen"];
+                            break;
+                        case 2:
+                            status = dataArray["Lichtschranke aussen"];
+                            break;
+                        case 3:
+                            status = dataArray["Referenztaster vertikal"];
+                            break;
+                        case 4:
+                            status = dataArray["Referenztaster Ausleger vorne"];
+                            break;
+                        case 5:
+                            status = dataArray["Referenztaster Ausleger hinten"];
+                            break;
+                        default:
+                            status = "";
+                    }
+                    console.log(status);
+                    updateInputCheckboxes(arrayHochregallagerCheckboxIds[id], status)
+                }
             }
-            //Update input checkboxes
-            // var test = document.getElementsByClassName("test");
-            // for( var i = 0; i < test.length; i++){
-            //     if (!test[i].hasAttribute('checked')){
-            //         //console.log(test[i]);
-            //         test[i].setAttribute("checked", "")
-            //     } else if (test[i].hasAttribute('checked')){
-            //         test[i].removeAttribute('checked')
-            //     }
-            // }
+
         });
+}
+
+function updateInputCheckboxes(checkBoxID, status) {
+    if(!status){
+        console.warn("status for checkbox is empty!")
+    }
+    var inputElement = document.getElementById(checkBoxID);
+    if (status === " true") {
+        inputElement.setAttribute("checked", "")
+    } else if (status === " false") {
+        inputElement.removeAttribute('checked')
+    }
 }
 
 function hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y) {
@@ -545,18 +584,18 @@ function createSvgStapelmagazin() {
 //         });
 // }
 
-function createSvgAmpel(dataArray) {
+// function createSvgAmpel(dataArray) {
 
-    if (dataArray[ArrayWithVariablesForAmpel[0]].includes(" true")) {
-        document.getElementById("Ampel").src = "./media/img/ampel/Ampelfarbe_rot.svg";
-    } else if (dataArray[ArrayWithVariablesForAmpel[1]].includes(" true")) {
-        document.getElementById("Ampel").src = "./media/img/ampel/Ampelfarbe_gelb.svg";
-    } else if (dataArray[ArrayWithVariablesForAmpel[2]].includes(" true")) {
-        document.getElementById("Ampel").src = "./media/img/ampel/Ampelfarbe_grün.svg";
-    } else if (dataArray[ArrayWithVariablesForAmpel[3]].includes(" true")) {
-        document.getElementById("Ampel").src = "./media/img/ampel/Ampelfarbe_aus.svg";
-    }
-}
+//     if (dataArray[ArrayWithVariablesForAmpel[0]].includes(" true")) {
+//         document.getElementById("Ampel").src = "./media/img/ampel/Ampelfarbe_rot.svg";
+//     } else if (dataArray[ArrayWithVariablesForAmpel[1]].includes(" true")) {
+//         document.getElementById("Ampel").src = "./media/img/ampel/Ampelfarbe_gelb.svg";
+//     } else if (dataArray[ArrayWithVariablesForAmpel[2]].includes(" true")) {
+//         document.getElementById("Ampel").src = "./media/img/ampel/Ampelfarbe_grün.svg";
+//     } else if (dataArray[ArrayWithVariablesForAmpel[3]].includes(" true")) {
+//         document.getElementById("Ampel").src = "./media/img/ampel/Ampelfarbe_aus.svg";
+//     }
+// }
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
