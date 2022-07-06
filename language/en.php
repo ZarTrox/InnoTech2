@@ -91,6 +91,19 @@ $lang = array(
    "single_view_h3" => "Status of Sensors & Actuators:",
 
 
+
+   /* NOTE Einzelübersicht Beschreibungen */
+   "module1_desc" => "A high-bay warehouse is a floor space-saving warehouse that enables the computer-aided storage and retrieval of goods. In most cases, high-bay warehouses are designed as pallet rack warehouses. This standardization enables a high degree of automation and connection to an ERP (Enterprise Resource Planning) system. High-bay warehouses are characterized by high space utilization and high investment requirements.",
+
+   "module2_desc" => "Industrial robots are universally applicable automatic motion machines with several axes whose movements are freely programmable (i.e. without mechanical or human intervention) and, if necessary, sensor-guided with regard to movement sequence and paths or angles. They can be equipped with grippers, tools or other manufacturing equipment and can perform handling and/or manufacturing tasks.",
+
+   "module3_desc" => "In the multi-machining station with kiln, the workpiece automatically passes through several stations that simulate different processes. Various conveying techniques are used, such as a conveyor belt, a rotary table and a vacuum suction gripper. The machining process begins with the furnace. Machining is to be initiated as soon as a workpiece is placed on the furnace slide. This interrupts the light barrier, which should cause the gate of the furnace to open and the furnace slide to retract.",
+
+   "module4_desc" => "The sorting line with color detection is used for the automated separation of components of different colors. Here, geometrically identical but different colored components are fed to a color sensor with the aid of a conveyor belt and then separated according to their color. The conveyor belt is driven by an S-motor and the conveying path is measured by means of a pulse sensor. The ejection of the workpieces is carried out by pneumatic cylinders assigned to the corresponding bearing points and actuated by solenoid valves. Several photoelectric sensors control the flow of workpieces and whether workpieces are in the bearing positions.",
+
+   "module5_desc" => "The stacking magazine has a magazine tube with capacity for a maximum of eight workpieces, which can be fed individually to the value-adding process. This is done by a double-acting cylinder which pushes the workpieces on individually. The end positions are detected by sensors. The rocker arm is part of the repositioning module and ensures that the separated workpieces are transferred from the end position of the stacking magazine.",
+
+
    /* NOTE Footer */
    "footer1" => "Represented by",
    "footer2" => "Cooperation with",
