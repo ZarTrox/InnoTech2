@@ -40,7 +40,7 @@ $lang = array(
    "module2.6" => "V-rotate",
 
    "module3.1" => "B-Reference switch turn-table (position vacuum)",
-   "module3.2" => "B-Reference switch turn-table (position belt))",
+   "module3.2" => "B-Reference switch turn-table (position belt)",
    "module3.3" => "B-Light-barrier end of conveyor belt",
    "module3.4" => "B-Reference switch turn-table (position saw)",
    "module3.5" => "B-Reference switch vacuum (position turn-table)",
