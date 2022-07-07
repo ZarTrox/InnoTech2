@@ -166,7 +166,7 @@
             </div>
 
 
-            <!-- 5. Wipphebel -->
+            <!-- 5. Umsetzer -->
             <div class="col-12 col-md-6 col-lg-3 large-grid oder-1 order-xl-2 p-0 card_live_status">
                 <div class="m-1">
                     <h4>
@@ -219,7 +219,7 @@
         </h1>
 
         <!-- 1. Hochregallager -->
-        <div id="Hochregallager" class="container_single_part header_placeholder">
+        <div id="Hochregal" class="container_single_part header_placeholder">
             <h2>
                 <?php echo $lang['module1'] ?>
             </h2>
@@ -435,7 +435,7 @@
         <!-- End 3. -->
 
         <!-- 4. Sortierstrecke -->
-        <div id="Sortierstrecke" class="container_single_part header_placeholder">
+        <div id="Sortier" class="container_single_part header_placeholder">
             <h2>
                 <?php echo $lang['module4'] ?>
             </h2>
@@ -506,8 +506,8 @@
 
         <!-- End 4. -->
 
-        <!-- 5. Wipphebel -->
-        <div id="Wipphebel" class="container_single_part header_placeholder">
+        <!-- 5. Umsetzer -->
+        <div id="Umsetzer" class="container_single_part header_placeholder">
             <h2>
                 <?php echo $lang['module5'] ?>
             </h2>
