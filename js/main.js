@@ -2,6 +2,7 @@
 - Richtige Skalieren umsetzen
 - Über neue Idee die Zeit zutracken denken (Mit der Uhrzeit die mitgeliefert wird arbeiten?)
 - d3.ease verwenden?
+- Hearmap fuer Gesameuebersicht?
 
 
 */
@@ -202,7 +203,7 @@ function createSvgHochregallager(dataArray, Zeit, dataArrayVorher, getDomainMaxR
                 //console.log(parseInt(getDomainMaxRangeHHorizontalXScale) / 10);
                 var x = d3.scaleLinear()
                     .domain([0, getDomainMaxRangeHHorizontalXScale])
-                    .range([parseInt(getDomainMaxRangeHHorizontalXScale) / 10, widthLastColumn]).clamp(true) //vlt - 1/10. der länge abziehen wegen rahmen elemente?
+                    .range([0, widthLastColumn]).clamp(true) //vlt - 1/10. der länge abziehen wegen rahmen elemente?
                 var y = d3.scaleLinear()
                     .domain([0, getDomainMaxRangeHVertikalYScale])
                     .range([parseInt(heightDiv) / 10, heightDiv]).clamp(true)
@@ -259,10 +260,10 @@ function hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y) {
     //Hhori & HVerti
 
     if (dataArrayVorher) {
-        var scaledHHorizontal = x(dataArray[ArrayWithVariablesForHochregalLager[6]]);
-        var scaledHHorizontalVorher = x(dataArrayVorher[ArrayWithVariablesForHochregalLager[6]]);
-        var scaledHvert = y(dataArray[ArrayWithVariablesForHochregalLager[7]]);
-        var scaledHvertVorher = y(dataArrayVorher[ArrayWithVariablesForHochregalLager[7]]);
+        var scaledHHorizontal = x(parseInt(dataArray[ArrayWithVariablesForHochregalLager[6]]));
+        var scaledHHorizontalVorher = x(parseInt(dataArrayVorher[ArrayWithVariablesForHochregalLager[6]]));
+        var scaledHvert = y(parseInt(dataArray[ArrayWithVariablesForHochregalLager[7]]));
+        var scaledHvertVorher = y(parseInt(dataArrayVorher[ArrayWithVariablesForHochregalLager[7]]));
 
         var diffHHorizontal = scaledHHorizontal - scaledHHorizontalVorher;
         var diffHvert = scaledHvertVorher - scaledHvert;
@@ -568,7 +569,7 @@ function createSvgWipphebel(dataArray, Zeit) {
 
 function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeVHorizontalXScale, getDomainMaxRangeVVertikalYScale) {
     //TODO: Elemente in svg grupieren
-    d3.xml("./media/img/Vakuum-SauggreiferNew3.svg",
+    d3.xml("./media/img/Vakuum-SauggreiferNew5.svg",
         function (error, documentFragment) {
             if (error) { console.log(error); return; }
             var svgNode = documentFragment
@@ -594,28 +595,28 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMax
                 //     document.getElementById("Vakuum").style.transform = "scale(1, 1)";
                 // }
                 var madde = Math.floor(Math.random() * (Math.ceil(6) - Math.floor(0)))
-                // if (madde <= 2) {
-                //     dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 0
-                // } else 
-                // if (madde > 2 && madde <= 4) {
-                //     dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 50
-                // } else if (madde > 4) {
-                //     dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 200
-                // }
+                if (madde <= 2) {
+                    dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 0
+                } else 
+                if (madde > 2 && madde <= 4) {
+                    dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 50
+                } else if (madde > 4) {
+                    dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 200
+                }
                 if (dataArrayVorher) {
-                    var scaledHvert = y(dataArray[ArrayWithVariablesForVakuumSauggreifer[3]]);
-                    var scaledHvertVorher = y(dataArrayVorher[ArrayWithVariablesForVakuumSauggreifer[3]]);
+                    var scaledHvert = y(parseInt(dataArray[ArrayWithVariablesForVakuumSauggreifer[3]]));
+                    var scaledHvertVorher = y(parseInt(dataArrayVorher[ArrayWithVariablesForVakuumSauggreifer[3]]));
                     var diffHvert = scaledHvert - scaledHvertVorher;
 
-                    //  console.log("scaledHvert" + scaledHvert);
-                    //  console.log("scaledHvertVorher" + scaledHvertVorher);
-                    //  console.log("DiffHvert" + diffHvert);
+                     console.log("scaledHvert" + scaledHvert);
+                     console.log("scaledHvertVorher" + scaledHvertVorher);
+                     console.log("DiffHvert" + diffHvert);
                     // console.log("------------------------------------");
                     svg.selectAll(".beweglicherArm").each(function (d, i) {
                         if (d3.select(this).attr('id') === "testThisIssue") {
                             var oldvalueY = d3.select(this).attr("y");
-                            // console.log("Old: " + oldvalueY);
-                            // console.log("Diff: " + diffHvert);
+                            console.log("Old: " + oldvalueY);
+                            console.log("Diff: " + diffHvert);
                             // console.log("------------------------------------")
                             var newvalueY = parseFloat(oldvalueY) + diffHvert;
                             d3.select(this)
@@ -633,13 +634,13 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMax
                         }
                     })
                 } else {
-                    svg.selectAll(".beweglicherArm").each(function (d, i) {
-                        d3.select(this)
-                            .transition()
-                            .duration(1000)
-                            .attr("y", y(dataArray[ArrayWithVariablesForVakuumSauggreifer[3]]) + "px");
+                    // svg.selectAll(".beweglicherArm").each(function (d, i) {
+                    //     d3.select(this)
+                    //         .transition()
+                    //         .duration(1000)
+                    //         .attr("y", y(dataArray[ArrayWithVariablesForVakuumSauggreifer[3]]) + "px");
 
-                    })
+                    // })
                 }
                 var status = "";
                 for (id in arraySauggreiferCheckboxIds) {

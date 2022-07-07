@@ -25,19 +25,19 @@
 <rect x="455.8" y="61.5" class="sauggreifer_st2" width="152.6" height="36.9"/>
 <rect x="571.2" y="98.5" class="sauggreifer_st1" width="37.3" height="15.5"/>
 <rect x="456" y="98.5" class="sauggreifer_st1" width="37.9" height="15.5"/>
-<rect x="146.6" y="224" transform="matrix(-1 -5.359769e-11 5.359769e-11 -1 394.4077 489.1437)" class="sauggreifer_st0 beweglicherArm" width="101.2" height="41.1"/>
-<rect x="247.8" y="177.3" transform="matrix(-1 -5.353774e-11 5.353774e-11 -1 535.3456 365.8425)" class="sauggreifer_st1 beweglicherArm" width="39.7" height="11.2"/>
-<rect x="247.8" y="301.7" transform="matrix(-1 -5.360657e-11 5.360657e-11 -1 535.3456 613.953)" class="sauggreifer_st1 beweglicherArm" width="39.7" height="10.5"/>
-<rect x="238.9" y="188.5" transform="matrix(-1 -5.365720e-11 5.365720e-11 -1 486.7121 412.4897)" class="sauggreifer_st1 beweglicherArm" width="8.9" height="35.5"/>
-<rect x="239.2" y="265.2" transform="matrix(-1 -5.388147e-11 5.388147e-11 -1 486.7121 565.9899)" class="sauggreifer_st1 beweglicherArm" width="8.3" height="35.5"/>
-<rect x="608.7" y="188.6" transform="matrix(-1 -5.370960e-11 5.370960e-11 -1 1376.1213 492.7803)" class="sauggreifer_st1 beweglicherArm" id="testThisIssue" width="158.8" height="115.6"/>
-<rect x="146.5" y="189.4" transform="matrix(-1 -5.539670e-11 5.539670e-11 -1 328.1333 413.6134)" class="sauggreifer_st2 beweglicherArm" width="35.2" height="34.7"/>
-<rect x="109.1" y="189.7" transform="matrix(-1 -5.459423e-11 5.459423e-11 -1 255.6 454.5334)" class="sauggreifer_st2 beweglicherArm" width="37.3" height="75.2"/>
-<rect x="77.1" y="189.4" transform="matrix(-1 -5.878599e-11 5.878599e-11 -1 223.5754 413.7333)" class="sauggreifer_st1 beweglicherArm" width="69.4" height="34.9"/>
-<rect x="83.1" y="224.5" transform="matrix(-1 -4.535939e-11 4.535939e-11 -1 170.7596 552.9122)" class="sauggreifer_st3 beweglicherArm" width="4.6" height="103.9"/>
-<rect x="100.6" y="224.5" transform="matrix(-1 -4.535939e-11 4.535939e-11 -1 205.8174 551.8881)" class="sauggreifer_st3 beweglicherArm" width="4.6" height="102.9"/>
-<rect x="74.3" y="328.4" transform="matrix(-1 -2.777435e-11 2.777435e-11 -1 190.2735 682.6122)" class="sauggreifer_st1 beweglicherArm" width="41.7" height="25.8"/>
-<rect x="87.3" y="360.5" transform="matrix(-1 -5.253454e-11 5.253454e-11 -1 190.024 742.8503)" class="sauggreifer_st4 beweglicherArm" width="15.4" height="21.8"/>
+<rect x="146.6" y="224"  class="sauggreifer_st0 beweglicherArm" width="101.2" height="41.1"/>
+<rect x="247.8" y="177.3"  class="sauggreifer_st1 beweglicherArm" width="39.7" height="11.2"/>
+<rect x="247.8" y="301.7"  class="sauggreifer_st1 beweglicherArm" width="39.7" height="10.5"/>
+<rect x="238.9" y="188.5"  class="sauggreifer_st1 beweglicherArm" width="8.9" height="35.5"/>
+<rect x="239.2" y="265.2"  class="sauggreifer_st1 beweglicherArm" width="8.3" height="35.5"/>
+<rect x="608.7" y="188.6"  class="sauggreifer_st1 beweglicherArm" id="testThisIssue" width="158.8" height="115.6"/>
+<rect x="146.5" y="189.4"  class="sauggreifer_st2 beweglicherArm" width="35.2" height="34.7"/>
+<rect x="109.1" y="189.7"  class="sauggreifer_st2 beweglicherArm" width="37.3" height="75.2"/>
+<rect x="77.1" y="189.4"  class="sauggreifer_st1 beweglicherArm" width="69.4" height="34.9"/>
+<rect x="83.1" y="224.5"  class="sauggreifer_st3 beweglicherArm" width="4.6" height="103.9"/>
+<rect x="100.6" y="224.5"  class="sauggreifer_st3 beweglicherArm" width="4.6" height="102.9"/>
+<rect x="74.3" y="328.4"  class="sauggreifer_st1 beweglicherArm" width="41.7" height="25.8"/>
+<rect x="87.3" y="360.5"  class="sauggreifer_st4 beweglicherArm" width="15.4" height="21.8"/>
 <rect x="451.9" y="675.8" class="sauggreifer_st1" width="219.9" height="61"/>
 <rect x="253.5" y="736.8" class="sauggreifer_st3" width="691.9" height="13"/>
 <rect x="472" y="682.9" class="sauggreifer_st5" width="49.7" height="44.9"/>
