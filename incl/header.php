@@ -2,6 +2,9 @@
     <div class="header_brand">
         <a href="#overview">
             <img class="header_logo" src="./media/img/logo/Logo.svg" alt="Logo">
+            <p class="header_logo_subtitle">
+                <?php echo $lang['header_logo_subtitle'] ?>
+            </p>
         </a>
     </div>
 

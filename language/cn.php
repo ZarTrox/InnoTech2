@@ -12,13 +12,14 @@ $lang = array(
    "header2" => "现场状态",
    "header3" => "单一视图",
    "header4" => "图例单视图",
+   "header_logo_subtitle" => "为你的生产开绿灯。",
 
    /* NOTE Module */
    "module1" => "高架仓库",
    "module2" => "抽吸垫",
    "module3" => "窑炉",
    "module4" => "分拣线",
-   "module5" => "摇杆",
+   "module5" => "转移模块",
 
 
    /* NOTE Sensoren & Aktoren Module */

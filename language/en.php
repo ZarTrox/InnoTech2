@@ -12,14 +12,14 @@ $lang = array(
    "header2" => "Live status",
    "header3" => "Single view",
    "header4" => "Legend single view",
-
+   "header_logo_subtitle" => "Green light<br>for your production.",
 
    /* NOTE Module */
    "module1" => "Warehouse",
    "module2" => "Transport robot",
    "module3" => "Kiln",
    "module4" => "Conveyor belt",
-   "module5" => "Rocker lever",
+   "module5" => "Transfer module",
 
 
    /* NOTE Sensoren & Aktoren Module */
