@@ -106,6 +106,5 @@ $lang = array(
 
    /* NOTE Footer */
    "footer1" => "Represented by",
-   "footer2" => "Cooperation with",
 
 );

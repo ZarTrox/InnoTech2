@@ -103,7 +103,6 @@ $lang = array(
 
    /* NOTE Footer */
    "footer1" => "代表者",
-   "footer2" => "一个与之合作的",
 
 
 );
