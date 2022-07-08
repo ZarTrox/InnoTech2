@@ -12,14 +12,14 @@ $lang = array(
    "header2" => "Live status",
    "header3" => "Single view",
    "header4" => "Legend single view",
-
+   "header_logo_subtitle" => "Green light<br>for your production.",
 
    /* NOTE Module */
    "module1" => "Warehouse",
    "module2" => "Transport robot",
    "module3" => "Kiln",
    "module4" => "Conveyor belt",
-   "module5" => "Rocker lever",
+   "module5" => "Transfer module",
 
 
    /* NOTE Sensoren & Aktoren Module */
@@ -40,7 +40,7 @@ $lang = array(
    "module2.6" => "V-rotate",
 
    "module3.1" => "B-Reference switch turn-table (position vacuum)",
-   "module3.2" => "B-Reference switch turn-table (position belt))",
+   "module3.2" => "B-Reference switch turn-table (position belt)",
    "module3.3" => "B-Light-barrier end of conveyor belt",
    "module3.4" => "B-Reference switch turn-table (position saw)",
    "module3.5" => "B-Reference switch vacuum (position turn-table)",
@@ -106,6 +106,5 @@ $lang = array(
 
    /* NOTE Footer */
    "footer1" => "Represented by",
-   "footer2" => "Cooperation with",
 
 );

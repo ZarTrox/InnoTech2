@@ -129,7 +129,14 @@ body {
 }
 
 .header_logo {
-    max-height: 50px;
+    max-height: 25px;
+}
+
+.header_logo_subtitle {
+    font-size: 12px;
+    line-height: 12px;
+    max-width: 106.233;
+    text-align: center;
 }
 
 .header_links {

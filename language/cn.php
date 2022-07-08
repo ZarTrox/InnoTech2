@@ -12,13 +12,14 @@ $lang = array(
    "header2" => "现场状态",
    "header3" => "单一视图",
    "header4" => "图例单视图",
+   "header_logo_subtitle" => "为你的生产开绿灯。",
 
    /* NOTE Module */
    "module1" => "高架仓库",
    "module2" => "抽吸垫",
    "module3" => "窑炉",
    "module4" => "分拣线",
-   "module5" => "摇杆",
+   "module5" => "转移模块",
 
 
    /* NOTE Sensoren & Aktoren Module */
@@ -38,14 +39,14 @@ $lang = array(
    "module2.5" => "V-横向",
    "module2.6" => "V-轮换",
 
-   "module3.1" => "B-参考开关转盘(位置：吸盘)",
-   "module3.2" => "B-参考开关转盘(位置传送带)",
+   "module3.1" => "B-参考开关转盘（位置：吸盘）",
+   "module3.2" => "B-参考开关转盘（位置传送带）",
    "module3.3" => "B-轻型障碍物末端输送带",
-   "module3.4" => "B-参考开关转盘（位置见",
+   "module3.4" => "B-参考开关转盘（位置见）",
    "module3.5" => "B-参考开关吸气（位置：转盘）",
    "module3.6" => "B-参考开关 炉内滑动",
    "module3.7" => "B-参考开关 炉子外面的滑道",
-   "module3.8" => "B-参考开关吸气（位置：窑炉",
+   "module3.8" => "B-参考开关吸气（位置：窑炉）",
    "module3.9" => "B-轻度阻隔窑炉",
    "module3.10" => "B-电机转盘顺时针旋转",
    "module3.11" => "B-电机转盘逆时针旋转",
@@ -64,8 +65,8 @@ $lang = array(
    "module4.5" => "S-浅色屏障蓝",
    "module4.6" => "S-电机传送带",
 
-   "module5.1" => "转换器端部停止 1 (3B1)",
-   "module5.2" => "转换器端部停止 2 (3B2)",
+   "module5.1" => "转换器端部停止 1 （3B1）",
+   "module5.2" => "转换器端部停止 2 （3B2）",
 
 
 
@@ -103,7 +104,6 @@ $lang = array(
 
    /* NOTE Footer */
    "footer1" => "代表者",
-   "footer2" => "一个与之合作的",
 
 
 );

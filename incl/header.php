@@ -2,6 +2,9 @@
     <div class="header_brand">
         <a href="#overview">
             <img class="header_logo" src="./media/img/logo/Logo.svg" alt="Logo">
+            <p class="header_logo_subtitle">
+                <?php echo $lang['header_logo_subtitle'] ?>
+            </p>
         </a>
     </div>
 
@@ -26,11 +29,11 @@
         <div class="dropdown">
             <div class="dropbtn"><?php echo $lang['header3'] ?></div>
             <div class="dropdown-content">
-                <a href="#Hochregallager"><?php echo $lang['module1'] ?></a>
+                <a href="#Hochregal"><?php echo $lang['module1'] ?></a>
                 <a href="#Sauggreifer"><?php echo $lang['module2'] ?></a>
                 <a href="#Brennofen"><?php echo $lang['module3'] ?></a>
-                <a href="#Sortierstrecke"><?php echo $lang['module4'] ?></a>
-                <a href="#Wipphebel"><?php echo $lang['module5'] ?></a>
+                <a href="#Sortier"><?php echo $lang['module4'] ?></a>
+                <a href="#Umsetzer"><?php echo $lang['module5'] ?></a>
             </div>
         </div>
         <div>
@@ -81,11 +84,11 @@
                             <?php echo $lang['header3'] ?>
                         </div>
                         <div class="dropdown-content">
-                            <a class="nav__link" href="#Hochregallager"><?php echo $lang['module1'] ?></a>
+                            <a class="nav__link" href="#Hochregal"><?php echo $lang['module1'] ?></a>
                             <a class="nav__link" href="#Sauggreifer"><?php echo $lang['module2'] ?></a>
                             <a class="nav__link" href="#Brennofen"><?php echo $lang['module3'] ?></a>
-                            <a class="nav__link" href="#Sortierstrecke"><?php echo $lang['module4'] ?></a>
-                            <a class="nav__link" href="#Wipphebel"><?php echo $lang['module5'] ?></a>
+                            <a class="nav__link" href="#Sortier"><?php echo $lang['module4'] ?></a>
+                            <a class="nav__link" href="#Umsetzer"><?php echo $lang['module5'] ?></a>
                         </div>
                     </div>
                 </li>

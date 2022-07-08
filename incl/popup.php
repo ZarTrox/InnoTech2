@@ -9,7 +9,7 @@
          </div>
          <div class="container">
             <div class="row">
-               <div class="col-lg-8 mx-auto">
+               <div class="col-12 mx-auto">
                   <div class="modal-body">
                      <!-- Details Go Here -->
                      <h2 class="text-uppercase">Legende zu Bildfarben und Formen</h2>
@@ -17,14 +17,50 @@
                         Hier werden Farben und Symbole der Einzelübersicht genauer erklärt.
                      </p>
 
-                     <p>
-                        Lichtschranke: Kreis -> orange: #f78a15 -> #b96306<br>
-                        Motor: … -> lila: #7800bd -> #470071<br>
-                        Taster/Anschlag: … -> pink: #fd76ff -> #fc2aff<br>
-                        Schalter: … -> grün: #427c42<br>
-                        Leuchte: … -> gelb: #ffd921<br>
-
-                     </p>
+                     <table style="color: black">
+                        <tr>
+                           <th>Bezeichnung Aktor / Sensor</th>
+                           <th>Form</th>
+                           <th>Farbe</th>
+                           <th>Farbe HEX Code</th>
+                           <th>Farbe HEX Code aktiv</th>
+                        </tr>
+                        <tr>
+                           <td>Lichtschranke</td>
+                           <td>Kreis</td>
+                           <td>orange</td>
+                           <td style="color: #f78a15">#f78a15</td>
+                           <td style="color: #b96306">#b96306</td>
+                        </tr>
+                        <tr>
+                           <td>Motor</td>
+                           <td>...</td>
+                           <td>lila</td>
+                           <td style="color: #7800bd">#7800bd</td>
+                           <td style="color: #470071">#470071</td>
+                        </tr>
+                        <tr>
+                           <td>Taster/Anschlag</td>
+                           <td>...</td>
+                           <td>pink</td>
+                           <td style="color: #fd76ff">#fd76ff</td>
+                           <td style="color: #fc2aff">#fc2aff</td>
+                        </tr>
+                        <tr>
+                           <td>Schalter</td>
+                           <td>...</td>
+                           <td>grün</td>
+                           <td style="color: #427c42">#427c42</td>
+                           <td style="color: ">...</td>
+                        </tr>
+                        <tr>
+                           <td>Leuchte</td>
+                           <td>...</td>
+                           <td>gelb</td>
+                           <td style="color: #ffd921">#ffd921</td>
+                           <td style="color: ">...</td>
+                        </tr>
+                     </table>
 
                      <div class="text-center">
                         <button class="btn btn-outline mt-5" data-dismiss="modal" type="button">

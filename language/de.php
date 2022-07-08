@@ -12,13 +12,14 @@ $lang = array(
    "header2" => "Live Status",
    "header3" => "Einzelübersicht",
    "header4" => "Legende Einzelansicht",
+   "header_logo_subtitle" => "Grünes Licht<br>für Ihre Produktion.",
 
    /* NOTE Module */
    "module1" => "Hochregallager",
    "module2" => "Sauggreifer",
    "module3" => "Brennofen",
    "module4" => "Sortierstrecke",
-   "module5" => "Wipphebel",
+   "module5" => "Umsetzer",
 
 
    /* NOTE Sensoren & Aktoren Module */
@@ -101,8 +102,7 @@ $lang = array(
 
 
    /* NOTE Footer */
-   "footer1" => "Repräsentiert durch",
-   "footer2" => "Eine Kooperation mit",
+   "footer1" => "Repräsentiert durch:",
 
 
 );
