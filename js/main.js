@@ -1,6 +1,4 @@
 /*  Aufgaben Celina:
-- Richtige Skalieren umsetzen
-- Über neue Idee die Zeit zutracken denken (Mit der Uhrzeit die mitgeliefert wird arbeiten?)
 - d3.ease verwenden?
 - Hearmap fuer Gesameuebersicht?
 
