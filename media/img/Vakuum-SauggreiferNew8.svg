@@ -18,26 +18,26 @@
 <rect x="571.2" y="113.5" class="sauggreifer_st0" width="37.3" height="494.4"/>
 <rect x="456" y="113.9" class="sauggreifer_st0" width="37.9" height="493.9"/>
 <rect x="767.4" y="188.7" class="sauggreifer_st1 beweglicherArm" width="40.4" height="115.2"/>
-<rect x="247.8" y="188.5" class="sauggreifer_st1 beweglicherArm" width="36.3" height="113"/>
+<rect x="247.8" y="188.5" class="sauggreifer_st1 beweglicherArm" id="referenzPunktQuerstange" width="36.3" height="113"/>
 <rect x="284.2" y="188.6" class="sauggreifer_st0 beweglicherArm" width="171.8" height="112.9"/>
 <rect x="608.5" y="61.5" class="sauggreifer_st1" width="20.9" height="73.8"/>
 <rect x="434.4" y="61.5" class="sauggreifer_st1" width="21.4" height="73.8"/>
 <rect x="455.8" y="61.5" class="sauggreifer_st2" width="152.6" height="36.9"/>
 <rect x="571.2" y="98.5" class="sauggreifer_st1" width="37.3" height="15.5"/>
 <rect x="456" y="98.5" class="sauggreifer_st1" width="37.9" height="15.5"/>
-<rect x="146.6" y="224"  class="sauggreifer_st0 beweglicherArm" width="101.2" height="41.1"/>
+<rect x="146.6" y="224"  class="sauggreifer_st0 beweglicherArm" id="ausfahrbareQuerstange1" width="101.2" height="41.1"/>
 <rect x="247.8" y="177.3"  class="sauggreifer_st1 beweglicherArm" width="39.7" height="11.2"/>
 <rect x="247.8" y="301.7"  class="sauggreifer_st1 beweglicherArm" width="39.7" height="10.5"/>
 <rect x="238.9" y="188.5"  class="sauggreifer_st1 beweglicherArm" width="8.9" height="35.5"/>
 <rect x="239.2" y="265.2"  class="sauggreifer_st1 beweglicherArm" width="8.3" height="35.5"/>
-<rect x="608.7" y="188.6"  class="sauggreifer_st1 beweglicherArm" id="testThisIssue" width="158.8" height="115.6"/>
-<rect x="146.5" y="189.4"  class="sauggreifer_st2 beweglicherArm" width="35.2" height="34.7"/>
-<rect x="109.1" y="189.7"  class="sauggreifer_st2 beweglicherArm" width="37.3" height="75.2"/>
-<rect x="77.1" y="189.4"  class="sauggreifer_st1 beweglicherArm" width="69.4" height="34.9"/>
-<rect x="83.1" y="224.5"  class="sauggreifer_st3 beweglicherArm" width="4.6" height="103.9"/>
-<rect x="100.6" y="224.5"  class="sauggreifer_st3 beweglicherArm" width="4.6" height="102.9"/>
-<rect x="74.3" y="328.4"  class="sauggreifer_st1 beweglicherArm" width="41.7" height="25.8"/>
-<rect x="87.3" y="360.5"  class="sauggreifer_st4 beweglicherArm" width="15.4" height="21.8"/>
+<rect x="608.7" y="188.6"  class="sauggreifer_st1 beweglicherArm" width="158.8" height="115.6"/>
+<rect x="146.5" y="189.4"  class="sauggreifer_st2 beweglicherArm ausfahrbarerGreifer" width="35.2" height="34.7"/>
+<rect x="109.1" y="189.7"  class="sauggreifer_st2 beweglicherArm ausfahrbarerGreifer" width="37.3" height="75.2"/>
+<rect x="77.1" y="189.4"  class="sauggreifer_st1 beweglicherArm ausfahrbarerGreifer" width="69.4" height="34.9"/>
+<rect x="83.1" y="224.5"  class="sauggreifer_st3 beweglicherArm ausfahrbarerGreifer" width="4.6" height="103.9"/>
+<rect x="100.6" y="224.5"  class="sauggreifer_st3 beweglicherArm ausfahrbarerGreifer" width="4.6" height="102.9"/>
+<rect x="74.3" y="328.4"  class="sauggreifer_st1 beweglicherArm ausfahrbarerGreifer" width="41.7" height="25.8"/>
+<rect x="87.3" y="360.5"  class="sauggreifer_st4 beweglicherArm ausfahrbarerGreifer" width="15.4" height="21.8"/>
 <rect x="451.9" y="675.8" class="sauggreifer_st1" width="219.9" height="61"/>
 <rect x="253.5" y="736.8" class="sauggreifer_st3" width="691.9" height="13"/>
 <rect x="472" y="682.9" class="sauggreifer_st5" width="49.7" height="44.9"/>
@@ -62,7 +62,7 @@
 <rect x="801.2" y="689.4" class="sauggreifer_st1" width="51.3" height="47.2"/>
 <rect x="477.1" y="56.6" class="sauggreifer_st1" width="111.9" height="16.8"/>
 <rect x="266.6" y="662" class="sauggreifer_st5" width="180.2" height="74.8"/>
-<rect x="92.8" y="354.3" class="sauggreifer_st9 beweglicherArm" width="3.2" height="6.2"/>
+<rect x="92.8" y="354.3" class="sauggreifer_st9 beweglicherArm ausfahrbarerGreifer" width="3.2" height="6.2"/>
 <rect x="635.8" y="642.2" class="sauggreifer_st1" width="34.8" height="33.6"/>
 <rect x="623.9" y="185" class="sauggreifer_st2 beweglicherArm" width="69.3" height="30.4"/>
 <rect x="900.8" y="727" class="sauggreifer_st1" width="43.2" height="9.6"/>
@@ -71,7 +71,7 @@
 <rect x="586.6" y="714.6" class="sauggreifer_st10" width="181.9" height="9.1"/>
 <rect x="769" y="713" class="sauggreifer_st1" width="27.2" height="23.5"/>
 <rect x="796.2" y="714.7" class="sauggreifer_st10" width="4.7" height="9.1"/>
-<rect x="146.6" y="239.4" class="sauggreifer_st8 beweglicherArm" width="100" height="9.6"/>
+<rect x="146.6" y="239.4" class="sauggreifer_st8 beweglicherArm" id="ausfahrbareQuerstange2" width="100" height="9.6"/>
 <rect x="285" y="205.8" class="sauggreifer_st8 beweglicherArm" width="169.6" height="11.6"/>
 <rect x="285.4" y="239.2" class="sauggreifer_st8 beweglicherArm" width="169.6" height="11.6"/>
 <rect x="285.4" y="270.8" class="sauggreifer_st8 beweglicherArm" width="169.6" height="11.6"/>

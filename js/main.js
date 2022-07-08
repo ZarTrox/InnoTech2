@@ -155,7 +155,8 @@ async function updateSvgWithData(data) {
             createSvgSortierstrecke(dataArray, Zeit);
             //createSvgStapelmagazin()
             //createSvgAmpel(dataArray);
-            //createSvgBrennofen(dataArray, Zeit);
+            createSvgBrennofen(dataArray, Zeit);
+            createSvgFestoUebersicht(dataArray, Zeit)
         } else {
             //createAllSVGs();
             //Oder in den FUnktionen pruefen ob dataArrayVorher = null
@@ -164,7 +165,7 @@ async function updateSvgWithData(data) {
 }
 
 function createSvgUebersicht(dataArray, Zeit, dataArrayVorher) {
-    d3.xml("./media/img/Gesamtansicht.svg",
+    d3.xml("./media/img/Gesamtansicht2.svg",
         function (error, documentFragment) {
             if (error) { console.log(error); return; }
 
@@ -177,6 +178,20 @@ function createSvgUebersicht(dataArray, Zeit, dataArrayVorher) {
 
 
             //svg.select("#HochregallagerLink").appendChild("<a href='www.w3schools.com/html/html_links.asp'></a>")
+        });
+}
+
+function createSvgUebersichtFesto(dataArray, Zeit, dataArrayVorher) {
+    d3.xml("./media/img/Gesamtansicht_Festo2.svg",
+        function (error, documentFragment) {
+            if (error) { console.log(error); return; }
+
+            var svgNode = documentFragment
+                .getElementsByTagName("svg")[0];
+            var main_chart_svg = d3.select("#FestoUeberblickSvg")
+            if (document.getElementById('FestoUeberblickSvg').getElementsByTagName('svg').length == 0) {
+                main_chart_svg.node().appendChild(svgNode);
+            }
         });
 }
 
@@ -268,10 +283,6 @@ function hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y) {
         svg.selectAll(".turmBewegen").each(function (d, i) {
             var oldvalueX = d3.select(this).attr("x");
             var newvalueX = parseFloat(oldvalueX) + diffHHorizontal;
-            // if (newvalueX < 0) {
-            //     console.log("X alt: " + oldvalueX);
-            //     console.log("X neu: " + newvalueX);
-            // }
             d3.select(this)
                 .transition()
                 .duration(1000)
@@ -283,14 +294,6 @@ function hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y) {
             var newvalueY = parseFloat(oldvalueY) + diffHvert;
             var oldvalueX = d3.select(this).attr("x");
             var newvalueX = parseFloat(oldvalueX) + diffHHorizontal;
-            // if (newvalueX < 0) {
-            //     console.log("X alt Greifer: " + oldvalueX);
-            //     console.log("X neu Greifer: " + newvalueX);
-            // }
-            // if (newvalueY < 0) {
-            //     console.log("Y alt Greifer: " + oldvalueY);
-            //     console.log("Y neu Greifer: " + newvalueY);
-            // }
             d3.select(this)
                 .transition()
                 .duration(1000)
@@ -501,9 +504,8 @@ function createSvgSortierstrecke(dataArray, Zeit) {
 
 
 }
-//Fehler: wenn wipphebel dann gleiche farbklassen verwendet und somit hochregallager andere farbe. aber egal da wir andere seiten verwenden fpr einzelansichten
 function createSvgWipphebel(dataArray, Zeit) {
-    d3.xml("./media/img/Wipphebel2.svg",
+    d3.xml("./media/img/Wipphebel3.svg",
         function (error, documentFragment) {
             if (error) { console.log(error); return; }
             var svgNode = documentFragment
@@ -520,14 +522,12 @@ function createSvgWipphebel(dataArray, Zeit) {
                     Warum?
                 */
 
-                //Um zu testen ob das flippen funktioniert
                 var madde = Math.floor(Math.random() * (Math.ceil(6) - Math.floor(0)))
                 if (madde > 3) {
                     dataArray[ArrayWithVariablesForWippHebel[0]] = " true"
                 } else if (madde <= 3) {
                     dataArray[ArrayWithVariablesForWippHebel[1]] = " true"
                 }
-                //Das als transition umwandeln? Wie würde das funktiuonieren?
                 if (dataArray[ArrayWithVariablesForWippHebel[0]] == " true") {
                     document.getElementById("WipphebelSvg").style.transform = "scale(1, 1)";
                 } else if (dataArray[ArrayWithVariablesForWippHebel[1]] == " true") {
@@ -567,7 +567,7 @@ function createSvgWipphebel(dataArray, Zeit) {
 
 function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeVHorizontalXScale, getDomainMaxRangeVVertikalYScale) {
     //TODO: Elemente in svg grupieren
-    d3.xml("./media/img/Vakuum-SauggreiferNew5.svg",
+    d3.xml("./media/img/Vakuum-SauggreiferNew8.svg",
         function (error, documentFragment) {
             if (error) { console.log(error); return; }
             var svgNode = documentFragment
@@ -581,7 +581,7 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMax
                 //TOdo: Skalieren der Grafik
                 var x = d3.scaleLinear()
                     .domain([0, getDomainMaxRangeVHorizontalXScale])
-                    .range([0, 0]).clamp(true)
+                    .range([0, 1024]).clamp(true)
                 var y = d3.scaleLinear()
                     .domain([0, getDomainMaxRangeVVertikalYScale])
                     .range([768, 0]).clamp(true)
@@ -594,77 +594,91 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMax
                 // }
                 var madde = Math.floor(Math.random() * (Math.ceil(6) - Math.floor(0)))
                 if (madde <= 2) {
-                    dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 0
-                } else 
-                if (madde > 2 && madde <= 4) {
-                    dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 50
-                } else if (madde > 4) {
-                    dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 200
-                }
+                    dataArray[ArrayWithVariablesForVakuumSauggreifer[5]] = 0
+                } else
+                    if (madde > 2 && madde <= 4) {
+                        dataArray[ArrayWithVariablesForVakuumSauggreifer[5]] = 10
+                    } else if (madde > 4) {
+                        dataArray[ArrayWithVariablesForVakuumSauggreifer[5]] = 80
+                    }
                 if (dataArrayVorher) {
+
                     var scaledHvert = y(parseInt(dataArray[ArrayWithVariablesForVakuumSauggreifer[3]]));
                     var scaledHvertVorher = y(parseInt(dataArrayVorher[ArrayWithVariablesForVakuumSauggreifer[3]]));
                     var diffHvert = scaledHvert - scaledHvertVorher;
 
-                     console.log("scaledHvert" + scaledHvert);
-                     console.log("scaledHvertVorher" + scaledHvertVorher);
-                     console.log("DiffHvert" + diffHvert);
-                    // console.log("------------------------------------");
+                    var scaledHHorizontal = x(parseInt(dataArray[ArrayWithVariablesForVakuumSauggreifer[5]]));
+                    var scaledHHorizontalVorher = x(parseInt(dataArrayVorher[ArrayWithVariablesForVakuumSauggreifer[5]]));
+                    var diffHHorizontal = scaledHHorizontal - scaledHHorizontalVorher;
+
+                    /*
+                    Drehen:
+                    - Werte von 0 - 1000 irgendetwas
+                    - skalieren auf 360Grad? Und wenn größer 180 dann wieder zurückflippen?
+                    */
+                    //Celina: Im graphen code verschiedene ebenen erstellen
+                    //Ist es wichtig den greifer nach links und rechts zu bewegen?
+                    //Hochregallager auf der rechten seite anzeigen
                     svg.selectAll(".beweglicherArm").each(function (d, i) {
-                        if (d3.select(this).attr('id') === "testThisIssue") {
-                            var oldvalueY = d3.select(this).attr("y");
-                            console.log("Old: " + oldvalueY);
-                            console.log("Diff: " + diffHvert);
-                            // console.log("------------------------------------")
-                            var newvalueY = parseFloat(oldvalueY) + diffHvert;
+                        var oldvalueY = d3.select(this).attr("y");
+                        var newvalueY = parseFloat(oldvalueY) + diffHvert;
+
+                        var oldValueX = d3.select(this).attr("x");
+                        var newValueX = parseFloat(oldValueX) + diffHHorizontal;
+                        var classesSauggreiferElement = d3.select(this).attr("class");
+                        var idSauggreiferElement = d3.select(this).attr("id");
+
+                        //if ((idSauggreiferElement === "ausfahrbareQuerstange1") || (idSauggreiferElement === "ausfahrbareQuerstange2")) {
+                            //Weg finden wie man die Querstrebe am Hauptarm halten kann
+                            //var newLength = diffHHorizontal - d3.select(parseFloat(d3.select("#referenzPunktQuerstange").attr("x")));
+                            //console.log(typeof parseFloat(d3.select("#referenzPunktQuerstange").attr("x")));
+                            // d3.select(this)
+                            //     .transition()
+                            //     .duration(1000)
+                            //     .attr("y", newvalueY + "px")
+                            //     .attr("x", newValueX + "px")
+                            //     .attr("width", newLength)
+                        //} else 
+                        if (classesSauggreiferElement.includes("ausfahrbarerGreifer")) {
                             d3.select(this)
                                 .transition()
                                 .duration(1000)
                                 .attr("y", newvalueY + "px")
+                                .attr("x", newValueX + "px")
                         } else {
-
-                            var oldvalueY = d3.select(this).attr("y");
-                            var newvalueY = parseFloat(oldvalueY) + diffHvert;
                             d3.select(this)
                                 .transition()
                                 .duration(1000)
                                 .attr("y", newvalueY + "px")
                         }
-                    })
-                } else {
-                    // svg.selectAll(".beweglicherArm").each(function (d, i) {
-                    //     d3.select(this)
-                    //         .transition()
-                    //         .duration(1000)
-                    //         .attr("y", y(dataArray[ArrayWithVariablesForVakuumSauggreifer[3]]) + "px");
 
-                    // })
-                }
-                var status = "";
-                for (id in arraySauggreiferCheckboxIds) {
-                    switch (parseInt(id)) {
-                        case 0:
-                            status = dataArray["Referenztaster horizontal"];
-                            break;
-                        case 1:
-                            status = dataArray["Lichtschranke innen"];
-                            break;
-                        case 2:
-                            status = dataArray["Lichtschranke aussen"];
-                            break;
-                        case 3:
-                            status = dataArray["Referenztaster vertikal"];
-                            break;
-                        case 4:
-                            status = dataArray["Referenztaster Ausleger vorne"];
-                            break;
-                        case 5:
-                            status = dataArray["Referenztaster Ausleger hinten"];
-                            break;
-                        default:
-                            status = "";
+                    })
+                    var status = "";
+                    for (id in arraySauggreiferCheckboxIds) {
+                        switch (parseInt(id)) {
+                            case 0:
+                                status = dataArray["Referenztaster horizontal"];
+                                break;
+                            case 1:
+                                status = dataArray["Lichtschranke innen"];
+                                break;
+                            case 2:
+                                status = dataArray["Lichtschranke aussen"];
+                                break;
+                            case 3:
+                                status = dataArray["Referenztaster vertikal"];
+                                break;
+                            case 4:
+                                status = dataArray["Referenztaster Ausleger vorne"];
+                                break;
+                            case 5:
+                                status = dataArray["Referenztaster Ausleger hinten"];
+                                break;
+                            default:
+                                status = "";
+                        }
+                        updateInputCheckboxes(arraySauggreiferCheckboxIds[id], status)
                     }
-                    updateInputCheckboxes(arraySauggreiferCheckboxIds[id], status)
                 }
             }
         });
@@ -684,24 +698,43 @@ function createSvgStapelmagazin() {
             svg = main_chart_svg.select("svg")
         });
 }
-// function createSvgBrennofen(dataArray, Zeit) {
-//     d3.xml("./media/img/Wipphebel.svg",
-//         function (error, documentFragment) {
-//             if (error) { console.log(error); return; }
+function createSvgBrennofen(dataArray, Zeit) {
+    d3.xml("./media/img/Brennofen2.svg",
+        function (error, documentFragment) {
+            if (error) { console.log(error); return; }
 
-//             var svgNode = documentFragment
-//                 .getElementsByTagName("svg")[0];
-//             var main_chart_svg = d3.select("#Wipphebel")
-//             // if (document.getElementById("div"))
-//             if (document.getElementById('Wipphebel').getElementsByTagName('svg').length == 0) {
-//                 main_chart_svg.node().appendChild(svgNode);
-//             }
-//             svg = main_chart_svg.select("svg")
-//             if (dataArray != "") {
-//                 svg.selectAll("rect.Wipphebel").remove();
-//             }
-//         });
-// }
+            var svgNode = documentFragment
+                .getElementsByTagName("svg")[0];
+            var main_chart_svg = d3.select("#BrennOfenSvg")
+            // if (document.getElementById("div"))
+            if (document.getElementById('BrennOfenSvg').getElementsByTagName('svg').length == 0) {
+                main_chart_svg.node().appendChild(svgNode);
+            }
+            svg = main_chart_svg.select("svg")
+            if (dataArray != "") {
+                svg.selectAll("rect.Wipphebel").remove();
+            }
+        });
+}
+
+function createSvgFestoUebersicht(dataArray, Zeit) {
+    d3.xml("./media/img/Gesamtübersicht_Festo2.svg",
+        function (error, documentFragment) {
+            if (error) { console.log(error); return; }
+
+            var svgNode = documentFragment
+                .getElementsByTagName("svg")[0];
+            var main_chart_svg = d3.select("#FestoUebersichtSvg")
+            // if (document.getElementById("div"))
+            if (document.getElementById('FestoUebersichtSvg').getElementsByTagName('svg').length == 0) {
+                main_chart_svg.node().appendChild(svgNode);
+            }
+            svg = main_chart_svg.select("svg")
+            if (dataArray != "") {
+                svg.selectAll("rect.Wipphebel").remove();
+            }
+        });
+}
 
 // function createSvgAmpel(dataArray) {
 
