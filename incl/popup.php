@@ -13,11 +13,11 @@
                   <div class="modal-body">
                      <!-- Details Go Here -->
                      <h2 class="text-uppercase">Legende zu Bildfarben und Formen</h2>
-                     <p class="item-intro text-muted">
-                        Hier werden Farben und Symbole der Einzelübersicht genauer erklärt.
+                     <p class="item-intro">
+                        Definition der Farben in den Einzelansichten:
                      </p>
 
-                     <table style="color: black">
+                     <table>
                         <tr>
                            <th>Bezeichnung Aktor / Sensor</th>
                            <th>Farbe</th>

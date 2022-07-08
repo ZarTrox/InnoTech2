@@ -442,9 +442,6 @@ body {
 }
 
 
-/* NOTE live_status */
-
-
 
 
 /* NOTE Footer */
@@ -452,6 +449,8 @@ body {
     min-height: 15vh;
     background-color: var(--action-bar);
 }
+
+
 
 /* NOTE PopUp Legende */
 
@@ -462,18 +461,17 @@ body {
 
 .legende .modal-content {
     padding: 100px 0;
+    background-color: var(--background) !important;
 }
 
 .legende .modal-content h2 {
     font-size: 3em;
     margin-bottom: 15px;
-    color: black;
     text-align: center;
 }
 
 .legende .modal-content p.item-intro {
     font-size: 16px;
-    font-style: italic;
     margin: 20px 0 30px;
     text-align: center;
 }
@@ -481,7 +479,6 @@ body {
 .legende .modal-content p {
     margin-top: 15px;
     margin-bottom: 30px;
-    color: black;
 }
 
 .legende .modal-content img {
@@ -491,8 +488,8 @@ body {
 
 .legende .modal-content button {
     cursor: pointer;
-    color: var(--action-bar);
-    border-color: var(--action-bar);
+    color: white;
+    border-color: white;
 }
 
 .legende .modal-content button:hover {
@@ -515,26 +512,22 @@ body {
 }
 
 .legende .close-modal .lr {
-    /* Safari and Chrome */
-    z-index: 1051;
+    z-index: 9999;
     width: 1px;
     height: 75px;
     margin-left: 35px;
-    /* IE 9 */
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
-    background-color: var(--action-bar);
+    background-color: white;
 }
 
 .legende .close-modal .lr .rl {
-    /* Safari and Chrome */
-    z-index: 1052;
+    z-index: 9999;
     width: 1px;
     height: 75px;
-    /* IE 9 */
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
-    background-color: var(--action-bar);
+    background-color: white;
 }
 
 .svg_color_Lichtschranke {
