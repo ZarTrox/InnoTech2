@@ -20,45 +20,44 @@
                      <table style="color: black">
                         <tr>
                            <th>Bezeichnung Aktor / Sensor</th>
-                           <th>Form</th>
                            <th>Farbe</th>
-                           <th>Farbe HEX Code</th>
-                           <th>Farbe HEX Code aktiv</th>
                         </tr>
                         <tr>
-                           <td>Lichtschranke</td>
-                           <td>Kreis</td>
-                           <td>orange</td>
-                           <td style="color: #f78a15">#f78a15</td>
-                           <td style="color: #b96306">#b96306</td>
+                           <td>
+                              Lichtschranke
+                           </td>
+                           <td>
+                              <div class="svg_color_Lichtschranke"></div>
+                              #f78a15
+                           </td>
                         </tr>
                         <tr>
                            <td>Motor</td>
-                           <td>...</td>
-                           <td>lila</td>
-                           <td style="color: #7800bd">#7800bd</td>
-                           <td style="color: #470071">#470071</td>
+                           <td>
+                              <div class="svg_color_Motor"></div>
+                              #7800bd
+                           </td>
                         </tr>
                         <tr>
                            <td>Taster/Anschlag</td>
-                           <td>...</td>
-                           <td>pink</td>
-                           <td style="color: #fd76ff">#fd76ff</td>
-                           <td style="color: #fc2aff">#fc2aff</td>
+                           <td>
+                              <div class="svg_color_Taster"></div>
+                              #fd76ff
+                           </td>
                         </tr>
                         <tr>
                            <td>Schalter</td>
-                           <td>...</td>
-                           <td>grün</td>
-                           <td style="color: #427c42">#427c42</td>
-                           <td style="color: ">...</td>
+                           <td>
+                              <div class="svg_color_Schalter"></div>
+                              #427c42
+                           </td>
                         </tr>
                         <tr>
                            <td>Leuchte</td>
-                           <td>...</td>
-                           <td>gelb</td>
-                           <td style="color: #ffd921">#ffd921</td>
-                           <td style="color: ">...</td>
+                           <td>
+                              <div class="svg_color_Leuchte"></div>
+                              #ffd921
+                           </td>
                         </tr>
                      </table>
 

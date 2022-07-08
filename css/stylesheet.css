@@ -537,7 +537,50 @@ body {
     background-color: var(--action-bar);
 }
 
+.svg_color_Lichtschranke {
+    width: 20px;
+    height: 20px;
+    background: #f78a15;
+    display: inline-block;
+    vertical-align: sub;
+    margin-right: 10px;
+}
 
+.svg_color_Motor {
+    width: 20px;
+    height: 20px;
+    background: #7800bd;
+    display: inline-block;
+    vertical-align: sub;
+    margin-right: 10px;
+}
+
+.svg_color_Taster {
+    width: 20px;
+    height: 20px;
+    background: #fd76ff;
+    display: inline-block;
+    vertical-align: sub;
+    margin-right: 10px;
+}
+
+.svg_color_Schalter {
+    width: 20px;
+    height: 20px;
+    background: #427c42;
+    display: inline-block;
+    vertical-align: sub;
+    margin-right: 10px;
+}
+
+.svg_color_Leuchte {
+    width: 20px;
+    height: 20px;
+    background: #ffd921;
+    display: inline-block;
+    vertical-align: sub;
+    margin-right: 10px;
+}
 
 
 /* NOTE Button */
