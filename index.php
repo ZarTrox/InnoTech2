@@ -61,7 +61,7 @@
 
             <div class="col-12 col-xl-6 pt-3 pb-3">
 
-                <img class="overview_pic" id="overview_three" src="./media/img/Gesamtübersicht_Festo.svg" alt="Gesamtübersicht Festo">
+                <img class="overview_pic" src="./media/img/Gesamtübersicht_Festo.svg" alt="Gesamtübersicht Festo">
 
             </div>
 
@@ -73,24 +73,6 @@
 
 
     </div>
-
-
-    <script>
-        $(document).ready(function() {
-
-            const mq = window.matchMedia("(min-width: 992px)");
-
-            if (mq.matches) {
-                var height = Math.min($("#overview_one").height(), $("#overview_two").height(), $("#overview_three").height());
-                $("#overview_one").height(height);
-                $("#overview_two").height(height);
-                $("#overview_three").height(height);
-            } else {
-                // window width is less than 960px
-            }
-
-        });
-    </script>
 
 
 
@@ -518,7 +500,7 @@
                     <!-- Bild -->
                     <div class="col-12 col-lg-6" style="display: flex !important;">
                         <img src="./media/img/Stapelmagazin.svg" class="single_pic" alt="Stapelmagazin">
-                        <div class="single_pic" id="WipphebelSvg" alt="Part Wipphebel"></div>
+                        <div class="single_pic" id="UmsetzerSvg" alt="Part Umsetzer"></div>
                     </div>
 
                     <!-- Status Sensoren & Aktoren -->

@@ -57,7 +57,7 @@ const ArrayWithVariablesForVakuumSauggreifer = [
     "V-horizontal"
 ]
 
-const ArrayWithVariablesForWippHebel = [
+const ArrayWithVariablesForUmsetzer = [
     "Umsetzer Endanschlag 1 (3B1)",
     "Umsetzer Endanschlag 2 (3B2)"
 ]
@@ -84,9 +84,9 @@ const arraySauggreiferCheckboxIds = [
     "checkboxSauggreiferReferenzschalterdrehen",
 ]
 
-const arrayWipphebelCheckboxIds = [
-    "checkboxWipphebelUmsetzerendanschlag1",
-    "checkboxWipphebelUmsetzerendanschlag2"
+const arrayUmsetzerCheckboxIds = [
+    "checkboxUmsetzerUmsetzerendanschlag1",
+    "checkboxUmsetzerUmsetzerendanschlag2"
 ]
 
 const arrayBearbeitungsstationMitBrennofenCheckboxIds = [
@@ -151,7 +151,7 @@ async function updateSvgWithData(data) {
             createSvgUebersicht(dataArray, Zeit, dataArrayVorher);
             createSvgHochregallager(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeHHorizontalXScale, getDomainMaxRangeHVertikalYScale);
             createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeVHorizontalXScale, getDomainMaxRangeVVertikalYScale);
-            createSvgWipphebel(dataArray, Zeit);
+            createSvgUmsetzer(dataArray, Zeit);
             createSvgSortierstrecke(dataArray, Zeit);
             //createSvgStapelmagazin()
             //createSvgAmpel(dataArray);
@@ -504,14 +504,14 @@ function createSvgSortierstrecke(dataArray, Zeit) {
 
 
 }
-function createSvgWipphebel(dataArray, Zeit) {
-    d3.xml("./media/img/Wipphebel3.svg",
+function createSvgUmsetzer(dataArray, Zeit) {
+    d3.xml("./media/img/Umsetzer3.svg",
         function (error, documentFragment) {
             if (error) { console.log(error); return; }
             var svgNode = documentFragment
                 .getElementsByTagName("svg")[0];
-            var main_chart_svg = d3.select("#WipphebelSvg")
-            if (document.getElementById('WipphebelSvg').getElementsByTagName('svg').length == 0) {
+            var main_chart_svg = d3.select("#UmsetzerSvg")
+            if (document.getElementById('UmsetzerSvg').getElementsByTagName('svg').length == 0) {
                 main_chart_svg.node().appendChild(svgNode);
             }
             svg = main_chart_svg.select("svg")
@@ -524,19 +524,19 @@ function createSvgWipphebel(dataArray, Zeit) {
 
                 var madde = Math.floor(Math.random() * (Math.ceil(6) - Math.floor(0)))
                 if (madde > 3) {
-                    dataArray[ArrayWithVariablesForWippHebel[0]] = " true"
+                    dataArray[ArrayWithVariablesForUmsetzer[0]] = " true"
                 } else if (madde <= 3) {
-                    dataArray[ArrayWithVariablesForWippHebel[1]] = " true"
+                    dataArray[ArrayWithVariablesForUmsetzer[1]] = " true"
                 }
-                if (dataArray[ArrayWithVariablesForWippHebel[0]] == " true") {
-                    document.getElementById("WipphebelSvg").style.transform = "scale(1, 1)";
-                } else if (dataArray[ArrayWithVariablesForWippHebel[1]] == " true") {
-                    document.getElementById("WipphebelSvg").style.transform = "scale(-1, 1)";
+                if (dataArray[ArrayWithVariablesForUmsetzer[0]] == " true") {
+                    document.getElementById("UmsetzerSvg").style.transform = "scale(1, 1)";
+                } else if (dataArray[ArrayWithVariablesForUmsetzer[1]] == " true") {
+                    document.getElementById("UmsetzerSvg").style.transform = "scale(-1, 1)";
                 } else {
-                    //Wipper in der Luft?
+                    //Umsetzer in der Luft?
                 }
                 var status = "";
-                for (id in arrayWipphebelCheckboxIds) {
+                for (id in arrayUmsetzerCheckboxIds) {
                     switch (parseInt(id)) {
                         case 0:
                             status = dataArray["Referenztaster horizontal"];
@@ -559,7 +559,7 @@ function createSvgWipphebel(dataArray, Zeit) {
                         default:
                             status = "";
                     }
-                    updateInputCheckboxes(arrayWipphebelCheckboxIds[id], status)
+                    updateInputCheckboxes(arrayUmsetzerCheckboxIds[id], status)
                 }
             }
         });
@@ -712,7 +712,7 @@ function createSvgBrennofen(dataArray, Zeit) {
             }
             svg = main_chart_svg.select("svg")
             if (dataArray != "") {
-                svg.selectAll("rect.Wipphebel").remove();
+                svg.selectAll("rect.Umsetzer").remove();
             }
         });
 }
@@ -731,7 +731,7 @@ function createSvgFestoUebersicht(dataArray, Zeit) {
             }
             svg = main_chart_svg.select("svg")
             if (dataArray != "") {
-                svg.selectAll("rect.Wipphebel").remove();
+                svg.selectAll("rect.Umsetzer").remove();
             }
         });
 }
