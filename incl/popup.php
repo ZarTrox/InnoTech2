@@ -12,19 +12,25 @@
                <div class="col-12 mx-auto">
                   <div class="modal-body">
                      <!-- Details Go Here -->
-                     <h2 class="text-uppercase">Legende zu Bildfarben und Formen</h2>
+                     <h2 class="text-uppercase">
+                        <?php echo $lang['legende_h'] ?>
+                     </h2>
                      <p class="item-intro">
-                        Definition der Farben in den Einzelansichten:
+                        <?php echo $lang['legende_subtitle'] ?>
                      </p>
 
                      <table>
                         <tr>
-                           <th>Bezeichnung Aktor / Sensor</th>
-                           <th>Farbe</th>
+                           <th>
+                              <?php echo $lang['legende_table_header1'] ?>
+                           </th>
+                           <th>
+                              <?php echo $lang['legende_table_header2'] ?>
+                           </th>
                         </tr>
                         <tr>
                            <td>
-                              Lichtschranke
+                              <?php echo $lang['legende1.1'] ?>
                            </td>
                            <td>
                               <div class="svg_color_Lichtschranke"></div>
@@ -32,28 +38,36 @@
                            </td>
                         </tr>
                         <tr>
-                           <td>Motor</td>
+                           <td>
+                              <?php echo $lang['legende2.1'] ?>
+                           </td>
                            <td>
                               <div class="svg_color_Motor"></div>
                               #7800bd
                            </td>
                         </tr>
                         <tr>
-                           <td>Taster/Anschlag</td>
+                           <td>
+                              <?php echo $lang['legende3.1'] ?>
+                           </td>
                            <td>
                               <div class="svg_color_Taster"></div>
                               #fd76ff
                            </td>
                         </tr>
                         <tr>
-                           <td>Schalter</td>
+                           <td>
+                              <?php echo $lang['legende4.1'] ?>
+                           </td>
                            <td>
                               <div class="svg_color_Schalter"></div>
                               #427c42
                            </td>
                         </tr>
                         <tr>
-                           <td>Leuchte</td>
+                           <td>
+                              <?php echo $lang['legende5.1'] ?>
+                           </td>
                            <td>
                               <div class="svg_color_Leuchte"></div>
                               #ffd921

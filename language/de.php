@@ -101,6 +101,20 @@ $lang = array(
    Der Wipphebel ist Bestandteil des Modul Umsetzen und sorgt für die Übernahme der vereinzelten Werkstücke aus der Endposition des Stapelmagazin.",
 
 
+   /* NOTE Legende */
+   "legende_h" => "Legende zu den Bildfarben",
+   "legende_subtitle" => "Definition der Farben in den Einzelansichten",
+
+   "legende_table_header1" => "Bezeichnung Aktor / Sensor",
+   "legende_table_header2" => "Farbe",
+
+   "legende1.1" => "Lichtschranke",
+   "legende2.1" => "Motor",
+   "legende3.1" => "Taster/Anschlag",
+   "legende4.1" => "Schalter",
+   "legende5.1" => "Leuchte",
+
+
    /* NOTE Footer */
    "footer1" => "Repräsentiert durch:",
 

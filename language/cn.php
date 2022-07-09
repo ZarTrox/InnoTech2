@@ -102,6 +102,20 @@ $lang = array(
    摇臂是传输模块的一部分，确保分离的工件从堆垛库的末端位置被接管。",
 
 
+   /* NOTE Legende */
+   "legende_h" => "图像颜色的图例",
+   "legende_subtitle" => "各个视图中的颜色定义",
+
+   "legende_table_header1" => "执行器/传感器名称",
+   "legende_table_header2" => "颜色",
+
+   "legende1.1" => "光屏障",
+   "legende2.1" => "电机",
+   "legende3.1" => "钮扣",
+   "legende4.1" => "开关",
+   "legende5.1" => "灯具",
+
+
    /* NOTE Footer */
    "footer1" => "代表者",
 
