@@ -97,7 +97,7 @@
                             <th>
                                 <?php echo $lang['table_h1'] ?>
                             </th>
-                            <th>
+                            <th id="table_width_one">
                                 <?php echo $lang['table_h2'] ?>
                             </th>
                         </tr>
@@ -117,7 +117,7 @@
                             <th>
                                 <?php echo $lang['table_h1'] ?>
                             </th>
-                            <th>
+                            <th id="table_width_two">
                                 <?php echo $lang['table_h2'] ?>
                             </th>
                         </tr>
@@ -138,7 +138,7 @@
                             <th>
                                 <?php echo $lang['table_h1'] ?>
                             </th>
-                            <th>
+                            <th id="table_width_four">
                                 <?php echo $lang['table_h2'] ?>
                             </th>
                         </tr>
@@ -159,7 +159,7 @@
                             <th>
                                 <?php echo $lang['table_h1'] ?>
                             </th>
-                            <th>
+                            <th id="table_width_five">
                                 <?php echo $lang['table_h2'] ?>
                             </th>
                         </tr>
@@ -179,7 +179,7 @@
                             <th>
                                 <?php echo $lang['table_h1'] ?>
                             </th>
-                            <th>
+                            <th id="table_width_three">
                                 <?php echo $lang['table_h2'] ?>
                             </th>
                         </tr>
@@ -226,7 +226,7 @@
                                     <th>
                                         <?php echo $lang['table_h1'] ?>
                                     </th>
-                                    <th>
+                                    <th id="table_width_six">
                                         <?php echo $lang['table_h2'] ?>
                                     </th>
                                 </tr>
@@ -298,7 +298,7 @@
                                     <th>
                                         <?php echo $lang['table_h1'] ?>
                                     </th>
-                                    <th>
+                                    <th id="table_width_seven">
                                         <?php echo $lang['table_h2'] ?>
                                     </th>
                                 </tr>
@@ -387,7 +387,7 @@
                                     <th>
                                         <?php echo $lang['table_h1'] ?>
                                     </th>
-                                    <th>
+                                    <th id="table_width_eight">
                                         <?php echo $lang['table_h2'] ?>
                                     </th>
                                 </tr>
@@ -441,7 +441,7 @@
                                     <th>
                                         <?php echo $lang['table_h1'] ?>
                                     </th>
-                                    <th>
+                                    <th id="table_width_nine">
                                         <?php echo $lang['table_h2'] ?>
                                     </th>
                                 </tr>
@@ -515,7 +515,7 @@
                                     <th>
                                         <?php echo $lang['table_h1'] ?>
                                     </th>
-                                    <th>
+                                    <th id="table_width_ten">
                                         <?php echo $lang['table_h2'] ?>
                                     </th>
                                 </tr>
@@ -569,9 +569,27 @@
 
 
 
+    <script>
+        $(document).ready(function() {
+
+            var width = Math.min($("#table_width_one").width(), $("#table_width_two").width(), $("#table_width_three").width(), $("#table_width_four").width(), $("#table_width_five").width());
+            $("#table_width_one").width(width);
+            $("#table_width_two").width(width);
+            $("#table_width_three").width(width);
+            $("#table_width_four").width(width);
+            $("#table_width_five").width(width);
 
 
-    </div>
+            var width = Math.min($("#table_width_six").width(), $("#table_width_seven").width(), $("#table_width_eight").width(), $("#table_width_nine").width(), $("#table_width_ten").width());
+            $("#table_width_six").width(width);
+            $("#table_width_seven").width(width);
+            $("#table_width_eight").width(width);
+            $("#table_width_nine").width(width);
+            $("#table_width_ten").width(width);
+
+        });
+    </script>
+
 
     <div id="svgcontainer"> </div>
     <script>
