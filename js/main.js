@@ -119,10 +119,6 @@ const arraySortierstreckeMitFarberkennungCheckboxIds = [
     "checkboxSortierstreckeMotorfoerderband"
 ]
 
-const arrayVakuumSauggreiferCheckboxIds = [
-
-]
-
 
 function getData() {
     fetch(`https://it2wi1.if-lab.de/rest/ft_ablauf`)
@@ -134,10 +130,11 @@ function getData() {
 }
 
 async function updateSvgWithData(data) {
-    var getDomainMaxRangeHHorizontalXScale = getMaxValue(data, "H-horizontal")
-    var getDomainMaxRangeHVertikalYScale = getMaxValue(data, "H-vertikal")
-    var getDomainMaxRangeVVertikalYScale = getMaxValue(data, "V-vertikal")
-    var getDomainMaxRangeVHorizontalXScale = getMaxValue(data, "V-horizontal")
+    var getDomainMaxRangeHHorizontalXScale = getMaxValue(data, "H-horizontal");
+    var getDomainMaxRangeHVertikalYScale = getMaxValue(data, "H-vertikal");
+    var getDomainMaxRangeVVertikalYScale = getMaxValue(data, "V-vertikal");
+    var getDomainMaxRangeVHorizontalXScale = getMaxValue(data, "V-horizontal");
+    var getDomainMaxRangeVDrehenZScale = getMaxValue(data, "V-drehen");
 
     for (element in data) {
         //Check time here
@@ -145,18 +142,17 @@ async function updateSvgWithData(data) {
         //Todo fall für 0 einfuegen
         if (element != 0) {
             var dataArray = data[element]["werte"];
-            var Zeit = data[element]["datum"];
             var dataArrayVorher = data[element - 1]["werte"];
             //updateStationen(data[element]["werte"], data[element]["datum"], data[element - 1]["werte"], getDomainMaxRangeHHorizontalXScale);
-            createSvgUebersicht(dataArray, Zeit, dataArrayVorher);
-            createSvgHochregallager(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeHHorizontalXScale, getDomainMaxRangeHVertikalYScale);
-            createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeVHorizontalXScale, getDomainMaxRangeVVertikalYScale);
-            createSvgUmsetzer(dataArray, Zeit);
-            createSvgSortierstrecke(dataArray, Zeit);
+            createSvgUebersicht(dataArray, dataArrayVorher);
+            createSvgHochregallager(dataArray, dataArrayVorher, getDomainMaxRangeHHorizontalXScale, getDomainMaxRangeHVertikalYScale);
+            createSvgVakuumSauggreif(dataArray, dataArrayVorher, getDomainMaxRangeVHorizontalXScale, getDomainMaxRangeVVertikalYScale, getDomainMaxRangeVDrehenZScale);
+            createSvgUmsetzer(dataArray);
+            createSvgSortierstrecke(dataArray);
             //createSvgStapelmagazin()
             //createSvgAmpel(dataArray);
-            createSvgBrennofen(dataArray, Zeit);
-            createSvgFestoUebersicht(dataArray, Zeit)
+            createSvgBrennofen(dataArray);
+            createSvgFestoUebersicht(dataArray)
         } else {
             //createAllSVGs();
             //Oder in den FUnktionen pruefen ob dataArrayVorher = null
@@ -164,7 +160,7 @@ async function updateSvgWithData(data) {
     }
 }
 
-function createSvgUebersicht(dataArray, Zeit, dataArrayVorher) {
+function createSvgUebersicht(dataArray, dataArrayVorher) {
     d3.xml("./media/img/Gesamtansicht2.svg",
         function (error, documentFragment) {
             if (error) { console.log(error); return; }
@@ -181,7 +177,7 @@ function createSvgUebersicht(dataArray, Zeit, dataArrayVorher) {
         });
 }
 
-function createSvgUebersichtFesto(dataArray, Zeit, dataArrayVorher) {
+function createSvgUebersichtFesto() {
     d3.xml("./media/img/Gesamtansicht_Festo2.svg",
         function (error, documentFragment) {
             if (error) { console.log(error); return; }
@@ -195,7 +191,7 @@ function createSvgUebersichtFesto(dataArray, Zeit, dataArrayVorher) {
         });
 }
 
-function createSvgHochregallager(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeHHorizontalXScale, getDomainMaxRangeHVertikalYScale) {
+function createSvgHochregallager(dataArray, dataArrayVorher, getDomainMaxRangeHHorizontalXScale, getDomainMaxRangeHVertikalYScale) {
     d3.xml("./media/img/HochregallagerNew12.svg",
         function (error, documentFragment) {
             if (error) { console.log(error); return; }
@@ -211,17 +207,17 @@ function createSvgHochregallager(dataArray, Zeit, dataArrayVorher, getDomainMaxR
             if (dataArray != "") {
                 //Direkt am anfang mappen und den maximalen wert anchfragen
                 var widthDiv = document.getElementById('HochregallagerSvg').offsetWidth;
-                var heightDiv = document.getElementById('HochregallagerSvg').offsetHeight;
+                var offsetHeightDevHochregallager = document.getElementById('HochregallagerSvg').offsetHeight;
                 var widthLastColumn = d3.select("#letzteStrebe").attr("x");
                 //console.log(parseInt(getDomainMaxRangeHHorizontalXScale) / 10);
                 var x = d3.scaleLinear()
-                    .domain([0, getDomainMaxRangeHHorizontalXScale])
-                    .range([0, widthLastColumn]).clamp(true) //vlt - 1/10. der länge abziehen wegen rahmen elemente?
+                    .domain([0, parseInt(getDomainMaxRangeHHorizontalXScale)])
+                    .range([0, parseFloat(widthLastColumn)]).clamp(true) //vlt - 1/10. der länge abziehen wegen rahmen elemente?
                 var y = d3.scaleLinear()
-                    .domain([0, getDomainMaxRangeHVertikalYScale])
-                    .range([parseInt(heightDiv) / 10, heightDiv]).clamp(true)
-
-                hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y);
+                    .domain([0, parseInt(getDomainMaxRangeHVertikalYScale)])
+                    .range([parseFloat(offsetHeightDevHochregallager) * 0.13, parseFloat(offsetHeightDevHochregallager) * 0.65])
+                    
+                hochregallager_update_svg(dataArray, dataArrayVorher, x, y);
                 var status = "";
                 for (id in arrayHochregallagerCheckboxIds) {
                     switch (parseInt(id)) {
@@ -269,9 +265,8 @@ function updateInputCheckboxes(checkBoxID, status) {
     }
 }
 
-function hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y) {
+function hochregallager_update_svg(dataArray, dataArrayVorher, x, y) {
     //Hhori & HVerti
-
     if (dataArrayVorher) {
         var scaledHHorizontal = x(parseInt(dataArray[ArrayWithVariablesForHochregalLager[6]]));
         var scaledHHorizontalVorher = x(parseInt(dataArrayVorher[ArrayWithVariablesForHochregalLager[6]]));
@@ -366,7 +361,7 @@ function hochregallager_update_svg(dataArray, Zeit, dataArrayVorher, x, y) {
     })
 
 }
-function createSvgSortierstrecke(dataArray, Zeit) {
+function createSvgSortierstrecke(dataArray) {
     d3.xml("./media/img/Sortierstrecke7.svg",
         function (error, documentFragment) {
             if (error) { console.log(error); return; }
@@ -476,22 +471,22 @@ function createSvgSortierstrecke(dataArray, Zeit) {
                 for (id in arraySortierstreckeMitFarberkennungCheckboxIds) {
                     switch (parseInt(id)) {
                         case 0:
-                            status = dataArray["Referenztaster horizontal"];
+                            status = dataArray["S-Lichtschranke Eingang"];
                             break;
                         case 1:
-                            status = dataArray["Lichtschranke innen"];
+                            status = dataArray["S-Lichtschranke nach Farbsensor"];
                             break;
                         case 2:
-                            status = dataArray["Lichtschranke aussen"];
+                            status = dataArray["S-Lichtschranke weiss"];
                             break;
                         case 3:
-                            status = dataArray["Referenztaster vertikal"];
+                            status = dataArray["S-Lichtschranke rot"];
                             break;
                         case 4:
-                            status = dataArray["Referenztaster Ausleger vorne"];
+                            status = dataArray["S-Lichtschranke blau"];
                             break;
                         case 5:
-                            status = dataArray["Referenztaster Ausleger hinten"];
+                            status = dataArray["S-Motor Foerderband"];
                             break;
                         default:
                             status = "";
@@ -504,7 +499,7 @@ function createSvgSortierstrecke(dataArray, Zeit) {
 
 
 }
-function createSvgUmsetzer(dataArray, Zeit) {
+function createSvgUmsetzer(dataArray) {
     d3.xml("./media/img/Umsetzer3.svg",
         function (error, documentFragment) {
             if (error) { console.log(error); return; }
@@ -539,22 +534,10 @@ function createSvgUmsetzer(dataArray, Zeit) {
                 for (id in arrayUmsetzerCheckboxIds) {
                     switch (parseInt(id)) {
                         case 0:
-                            status = dataArray["Referenztaster horizontal"];
+                            status = dataArray["Umsetzer Endanschlag 1 (3B1)"];
                             break;
                         case 1:
-                            status = dataArray["Lichtschranke innen"];
-                            break;
-                        case 2:
-                            status = dataArray["Lichtschranke aussen"];
-                            break;
-                        case 3:
-                            status = dataArray["Referenztaster vertikal"];
-                            break;
-                        case 4:
-                            status = dataArray["Referenztaster Ausleger vorne"];
-                            break;
-                        case 5:
-                            status = dataArray["Referenztaster Ausleger hinten"];
+                            status = dataArray["Umsetzer Endanschlag 2 (3B2)"];
                             break;
                         default:
                             status = "";
@@ -565,7 +548,7 @@ function createSvgUmsetzer(dataArray, Zeit) {
         });
 }
 
-function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMaxRangeVHorizontalXScale, getDomainMaxRangeVVertikalYScale) {
+function createSvgVakuumSauggreif(dataArray, dataArrayVorher, getDomainMaxRangeVHorizontalXScale, getDomainMaxRangeVVertikalYScale, getDomainMaxRangeVDrehenZScale) {
     //TODO: Elemente in svg grupieren
     d3.xml("./media/img/Vakuum-SauggreiferNew8.svg",
         function (error, documentFragment) {
@@ -578,29 +561,36 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMax
             }
             svg = main_chart_svg.select("svg")
             if (dataArray != "") {
-                //TOdo: Skalieren der Grafik
+                var offsetHeightSauggreifDiv = document.getElementById('Vakuum').offsetHeight;
+                var maxAusweitungVonAusfahrbarerQuerstrebe = parseFloat(d3.select("#referenzPunktQuerstange").attr("x"));
                 var x = d3.scaleLinear()
-                    .domain([0, getDomainMaxRangeVHorizontalXScale])
-                    .range([0, 1024]).clamp(true)
+                    .domain([0, parseInt(getDomainMaxRangeVHorizontalXScale)])
+                    .range([0, maxAusweitungVonAusfahrbarerQuerstrebe]).clamp(true)
                 var y = d3.scaleLinear()
-                    .domain([0, getDomainMaxRangeVVertikalYScale])
-                    .range([768, 0]).clamp(true)
-                //Flippen wenn der Kran auf der rechten seite ist
-                //Hoch und runter fahren
-                // if (rechts) {
-                //     document.getElementById("Vakuum").style.transform = "scale(-1, 1)";
-                // } else {
-                //     document.getElementById("Vakuum").style.transform = "scale(1, 1)";
-                // }
+                    .domain([0, parseInt(getDomainMaxRangeVVertikalYScale)])
+                    .range([parseFloat(offsetHeightSauggreifDiv) * 0.245, parseFloat(offsetHeightSauggreifDiv) - (parseFloat(offsetHeightSauggreifDiv) * 0.32)]).clamp(true)
+
+                var z = d3.scaleLinear()
+                    .domain([0, parseInt(getDomainMaxRangeVDrehenZScale)])
+                    .range([0, 360]).clamp(true)
                 var madde = Math.floor(Math.random() * (Math.ceil(6) - Math.floor(0)))
                 if (madde <= 2) {
                     dataArray[ArrayWithVariablesForVakuumSauggreifer[5]] = 0
                 } else
                     if (madde > 2 && madde <= 4) {
-                        dataArray[ArrayWithVariablesForVakuumSauggreifer[5]] = 10
+                        dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 100
+                        //dataArray[ArrayWithVariablesForVakuumSauggreifer[4]] = 50
                     } else if (madde > 4) {
-                        dataArray[ArrayWithVariablesForVakuumSauggreifer[5]] = 80
+                        dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 980
+                        //dataArray[ArrayWithVariablesForVakuumSauggreifer[4]] = 1200
                     }
+                var drehenSkaliert = z(parseInt(dataArray[ArrayWithVariablesForVakuumSauggreifer[4]]));
+                if ((drehenSkaliert > 90) && (drehenSkaliert <= 270)) {
+                    document.getElementById("Vakuum").style.transform = "scale(-1, 1)";
+                } else {
+                    document.getElementById("Vakuum").style.transform = "scale(1, 1)";
+                }
+
                 if (dataArrayVorher) {
 
                     var scaledHvert = y(parseInt(dataArray[ArrayWithVariablesForVakuumSauggreifer[3]]));
@@ -611,13 +601,7 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMax
                     var scaledHHorizontalVorher = x(parseInt(dataArrayVorher[ArrayWithVariablesForVakuumSauggreifer[5]]));
                     var diffHHorizontal = scaledHHorizontal - scaledHHorizontalVorher;
 
-                    /*
-                    Drehen:
-                    - Werte von 0 - 1000 irgendetwas
-                    - skalieren auf 360Grad? Und wenn größer 180 dann wieder zurückflippen?
-                    */
                     //Celina: Im graphen code verschiedene ebenen erstellen
-                    //Ist es wichtig den greifer nach links und rechts zu bewegen?
                     //Hochregallager auf der rechten seite anzeigen
                     svg.selectAll(".beweglicherArm").each(function (d, i) {
                         var oldvalueY = d3.select(this).attr("y");
@@ -629,15 +613,15 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMax
                         var idSauggreiferElement = d3.select(this).attr("id");
 
                         //if ((idSauggreiferElement === "ausfahrbareQuerstange1") || (idSauggreiferElement === "ausfahrbareQuerstange2")) {
-                            //Weg finden wie man die Querstrebe am Hauptarm halten kann
-                            //var newLength = diffHHorizontal - d3.select(parseFloat(d3.select("#referenzPunktQuerstange").attr("x")));
-                            //console.log(typeof parseFloat(d3.select("#referenzPunktQuerstange").attr("x")));
-                            // d3.select(this)
-                            //     .transition()
-                            //     .duration(1000)
-                            //     .attr("y", newvalueY + "px")
-                            //     .attr("x", newValueX + "px")
-                            //     .attr("width", newLength)
+                        //Weg finden wie man die Querstrebe am Hauptarm halten kann
+                        //var newLength = diffHHorizontal - d3.select(parseFloat(d3.select("#referenzPunktQuerstange").attr("x")));
+                        //console.log(typeof parseFloat(d3.select("#referenzPunktQuerstange").attr("x")));
+                        // d3.select(this)
+                        //     .transition()
+                        //     .duration(1000)
+                        //     .attr("y", newvalueY + "px")
+                        //     .attr("x", newValueX + "px")
+                        //     .attr("width", newLength)
                         //} else 
                         if (classesSauggreiferElement.includes("ausfahrbarerGreifer")) {
                             d3.select(this)
@@ -657,22 +641,13 @@ function createSvgVakuumSauggreif(dataArray, Zeit, dataArrayVorher, getDomainMax
                     for (id in arraySauggreiferCheckboxIds) {
                         switch (parseInt(id)) {
                             case 0:
-                                status = dataArray["Referenztaster horizontal"];
+                                status = dataArray["V-Referenzschalter vertikal"];
                                 break;
                             case 1:
-                                status = dataArray["Lichtschranke innen"];
+                                status = dataArray["V-Referenzschalter horizontal"];
                                 break;
                             case 2:
-                                status = dataArray["Lichtschranke aussen"];
-                                break;
-                            case 3:
-                                status = dataArray["Referenztaster vertikal"];
-                                break;
-                            case 4:
-                                status = dataArray["Referenztaster Ausleger vorne"];
-                                break;
-                            case 5:
-                                status = dataArray["Referenztaster Ausleger hinten"];
+                                status = dataArray["V-Referenzschalter drehen"];
                                 break;
                             default:
                                 status = "";
@@ -698,7 +673,7 @@ function createSvgStapelmagazin() {
             svg = main_chart_svg.select("svg")
         });
 }
-function createSvgBrennofen(dataArray, Zeit) {
+function createSvgBrennofen(dataArray) {
     d3.xml("./media/img/Brennofen2.svg",
         function (error, documentFragment) {
             if (error) { console.log(error); return; }
@@ -712,12 +687,11 @@ function createSvgBrennofen(dataArray, Zeit) {
             }
             svg = main_chart_svg.select("svg")
             if (dataArray != "") {
-                svg.selectAll("rect.Umsetzer").remove();
             }
         });
 }
 
-function createSvgFestoUebersicht(dataArray, Zeit) {
+function createSvgFestoUebersicht(dataArray) {
     d3.xml("./media/img/Gesamtübersicht_Festo2.svg",
         function (error, documentFragment) {
             if (error) { console.log(error); return; }
@@ -731,23 +705,13 @@ function createSvgFestoUebersicht(dataArray, Zeit) {
             }
             svg = main_chart_svg.select("svg")
             if (dataArray != "") {
-                svg.selectAll("rect.Umsetzer").remove();
             }
         });
 }
 
-// function createSvgAmpel(dataArray) {
+function createHeaderAmpel(dataArray) {
 
-//     if (dataArray[ArrayWithVariablesForAmpel[0]].includes(" true")) {
-//         document.getElementById("Ampel").src = "./media/img/ampel/Ampelfarbe_rot.svg";
-//     } else if (dataArray[ArrayWithVariablesForAmpel[1]].includes(" true")) {
-//         document.getElementById("Ampel").src = "./media/img/ampel/Ampelfarbe_gelb.svg";
-//     } else if (dataArray[ArrayWithVariablesForAmpel[2]].includes(" true")) {
-//         document.getElementById("Ampel").src = "./media/img/ampel/Ampelfarbe_grün.svg";
-//     } else if (dataArray[ArrayWithVariablesForAmpel[3]].includes(" true")) {
-//         document.getElementById("Ampel").src = "./media/img/ampel/Ampelfarbe_aus.svg";
-//     }
-// }
+}
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
