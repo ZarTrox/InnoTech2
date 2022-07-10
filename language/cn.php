@@ -114,6 +114,7 @@ $lang = array(
    "legende3.1" => "钮扣",
    "legende4.1" => "开关",
    "legende5.1" => "灯具",
+   "legende6.1" => "颜色传感器",
 
 
    /* NOTE Footer */

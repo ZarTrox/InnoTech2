@@ -113,6 +113,7 @@ $lang = array(
    "legende3.1" => "Taster/Anschlag",
    "legende4.1" => "Schalter",
    "legende5.1" => "Leuchte",
+   "legende6.1" => "Farbsensor",
 
 
    /* NOTE Footer */

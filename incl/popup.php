@@ -73,6 +73,15 @@
                               #ffd921
                            </td>
                         </tr>
+                        <tr>
+                           <td>
+                              <?php echo $lang['legende6.1'] ?>
+                           </td>
+                           <td>
+                              <div class="svg_color_Farbsensor"></div>
+                              #603813
+                           </td>
+                        </tr>
                      </table>
 
                      <div class="text-center">

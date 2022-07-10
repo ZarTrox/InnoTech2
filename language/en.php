@@ -116,6 +116,7 @@ $lang = array(
    "legende3.1" => "Pushbutton/Stop",
    "legende4.1" => "Switch",
    "legende5.1" => "Light",
+   "legende6.1" => "Color sensor",
 
 
    /* NOTE Footer */

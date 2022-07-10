@@ -575,6 +575,15 @@ body {
     margin-right: 10px;
 }
 
+.svg_color_Farbsensor {
+    width: 20px;
+    height: 20px;
+    background: #603813;
+    display: inline-block;
+    vertical-align: sub;
+    margin-right: 10px;
+}
+
 
 /* NOTE Button */
 
