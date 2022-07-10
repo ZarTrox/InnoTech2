@@ -118,7 +118,8 @@ $lang = array(
 
 
    /* NOTE Footer */
-   "footer1" => "代表者",
+   "footer1" => "版权声明",
+   "footer2" => "代表者",
 
 
 );

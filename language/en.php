@@ -120,6 +120,7 @@ $lang = array(
 
 
    /* NOTE Footer */
-   "footer1" => "Represented by",
+   "footer1" => "Copyright",
+   "footer2" => "Represented by",
 
 );

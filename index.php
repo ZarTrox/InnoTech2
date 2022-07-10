@@ -60,8 +60,9 @@
             </div>
 
             <div class="col-12 col-xl-6 pt-3 pb-3">
-
-                <img class="overview_pic" src="./media/img/Gesamtübersicht_Festo.svg" alt="Gesamtübersicht Festo">
+                <a href="https://neo-ideas.de/IT2/#Umsetzer">
+                    <img class="overview_pic" src="./media/img/Gesamtübersicht_Festo.svg" alt="Gesamtübersicht Festo">
+                </a>
 
             </div>
 
