@@ -216,7 +216,7 @@ function createSvgHochregallager(dataArray, dataArrayVorher, getDomainMaxRangeHH
                 var y = d3.scaleLinear()
                     .domain([0, parseInt(getDomainMaxRangeHVertikalYScale)])
                     .range([parseFloat(offsetHeightDevHochregallager) * 0.13, parseFloat(offsetHeightDevHochregallager) * 0.65])
-                    
+
                 hochregallager_update_svg(dataArray, dataArrayVorher, x, y);
                 var status = "";
                 for (id in arrayHochregallagerCheckboxIds) {
@@ -393,79 +393,24 @@ function createSvgSortierstrecke(dataArray) {
                     })
                 }
                 if (dataArray[ArrayWithVariablesForSortierstreckeMitFarberkennung[0]] === " false") {
-                    svg.select("#LichtschrankeEingangSeite")
-                        .transition()
-                        .attr("class", "sortierstrecke_Lichtschranke")
-                        .transition()
-                        .duration(1000)
-                        .attr("class", "sortierstrecke_Lichtschranke_transform")
-
-                    svg.select("#LichtschrankeEingangOben")
-                        .transition()
-                        .attr("class", "sortierstrecke_Lichtschranke")
-                        .transition()
-                        .duration(1000)
-                        .attr("class", "sortierstrecke_Lichtschranke_transform")
+                    lichtschrankeBlinken("#LichtschrankeEingangSeite", "sortierstrecke_Lichtschranke", "sortierstrecke_Lichtschranke_transform");
+                    lichtschrankeBlinken("#LichtschrankeEingangOben", "sortierstrecke_Lichtschranke", "sortierstrecke_Lichtschranke_transform");
                 }
                 if (dataArray[ArrayWithVariablesForSortierstreckeMitFarberkennung[1]] === " false") {
-                    svg.select("#LichtschrankeNachFarbsensorSeite")
-                        .transition()
-                        .attr("class", "sortierstrecke_Lichtschranke")
-                        .transition()
-                        .duration(1000)
-                        .attr("class", "sortierstrecke_Lichtschranke_transform")
-                    svg.select("#LichtschrankeNachFarbsensorOben")
-                        .transition()
-                        .attr("class", "sortierstrecke_Lichtschranke")
-                        .transition()
-                        .duration(1000)
-                        .attr("class", "sortierstrecke_Lichtschranke_transform")
-
+                    lichtschrankeBlinken("#LichtschrankeNachFarbsensorSeite", "sortierstrecke_Lichtschranke", "sortierstrecke_Lichtschranke_transform");
+                    lichtschrankeBlinken("#LichtschrankeNachFarbsensorOben", "sortierstrecke_Lichtschranke", "sortierstrecke_Lichtschranke_transform");
                 }
                 if (dataArray[ArrayWithVariablesForSortierstreckeMitFarberkennung[2]] === " false") {
-                    svg.select("#LichtschrankeWeissSeite")
-                        .transition()
-                        .attr("class", "sortierstrecke_Lichtschranke")
-                        .transition()
-                        .duration(1000)
-                        .attr("class", "sortierstrecke_Lichtschranke_transform")
-
-                    svg.select("#LichtschrankeWeissOben")
-                        .transition()
-                        .attr("class", "sortierstrecke_Lichtschranke")
-                        .transition()
-                        .duration(1000)
-                        .attr("class", "sortierstrecke_Lichtschranke_transform")
+                    lichtschrankeBlinken("#LichtschrankeWeissSeite", "sortierstrecke_Lichtschranke", "sortierstrecke_Lichtschranke_transform");
+                    lichtschrankeBlinken("#LichtschrankeWeissOben", "sortierstrecke_Lichtschranke", "sortierstrecke_Lichtschranke_transform");
                 }
                 if (dataArray[ArrayWithVariablesForSortierstreckeMitFarberkennung[3]] === " false") {
-                    svg.select("#LichtschrankeRotSeite")
-                        .transition()
-                        .attr("class", "sortierstrecke_Lichtschranke")
-                        .transition()
-                        .duration(1000)
-                        .attr("class", "sortierstrecke_Lichtschranke_transform")
-
-                    svg.select("#LichtschrankeRotOben")
-                        .transition()
-                        .attr("class", "sortierstrecke_Lichtschranke")
-                        .transition()
-                        .duration(1000)
-                        .attr("class", "sortierstrecke_Lichtschranke_transform")
+                    lichtschrankeBlinken("#LichtschrankeRotSeite", "sortierstrecke_Lichtschranke", "sortierstrecke_Lichtschranke_transform");
+                    lichtschrankeBlinken("#LichtschrankeRotOben", "sortierstrecke_Lichtschranke", "sortierstrecke_Lichtschranke_transform");
                 }
                 if (dataArray[ArrayWithVariablesForSortierstreckeMitFarberkennung[4]] === " false") {
-                    svg.select("#LichtschrankeBlauSeite")
-                        .transition()
-                        .attr("class", "sortierstrecke_Lichtschranke")
-                        .transition()
-                        .duration(1000)
-                        .attr("class", "sortierstrecke_Lichtschranke_transform")
-
-                    svg.select("#LichtschrankeBlauOben")
-                        .transition()
-                        .attr("class", "sortierstrecke_Lichtschranke")
-                        .transition()
-                        .duration(1000)
-                        .attr("class", "sortierstrecke_Lichtschranke_transform")
+                    lichtschrankeBlinken("#LichtschrankeBlauSeite", "sortierstrecke_Lichtschranke", "sortierstrecke_Lichtschranke_transform");
+                    lichtschrankeBlinken("#LichtschrankeBlauOben", "sortierstrecke_Lichtschranke", "sortierstrecke_Lichtschranke_transform");
                 }
                 var status = "";
                 for (id in arraySortierstreckeMitFarberkennungCheckboxIds) {
@@ -496,9 +441,19 @@ function createSvgSortierstrecke(dataArray) {
             }
 
         });
-
-
 }
+
+function lichtschrankeBlinken(lichtschrankeID, classNameNormal, classNameTransform) {
+    svg.select(lichtschrankeID)
+        .transition()
+        .attr("class", classNameNormal)
+        .transition()
+        .duration(1000)
+        .attr("class", classNameTransform)
+}
+
+
+
 function createSvgUmsetzer(dataArray) {
     d3.xml("./media/img/Umsetzer3.svg",
         function (error, documentFragment) {
