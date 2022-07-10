@@ -55,13 +55,13 @@
 
             <div class="col-12 col-xl-6 pt-3 pb-3">
 
-                <div class="overview_pic" id="GesamtueberblickSvg" alt="Gesamtübersicht Fischer Technik"></div>
+                <div class="" id="GesamtueberblickSvg" alt="Gesamtübersicht Fischer Technik"></div>
 
             </div>
 
             <div class="col-12 col-xl-6 pt-3 pb-3">
                 <a href="https://neo-ideas.de/IT2/#Umsetzer">
-                    <img class="overview_pic" src="./media/img/Gesamtübersicht_Festo.svg" alt="Gesamtübersicht Festo">
+                    <img class="" src="./media/img/Gesamtübersicht_Festo.svg" alt="Gesamtübersicht Festo">
                 </a>
 
             </div>
@@ -286,6 +286,7 @@
                     <!-- Bild -->
                     <div class="col-12 col-lg-6">
                         <div class="single_pic" id="Vakuum" alt="Part Sauggreifer"></div>
+                        <img src="./media/img/Hochregallager seitlich fuer sauggreifer.svg" class="sauggreifer_hochregal_pos">
                     </div>
 
                     <!-- Status Sensoren & Aktoren -->
@@ -499,9 +500,13 @@
                 <div class="row">
 
                     <!-- Bild -->
-                    <div class="col-12 col-lg-6" style="display: flex !important;">
-                        <img src="./media/img/Stapelmagazin.svg" class="single_pic" alt="Stapelmagazin">
-                        <div class="single_pic" id="UmsetzerSvg" alt="Part Umsetzer"></div>
+                    <div class="col-12 col-lg-6" style="display: flex;">
+                        <div class="col-6">
+                            <img src="./media/img/Stapelmagazin.svg" class="single_pic" alt="Stapelmagazin">
+                        </div>
+                        <div class="col-6">
+                            <div class="single_pic" id="UmsetzerSvg" alt="Part Umsetzer"></div>
+                        </div>
                     </div>
 
                     <!-- Status Sensoren & Aktoren -->
