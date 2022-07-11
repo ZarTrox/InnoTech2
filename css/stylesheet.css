@@ -164,36 +164,41 @@ body {
     padding-top: 10px;
 }
 
-.header_light_basis {
+.header_light0 {
     border-radius: 50%;
     border: 2px solid black;
-}
-
-.header_light0 {
     width: 40px;
     height: 40px;
     background: var(--timer);
 }
 
 .header_light1 {
+    border-radius: 50%;
+    border: 2px solid black;
     width: 40px;
     height: 40px;
     background: red;
 }
 
 .header_light2 {
+    border-radius: 50%;
+    border: 2px solid black;
     width: 40px;
     height: 40px;
     background: orange;
 }
 
 .header_light3 {
+    border-radius: 50%;
+    border: 2px solid black;
     width: 40px;
     height: 40px;
     background: green;
 }
 
 .header_light4 {
+    border-radius: 50%;
+    border: 2px solid black;
     width: 40px;
     height: 40px;
     background: white;

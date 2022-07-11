@@ -9,10 +9,10 @@
     </div>
 
     <div class="header_light_container">
-        <div class="header_light_basis header_light0"></div>
-        <div class="header_light_basis header_light0"></div>
-        <div class="header_light_basis header_light3"></div>
-        <div class="header_light_basis header_light0"></div>
+        <div id="ampel_header_1"></div>
+        <div id="ampel_header_2"></div>
+        <div id="ampel_header_3"></div>
+        <div id="ampel_header_4"></div>
     </div>
 
     <div class="header_links header_large">

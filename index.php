@@ -56,13 +56,13 @@
         <div class="row m-0 p-0">
 
 
-            <div class="col-12 col-xl-6">
+            <div class="col-12 col-md-6">
 
                 <div class="" id="GesamtueberblickSvg" alt="Gesamtübersicht Fischer Technik"></div>
 
             </div>
 
-            <div class="col-12 col-xl-6">
+            <div class="col-12 col-md-6">
                 <a href="https://neo-ideas.de/IT2/#Umsetzer">
                     <img class="" src="./media/img/Gesamtübersicht_Festo.svg" alt="Gesamtübersicht Festo">
                 </a>
