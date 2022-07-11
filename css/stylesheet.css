@@ -161,7 +161,7 @@ body {
 .header_light_container {
     display: contents;
     display: flex;
-    padding-top: 10px;
+    padding-top: 14px;
 }
 
 .header_light0 {
