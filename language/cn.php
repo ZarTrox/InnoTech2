@@ -71,7 +71,7 @@ $lang = array(
 
 
    /* NOTE Gesamtübersicht */
-   "overview_description" => "点击植物模块，进入单个视图",
+   "overview_description" => "点击植物模块，进入单个视图。",
 
 
    /* NOTE Live Status */
@@ -103,7 +103,7 @@ $lang = array(
    摇臂是传输模块的一部分，确保分离的工件从堆垛库的末端位置被接管。",
 
 
-   /* NOTE Legende */
+   /* NOTE PopUp Legende */
    "legende_h" => "图像颜色的图例",
    "legende_subtitle" => "各个视图中的颜色定义",
 

@@ -70,7 +70,7 @@ $lang = array(
 
 
    /* NOTE Gesamtübersicht */
-   "overview_description" => "Klicken Sie auf ein Anlagemodul, um in die Einzelansicht zu gelangen",
+   "overview_description" => "Klicken Sie auf ein Anlagemodul, um in die Einzelansicht zu gelangen.",
 
 
    /* NOTE Live Status */
@@ -102,7 +102,7 @@ $lang = array(
    Der Wipphebel ist Bestandteil des Modul Umsetzen und sorgt für die Übernahme der vereinzelten Werkstücke aus der Endposition des Stapelmagazin.",
 
 
-   /* NOTE Legende */
+   /* NOTE PopUp Legende */
    "legende_h" => "Legende zu den Bildfarben",
    "legende_subtitle" => "Definition der Farben in den Einzelansichten",
 

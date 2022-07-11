@@ -72,7 +72,7 @@ $lang = array(
 
 
    /* NOTE Gesamtübersicht */
-   "overview_description" => "Click on a plant module to get to the individual view",
+   "overview_description" => "Click on a plant module to get to the individual view.",
 
 
 
@@ -105,7 +105,7 @@ $lang = array(
    "module5_desc" => "The stacking magazine has a magazine tube with capacity for a maximum of eight workpieces, which can be fed individually to the value-adding process. This is done by a double-acting cylinder which pushes the workpieces on individually. The end positions are detected by sensors. The rocker arm is part of the repositioning module and ensures that the separated workpieces are transferred from the end position of the stacking magazine.",
 
 
-   /* NOTE Legende */
+   /* NOTE PopUp Legende */
    "legende_h" => "Legend for the image colors",
    "legende_subtitle" => "Definition of colors in the individual views",
 
