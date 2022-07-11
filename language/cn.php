@@ -71,6 +71,7 @@ $lang = array(
 
 
    /* NOTE Gesamtübersicht */
+   "overview_description" => "点击植物模块，进入单个视图",
 
 
    /* NOTE Live Status */

@@ -5,7 +5,7 @@
     <td>
         <?php echo $lang['module5.1'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxWipphebelUmsetzerendanschlag1" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -18,7 +18,7 @@
     <td>
         <?php echo $lang['module5.2'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxWipphebelUmsetzerendanschlag2" type="checkbox" checked disabled>
             <span class="slider round no-pointer"></span>

@@ -43,23 +43,26 @@
 
 
     <!-- NOTE Gesamtübersicht -->
-    <div id="overview" class="container_overview header_placeholder">
+    <div id="overview" class="header_placeholder">
 
 
         <h1>
             <?php echo $lang['header1'] ?>
         </h1>
+        <p class="text-center m-0">
+            <?php echo $lang['overview_description'] ?>
+        </p>
 
         <div class="row m-0 p-0">
 
 
-            <div class="col-12 col-xl-6 pt-3 pb-3">
+            <div class="col-12 col-xl-6">
 
                 <div class="" id="GesamtueberblickSvg" alt="Gesamtübersicht Fischer Technik"></div>
 
             </div>
 
-            <div class="col-12 col-xl-6 pt-3 pb-3">
+            <div class="col-12 col-xl-6">
                 <a href="https://neo-ideas.de/IT2/#Umsetzer">
                     <img class="" src="./media/img/Gesamtübersicht_Festo.svg" alt="Gesamtübersicht Festo">
                 </a>
@@ -203,7 +206,7 @@
 
         <!-- 1. Hochregallager -->
         <div id="Hochregal" class="container_single_part header_placeholder">
-            <h2>
+            <h2 class="mt-5 mb-5">
                 <?php echo $lang['module1'] ?>
             </h2>
             <div class="container">
@@ -222,7 +225,7 @@
                             <h4>
                                 <?php echo $lang['single_view_h3'] ?>
                             </h4>
-                            <table class="">
+                            <table class="single_view_table">
                                 <tr>
                                     <th>
                                         <?php echo $lang['table_h1'] ?>
@@ -276,7 +279,7 @@
 
         <!-- 2. Sauggreifer -->
         <div id="Sauggreifer" class="container_single_part header_placeholder">
-            <h2>
+            <h2 class="mb-5">
                 <?php echo $lang['module2'] ?>
             </h2>
 
@@ -295,7 +298,7 @@
                             <h4>
                                 <?php echo $lang['single_view_h3'] ?>
                             </h4>
-                            <table class="">
+                            <table class="single_view_table">
                                 <tr>
                                     <th>
                                         <?php echo $lang['table_h1'] ?>
@@ -349,7 +352,7 @@
 
         <!-- 3. Brennofen -->
         <div id="Brennofen" class="container_single_part header_placeholder">
-            <h2>
+            <h2 class="mb-5">
                 <?php echo $lang['module3'] ?>
             </h2>
 
@@ -384,7 +387,7 @@
                             <h4>
                                 <?php echo $lang['single_view_h3'] ?>
                             </h4>
-                            <table class="">
+                            <table class="single_view_table">
                                 <tr>
                                     <th>
                                         <?php echo $lang['table_h1'] ?>
@@ -420,7 +423,7 @@
 
         <!-- 4. Sortierstrecke -->
         <div id="Sortier" class="container_single_part header_placeholder">
-            <h2>
+            <h2 class="mb-5">
                 <?php echo $lang['module4'] ?>
             </h2>
 
@@ -434,7 +437,7 @@
 
                     <!-- Status Sensoren & Aktoren -->
                     <div class="col-12 col-lg-6">
-                        <div class="">
+                        <div class="single_view_table">
                             <h4>
                                 <?php echo $lang['single_view_h3'] ?>
                             </h4>
@@ -492,7 +495,7 @@
 
         <!-- 5. Umsetzer -->
         <div id="Umsetzer" class="container_single_part header_placeholder">
-            <h2>
+            <h2 class="mb-5">
                 <?php echo $lang['module5'] ?>
             </h2>
 
@@ -516,7 +519,7 @@
                                 <?php echo $lang['single_view_h3'] ?>
                             </h4>
 
-                            <table class="">
+                            <table class="single_view_table">
                                 <tr>
                                     <th>
                                         <?php echo $lang['table_h1'] ?>

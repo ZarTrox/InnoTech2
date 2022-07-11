@@ -70,6 +70,7 @@ $lang = array(
 
 
    /* NOTE Gesamtübersicht */
+   "overview_description" => "Klicken Sie auf ein Anlagemodul, um in die Einzelansicht zu gelangen",
 
 
    /* NOTE Live Status */

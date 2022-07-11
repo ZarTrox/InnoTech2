@@ -72,6 +72,7 @@ $lang = array(
 
 
    /* NOTE Gesamtübersicht */
+   "overview_description" => "Click on a plant module to get to the individual view",
 
 
 

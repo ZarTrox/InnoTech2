@@ -5,7 +5,7 @@
     <td>
         <?php echo $lang['module3.1'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxBrennofenReferenzschalterdrehkreuzsauger" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -18,7 +18,7 @@
     <td>
         <?php echo $lang['module3.2'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxBrennofenReferenzschalterdrehkreuzfoerderband" type="checkbox" checked disabled>
             <span class="slider round no-pointer"></span>
@@ -31,7 +31,7 @@
     <td>
         <?php echo $lang['module3.3'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxBrennofenLichtschrankeendefoerderband" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -44,7 +44,7 @@
     <td>
         <?php echo $lang['module3.4'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxBrennofenReferenzschalterdrehkreuzsaege" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -57,7 +57,7 @@
     <td>
         <?php echo $lang['module3.5'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxBrennofenReferenzschaltersaugerdrehkreuz" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -70,7 +70,7 @@
     <td>
         <?php echo $lang['module3.6'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxBrennofenReferenzschalterOfenschieberinnen" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -83,7 +83,7 @@
     <td>
         <?php echo $lang['module3.7'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxBrennofenReferenzschalterofenschieberaussen" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -96,7 +96,7 @@
     <td>
         <?php echo $lang['module3.8'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxBrennofenReferenzschaltersaugerbrennofen" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -109,7 +109,7 @@
     <td>
         <?php echo $lang['module3.9'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxBrennofenLichtschrankebrennofen" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -122,7 +122,7 @@
     <td>
         <?php echo $lang['module3.10'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxBrennofenMotordrehkreuzimuhrzeigersinn" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -135,7 +135,7 @@
     <td>
         <?php echo $lang['module3.11'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxBrennofenMotordrehkreuzgegenuhrzeigersinn" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -148,7 +148,7 @@
     <td>
         <?php echo $lang['module3.12'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxBrennofenMotorfoerderbandvorwaerts" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -161,7 +161,7 @@
     <td>
         <?php echo $lang['module3.13'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxBrennofenMotorsaege" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -174,7 +174,7 @@
     <td>
         <?php echo $lang['module3.14'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxBrennofenMotorofenschiebereinfahrt" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -187,7 +187,7 @@
     <td>
         <?php echo $lang['module3.15'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxBrennofenMotorofenschieberausfahrt" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -200,7 +200,7 @@
     <td>
         <?php echo $lang['module3.16'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxBrennofenMotorsaugerzumofen" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -213,7 +213,7 @@
     <td>
         <?php echo $lang['module3.17'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxBrennofenMotorsaugerzumdrehkreuz" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -226,7 +226,7 @@
     <td>
         <?php echo $lang['module3.18'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxBrennofenLeutchteofen" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>

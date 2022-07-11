@@ -36,11 +36,6 @@
                 <a href="#Umsetzer"><?php echo $lang['module5'] ?></a>
             </div>
         </div>
-        <div>
-            <a href="#legende" data-toggle="modal" class="animated-button">
-                <?php echo $lang['header4'] ?>
-            </a>
-        </div>
 
 
         <div class="flag_large_screen">
@@ -92,11 +87,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav__item">
-                    <a class="nav__link" href="#legende" data-toggle="modal" class="animated-button">
-                        <?php echo $lang['header4'] ?>
-                    </a>
-                </li>
+
                 <li class="nav__item">
                     <div class="nav__link">
                         <a href="?lang=de">
