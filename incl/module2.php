@@ -20,7 +20,7 @@
     </td>
     <td class="p-0 text-center">
         <label class="switch">
-            <input class="checkboxSauggreiferReferenzschalterhorizontal" type="checkbox" checked disabled>
+            <input class="checkboxSauggreiferReferenzschalterhorizontal" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>

@@ -873,7 +873,10 @@ function createSvgBrennofen(dataArray) {
           default:
             status = "";
         }
-        updateInputCheckboxes(arraySauggreiferCheckboxIds[id], status);
+        updateInputCheckboxes(
+          arrayBearbeitungsstationMitBrennofenCheckboxIds[id],
+          status
+        );
       }
     }
   });

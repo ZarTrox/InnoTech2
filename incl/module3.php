@@ -20,7 +20,7 @@
     </td>
     <td class="p-0 text-center">
         <label class="switch">
-            <input class="checkboxBrennofenReferenzschalterdrehkreuzfoerderband" type="checkbox" checked disabled>
+            <input class="checkboxBrennofenReferenzschalterdrehkreuzfoerderband" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
