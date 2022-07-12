@@ -823,57 +823,52 @@ function createSvgBrennofen(dataArray) {
               dataArray["B-Referenzschalter Drehkranz (Pos. Foerderband)"];
             break;
           case 2:
-            status = dataArray["V-Referenzschalter drehen"];
+            status = dataArray["B-Lichtschranke Ende Foerderband"];
             break;
           case 3:
-            status = dataArray["B-Referenzschalter Drehkranz (Pos. Sauger)"];
+            status = dataArray["B-Referenzschalter Drehkranz (Pos. Saege)"];
             break;
           case 4:
-            status =
-              dataArray["B-Referenzschalter Drehkranz (Pos. Foerderband)"];
+            status = dataArray["B-Referenzschalter Sauger (Pos. Drehkranz)"];
             break;
           case 5:
-            status = dataArray["V-Referenzschalter drehen"];
+            status = dataArray["B-Referenzschalter Ofenschieber Innen"];
             break;
           case 6:
-            status = dataArray["B-Referenzschalter Drehkranz (Pos. Sauger)"];
+            status = dataArray["B-Referenzschalter Ofenschieber Aussen"];
             break;
           case 7:
-            status =
-              dataArray["B-Referenzschalter Drehkranz (Pos. Foerderband)"];
+            status = dataArray["B-Referenzschalter Sauger (Pos. Brennofen)"];
             break;
           case 8:
-            status = dataArray["V-Referenzschalter drehen"];
+            status = dataArray["B-Lichtschranke Brennofen"];
             break;
           case 9:
-            status = dataArray["B-Referenzschalter Drehkranz (Pos. Sauger)"];
+            status = dataArray["B-Motor Drehkranz im Uhrzeigersinn"];
             break;
           case 10:
-            status =
-              dataArray["B-Referenzschalter Drehkranz (Pos. Foerderband)"];
+            status = dataArray["B-Motor Drehkranz gegen Uhrzeigersinn"];
             break;
           case 11:
-            status = dataArray["V-Referenzschalter drehen"];
+            status = dataArray["B-Motor Foerderband vorwaerts"];
             break;
           case 12:
-            status = dataArray["B-Referenzschalter Drehkranz (Pos. Sauger)"];
+            status = dataArray["B-Motor Saege"];
             break;
           case 13:
-            status =
-              dataArray["B-Referenzschalter Drehkranz (Pos. Foerderband)"];
+            status = dataArray["B-Motor Ofenschieber Einfahren"];
             break;
           case 14:
-            status = dataArray["V-Referenzschalter drehen"];
+            status = dataArray["B-Motor Ofenschieber Ausfahren"];
             break;
           case 15:
-            status = dataArray["B-Referenzschalter Drehkranz (Pos. Sauger)"];
+            status = dataArray["B-Motor Sauger zum Ofen"];
             break;
           case 16:
-            status =
-              dataArray["B-Referenzschalter Drehkranz (Pos. Foerderband)"];
+            status = dataArray["B-Motor Sauger zum Drehkranz"];
             break;
           case 17:
-            status = dataArray["V-Referenzschalter drehen"];
+            status = dataArray["B-Leuchte Ofen"];
             break;
           default:
             status = "";
