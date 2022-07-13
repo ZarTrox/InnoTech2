@@ -110,26 +110,6 @@
                 </div>
             </div>
 
-            <!-- 2. Sauggreifer -->
-            <div class="col-12 col-md-6 col-lg-3 large-grid oder-1 order-xl-2 p-0 card_live_status">
-                <div class="m-1">
-                    <h4>
-                        <?php echo $lang['module2'] ?>
-                    </h4>
-                    <table>
-                        <tr>
-                            <th>
-                                <?php echo $lang['table_h1'] ?>
-                            </th>
-                            <th id="table_width_two">
-                                <?php echo $lang['table_h2'] ?>
-                            </th>
-                        </tr>
-                        <?php include('./incl/module2.php'); ?>
-                    </table>
-                </div>
-            </div>
-
 
             <!-- 4. Sortierstrecke -->
             <div class="col-12 col-md-6 col-lg-3 large-grid oder-1 order-xl-2 p-0 card_live_status">
@@ -151,6 +131,26 @@
                 </div>
             </div>
 
+
+            <!-- 2. Sauggreifer -->
+            <div class="col-12 col-md-6 col-lg-3 large-grid oder-1 order-xl-2 p-0 card_live_status">
+                <div class="m-1">
+                    <h4>
+                        <?php echo $lang['module2'] ?>
+                    </h4>
+                    <table>
+                        <tr>
+                            <th>
+                                <?php echo $lang['table_h1'] ?>
+                            </th>
+                            <th id="table_width_two">
+                                <?php echo $lang['table_h2'] ?>
+                            </th>
+                        </tr>
+                        <?php include('./incl/module2.php'); ?>
+                    </table>
+                </div>
+            </div>
 
             <!-- 5. Umsetzer -->
             <div class="col-12 col-md-6 col-lg-3 large-grid oder-1 order-xl-2 p-0 card_live_status">

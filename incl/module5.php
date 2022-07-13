@@ -1,4 +1,4 @@
-<!-- 5. Wipphebel -->
+<!-- 5. Umsetzer -->
 
 <!-- Umsetzer Endanschlag 1 (3B1) -->
 <tr>
@@ -7,7 +7,7 @@
     </td>
     <td class="p-0 text-center">
         <label class="switch">
-            <input class="checkboxWipphebelUmsetzerendanschlag1" type="checkbox" disabled>
+            <input class="checkboxUmsetzerUmsetzerendanschlag1" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -20,7 +20,7 @@
     </td>
     <td class="p-0 text-center">
         <label class="switch">
-            <input class="checkboxWipphebelUmsetzerendanschlag2" type="checkbox" disabled>
+            <input class="checkboxUmsetzerUmsetzerendanschlag2" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
