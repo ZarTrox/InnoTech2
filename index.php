@@ -283,7 +283,7 @@
                 <?php echo $lang['module2'] ?>
             </h2>
 
-            <div class="container ">
+            <div class="container">
                 <div class="row">
 
                     <!-- Bild -->
@@ -327,7 +327,7 @@
                     </div>
 
                     <!-- Beschreibung -->
-                    <div>
+                    <div class="container">
                         <h4 class="mt-3">
                             <?php echo $lang['single_view_h1'] ?>
                         </h4>
@@ -470,7 +470,7 @@
                     </div>
 
                     <!-- Beschreibung -->
-                    <div>
+                    <div class="container">
                         <h4 class="mt-3">
                             <?php echo $lang['single_view_h1'] ?>
                         </h4>
@@ -548,7 +548,7 @@
                     </div>
 
                     <!-- Beschreibung -->
-                    <div>
+                    <div class="container">
                         <h4 class="mt-3">
                             <?php echo $lang['single_view_h1'] ?>
                         </h4>
