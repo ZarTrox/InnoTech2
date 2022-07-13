@@ -5,7 +5,7 @@
     <td>
         <?php echo $lang['module1.1'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxHochregallagerReferenztasterhorizontal" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -18,9 +18,9 @@
     <td>
         <?php echo $lang['module1.2'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
-            <input class="checkboxHochregallagerLichtschrankeinnen" type="checkbox" checked disabled>
+            <input class="checkboxHochregallagerLichtschrankeinnen" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -31,7 +31,7 @@
     <td>
         <?php echo $lang['module1.3'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxHochregallagerLichtschrankeaussen" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -44,7 +44,7 @@
     <td>
         <?php echo $lang['module1.4'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxHochregallagerReferenztastervertikal" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -57,7 +57,7 @@
     <td>
         <?php echo $lang['module1.5'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxHochregallagerReferenztasterauslegervorne" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -69,7 +69,7 @@
     <td>
         <?php echo $lang['module1.6'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxHochregallagerReferenztasterauslegerhinten" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -82,7 +82,7 @@
     <td>
         <?php echo $lang['module1.7'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxHochregallagerVertikal" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -95,7 +95,7 @@
     <td>
         <?php echo $lang['module1.8'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxHochregallagerHorizontal" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>

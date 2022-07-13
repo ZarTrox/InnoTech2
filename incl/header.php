@@ -9,10 +9,10 @@
     </div>
 
     <div class="header_light_container">
-        <div class="header_light_basis header_light0"></div>
-        <div class="header_light_basis header_light0"></div>
-        <div class="header_light_basis header_light3"></div>
-        <div class="header_light_basis header_light0"></div>
+        <div id="ampel_header_1"></div>
+        <div id="ampel_header_2"></div>
+        <div id="ampel_header_3"></div>
+        <div id="ampel_header_4"></div>
     </div>
 
     <div class="header_links header_large">
@@ -35,11 +35,6 @@
                 <a href="#Sortier"><?php echo $lang['module4'] ?></a>
                 <a href="#Umsetzer"><?php echo $lang['module5'] ?></a>
             </div>
-        </div>
-        <div>
-            <a href="#legende" data-toggle="modal" class="animated-button">
-                <?php echo $lang['header4'] ?>
-            </a>
         </div>
 
 
@@ -92,11 +87,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav__item">
-                    <a class="nav__link" href="#legende" data-toggle="modal" class="animated-button">
-                        <?php echo $lang['header4'] ?>
-                    </a>
-                </li>
+
                 <li class="nav__item">
                     <div class="nav__link">
                         <a href="?lang=de">

@@ -5,7 +5,7 @@
     <td>
         <?php echo $lang['module4.1'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxSortierstreckeLichtschrankeeingang" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -18,9 +18,9 @@
     <td>
         <?php echo $lang['module4.2'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
-            <input class="checkboxSortierstreckeLichtschrankenachfarbsensor" type="checkbox" checked disabled>
+            <input class="checkboxSortierstreckeLichtschrankenachfarbsensor" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -31,7 +31,7 @@
     <td>
         <?php echo $lang['module4.3'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxSortierstreckeLichtschrankeweiss" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -44,7 +44,7 @@
     <td>
         <?php echo $lang['module4.4'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxSortierstreckeLichtschrankerot" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -57,7 +57,7 @@
     <td>
         <?php echo $lang['module4.5'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxSortierstreckeLichtschrankeblau" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -70,7 +70,7 @@
     <td>
         <?php echo $lang['module4.6'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxSortierstreckeMotorfoerderband" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>

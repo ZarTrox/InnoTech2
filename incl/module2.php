@@ -5,7 +5,7 @@
     <td>
         <?php echo $lang['module2.1'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxSauggreiferReferenzschaltervertikal" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -18,9 +18,9 @@
     <td>
         <?php echo $lang['module2.2'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
-            <input class="checkboxSauggreiferReferenzschalterhorizontal" type="checkbox" checked disabled>
+            <input class="checkboxSauggreiferReferenzschalterhorizontal" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
         </label>
     </td>
@@ -31,7 +31,7 @@
     <td>
         <?php echo $lang['module2.3'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxSauggreiferReferenzschalterdrehen" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -44,7 +44,7 @@
     <td>
         <?php echo $lang['module2.4'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxSauggreiferVertikal" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -57,7 +57,7 @@
     <td>
         <?php echo $lang['module2.5'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxSauggreiferHorizontal" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
@@ -70,7 +70,7 @@
     <td>
         <?php echo $lang['module2.6'] ?>
     </td>
-    <td>
+    <td class="p-0 text-center">
         <label class="switch">
             <input class="checkboxSauggreiferDrehen" type="checkbox" disabled>
             <span class="slider round no-pointer"></span>
