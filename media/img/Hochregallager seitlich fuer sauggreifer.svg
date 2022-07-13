@@ -38,77 +38,77 @@
 <style
    type="text/css"
    id="style2">
-	.st0{fill:#FFFFFF;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
-	.st1{fill:#E52629;stroke:#020203;stroke-width:2;stroke-miterlimit:10;}
-	.st2{fill:#E7E6E6;stroke:#020203;stroke-width:2;stroke-miterlimit:10;}
-	.st3{fill:#0D71B9;stroke:#020203;stroke-width:2;stroke-miterlimit:10;}
-	.st4{fill:#808181;stroke:#020203;stroke-width:2;stroke-miterlimit:10;}
+	.sauggreif_Hochragallager_st0{fill:#FFFFFF;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.sauggreif_Hochragallager_st1{fill:#E52629;stroke:#020203;stroke-width:2;stroke-miterlimit:10;}
+	.sauggreif_Hochragallager_st2{fill:#E7E6E6;stroke:#020203;stroke-width:2;stroke-miterlimit:10;}
+	.sauggreif_Hochragallager_st3{fill:#0D71B9;stroke:#020203;stroke-width:2;stroke-miterlimit:10;}
+	.sauggreif_Hochragallager_st4{fill:#808181;stroke:#020203;stroke-width:2;stroke-miterlimit:10;}
 </style>
 <rect
    x="14.900002"
    y="11.599998"
-   class="st0"
+   class="sauggreif_Hochragallager_st0"
    width="10.2"
    height="677.29999"
    id="rect4" />
 <rect
    x="167.10001"
    y="12.199997"
-   class="st0"
+   class="sauggreif_Hochragallager_st0"
    width="10.2"
    height="677.29999"
    id="rect6" />
 <rect
    x="25.099998"
    y="106"
-   class="st0"
+   class="sauggreif_Hochragallager_st0"
    width="142"
    height="4.5"
    id="rect8" />
 <rect
    x="25.099998"
    y="325.79999"
-   class="st0"
+   class="sauggreif_Hochragallager_st0"
    width="142"
    height="4.5"
    id="rect10" />
 <rect
    x="25.099998"
    y="542.90002"
-   class="st0"
+   class="sauggreif_Hochragallager_st0"
    width="142.10001"
    height="4.5"
    id="rect12" />
 <path
-   class="st1"
+   class="sauggreif_Hochragallager_st1"
    d="M 141.4,280.6 C 117.8,259 94.6,262.4 96.6,262.4 c 1.4,0 -30.2,-1 -45,18.2"
    id="path14" />
 <path
-   class="st2"
+   class="sauggreif_Hochragallager_st2"
    d="M 141.3,62 C 117.7,40.4 94.5,43.8 96.5,43.8 c 1.4,0 -30.2,-1 -45,18.2"
    id="path16" />
 <path
-   class="st3"
+   class="sauggreif_Hochragallager_st3"
    d="m 140.9,497.3 c -23.6,-21.6 -46.8,-18.2 -44.8,-18.2 1.4,0 -30.2,-1 -45,18.2"
    id="path18" />
 <rect
    x="37"
    y="62.199997"
-   class="st4"
+   class="sauggreif_Hochragallager_st4"
    width="117.7"
    height="43.700001"
    id="rect20" />
 <rect
    x="36.199997"
    y="497.70001"
-   class="st4"
+   class="sauggreif_Hochragallager_st4"
    width="116.2"
    height="45.200001"
    id="rect22" />
 <rect
    x="37.5"
    y="280.89999"
-   class="st4"
+   class="sauggreif_Hochragallager_st4"
    width="116.2"
    height="44.900002"
    id="rect24" />
