@@ -6,12 +6,11 @@ $lang = array(
    /* NOTE Title */
    "title" => "Team 1 - Case 1 - Innovation Technology II",
 
-
    /* NOTE Header */
    "header1" => "Overview",
    "header2" => "Live status",
    "header3" => "Single view",
-   "header4" => "Legend single view",
+   "header4" => "Legend components",
    "header_logo_subtitle" => "Green light<br>for your production.",
 
    /* NOTE Module */

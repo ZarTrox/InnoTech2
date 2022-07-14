@@ -58,13 +58,33 @@
 
             <div class="col-12 col-md-6">
 
-                <div class="" id="GesamtueberblickSvg" alt="Gesamtübersicht Fischer Technik"></div>
+                <?php
+                if ($_GET['lang'] == "de") {
+                    echo "<img src='./media/img/Gesamtansicht_de.svg' alt=' ' />";
+                } elseif ($_GET['lang'] == "en") {
+                    echo "<img src='./media/img/Gesamtansicht_en.svg' alt=' ' />";
+                } elseif ($_GET['lang'] == "zh-CN") {
+                    echo "<img src='./media/img/Gesamtansicht_zh-CN.svg' alt=' ' />";
+                } else {
+                    echo "<img src='./media/img/Gesamtansicht_en.svg' alt=' ' />";
+                }
+                ?>
 
             </div>
 
             <div class="col-12 col-md-6">
                 <a href="https://neo-ideas.de/IT2/#Umsetzer">
-                    <img class="" src="./media/img/Gesamtübersicht_Festo.svg" alt="Gesamtübersicht Festo">
+                    <?php
+                    if ($_GET['lang'] == "de") {
+                        echo "<img src='./media/img/Gesamtübersicht_Festo_de.svg' alt=' ' />";
+                    } elseif ($_GET['lang'] == "en") {
+                        echo "<img src='./media/img/Gesamtübersicht_Festo_en.svg' alt=' ' />";
+                    } elseif ($_GET['lang'] == "zh-CN") {
+                        echo "<img src='./media/img/Gesamtübersicht_Festo_zh-CN.svg' alt=' ' />";
+                    } else {
+                        echo "<img src='./media/img/Gesamtübersicht_Festo_en.svg' alt=' ' />";
+                    }
+                    ?>
                 </a>
 
             </div>
@@ -78,6 +98,12 @@
 
     </div>
 
+
+    <script>
+        function changeText() {
+            document.getElementById('tspan874').textContent = "new text";
+        }
+    </script>
 
 
 
@@ -237,7 +263,7 @@
                                 <?php include('./incl/module1.php'); ?>
                             </table>
 
-                            <a href="#legende" data-toggle="modal" class="animated-button">
+                            <!--<a href="#legende" data-toggle="modal" class="animated-button">
                                 <div class="mt-3 mb-3">
                                     <button class="learn-more">
                                         <span class="circle" aria-hidden="true">
@@ -248,7 +274,7 @@
                                         </span>
                                     </button>
                                 </div>
-                            </a>
+                            </a> -->
 
                         </div>
                     </div>
@@ -310,7 +336,7 @@
                                 <?php include('./incl/module2.php'); ?>
                             </table>
 
-                            <a href="#legende" data-toggle="modal" class="animated-button">
+                            <!--<a href="#legende" data-toggle="modal" class="animated-button">
                                 <div class="mt-3 mb-3">
                                     <button class="learn-more">
                                         <span class="circle" aria-hidden="true">
@@ -321,7 +347,7 @@
                                         </span>
                                     </button>
                                 </div>
-                            </a>
+                            </a> -->
 
                         </div>
                     </div>
@@ -399,7 +425,7 @@
                                 <?php include('./incl/module3.php'); ?>
                             </table>
 
-                            <a href="#legende" data-toggle="modal" class="animated-button">
+                            <!--<a href="#legende" data-toggle="modal" class="animated-button">
                                 <div class="mt-3 mb-3">
                                     <button class="learn-more">
                                         <span class="circle" aria-hidden="true">
@@ -410,7 +436,7 @@
                                         </span>
                                     </button>
                                 </div>
-                            </a>
+                            </a> -->
                         </div>
                     </div>
 
@@ -453,7 +479,7 @@
                                 <?php include('./incl/module4.php'); ?>
                             </table>
 
-                            <a href="#legende" data-toggle="modal" class="animated-button">
+                            <!--<a href="#legende" data-toggle="modal" class="animated-button">
                                 <div class="mt-3 mb-3">
                                     <button class="learn-more">
                                         <span class="circle" aria-hidden="true">
@@ -464,7 +490,7 @@
                                         </span>
                                     </button>
                                 </div>
-                            </a>
+                            </a> -->
 
                         </div>
                     </div>
@@ -531,7 +557,7 @@
                                 <?php include('./incl/module5.php'); ?>
                             </table>
 
-                            <a href="#legende" data-toggle="modal" class="animated-button">
+                            <!--<a href="#legende" data-toggle="modal" class="animated-button">
                                 <div class="mt-3 mb-3">
                                     <button class="learn-more">
                                         <span class="circle" aria-hidden="true">
@@ -542,7 +568,7 @@
                                         </span>
                                     </button>
                                 </div>
-                            </a>
+                            </a> -->
 
                         </div>
                     </div>

@@ -9,10 +9,10 @@
     </div>
 
     <div class="header_light_container">
-        <div id="ampel_header_1"></div>
-        <div id="ampel_header_2"></div>
-        <div id="ampel_header_3"></div>
-        <div id="ampel_header_4"></div>
+        <div class="header_light_basis header_light0"></div>
+        <div class="header_light_basis header_light0"></div>
+        <div class="header_light_basis header_light3"></div>
+        <div class="header_light_basis header_light0"></div>
     </div>
 
     <div class="header_links header_large">
@@ -36,6 +36,11 @@
                 <a href="#Umsetzer"><?php echo $lang['module5'] ?></a>
             </div>
         </div>
+        <div>
+            <a href="#legende" data-toggle="modal" class="animated-button">
+                <?php echo $lang['header4'] ?>
+            </a>
+        </div>
 
 
         <div class="flag_large_screen">
@@ -47,8 +52,8 @@
                 <img src="./media/img/flag/us.svg" class="flag">
             </a>
 
-            <a href="?lang=cn">
-                <img src="./media/img/flag/cn.svg" class="flag">
+            <a href="?lang=zh-CN">
+                <img src="./media/img/flag/zh-CN.svg" class="flag">
             </a>
         </div>
 
@@ -87,7 +92,11 @@
                         </div>
                     </div>
                 </li>
-
+                <li class="nav__item">
+                    <a class="nav__link" href="#legende" data-toggle="modal" class="animated-button">
+                        <?php echo $lang['header4'] ?>
+                    </a>
+                </li>
                 <li class="nav__item">
                     <div class="nav__link">
                         <a href="?lang=de">
@@ -98,7 +107,7 @@
                             <img src="./media/img/flag/us.svg" class="flag">
                         </a>
 
-                        <a href="?lang=cn">
+                        <a href="?lang=zh-CN">
                             <img src="./media/img/flag/cn.svg" class="flag">
                         </a>
                     </div>

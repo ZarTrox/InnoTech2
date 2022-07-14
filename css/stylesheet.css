@@ -370,13 +370,13 @@ body {
 }
 
 
-@media (max-width: 864px) {
+@media (max-width: 1070px) {
     .header_large {
         display: none;
     }
 }
 
-@media (min-width: 865px) {
+@media (min-width: 1070px) {
     .header_small {
         display: none;
     }
