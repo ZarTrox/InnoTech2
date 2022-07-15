@@ -66,7 +66,7 @@
     <!-- Small Screen-->
     <div class="header_small">
         <a class="nav__trigger pointer"><span class="nav__icon pointer"></span></a>
-        <nav class="nav">
+        <nav class="nav" style="display: none;">
             <ul class="nav__list mr-auto ml-auto mt-5">
                 <li class="nav__item">
                     <a class="nav__link" href="#overview">
@@ -74,7 +74,7 @@
                     </a>
                 </li>
                 <li class="nav__item">
-                    <a class="nav__link" href="#live_status" data-toggle="modal" class="animated-button">
+                    <a class="nav__link" href="#live_status">
                         <?php echo $lang['header2'] ?>
                     </a>
                 </li>
@@ -132,6 +132,12 @@
     });
 
 
+    $(".nav__trigger").click(function() {
+        $(".nav").toggle();
+    });
+    $(".nav__link").click(function() {
+        $(".nav").toggle();
+    });
 
 
 
