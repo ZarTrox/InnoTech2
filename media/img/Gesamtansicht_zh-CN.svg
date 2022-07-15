@@ -9,7 +9,7 @@
    style="enable-background:new 0 0 1024 768;"
    xml:space="preserve"
    id="svg428"
-   sodipodi:docname="Gesamtansicht_en.svg"
+   sodipodi:docname="Gesamtansicht_zh-CN.svg"
    inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -52,14 +52,14 @@
    inkscape:deskcolor="#d1d1d1"
    showgrid="false"
    inkscape:zoom="1.046875"
-   inkscape:cx="596.0597"
+   inkscape:cx="561.67164"
    inkscape:cy="359.64179"
    inkscape:window-width="1920"
    inkscape:window-height="991"
    inkscape:window-x="-9"
-   inkscape:window-y="-9"
+   inkscape:window-y="1071"
    inkscape:window-maximized="1"
-   inkscape:current-layer="Brennofen_mit_Bohrstation" />
+   inkscape:current-layer="svg428" />
 <style
    type="text/css"
    id="style2">
@@ -333,14 +333,15 @@
 	</a>
 <text
    xml:space="preserve"
-   style="enable-background:new 0 0 1024 768;font-size:33.3333px;font-family:Roboto;-inkscape-font-specification:Roboto;text-align:center;text-anchor:middle;fill:#ffffff"
+   style="font-size:33.3333px;font-family:Roboto;-inkscape-font-specification:Roboto;text-align:center;text-anchor:middle;fill:#ffffff"
    x="234.98508"
    y="129.91045"
    id="text448"><tspan
      sodipodi:role="line"
      id="tspan446"
-     x="239.9167"
-     y="129.91045">高架仓库 </tspan></text></g>
+     x="239.91672"
+     y="129.91045"
+     style="fill:#000000">高架仓库 </tspan></text></g>
 <g
    id="Vakuum-Sauggreifer">
 	<a
@@ -419,14 +420,15 @@
    id="polygon118" />
 <text
    xml:space="preserve"
-   style="enable-background:new 0 0 1024 768;font-size:33.3333px;font-family:Roboto;-inkscape-font-specification:Roboto;text-align:center;text-anchor:middle;fill:#ffffff"
+   style="font-size:33.3333px;font-family:Roboto;-inkscape-font-specification:Roboto;text-align:center;text-anchor:middle;fill:#ffffff"
    x="562.62683"
    y="405.97015"
    id="text506"><tspan
      sodipodi:role="line"
      id="tspan504"
      x="567.55847"
-     y="405.97015">抽吸垫 </tspan></text></g>
+     y="405.97015"
+     style="fill:#000000">抽吸垫 </tspan></text></g>
 <g
    id="Sortierstrecke">
 	<a
@@ -559,14 +561,15 @@
 	</a>
 <text
    xml:space="preserve"
-   style="enable-background:new 0 0 1024 768;font-size:33.3333px;font-family:Roboto;-inkscape-font-specification:Roboto;text-align:center;text-anchor:middle;fill:#ffffff"
+   style="font-size:33.3333px;font-family:Roboto;-inkscape-font-specification:Roboto;text-align:center;text-anchor:middle;fill:#ffffff"
    x="771.82092"
    y="383.04477"
    id="text514"><tspan
      sodipodi:role="line"
      id="tspan512"
      x="776.75256"
-     y="383.04477">分拣线 </tspan></text></g>
+     y="383.04477"
+     style="fill:#000000">分拣线 </tspan></text></g>
 <g
    id="Brennofen_mit_Bohrstation">
 	<a
@@ -831,14 +834,15 @@
 	</a>
 <text
    xml:space="preserve"
-   style="enable-background:new 0 0 1024 768;font-size:33.3333px;font-family:Roboto;-inkscape-font-specification:Roboto;text-align:center;text-anchor:middle;fill:#ffffff"
+   style="font-size:33.3333px;font-family:Roboto;-inkscape-font-specification:Roboto;text-align:center;text-anchor:middle;fill:#ffffff"
    x="538.74628"
    y="82.149254"
    id="text510"><tspan
      sodipodi:role="line"
      id="tspan508"
      x="547.07959"
-     y="82.149254">窑炉 </tspan></text></g>
+     y="82.149254"
+     style="fill:#000000">窑炉 </tspan></text></g>
 <g
    id="Förderband">
 	<a
