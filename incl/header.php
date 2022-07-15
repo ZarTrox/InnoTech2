@@ -108,7 +108,7 @@
                         </a>
 
                         <a href="?lang=zh-CN">
-                            <img src="./media/img/flag/cn.svg" class="flag">
+                            <img src="./media/img/flag/zh-CN.svg" class="flag">
                         </a>
                     </div>
                 </li>
