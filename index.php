@@ -60,32 +60,30 @@
 
                 <?php
                 if ($_GET['lang'] == "de") {
-                    echo "<img src='./media/img/Gesamtansicht_de.svg' alt=' ' />";
+                    echo "<div id=\"GesamtueberblickSvg0\" alt=\"Gesamtübersicht Fischer Technik\"></div>";
                 } elseif ($_GET['lang'] == "en") {
-                    echo "<img src='./media/img/Gesamtansicht_en.svg' alt=' ' />";
+                    echo "<div id=\"GesamtueberblickSvg1\" alt=\"Gesamtübersicht Fischer Technik\"></div>";
                 } elseif ($_GET['lang'] == "zh-CN") {
-                    echo "<img src='./media/img/Gesamtansicht_zh-CN.svg' alt=' ' />";
+                    echo "<div id=\"GesamtueberblickSvg2\" alt=\"Gesamtübersicht Fischer Technik\"></div>";
                 } else {
-                    echo "<img src='./media/img/Gesamtansicht_en.svg' alt=' ' />";
+                    echo "<div id=\"GesamtueberblickSvg3\" alt=\"Gesamtübersicht Fischer Technik\"></div>";
                 }
                 ?>
 
             </div>
 
             <div class="col-12 col-md-6">
-                <a href="https://neo-ideas.de/IT2/#Umsetzer">
-                    <?php
+                <?php
                     if ($_GET['lang'] == "de") {
-                        echo "<img src='./media/img/Gesamtübersicht_Festo_de.svg' alt=' ' />";
+                        echo "<div id=\"FestoUebersichtSvg0\" alt=\"Gesamtübersicht Festo\"></div>";
                     } elseif ($_GET['lang'] == "en") {
-                        echo "<img src='./media/img/Gesamtübersicht_Festo_en.svg' alt=' ' />";
+                        echo "<div id=\"FestoUebersichtSvg1\" alt=\"Gesamtübersicht Festo\"></div>";
                     } elseif ($_GET['lang'] == "zh-CN") {
-                        echo "<img src='./media/img/Gesamtübersicht_Festo_zh-CN.svg' alt=' ' />";
+                        echo "<div id=\"FestoUebersichtSvg2\" alt=\"Gesamtübersicht Festo\"></div>";
                     } else {
-                        echo "<img src='./media/img/Gesamtübersicht_Festo_en.svg' alt=' ' />";
+                        echo "<div id=\"FestoUebersichtSvg3\" alt=\"Gesamtübersicht Festo\"></div>";
                     }
-                    ?>
-                </a>
+                ?>
 
             </div>
 
@@ -386,8 +384,7 @@
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <!-- Bild -->
-                        <img class="single_pic" src="./media/img/Brennofen.svg" alt="Part Brennofen">
-
+                        <div class="single_pic" id="BrennOfenSvg" alt="Part Brennofen"></div>
                         <!-- Beschreibung -->
                         <h4 class="mt-3">
                             <?php echo $lang['single_view_h1'] ?>

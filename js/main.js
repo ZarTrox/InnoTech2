@@ -1,15 +1,3 @@
-/*  Aufgaben Celina:
-- d3.ease verwenden?
-- Hearmap fuer Gesameuebersicht?
-
-*/
-/* Open Issues
-
-Wenn beim 0. element andere werte als 0 sind (e.g. H-Horizontal) werden diese nicht angezeigt
-
-*/
-
-
 //Arrays mit den Variablennamen von dem Datensatz
 
 const ArrayWithVariablesForHochregalLager = [
@@ -146,7 +134,6 @@ async function updateSvgWithData(data) {
 
   for (element in data) {
     await sleep(1000);
-    //Todo fall für 0 einfuegen
     var dataArray = data[element]["werte"];
     var dataArrayVorher = null;
     if (element != 0) {
@@ -165,16 +152,37 @@ async function updateSvgWithData(data) {
 
 function createSvgUebersicht() {
   //SVG erstellen/auswaehlen
-  d3.xml("./media/img/Gesamtansicht_de.svg", function (error, documentFragment) {
+  var pathToSvg_LanguageDefinition = "";
+  var documentID_LanguageDefinition;
+  if (document.getElementById("GesamtueberblickSvg0")){
+    pathToSvg_LanguageDefinition = "./media/img/Gesamtansicht_de.svg";
+    documentID_LanguageDefinition = 0;
+  } else if (document.getElementById("GesamtueberblickSvg1")) {
+    pathToSvg_LanguageDefinition = "./media/img/Gesamtansicht_en.svg";
+    documentID_LanguageDefinition = 1;
+  } else if (document.getElementById("GesamtueberblickSvg2")) {
+    pathToSvg_LanguageDefinition = "./media/img/Gesamtansicht_zh-CN.svg";
+    documentID_LanguageDefinition = 2;
+  } else if (document.getElementById("GesamtueberblickSvg3")) {
+    pathToSvg_LanguageDefinition = "./media/img/Gesamtansicht_en.svg";
+    documentID_LanguageDefinition = 3;
+  }
+
+  if (!pathToSvg_LanguageDefinition){
+    console.error("No path for Overview svg found!");
+  }
+
+  d3.xml(pathToSvg_LanguageDefinition, function (error, documentFragment) {
     if (error) {
       console.log(error);
       return;
     }
 
     var svgNode = documentFragment.getElementsByTagName("svg")[0];
-    var main_chart_svg = d3.select("#GesamtueberblickSvg");
+    var main_chart_svg = d3.select("#GesamtueberblickSvg"
+    + documentID_LanguageDefinition);
     if (
-      document.getElementById("GesamtueberblickSvg").getElementsByTagName("svg")
+      document.getElementById("GesamtueberblickSvg" + documentID_LanguageDefinition).getElementsByTagName("svg")
         .length == 0
     ) {
       main_chart_svg.node().appendChild(svgNode);
@@ -184,7 +192,7 @@ function createSvgUebersicht() {
 
 function createSvgHochregallager(dataArray, dataArrayVorher, getDomainMaxRangeHHorizontalXScale, getDomainMaxRangeHVertikalYScale) {
   //SVG erstellen/auswaehlen
-  d3.xml("./media/img/HochregallagerNew12.svg",
+  d3.xml("./media/img/Hochregallager.svg",
     function (error, documentFragment) {
       if (error) {
         console.log(error);
@@ -200,8 +208,6 @@ function createSvgHochregallager(dataArray, dataArrayVorher, getDomainMaxRangeHH
 
       if (dataArray != "") {
 
-        //Direkt am anfang mappen und den maximalen wert anchfragen
-
         //Skalieren der Daten
 
         var offsetWidthDevHochregallager = document.getElementById('HochregallagerSvg').offsetWidth;
@@ -214,10 +220,10 @@ function createSvgHochregallager(dataArray, dataArrayVorher, getDomainMaxRangeHH
           .range([parseFloat(offsetHeightDevHochregallager) * 0.13, parseFloat(offsetHeightDevHochregallager) * 0.65])
 
         //Bewegen des Greifarms und Turms
-        hochregallager_update_svg(dataArray, dataArrayVorher, x, y);
+        hochregallager_update_svg(dataArray, dataArrayVorher, x, y, offsetWidthDevHochregallager);
 
         //Checkboxen updaten
-
+        //Notiz: Um Prozess robust zu halten bei veraenderungen muessten die Werte mit den Arrays am Anfang verglichen werden.
         var status = "";
         for (id in arrayHochregallagerCheckboxIds) {
           switch (parseInt(id)) {
@@ -248,7 +254,7 @@ function createSvgHochregallager(dataArray, dataArrayVorher, getDomainMaxRangeHH
     });
 }
 
-function hochregallager_update_svg(dataArray, dataArrayVorher, x, y) {
+function hochregallager_update_svg(dataArray, dataArrayVorher, x, y, offsetWidthDevHochregallager) {
   if (dataArrayVorher) {
 
     //Differenz zum vorherigen Moment berechnen
@@ -280,76 +286,24 @@ function hochregallager_update_svg(dataArray, dataArrayVorher, x, y) {
       var oldvalueX = d3.select(this).attr("x");
       var newvalueX = parseFloat(oldvalueX) + diffHHorizontal;
 
+      //Vermeided, dass der gesamte Turm außerhalb des Bildrandes faehrt indem der Linkeste Punkt fuer der Greifer gesetzt wird
+      if (newvalueX <= (0.145 * offsetWidthDevHochregallager)){
+         newvalueX = 0.145 * offsetWidthDevHochregallager;
+      }
+
       d3.select(this)
         .transition()
         .duration(1000)
         .attr("y", newvalueY + "px")
         .attr("x", newvalueX + "px");
-      //Motor blinken lassen?
     });
   }
-  //Und evtl mit lichtschranke aussen verbinden?
-  //Blinkt sehr selten? Gehört das so?
-
-  //Lichtschranke blinken lassen
-  if (dataArray[ArrayWithVariablesForHochregalLager[0]] == " false") {
-    svg
-      .select("#LichtschrankeInnen")
-      .transition()
-      .attr("class", "lichtschranke")
-      .transition()
-      .duration(1000)
-      .attr("class", "lichtschrankeTransform");
-  }
-  if (dataArray[ArrayWithVariablesForHochregalLager[1]] == " false") {
-    svg
-      .select("#LichtschrankeAussen")
-      .transition()
-      .attr("class", "lichtschranke")
-      .transition()
-      .duration(1000)
-      .attr("class", "lichtschrankeTransform");
-  }
-
-  /*
-        "Referenztaster Ausleger vorne" ist immer gegenteil von "Referenztaster Ausleger hinten"
-        Also wenn true dann false und umgekehrt -> muss noch validiert werden
-    */
-  svg.selectAll(".taster").each(function () {
-    var currentId = d3.select(this).attr("id");
-    var currentRgbColor = d3.select(this).style("fill");
-    if (currentId === "Referenztastervertikal") {
-      if (dataArray[ArrayWithVariablesForHochregalLager[2]] == " false") {
-        document.getElementById("Referenztastervertikal").style.fill = "blue";
-        //Fuer Celina: TODO create blinking effect in svg file
-        //Farbe zu Farbe in svg aendern
-      } else {
-        document.getElementById("Referenztastervertikal").style.fill =
-          currentRgbColor;
-      }
-      //Validieren ob die IDs richtig zugeordnet sind
-    } else if (currentId === "ReferenztasterAuslegerVorne") {
-      if (dataArray[ArrayWithVariablesForHochregalLager[4]] == " false") {
-        document.getElementById("ReferenztasterAuslegerVorne").style.fill =
-          "blue";
-        document.getElementById("ReferenztasterAuslegerHinten").style.fill =
-          "#FD76FF";
-        //Fuer Celina: TODO create blinking effect in svg file
-        //Farbe zu Farbe in svg aendern
-      } else {
-        document.getElementById("ReferenztasterAuslegerVorne").style.fill =
-          "#FD76FF";
-        document.getElementById("ReferenztasterAuslegerHinten").style.fill =
-          "blue";
-      }
-    }
-  });
 }
 
 
 function createSvgSortierstrecke(dataArray) {
   //SVG erstellen/auswaehlen
-  d3.xml("./media/img/Sortierstrecke7.svg",
+  d3.xml("./media/img/Sortierstrecke.svg",
     function (error, documentFragment) {
       if (error) { console.log(error); return; }
       var svgNode = documentFragment
@@ -434,7 +388,7 @@ function createSvgSortierstrecke(dataArray) {
 
 function createSvgUmsetzer(dataArray) {
   //SVG erstellen/auswaehlen
-  d3.xml("./media/img/Umsetzer3.svg", function (error, documentFragment) {
+  d3.xml("./media/img/Umsetzer.svg", function (error, documentFragment) {
     if (error) {
       console.log(error);
       return;
@@ -450,17 +404,6 @@ function createSvgUmsetzer(dataArray) {
     svg = main_chart_svg.select("svg");
     if (dataArray != "") {
       //Evtl muss man den Inhalt hier tauschen falls schalter 1 links und niucht rechts ist
-      /*
-                    Es gibt nur false false???
-                    Warum?
-                */
-
-      var madde = Math.floor(Math.random() * (Math.ceil(6) - Math.floor(0)));
-      if (madde > 3) {
-        dataArray[ArrayWithVariablesForUmsetzer[0]] = " true";
-      } else if (madde <= 3) {
-        dataArray[ArrayWithVariablesForUmsetzer[1]] = " true";
-      }
       if (dataArray[ArrayWithVariablesForUmsetzer[0]] == " true") {
         document.getElementById("UmsetzerSvg").style.transform = "scale(1, 1)";
       } else if (dataArray[ArrayWithVariablesForUmsetzer[1]] == " true") {
@@ -490,7 +433,7 @@ function createSvgUmsetzer(dataArray) {
 
 function createSvgVakuumSauggreif(dataArray, dataArrayVorher, getDomainMaxRangeVHorizontalXScale, getDomainMaxRangeVVertikalYScale, getDomainMaxRangeVDrehenZScale) {
   //SVG erstellen/auswaehlen
-  d3.xml("./media/img/Vakuum-SauggreiferNew8.svg",
+  d3.xml("./media/img/Vakuum-Sauggreifer.svg",
     function (error, documentFragment) {
       if (error) {
         console.log(error);
@@ -517,18 +460,6 @@ function createSvgVakuumSauggreif(dataArray, dataArrayVorher, getDomainMaxRangeV
         var z = d3.scaleLinear()
           .domain([0, parseInt(getDomainMaxRangeVDrehenZScale)])
           .range([0, 360]).clamp(true);
-
-        //Test daten erstellen
-        var madde = Math.floor(Math.random() * (Math.ceil(6) - Math.floor(0)));
-        if (madde <= 2) {
-          dataArray[ArrayWithVariablesForVakuumSauggreifer[5]] = 0;
-        } else if (madde > 2 && madde <= 4) {
-          dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 100;
-          //dataArray[ArrayWithVariablesForVakuumSauggreifer[4]] = 50
-        } else if (madde > 4) {
-          dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 1200;
-          //dataArray[ArrayWithVariablesForVakuumSauggreifer[4]] = 1200
-        }
 
         //Bild um 180 grad flippen
         var drehenSkaliert = z(parseInt(dataArray[ArrayWithVariablesForVakuumSauggreifer[4]]));
@@ -619,7 +550,7 @@ function createSvgStapelmagazin() {
 
 function createSvgBrennofen(dataArray) {
   //SVG erstellen/auswaehlen
-  d3.xml("./media/img/Brennofen2.svg", function (error, documentFragment) {
+  d3.xml("./media/img/Brennofen.svg", function (error, documentFragment) {
     if (error) {
       console.log(error);
       return;
@@ -703,18 +634,35 @@ function createSvgBrennofen(dataArray) {
 
 function createSvgFestoUebersicht() {
   //SVG erstellen/auswaehlen
-  d3.xml("./media/img/Gesamtübersicht_Festo_de.svg", function (error, documentFragment) {
+
+  var pathToSvg_LanguageDefinition = "";
+  var documentID_LanguageDefinition;
+  if (document.getElementById("GesamtueberblickSvg0")){
+    pathToSvg_LanguageDefinition = "./media/img/Gesamtübersicht_Festo_de.svg";
+    documentID_LanguageDefinition = 0;
+  } else if (document.getElementById("GesamtueberblickSvg1")) {
+    pathToSvg_LanguageDefinition = "./media/img/Gesamtübersicht_Festo_en.svg";
+    documentID_LanguageDefinition = 1;
+  } else if (document.getElementById("GesamtueberblickSvg2")) {
+    pathToSvg_LanguageDefinition = "./media/img/Gesamtübersicht_Festo_zh-CN.svg";
+    documentID_LanguageDefinition = 2;
+  } else if (document.getElementById("GesamtueberblickSvg3")) {
+    pathToSvg_LanguageDefinition = "./media/img/Gesamtübersicht_Festo_en.svg";
+    documentID_LanguageDefinition = 3;
+  }
+
+  d3.xml(pathToSvg_LanguageDefinition, function (error, documentFragment) {
     if (error) {
       console.log(error);
       return;
     }
 
     var svgNode = documentFragment.getElementsByTagName("svg")[0];
-    var main_chart_svg = d3.select("#FestoUebersichtSvg");
+    var main_chart_svg = d3.select("#FestoUebersichtSvg" + documentID_LanguageDefinition);
     // if (document.getElementById("div"))
     if (
       document
-        .getElementById("FestoUebersichtSvg")
+        .getElementById("FestoUebersichtSvg" + documentID_LanguageDefinition)
         .getElementsByTagName("svg").length == 0
     ) {
       main_chart_svg.node().appendChild(svgNode);
