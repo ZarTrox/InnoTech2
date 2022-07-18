@@ -153,7 +153,7 @@ async function updateSvgWithData(data) {
       var dataArrayVorher = data[element - 1]["werte"];
     }
     createSvgUebersicht();
-    createSvgFestoUebersicht(dataArray);
+    createSvgFestoUebersicht();
     createHeaderAmpel(dataArray);
     createSvgHochregallager(dataArray, dataArrayVorher, getDomainMaxRangeHHorizontalXScale, getDomainMaxRangeHVertikalYScale);
     createSvgVakuumSauggreif(dataArray, dataArrayVorher, getDomainMaxRangeVHorizontalXScale, getDomainMaxRangeVVertikalYScale, getDomainMaxRangeVDrehenZScale);
@@ -165,7 +165,7 @@ async function updateSvgWithData(data) {
 
 function createSvgUebersicht() {
   //SVG erstellen/auswaehlen
-  d3.xml("./media/img/Gesamtansicht2.svg", function (error, documentFragment) {
+  d3.xml("./media/img/Gesamtansicht_de.svg", function (error, documentFragment) {
     if (error) {
       console.log(error);
       return;
@@ -180,23 +180,6 @@ function createSvgUebersicht() {
       main_chart_svg.node().appendChild(svgNode);
     }
   });
-}
-
-function createSvgUebersichtFesto() {
-  //SVG erstellen/auswaehlen
-  d3.xml("./media/img/Gesamtansicht_Festo2.svg",
-    function (error, documentFragment) {
-      if (error) {
-        console.log(error);
-        return;
-      }
-      var svgNode = documentFragment.getElementsByTagName("svg")[0];
-      var main_chart_svg = d3.select("#FestoUeberblickSvg");
-      if (document.getElementById("FestoUeberblickSvg").getElementsByTagName("svg").length == 0) {
-        main_chart_svg.node().appendChild(svgNode);
-      }
-    }
-  );
 }
 
 function createSvgHochregallager(dataArray, dataArrayVorher, getDomainMaxRangeHHorizontalXScale, getDomainMaxRangeHVertikalYScale) {
@@ -263,23 +246,6 @@ function createSvgHochregallager(dataArray, dataArrayVorher, getDomainMaxRangeHH
         }
       }
     });
-}
-
-//Helfer funktion zum aendern der checkbox stati
-function updateInputCheckboxes(checkBoxID, status) {
-  if (!status) {
-    console.warn("status for checkbox is empty!");
-  }
-  var inputElements = document.getElementsByClassName(checkBoxID);
-  for (checkbox in inputElements) {
-    if (typeof inputElements[checkbox] === "object") {
-      if (status === " true") {
-        inputElements[checkbox].setAttribute("checked", "");
-      } else if (status === " false") {
-        inputElements[checkbox].removeAttribute("checked");
-      }
-    }
-  }
 }
 
 function hochregallager_update_svg(dataArray, dataArrayVorher, x, y) {
@@ -465,17 +431,6 @@ function createSvgSortierstrecke(dataArray) {
     })
 }
 
-//Helfer funktion um lichtschranken zum blinken zu bringen
-function lichtschrankeBlinken(lichtschrankeID, classNameNormal, classNameTransform) {
-  svg.select(lichtschrankeID)
-    .transition()
-    .attr("class", classNameNormal)
-    .transition()
-    .duration(1000)
-    .attr("class", classNameTransform)
-}
-
-
 
 function createSvgUmsetzer(dataArray) {
   //SVG erstellen/auswaehlen
@@ -552,6 +507,7 @@ function createSvgVakuumSauggreif(dataArray, dataArrayVorher, getDomainMaxRangeV
         //Skalieren der Daten
         var offsetHeightSauggreifDiv = document.getElementById("Vakuum").offsetHeight;
         var maxAusweitungVonAusfahrbarerQuerstrebe = parseFloat(d3.select("#referenzPunktQuerstange").attr("x"));
+        
         var x = d3.scaleLinear()
           .domain([0, parseInt(getDomainMaxRangeVHorizontalXScale)])
           .range([0, maxAusweitungVonAusfahrbarerQuerstrebe]).clamp(true);
@@ -570,7 +526,7 @@ function createSvgVakuumSauggreif(dataArray, dataArrayVorher, getDomainMaxRangeV
           dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 100;
           //dataArray[ArrayWithVariablesForVakuumSauggreifer[4]] = 50
         } else if (madde > 4) {
-          dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 980;
+          dataArray[ArrayWithVariablesForVakuumSauggreifer[3]] = 1200;
           //dataArray[ArrayWithVariablesForVakuumSauggreifer[4]] = 1200
         }
 
@@ -602,19 +558,7 @@ function createSvgVakuumSauggreif(dataArray, dataArrayVorher, getDomainMaxRangeV
             var oldValueX = d3.select(this).attr("x");
             var newValueX = parseFloat(oldValueX) + diffHHorizontal;
             var classesSauggreiferElement = d3.select(this).attr("class");
-            var idSauggreiferElement = d3.select(this).attr("id");
 
-            //if ((idSauggreiferElement === "ausfahrbareQuerstange1") || (idSauggreiferElement === "ausfahrbareQuerstange2")) {
-            //Weg finden wie man die Querstrebe am Hauptarm halten kann
-            //var newLength = diffHHorizontal - d3.select(parseFloat(d3.select("#referenzPunktQuerstange").attr("x")));
-            //console.log(typeof parseFloat(d3.select("#referenzPunktQuerstange").attr("x")));
-            // d3.select(this)
-            //     .transition()
-            //     .duration(1000)
-            //     .attr("y", newvalueY + "px")
-            //     .attr("x", newValueX + "px")
-            //     .attr("width", newLength)
-            //} else
             if (classesSauggreiferElement.includes("ausfahrbarerGreifer")) {
               d3.select(this)
                 .transition()
@@ -671,6 +615,8 @@ function createSvgStapelmagazin() {
     svg = main_chart_svg.select("svg");
   });
 }
+
+
 function createSvgBrennofen(dataArray) {
   //SVG erstellen/auswaehlen
   d3.xml("./media/img/Brennofen2.svg", function (error, documentFragment) {
@@ -755,9 +701,9 @@ function createSvgBrennofen(dataArray) {
   });
 }
 
-function createSvgFestoUebersicht(dataArray) {
+function createSvgFestoUebersicht() {
   //SVG erstellen/auswaehlen
-  d3.xml("./media/img/Gesamtübersicht_Festo2.svg", function (error, documentFragment) {
+  d3.xml("./media/img/Gesamtübersicht_Festo_de.svg", function (error, documentFragment) {
     if (error) {
       console.log(error);
       return;
@@ -802,6 +748,35 @@ function createHeaderAmpel(dataArray) {
     d3.select("#ampel_header_4").attr("class", "header_light4");
   }
 }
+
+//Helfer funktion um lichtschranken zum blinken zu bringen
+function lichtschrankeBlinken(lichtschrankeID, classNameNormal, classNameTransform) {
+  svg.select(lichtschrankeID)
+    .transition()
+    .attr("class", classNameNormal)
+    .transition()
+    .duration(1000)
+    .attr("class", classNameTransform)
+}
+
+
+//Helfer funktion zum aendern der checkbox stati
+function updateInputCheckboxes(checkBoxID, status) {
+  if (!status) {
+    console.warn("status for checkbox is empty!");
+  }
+  var inputElements = document.getElementsByClassName(checkBoxID);
+  for (checkbox in inputElements) {
+    if (typeof inputElements[checkbox] === "object") {
+      if (status === " true") {
+        inputElements[checkbox].setAttribute("checked", "");
+      } else if (status === " false") {
+        inputElements[checkbox].removeAttribute("checked");
+      }
+    }
+  }
+}
+
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
