@@ -152,6 +152,9 @@ async function updateSvgWithData(data) {
 
 function createSvgUebersicht() {
   //SVG erstellen/auswaehlen
+
+  //Je nach ausgewahlter Sprache wird eine andere ID vergeben
+  //Je nach ID wird ein anderes Bild verwendet
   var pathToSvg_LanguageDefinition = "";
   var documentID_LanguageDefinition;
   if (document.getElementById("GesamtueberblickSvg0")){
@@ -179,12 +182,8 @@ function createSvgUebersicht() {
     }
 
     var svgNode = documentFragment.getElementsByTagName("svg")[0];
-    var main_chart_svg = d3.select("#GesamtueberblickSvg"
-    + documentID_LanguageDefinition);
-    if (
-      document.getElementById("GesamtueberblickSvg" + documentID_LanguageDefinition).getElementsByTagName("svg")
-        .length == 0
-    ) {
+    var main_chart_svg = d3.select("#GesamtueberblickSvg" + documentID_LanguageDefinition);
+    if (document.getElementById("GesamtueberblickSvg" + documentID_LanguageDefinition).getElementsByTagName("svg").length == 0) {
       main_chart_svg.node().appendChild(svgNode);
     }
   });
@@ -403,13 +402,10 @@ function createSvgUmsetzer(dataArray) {
     }
     svg = main_chart_svg.select("svg");
     if (dataArray != "") {
-      //Evtl muss man den Inhalt hier tauschen falls schalter 1 links und niucht rechts ist
       if (dataArray[ArrayWithVariablesForUmsetzer[0]] == " true") {
         document.getElementById("UmsetzerSvg").style.transform = "scale(1, 1)";
       } else if (dataArray[ArrayWithVariablesForUmsetzer[1]] == " true") {
         document.getElementById("UmsetzerSvg").style.transform = "scale(-1, 1)";
-      } else {
-        //Umsetzer in der Luft?
       }
 
       //Checkboxen updaten
@@ -635,6 +631,8 @@ function createSvgBrennofen(dataArray) {
 function createSvgFestoUebersicht() {
   //SVG erstellen/auswaehlen
 
+  //Je nach ausgewahlter Sprache wird eine andere ID vergeben
+  //Je nach ID wird ein anderes Bild verwendet
   var pathToSvg_LanguageDefinition = "";
   var documentID_LanguageDefinition;
   if (document.getElementById("GesamtueberblickSvg0")){
@@ -660,11 +658,7 @@ function createSvgFestoUebersicht() {
     var svgNode = documentFragment.getElementsByTagName("svg")[0];
     var main_chart_svg = d3.select("#FestoUebersichtSvg" + documentID_LanguageDefinition);
     // if (document.getElementById("div"))
-    if (
-      document
-        .getElementById("FestoUebersichtSvg" + documentID_LanguageDefinition)
-        .getElementsByTagName("svg").length == 0
-    ) {
+    if (document.getElementById("FestoUebersichtSvg" + documentID_LanguageDefinition).getElementsByTagName("svg").length == 0) {
       main_chart_svg.node().appendChild(svgNode);
     }
     svg = main_chart_svg.select("svg");
