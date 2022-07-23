@@ -17,15 +17,6 @@
 
     <meta name="robots" content="noindex, nofollow, nosnippet">
 
-    <!--
-    <meta name="robots" content="index, follow">
-    <meta name="robots" content="all">
-    <meta name="revisit-after" content="7 days">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    -->
-
-
     <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
     <script src="./js/main.js"></script>
 
@@ -95,15 +86,6 @@
 
 
     </div>
-
-
-    <script>
-        function changeText() {
-            document.getElementById('tspan874').textContent = "new text";
-        }
-    </script>
-
-
 
     <!-- NOTE Live Status -->
 
@@ -238,7 +220,6 @@
 
                     <!-- Bild -->
                     <div class="col-12 col-lg-6">
-                        <!--<img class="single_pic" src="./media/img/Hochregallager.svg" alt="Part Hochregallager">-->
                         <div id="HochregallagerSvg" class="single_pic" alt="Part Hochregallager"></div>
                     </div>
 
