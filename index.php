@@ -50,11 +50,11 @@
             <div class="col-12 col-md-6">
 
                 <?php
-                if ($_GET['lang'] == "de") {
+                if ($_SESSION['lang'] == "de") {
                     echo "<div id=\"GesamtueberblickSvg0\" alt=\"Gesamtübersicht Fischer Technik\"></div>";
-                } elseif ($_GET['lang'] == "en") {
+                } elseif ($_SESSION['lang'] == "en") {
                     echo "<div id=\"GesamtueberblickSvg1\" alt=\"Gesamtübersicht Fischer Technik\"></div>";
-                } elseif ($_GET['lang'] == "zh-CN") {
+                } elseif ($_SESSION['lang'] == "zh-CN") {
                     echo "<div id=\"GesamtueberblickSvg2\" alt=\"Gesamtübersicht Fischer Technik\"></div>";
                 } else {
                     echo "<div id=\"GesamtueberblickSvg3\" alt=\"Gesamtübersicht Fischer Technik\"></div>";
@@ -65,11 +65,11 @@
 
             <div class="col-12 col-md-6">
                 <?php
-                if ($_GET['lang'] == "de") {
+                if ($_SESSION['lang'] == "de") {
                     echo "<div id=\"FestoUebersichtSvg0\" alt=\"Gesamtübersicht Festo\"></div>";
-                } elseif ($_GET['lang'] == "en") {
+                } elseif ($_SESSION['lang'] == "en") {
                     echo "<div id=\"FestoUebersichtSvg1\" alt=\"Gesamtübersicht Festo\"></div>";
-                } elseif ($_GET['lang'] == "zh-CN") {
+                } elseif ($_SESSION['lang'] == "zh-CN") {
                     echo "<div id=\"FestoUebersichtSvg2\" alt=\"Gesamtübersicht Festo\"></div>";
                 } else {
                     echo "<div id=\"FestoUebersichtSvg3\" alt=\"Gesamtübersicht Festo\"></div>";
@@ -547,7 +547,7 @@
 
         });
     </script>
-    
+
     <script>
         getData();
     </script>
