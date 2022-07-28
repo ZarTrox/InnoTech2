@@ -547,9 +547,7 @@
 
         });
     </script>
-
-
-    <div id="svgcontainer"> </div>
+    
     <script>
         getData();
     </script>
