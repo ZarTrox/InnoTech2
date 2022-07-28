@@ -635,16 +635,16 @@ function createSvgFestoUebersicht() {
   //Je nach ID wird ein anderes Bild verwendet
   var pathToSvg_LanguageDefinition = "";
   var documentID_LanguageDefinition;
-  if (document.getElementById("GesamtueberblickSvg0")){
+  if (document.getElementById("FestoUebersichtSvg0")){
     pathToSvg_LanguageDefinition = "./media/img/Gesamtübersicht_Festo_de.svg";
     documentID_LanguageDefinition = 0;
-  } else if (document.getElementById("GesamtueberblickSvg1")) {
+  } else if (document.getElementById("FestoUebersichtSvg1")) {
     pathToSvg_LanguageDefinition = "./media/img/Gesamtübersicht_Festo_en.svg";
     documentID_LanguageDefinition = 1;
-  } else if (document.getElementById("GesamtueberblickSvg2")) {
+  } else if (document.getElementById("FestoUebersichtSvg2")) {
     pathToSvg_LanguageDefinition = "./media/img/Gesamtübersicht_Festo_zh-CN.svg";
     documentID_LanguageDefinition = 2;
-  } else if (document.getElementById("GesamtueberblickSvg3")) {
+  } else if (document.getElementById("FestoUebersichtSvg3")) {
     pathToSvg_LanguageDefinition = "./media/img/Gesamtübersicht_Festo_en.svg";
     documentID_LanguageDefinition = 3;
   }

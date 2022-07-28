@@ -65,15 +65,15 @@
 
             <div class="col-12 col-md-6">
                 <?php
-                    if ($_GET['lang'] == "de") {
-                        echo "<div id=\"FestoUebersichtSvg0\" alt=\"Gesamtübersicht Festo\"></div>";
-                    } elseif ($_GET['lang'] == "en") {
-                        echo "<div id=\"FestoUebersichtSvg1\" alt=\"Gesamtübersicht Festo\"></div>";
-                    } elseif ($_GET['lang'] == "zh-CN") {
-                        echo "<div id=\"FestoUebersichtSvg2\" alt=\"Gesamtübersicht Festo\"></div>";
-                    } else {
-                        echo "<div id=\"FestoUebersichtSvg3\" alt=\"Gesamtübersicht Festo\"></div>";
-                    }
+                if ($_GET['lang'] == "de") {
+                    echo "<div id=\"FestoUebersichtSvg0\" alt=\"Gesamtübersicht Festo\"></div>";
+                } elseif ($_GET['lang'] == "en") {
+                    echo "<div id=\"FestoUebersichtSvg1\" alt=\"Gesamtübersicht Festo\"></div>";
+                } elseif ($_GET['lang'] == "zh-CN") {
+                    echo "<div id=\"FestoUebersichtSvg2\" alt=\"Gesamtübersicht Festo\"></div>";
+                } else {
+                    echo "<div id=\"FestoUebersichtSvg3\" alt=\"Gesamtübersicht Festo\"></div>";
+                }
                 ?>
 
             </div>
@@ -242,18 +242,7 @@
                                 <?php include('./incl/module1.php'); ?>
                             </table>
 
-                            <!--<a href="#legende" data-toggle="modal" class="animated-button">
-                                <div class="mt-3 mb-3">
-                                    <button class="learn-more">
-                                        <span class="circle" aria-hidden="true">
-                                            <span class="icon arrow"></span>
-                                        </span>
-                                        <span class="button-text">
-                                            <?php echo $lang['header4'] ?>
-                                        </span>
-                                    </button>
-                                </div>
-                            </a> -->
+
 
                         </div>
                     </div>
@@ -315,18 +304,7 @@
                                 <?php include('./incl/module2.php'); ?>
                             </table>
 
-                            <!--<a href="#legende" data-toggle="modal" class="animated-button">
-                                <div class="mt-3 mb-3">
-                                    <button class="learn-more">
-                                        <span class="circle" aria-hidden="true">
-                                            <span class="icon arrow"></span>
-                                        </span>
-                                        <span class="button-text">
-                                            <?php echo $lang['header4'] ?>
-                                        </span>
-                                    </button>
-                                </div>
-                            </a> -->
+
 
                         </div>
                     </div>
@@ -403,18 +381,7 @@
                                 <?php include('./incl/module3.php'); ?>
                             </table>
 
-                            <!--<a href="#legende" data-toggle="modal" class="animated-button">
-                                <div class="mt-3 mb-3">
-                                    <button class="learn-more">
-                                        <span class="circle" aria-hidden="true">
-                                            <span class="icon arrow"></span>
-                                        </span>
-                                        <span class="button-text">
-                                            <?php echo $lang['header4'] ?>
-                                        </span>
-                                    </button>
-                                </div>
-                            </a> -->
+
                         </div>
                     </div>
 
@@ -457,18 +424,7 @@
                                 <?php include('./incl/module4.php'); ?>
                             </table>
 
-                            <!--<a href="#legende" data-toggle="modal" class="animated-button">
-                                <div class="mt-3 mb-3">
-                                    <button class="learn-more">
-                                        <span class="circle" aria-hidden="true">
-                                            <span class="icon arrow"></span>
-                                        </span>
-                                        <span class="button-text">
-                                            <?php echo $lang['header4'] ?>
-                                        </span>
-                                    </button>
-                                </div>
-                            </a> -->
+
 
                         </div>
                     </div>
@@ -535,18 +491,7 @@
                                 <?php include('./incl/module5.php'); ?>
                             </table>
 
-                            <!--<a href="#legende" data-toggle="modal" class="animated-button">
-                                <div class="mt-3 mb-3">
-                                    <button class="learn-more">
-                                        <span class="circle" aria-hidden="true">
-                                            <span class="icon arrow"></span>
-                                        </span>
-                                        <span class="button-text">
-                                            <?php echo $lang['header4'] ?>
-                                        </span>
-                                    </button>
-                                </div>
-                            </a> -->
+
 
                         </div>
                     </div>
